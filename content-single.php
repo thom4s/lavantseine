@@ -6,6 +6,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+
+		<?php
+			$media_meta = get_post_meta( $post->ID, '_my_meta_value_key', true );
+			if ( $media_meta ) {
+				echo $media_meta;
+			}
+		?>
+
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
@@ -21,6 +29,7 @@
 				'after'  => '</div>',
 			) );
 		?>
+	
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

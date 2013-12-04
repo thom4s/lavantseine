@@ -89,13 +89,12 @@ add_action( 'widgets_init', 'lavantseine_widgets_init' );
 
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles for front.
  */
 function lavantseine_scripts() {
 	// wp_enqueue_style( 'lavantseine-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'lavantseine-style', get_template_directory_uri() . '/styles/style.css' );
 	wp_enqueue_style( 'lavantseine-custom', get_template_directory_uri() . '/styles/custom.css' );
-
 
 	wp_enqueue_script( 'lavantseine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -104,8 +103,23 @@ function lavantseine_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'lavantseine_scripts' );
+
+
+/**
+ * Enqueue scripts and styles for admin.
+ */
+function lavantseine_admin_scripts() {
+	wp_enqueue_script('jquery-ui-datepicker');  
+	
+	wp_enqueue_script( 'lavantseine-scripts', get_template_directory_uri() . '/js/admin-scripts.js', array(), '20120206', true );
+
+	wp_enqueue_style('jquery-ui-custom', get_template_directory_uri().'/styles/jquery-ui-custom.css');
+
+}
+add_action( 'admin_enqueue_scripts', 'lavantseine_admin_scripts' );
 
 
 
@@ -119,6 +133,14 @@ require get_template_directory() . '/inc/events-post-type.php';
  * Load custom taxonomies.
  */
 require get_template_directory() . '/inc/custom-taxonomies.php';
+
+
+/**
+ * Load custom metas.
+ */
+require get_template_directory() . '/inc/post-metas.php';
+require get_template_directory() . '/inc/event-metas.php';
+
 
 
 
