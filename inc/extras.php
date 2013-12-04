@@ -19,6 +19,7 @@ function lavantseine_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'lavantseine_page_menu_args' );
 
+
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -34,6 +35,7 @@ function lavantseine_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'lavantseine_body_classes' );
+
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.

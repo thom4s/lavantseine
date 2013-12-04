@@ -1,0 +1,471 @@
+//
+// MIXINS
+// from here : http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+// from bootstrap
+// from Inuit.scss
+// --------------------------------------------------
+
+
+/****************************************************
+*   SOMMAIRE
+* 
+*   LAYOUT
+*       abs-centered () + abs-centered-fixed () + abs-centered-responsive ()  
+*       abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto)
+*       center-block()
+*       clearfix()
+*       box-sizing($type: "border")
+* 
+*
+*   STYLES
+*       opacity($opacity)
+*       box-shadow($shadow...)
+*       transition($transition...) + transition-delay($delay...) + transition-duration($duration...)
+*       Transformations : rotate($degrees) + scale($ratio) + translate($x, $y) +  skew($x, $y) + translate3d($x, $y, $z)
+*       border-radius($radius) + single side border-top-radius($radius)
+*       placeholder($color: $placeholderText)
+*       tab-focus()
+*       Shadow mixin (http://codepen.io/hugo/pen/xzjGB)
+*       shade($type, $color: #3498db, $depth: 20, $angle: 135deg, $long: false, $fade: false) 
+*
+*
+*   TYPOGRAPHY
+*       font-size($font-size, $line-height:true)
+*       font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight)
+*       font-family
+*       line-height($heightValue: 12 )
+*
+* 
+*   HACK
+*      ie7-inline-block()
+*
+*
+*   ELSE
+*      Retina Images : image-2x($image, $width, $height)
+*      breakpoint($point)
+*      vendor($property, $value...) (Inuit.scss)
+*      keyframe ($animation-name) (Inuit.scss)
+*
+****************************************************/
+
+
+
+
+// LAYOUT
+// --------------------------------------------------
+
+
+// Absolute positioned
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+
+// Aboslute Centering
+
+@mixin abs-centered () {
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+// centered in viewport
+@mixin abs-centered-fixed () {
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 999;
+}
+
+@mixin abs-centered-responsive () {
+  width: 60%; 
+  height: 60%;
+  min-width: 400px;
+  max-width: 500px;
+  padding: 40px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+
+// Block centered
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// Box-sizing
+
+@mixin box-sizing($type: "border") {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */ 
+  box-sizing: #{$type}-box;
+  -webkit-box-sizing: #{$type}-box;
+  -moz-box-sizing: #{$type}-box;
+}
+
+
+// Clearfix
+
+@mixin clearfix() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+
+
+// STYLES
+// --------------------------------------------------
+
+// Opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Drop shadows
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Transitions
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+     -moz-transition-delay: $transition-delay;
+       -o-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+     -moz-transition-duration: $transition-duration;
+       -o-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+
+// Transformations
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+@mixin scale($ratio) {
+  -webkit-transform: scale($ratio);
+     -moz-transform: scale($ratio);
+      -ms-transform: scale($ratio);
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+@mixin skew($x, $y) {
+  -webkit-transform: skew($x, $y);
+     -moz-transform: skew($x, $y);
+      -ms-transform: skewX($x) skewY($y); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew($x, $y);
+          transform: skew($x, $y);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+}
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+     -moz-transform: translate3d($x, $y, $z);
+       -o-transform: translate3d($x, $y, $z);
+          transform: translate3d($x, $y, $z);
+}
+
+
+// Border radius
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+
+// Placeholder text
+
+@mixin placeholder($color: $placeholderText) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+
+// Shadow mixin (http://codepen.io/hugo/pen/xzjGB)
+
+@mixin shade($type, $color: #3498db, $depth: 20, $angle: 135deg, $long: false, $fade: false) {             
+            $angle: ($angle - 90);             
+            $x: 1.5 * cos($angle) + 0px;  
+            $y: 1.5 * sin($angle) + 0px;  
+            $darken: (lightness($color)/$depth)/2;
+            $opacify: 0; 
+            $shadow: ();  
+            
+            @if $long == true{              
+              $darken:0;
+            }  
+            
+            @if $fade == true {
+              $opacify: (opacity($color)/$depth) ;
+// added this for rendering in some browsers, remove if you like.
+              @include translateZ(0); // requires Compass
+            }
+            
+            @for $i from 1 through $depth {
+              $shadow: $shadow, $i*$x $i*$y 0 hsla(hue($color) , saturation($color), (lightness($color) - ($i * $darken)), 1 - ($i * $opacify));     
+            }       
+            #{$type}-shadow: $shadow;
+    }
+
+
+// Webkit-style focus
+
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+
+
+// TYPOGRAPHY
+// --------------------------------------------------
+
+// Font-size
+
+@mixin font-size($font-size, $line-height:true){
+    font-size:$font-size;
+    font-size:($font-size / $base-font-size)*1rem;
+    @if $line-height == true{
+        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+}
+
+@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+
+// Font-family
+
+@mixin font-family-serif() {
+  font-family: $serifFontFamily;
+}
+@mixin font-family-sans-serif() {
+  font-family: $sansFontFamily;
+}
+@mixin font-family-monospace() {
+  font-family: $monoFontFamily;
+}
+@mixin font-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  @include font-family-serif();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+@mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  @include font-family-sans-serif();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+@mixin font-monospace($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  @include font-family-monospace();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+
+
+// Line height
+
+@mixin line-height($heightValue: 12 ){
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.125 * $heightValue) + rem;
+}
+
+
+
+
+
+
+// HACK
+// --------------------------------------------------
+
+// IE7 inline-block
+
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+
+
+
+
+
+// ELSE
+// --------------------------------------------------
+
+// Retina Images mixin
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+// Responsive Breakpoints
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: $largeBreakpoint + 1) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: $smallBreakpoint +1) and (max-width: $mediumBreakpoint) { @content; }
+  }
+  @else if $point == small {
+    @media (min-width: $minimalBreakpoint) and (max-width:$smallBreakpoint) { @content; }
+  }
+}
+
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+
+/**
+ * Create CSS keyframe animations for all vendors in one go, e.g.:
+ *
+   .foo{
+       @include vendor(animation, shrink 3s);
+   }
+
+   @include keyframe(shrink){
+       from{
+           font-size:5em;
+       }
+   }
+ *
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+@mixin keyframe ($animation-name){
+    @-webkit-keyframes $animation-name{
+        @content;
+    }
+
+    @-moz-keyframes $animation-name{
+        @content;
+    }
+
+    @-ms-keyframes $animation-name{
+        @content;
+    }
+
+    @-o-keyframes $animation-name{
+        @content;
+    }
+
+    @keyframes $animation-name{
+        @content;
+    }
+}
+
+

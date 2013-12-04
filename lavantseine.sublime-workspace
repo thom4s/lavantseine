@@ -1,0 +1,530 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"fade",
+				"fadeIn"
+			],
+			[
+				"rem",
+				"removeClass"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"fon",
+				"baseFontFamily"
+			],
+			[
+				"re",
+				"removeClass"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"Word",
+				"WordPress"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"no",
+				"normal"
+			],
+			[
+				"vertica",
+				"vertical-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"bo",
+				"box-sizing"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"article",
+				"article-header"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"clea",
+				"clear"
+			],
+			[
+				"clear",
+				"clearfix"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 482.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/thomas/Sites/wp-clic/wp-content/themes/daily_headlines/functions/fiche/fiche-metas.php",
+		"/Users/thomas/Sites/BlankThemes/handcrafted/page.php",
+		"/Users/thomas/Sites/BlankThemes/html5blank-master/functions.php",
+		"/Users/thomas/Downloads/HTML5-Reset-WordPress-Theme-master/options.php",
+		"/Users/thomas/Sites/th/scss/base.scss",
+		"/Users/thomas/Sites/th/notes.php",
+		"/Users/thomas/Sites/th/db/portfolio.json",
+		"/Users/thomas/Sites/th/db/notes.json",
+		"/Users/thomas/Sites/th/js/scripts.js",
+		"/Users/thomas/Sites/th/footer.php",
+		"/Users/thomas/Sites/th/header.php",
+		"/Users/thomas/Sites/th/scss/vendor/_prism.scss",
+		"/Users/thomas/Sites/th/db/notes/tablecontent.md",
+		"/Users/thomas/Sites/th/db/notes/localhost.md",
+		"/Users/thomas/Sites/th/db/notes/posttype.md",
+		"/Users/thomas/Sites/th/scss/partials/_u-base-spacing.scss",
+		"/Users/thomas/Sites/th/scss/config.scss",
+		"/Users/thomas/Sites/th/cgv.php",
+		"/Users/thomas/Sites/th/index.php",
+		"/Users/thomas/Sites/th/db/notes/wpupdate.md",
+		"/Users/thomas/Sites/DEV/th/footer.php",
+		"/Users/thomas/Sites/DEV/th/db/notes/metaboxes.md",
+		"/Users/thomas/Sites/DEV/th/notes.php",
+		"/Users/thomas/Sites/DEV/th/js/scripts.js",
+		"/Users/thomas/Sites/DEV/th/header.php",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_q-typography.scss",
+		"/Users/thomas/Sites/DEV/th/lib/showdown.js",
+		"/Users/thomas/Sites/DEV/th/db/notes.json",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-code.scss",
+		"/Users/thomas/Sites/DEV/th/scss/config.scss",
+		"/Users/thomas/Sites/DEV/th/lib/default.css",
+		"/Users/thomas/Sites/DEV/th/scss/base.scss",
+		"/Users/thomas/Sites/DEV/th/scss/vendor/_prism.scss",
+		"/Users/thomas/Sites/DEV/th/db/portfolio.json",
+		"/Users/thomas/Sites/DEV/th/index.php",
+		"/Users/thomas/Sites/DEV/th/db/whoami.json",
+		"/Users/thomas/Sites/DEV/th/references.php",
+		"/Users/thomas/Sites/DEV/th/scss/modules/_picto-styles.scss",
+		"/Users/thomas/Downloads/th-picto/styles.css",
+		"/Users/thomas/Sites/DEV/th/navigation.php",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-nav.scss",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_u-base-spacing.scss",
+		"/Users/thomas/Sites/DEV/th/.htaccess",
+		"/Users/thomas/Sites/DEV/th/lib/Markdown.Converter.js",
+		"/Users/thomas/Sites/DEV/th/db/notes/scss.md",
+		"/Users/thomas/Sites/DEV/th/footer-content.php",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-breadcrumb.scss",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-buttons.scss",
+		"/Users/thomas/Sites/DEV/th/scss/modules/_mixins.scss",
+		"/Users/thomas/Sites/DEV/th/contact.php",
+		"/Users/thomas/Sites/DEV/th/savoir-faire.php",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_q-forms.scss",
+		"/Users/thomas/Sites/DEV/th/db/notes/outils.md",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-medias.scss",
+		"/Users/thomas/Sites/DEV/th/db/notes/wpmigration.md",
+		"/Users/thomas/Sites/DEV/th/db/notes/localhost.md",
+		"/Users/thomas/Sites/DEV/th/db/notes/wpupdate.md",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_q-links.scss",
+		"/Users/thomas/Sites/DEV/th/db/notes/tablecontent.md",
+		"/Users/thomas/Sites/DEV/th/db/notes/convertmarkdown.md",
+		"/Users/thomas/Sites/DEV/th/db/notes/direnon.md",
+		"/Users/thomas/Sites/DEV/th/db/notes/environnement.md",
+		"/Users/thomas/Sites/DEV/th/send.php",
+		"/Users/thomas/Sites/DEV/th/scss/modules/_styleguide.scss",
+		"/Users/thomas/Sites/DEV/th/db/skills.json",
+		"/Users/thomas/Sites/DEV/th/scss/modules/_variables.scss",
+		"/Users/thomas/Sites/DEV/th/expertise.php",
+		"/Users/thomas/Sites/DEV/th/sidebar.php",
+		"/Users/thomas/Sites/DEV/th/portfolio.php",
+		"/Users/thomas/Sites/DEV/th/competences.php",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_m-footer-group.scss",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-post-content.scss",
+		"/Users/thomas/Sites/DEV/th/notes/tablecontent.md",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_q-lists.scss",
+		"/Users/thomas/Sites/DEV/th/notes/posttype.md",
+		"/Users/thomas/Sites/DEV/th/notes/localhost.md",
+		"/Users/thomas/Sites/DEV/th/notes/wpupdate.md",
+		"/Users/thomas/Sites/DEV/th/notes/environnement.md",
+		"/Users/thomas/Sites/DEV/th/notes/relatedposts.md",
+		"/Users/thomas/Sites/DEV/th/notes/sass.md",
+		"/Users/thomas/Sites/DEV/th/notes/convertmarkdown.md",
+		"/Users/thomas/Sites/DEV/th/notes/outils.md",
+		"/Users/thomas/Sites/DEV/th/notes/metaboxes.md",
+		"/Users/thomas/Sites/DEV/th/notes/wpmigration.md",
+		"/Users/thomas/Sites/DEV/th/notes/wiki.md",
+		"/Users/thomas/Sites/DEV/th/notes/process.md",
+		"/Users/thomas/Sites/DEV/th/notes/direnon.md",
+		"/Users/thomas/Sites/DEV/th/notes/portfolio.md",
+		"/Users/thomas/Sites/DEV/th/notes-2.php",
+		"/Users/thomas/Sites/DEV/th/db/notes.md",
+		"/Users/thomas/Sites/DEV/th/lib/classie.js",
+		"/Users/thomas/Sites/DEV/th/lib/sidebareffect.js",
+		"/Users/thomas/Sites/DEV/th/lib/bjqs-1.3.min.js",
+		"/Users/thomas/Sites/DEV/th/test.php",
+		"/Users/thomas/Sites/DEV/th/info.php",
+		"/Users/thomas/Sites/DEV/th/js/mustache.js",
+		"/Users/thomas/Sites/DEV/th/js/classie.js",
+		"/Users/thomas/Sites/DEV/th/test.md",
+		"/Users/thomas/Sites/DEV/th/lib/Markdown.php",
+		"/Users/thomas/Sites/DEV/th/lib/MarkdownExtra.php",
+		"/Users/thomas/Sites/DEV/th/js/markdown.js",
+		"/Users/thomas/Sites/DEV/th/db/blog.json",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_q-code.scss",
+		"/Users/thomas/Sites/DEV/th/db/tagline.json",
+		"/Users/thomas/Sites/DEV/th/js/app.js",
+		"/Users/thomas/Sites/DEV/th/articles.php",
+		"/Users/thomas/Sites/DEV/th/js/masonry.js",
+		"/Users/thomas/Sites/DEV/th/js/sidebarEffects.js",
+		"/Users/thomas/Sites/DEV/th/scss/vendor/_bjqs.scss",
+		"/Users/thomas/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/thomas/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_m-heading-group.scss",
+		"/Users/thomas/Sites/DEV/th/scss/vendor/_bootstrap-helpers.scss",
+		"/Users/thomas/Sites/DEV/th/scss/modules/_debug.scss",
+		"/Users/thomas/Sites/DEV/th/scss/config.css",
+		"/Users/thomas/Sites/DEV/th/aside.php",
+		"/Users/thomas/Sites/DEV/th/scss/partials/_a-grid.scss",
+		"/Users/thomas/Sites/DEV/th/works.php",
+		"/Users/thomas/Sites/starter/scss/partials/_m-sidebar-group.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_q-search.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_a-post-content.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_a-comments.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_a-pagination.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_m-footer-group.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_m-heading-group.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_a-nav.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_q-article.scss",
+		"/Users/thomas/Sites/starter/scss/partials/_u-content-spacing.scss"
+	],
+	"find":
+	{
+		"height": 54.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/thomas/Sites/th/scss",
+			"/Users/thomas/Sites/th/styles",
+			"/Users/thomas/Sites/DEV/th/scss",
+			"/Users/thomas/Sites/DEV/th",
+			"/Users/thomas/Sites/DEV/th/scss",
+			"/Users/thomas/Sites/DEV/th/scss/partials",
+			"/Users/thomas/Sites/DEV/th/scss",
+			"/Users/thomas/Sites/DEV/th",
+			"/Users/thomas/Sites/DEV/th/scss",
+			"/Users/thomas/Sites/DEV/th",
+			"/Users/thomas/Sites/DEV/th/scss",
+			"/Users/thomas/Sites/DEV/th",
+			"/Users/thomas/Sites/DEV/th/scss",
+			"/Users/thomas/Sites/DEV/th",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"paddin",
+			"padding",
+			"article-footer",
+			".tags",
+			"h1",
+			"inner-content",
+			"submit",
+			"ICON",
+			"skill-item",
+			"skillitem",
+			"submit",
+			"focus",
+			"linkColor",
+			"submit",
+			"submit\n",
+			"border-botto",
+			"button",
+			"hide",
+			"article-content ",
+			".articles-content ",
+			"footer",
+			"h5",
+			".article-footer h5",
+			".article-footer",
+			"articles",
+			"entry-extract",
+			"entry-extract\n\n\n",
+			"\n##### Ressources \n##### Ressources ",
+			"\n##### Ressources \n",
+			"Ressources",
+			"code",
+			"metadata",
+			"metadat",
+			"notesportfolio",
+			".menu-call",
+			"showleft",
+			"button",
+			".slide",
+			"}",
+			"<h5>",
+			".taglines",
+			"WordPress",
+			"nav.support-nav",
+			".hide",
+			">\n",
+			".hide",
+			":active",
+			"666",
+			".entry-extract",
+			"img {",
+			"buttons-menu",
+			"#loader",
+			"4.833em",
+			".article-item h1",
+			"font-weight: 700;\nmargin-bottom: 0;",
+			"<h4>",
+			"home-articles",
+			"#ba3925",
+			"$green",
+			"portfolio-tasks",
+			";\n",
+			"entry-extract",
+			"inside-page",
+			"home-articles",
+			"article-item",
+			"linkColor",
+			".home-articles",
+			"240px",
+			"<h3>",
+			"works",
+			"background: rgba(150, 0, 0, 0);",
+			"clearfix",
+			"box-siz",
+			".primary-",
+			".primar",
+			"h1 {",
+			"1",
+			":642",
+			"single side",
+			"border-radius",
+			"border",
+			"opacity",
+			"clearfix",
+			"center",
+			"font-sh",
+			"-u",
+			"-s",
+			"line",
+			"warning",
+			"box",
+			"snippets",
+			"top-na\n\ntop-nav",
+			".text",
+			"text",
+			"first",
+			"clear",
+			"logo",
+			"container",
+			"transi",
+			"large",
+			"/*",
+			"carousel-slider",
+			"home_widgets",
+			"carousel-widget-wpzoom-carousel-slider-2-id",
+			"height",
+			"class",
+			"\n\n\n\n\ncarou",
+			"caroufredsel_wrapper",
+			"date"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"U",
+			"S"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.589022338946,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 304.0,
+	"status_bar_visible": true
+}

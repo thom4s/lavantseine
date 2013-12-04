@@ -5,12 +5,6 @@
  * @package lavantseine
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
 
 if ( ! function_exists( 'lavantseine_setup' ) ) :
 /**
@@ -40,9 +34,16 @@ function lavantseine_setup() {
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+
+	// Remove unnecessary lines in head
+    // remove_action( 'wp_head', 'wlwmanifest_link' );
+
+
+	// This theme uses wp_nav_menu() in 3 possible locations : primary, secondary (top) and footer.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'lavantseine' ),
+		'primary' => __( 'Menu principal', 'lavantseine' ),
+		'secondary' => __( 'Accès directs', 'lavantseine' ),
+		'footer' => __( 'Footer', 'lavantseine' ),
 	) );
 
 	// Enable support for Post Formats.
@@ -57,26 +58,44 @@ function lavantseine_setup() {
 endif; // lavantseine_setup
 add_action( 'after_setup_theme', 'lavantseine_setup' );
 
+
 /**
  * Register widgetized area and update sidebar with default widgets.
+ * 1 emplacement pour la Sidebar principal ('sidebar')
+ * 1 emplacement pour les blocs du footer ('footer-widgets')
  */
 function lavantseine_widgets_init() {
+	
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'lavantseine' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Sidebar principale', 'lavantseine' ),
+		'id'            => 'sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Emplacements Footer ', 'lavantseine' ),
+		'id'            => 'footer-widgets',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
 }
 add_action( 'widgets_init', 'lavantseine_widgets_init' );
+
 
 /**
  * Enqueue scripts and styles.
  */
 function lavantseine_scripts() {
-	wp_enqueue_style( 'lavantseine-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'lavantseine-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'lavantseine-style', get_template_directory_uri() . '/styles/style.css' );
+	wp_enqueue_style( 'lavantseine-custom', get_template_directory_uri() . '/styles/custom.css' );
+
 
 	wp_enqueue_script( 'lavantseine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -87,6 +106,21 @@ function lavantseine_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'lavantseine_scripts' );
+
+
+
+/**
+ * Load events custom post type.
+ */
+require get_template_directory() . '/inc/events-post-type.php';
+
+
+/**
+ * Load custom taxonomies.
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';
+
+
 
 /**
  * Implement the Custom Header feature.
