@@ -9,7 +9,7 @@
 function add_custom_meta_box() {  
     add_meta_box(  
         'custom_meta_box', // $id  
-        'Détails événement', // $title   
+        'Détails de l\'événement', // $title   
         'show_custom_meta_box', // $callback  
         'event', // $page  
         'normal', // $context  

@@ -10,14 +10,15 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="mastfooter" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'lavantseine_credits' ); ?>
 			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'lavantseine' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'lavantseine' ), 'lavantseine', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</footer><!-- #mastfooter -->
+	
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

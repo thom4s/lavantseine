@@ -5,6 +5,7 @@
  */
 
 ( function( $ ) {
+	
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -16,6 +17,7 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
+	
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
@@ -33,5 +35,14 @@
 			}
 		} );
 	} );
+
+	//Update saison color (.saison-color) in real time...
+	// NOT WORKING YET
+	wp.customize( 'saison_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.saison-color' ).css('color', to );
+		} );
+	} );
+
 } )( jQuery );
 

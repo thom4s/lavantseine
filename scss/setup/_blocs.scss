@@ -1,0 +1,23 @@
+
+%bloc {
+	@extend .col-1;
+	&:nth-child(4) {
+		@extend %first;
+	}
+}
+
+
+
+.bloc-event {
+	@extend %bloc;
+
+}
+
+
+
+.bloc-post {
+	@extend %bloc;
+
+}
+
+

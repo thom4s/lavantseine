@@ -1,0 +1,20 @@
+%clearfix {
+	clear: both;
+	display: inline-block;
+}
+
+%first,
+.first { 
+	margin-left: 0;
+}
+
+%last,
+.last {
+	float: right;
+}
+
+%plain-width,
+.plain-width {
+    @include box-sizing(border);
+    width:100%;
+}

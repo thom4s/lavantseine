@@ -7,10 +7,21 @@
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
+ * Add custom color for .saison-color class
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function lavantseine_customize_register( $wp_customize ) {
+	$wp_customize->add_setting( 'saison_color' , array(
+	    'default'     => '#e00f77',
+	    'transport'   => 'postMessage',
+	) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'saison_color', array(
+		'label'        => __( 'Couleur de saison', 'lavantseine' ),
+		'section'    => 'colors',
+		'settings'   => 'saison_color',
+	) ) );
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';

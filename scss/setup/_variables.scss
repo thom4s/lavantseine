@@ -50,84 +50,69 @@ $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 
 
-// Scaffolding
+// Basic colors
 // -------------------------
-$bodyBackground:        $white !default;
 $textColor:             $grayDark !default;
-
-
-// Links
-// -------------------------
-$linkColor:             #08c !default;
+$linkColor:             #07547A !default;
 $linkColorHover:        darken($linkColor, 15%) !default;
-
-
-// Quotes
-// -------------------------
 $quoteColor:			#666;
 
 
 // Typography
 // -------------------------
-$sansFontFamily:        'PT Sans', sans-serif !default;
-$sansFontFamily:        'PT Sans Narrow', sans-serif !default;
-$serifFontFamily:       'PT Serif', serif !default;
+$sansFontFamily:        Arial, Helvetica, sans-serif !default;
+$serifFontFamily:       Georgia, Times New Roman, serif !default;
 $monoFontFamily:        Menlo, Consolas, monospace !default;		
 
+$titlesFontFamily:		'PT Sans', sans-serif !default;
+$navFontFamily: 		'PT Sans Narrow', sans-serif !default;
+$paragraphsFontFamily:	'PT Sans', sans-serif !default;
 
-$baseFontSize:          18px !default; // 1em
+$baseFontSize:          14px !default; // 1em
 $baseFontFamily:        $sansFontFamily !default;
 $altFontFamily:         $serifFontFamily !default;
-$baseLineHeight:        29px !default; 
-$lineHeightRatio:		1.618 !default;
+$baseLineHeight:        20px !default; 
+$lineHeightRatio:		1.43 !default;
 
 
 
 // Component sizing
 // -------------------------
-// Based on 16px font-size and 20px line-height
-// to set : http://modularscale.com/
 
-$fontSizeLarge:         $baseFontSize * 1.25 !default; // ~22.5px
-$fontSizeSmall:         $baseFontSize * 0.85 !default; // ~15.3px
-$fontSizeMini:          $baseFontSize * 0.75 !default; // ~13.5px
+$fontSizeLarge:         $baseFontSize * 1.25 !default; // ~px
+$fontSizeSmall:         $baseFontSize * 0.85 !default; // ~px
+$fontSizeMini:          $baseFontSize * 0.75 !default; // ~px
 
-$smallText: 			$baseFontSize * 0.778 !default; // ~14px
-$bigText:				$baseFontSize * 1.279 !default; // ~23px 
+		$paddingLarge:          11px 19px !default; 
+		$paddingSmall:          2px 10px !default;  
+		$paddingMini:           0px 6px !default;  
 
-$titlesFontFamily:		"proxima-nova", $sansFontFamily;
-$paragraphsFontFamily:	"abril-text", Garamont, $serifFontFamily;
+		$baseBorderRadius:      4px !default;
+		$borderRadiusLarge:     6px !default;
+		$borderRadiusSmall:     3px !default;
 
-$paddingLarge:          11px 19px !default; // 44px
-$paddingSmall:          2px 10px !default;  // 26px
-$paddingMini:           0px 6px !default;   // 22px
-
-$baseBorderRadius:      4px !default;
-$borderRadiusLarge:     6px !default;
-$borderRadiusSmall:     3px !default;
-
-$baseSpacingUnit:		4px !default;
-$halfSpacingUnit:		2px !default;
+		$baseSpacingUnit:		4px !default;
+		$halfSpacingUnit:		2px !default;
 
 
 
 // Tables
 // -------------------------
-$tableBackground:                   transparent !default; // overall background-color
+$tableBackground:                   transparent !default;
 $tableBackgroundAccent:             #f9f9f9 !default; // for striping
-$tableBackgroundHover:              #f5f5f5 !default; // for hover
-$tableBorder:                       #ddd !default; // table and cell border
+$tableBackgroundHover:              #f5f5f5 !default;
+$tableBorder:                       #ddd !default;
 
 
 
 // Forms
 // -------------------------
-$inputBackground:               $white !default;
-$inputBorder:                   #ccc !default;
-$inputBorderRadius:             $baseBorderRadius !default;
-$inputDisabledBackground:       $grayLighter !default;
-$formActionsBackground:         #f5f5f5 !default;
-$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+		$inputBackground:               $white !default;
+		$inputBorder:                   #ccc !default;
+		$inputBorderRadius:             $baseBorderRadius !default;
+		$inputDisabledBackground:       $grayLighter !default;
+		$formActionsBackground:         #f5f5f5 !default;
+		$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 
 
@@ -136,18 +121,16 @@ $inputHeight:                   $baseLineHeight + 10px; // base line-height + 8p
 // -------------------------
 
 $responsive:				true;
-$largeBreakpoint:			1200px;
+$largeBreakpoint:			1240px;
 $mediumBreakpoint:			1024px;
-$smallBreakpoint:			780px;
+$smallBreakpoint:			720px;
 $minimalBreakpoint:			320px;
 
 $mainWidth: 				980px !default;
-$gridColumns:				12 !default; 
-$gridColumnWidth: 			($mainWidth * 6.5) / 100 ;  // one column is 6.5%
-$gridGutterWidth: 			($mainWidth * 2) / 100 ; // one gutter is 2%
+$gridColumns:				5 !default; 
+$gridColumnWidth: 			($mainWidth * 18) / 100 ;  // one column is 18%
+$gridGutterWidth: 			($mainWidth * 2.5) / 100 ; // one gutter is 2.5%
 $gridRowWidth:            	($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;
-
-$verticalMargin:			4.833em;
 
 
 
@@ -158,22 +141,22 @@ $verticalMargin:			4.833em;
 
 // Navbar
 // -------------------------
-$navbarCollapseWidth:             979px !default;
-$navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
+		$navbarCollapseWidth:             979px !default;
+		$navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
-$navbarHeight:                    40px !default;
-$navbarBackgroundHighlight:       #ffffff !default;
-$navbarBackground:                darken($navbarBackgroundHighlight, 5%) !default;
-$navbarBorder:                    darken($navbarBackground, 12%) !default;
+		$navbarHeight:                    40px !default;
+		$navbarBackgroundHighlight:       #ffffff !default;
+		$navbarBackground:                darken($navbarBackgroundHighlight, 5%) !default;
+		$navbarBorder:                    darken($navbarBackground, 12%) !default;
 
-$navbarText:                      #777 !default;
-$navbarLinkColor:                 #777 !default;
-$navbarLinkColorHover:            $grayDark !default;
-$navbarLinkColorActive:           $gray !default;
-$navbarLinkBackgroundHover:       transparent !default;
-$navbarLinkBackgroundActive:      darken($navbarBackground, 5%) !default;
+		$navbarText:                      #777 !default;
+		$navbarLinkColor:                 #777 !default;
+		$navbarLinkColorHover:            $grayDark !default;
+		$navbarLinkColorActive:           $gray !default;
+		$navbarLinkBackgroundHover:       transparent !default;
+		$navbarLinkBackgroundActive:      darken($navbarBackground, 5%) !default;
 
-$navbarBrandColor:                $navbarLinkColor !default;
+		$navbarBrandColor:                $navbarLinkColor !default;
 
 
 
@@ -185,21 +168,21 @@ $placeholderText:         $grayLight !default;
 
 // Form states and alerts
 // -------------------------
-$warningText:             #c09853 !default;
-$warningBackground:       #fcf8e3 !default;
-$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%) !default;
+		$warningText:             #c09853 !default;
+		$warningBackground:       #fcf8e3 !default;
+		$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%) !default;
 
-$errorText:               #b94a48 !default;
-$errorBackground:         #f2dede !default;
-$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+		$errorText:               #b94a48 !default;
+		$errorBackground:         #f2dede !default;
+		$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
 
-$successText:             #468847 !default;
-$successBackground:       #dff0d8 !default;
-$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+		$successText:             #468847 !default;
+		$successBackground:       #dff0d8 !default;
+		$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
 
-$infoText:                #3a87ad !default;
-$infoBackground:          #d9edf7 !default;
-$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
+		$infoText:                #3a87ad !default;
+		$infoBackground:          #d9edf7 !default;
+		$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
 
 
 

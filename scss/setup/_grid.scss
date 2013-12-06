@@ -1,0 +1,33 @@
+/*
+ *  Grid setup
+ */
+
+
+@for $i from 1 through $gridColumns {
+    .col-#{$i} {
+        width: ($gridColumnWidth * $i) + ( $gridGutterWidth * ( $i - 1 ));
+        position: relative;
+        float: left;
+        margin-left : $gridGutterWidth ;
+    }
+
+    .col-#{$i}-width {
+        width: ($gridColumnWidth * $i) + ( $gridGutterWidth * ( $i - 1 ));
+    }
+    
+    .push-#{$i} {
+        left: ($gridColumnWidth * $i ) + ( $gridGutterWidth * ( $i ));
+    }
+ 
+    .pull-#{$i} {
+        right: - ($gridColumnWidth * $i ) + ( $gridGutterWidth * ( $i ));
+    }
+
+    .prefix-#{$i} {
+        margin-left: ($gridColumnWidth * $i ) + ( $gridGutterWidth * ( $i ));   
+    }
+
+    .suffix-#{$i} { 
+        margin-right: ( $gridColumnWidth * $i ) + (  $gridGutterWidth * ( $i ));
+    }
+}
