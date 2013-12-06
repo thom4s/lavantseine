@@ -1,0 +1,14 @@
+input {
+	background: $inputBackground;
+	border: 1px solid $inputBorder; 
+	height: $inputHeight;
+}
+
+.search-form {
+	@extend .col-1;
+	@extend %last;
+}
+
+input[type=search] {
+
+}

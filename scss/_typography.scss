@@ -1,3 +1,47 @@
-h1 {
+
+body {
+	font-size: $baseFontSize;
+}
+
+h1, h2, h3, h4, h5, h6 {
 	font-family: 'PT Sans', sans-serif;
 }
+
+h1 {
+	display: inline-block;
+	font-size: 2em;
+	background: $black;
+	color: $white;
+	padding: 0.5em 0.5em 0.1em 2em;
+	font-weight: 300;
+}
+
+aside {
+	h1 {
+		font-size: 1em;
+		margin-top: 5px;
+	}
+}
+
+h2 {
+	font-size: 1.14em;
+	text-transform: uppercase;
+
+}
+
+h3, h4 {
+	font-size: 1em;
+	color: $black;
+}
+
+p {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1em;
+	line-height: $baseLineHeight;
+}
+
+.menu {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1em;
+}
+

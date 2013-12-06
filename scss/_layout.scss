@@ -17,11 +17,15 @@ body {  }
 	}
 }
 
+.bloc {
+	background-color: $white;
+}
 
 	/*
 	 *	Header with branding and navigations
 	 */
 	#masthead {
+		position: relative;
 		@extend %clearfix;
 		@extend .plain-width;
 
@@ -74,4 +78,4 @@ body {  }
 	#mastfooter {
 		@extend %clearfix;
 		@extend .plain-width;
-	}	
+	}

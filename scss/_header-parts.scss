@@ -1,0 +1,14 @@
+
+
+
+
+.site-branding {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	img {
+		max-width: $logoWidth;
+	}
+
+}

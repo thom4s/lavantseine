@@ -64,7 +64,7 @@ function lavantseine_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar principale', 'lavantseine' ),
 		'id'            => 'sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="bloc widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
@@ -119,7 +119,7 @@ function lavantseine_customize_css()
 {
     ?>
          <style type="text/css">
-             h1 { color:<?php echo get_theme_mod('saison_color'); ?>; }
+            .saison-colored { color:<?php echo get_theme_mod('saison_color'); ?>; }
          </style>
     <?php
 }

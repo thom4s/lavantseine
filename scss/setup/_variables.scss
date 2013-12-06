@@ -83,6 +83,10 @@ $fontSizeLarge:         $baseFontSize * 1.25 !default; // ~px
 $fontSizeSmall:         $baseFontSize * 0.85 !default; // ~px
 $fontSizeMini:          $baseFontSize * 0.75 !default; // ~px
 
+$baseMargin:			10px;
+
+$logoWidth: 			98px;
+
 		$paddingLarge:          11px 19px !default; 
 		$paddingSmall:          2px 10px !default;  
 		$paddingMini:           0px 6px !default;  
@@ -94,6 +98,12 @@ $fontSizeMini:          $baseFontSize * 0.75 !default; // ~px
 		$baseSpacingUnit:		4px !default;
 		$halfSpacingUnit:		2px !default;
 
+
+
+// Picto
+// -------------------------
+
+$pictoWidth:			24px;
 
 
 // Tables
@@ -108,11 +118,11 @@ $tableBorder:                       #ddd !default;
 // Forms
 // -------------------------
 		$inputBackground:               $white !default;
-		$inputBorder:                   #ccc !default;
-		$inputBorderRadius:             $baseBorderRadius !default;
+		$inputBorder:                   $black !default;
+		$inputBorderRadius:             0 !default;
 		$inputDisabledBackground:       $grayLighter !default;
 		$formActionsBackground:         #f5f5f5 !default;
-		$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+		$inputHeight:                   $baseLineHeight;
 
 
 
@@ -141,13 +151,16 @@ $gridRowWidth:            	($gridColumns * $gridColumnWidth) + ($gridGutterWidth
 
 // Navbar
 // -------------------------
+
+$navbarBackground:			$black !default;
+$navbarBorder:              darken($navbarBackground, 12%) !default;
+$navbarHeight:              $baseLineHeight !default;
+
 		$navbarCollapseWidth:             979px !default;
 		$navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
 		$navbarHeight:                    40px !default;
 		$navbarBackgroundHighlight:       #ffffff !default;
-		$navbarBackground:                darken($navbarBackgroundHighlight, 5%) !default;
-		$navbarBorder:                    darken($navbarBackground, 12%) !default;
 
 		$navbarText:                      #777 !default;
 		$navbarLinkColor:                 #777 !default;
