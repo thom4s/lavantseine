@@ -22,6 +22,12 @@ add_action('add_meta_boxes', 'add_event_details_meta_box');
 $prefix = 'eventDetail_';  
 $event_details_fields = array(  
     array(  
+        'label'=> 'Texte court',  
+        'desc'  => 'Pour page d\'accueil, listes, résultats recherche',  
+        'id'    => $prefix.'shortText',  
+        'type'  => 'textarea'  
+    ),
+    array(  
         'label'=> 'Texte 2',  
         'desc'  => '',  
         'id'    => $prefix.'text2',  
@@ -78,15 +84,9 @@ $event_details_fields = array(
     array(  
         'name'  => 'Image Portrait',  
         'desc'  => 'Image Portrait',  
-        'id'    => $prefix.'landscapeMedia',  
+        'id'    => $prefix.'portraitMedia',  
         'type'  => 'image' 
-    ),
-    array(  
-        'name'  => 'Dossier de presse',  
-        'desc'  => 'Dossier de presse',  
-        'id'    => $prefix.'presskit',  
-        'type'  => 'image'
-    ) 
+    )
 );  
 
 

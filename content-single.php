@@ -5,15 +5,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header">
 
-		<?php
-			$media_meta = get_post_meta( $post->ID, '_my_meta_value_key', true );
-			if ( $media_meta ) {
-				echo $media_meta;
-			}
-		?>
-
+		<div class="entry-media">
+			<?php
+				$postDetail_mediaMarkup = get_post_meta( $post->ID, 'postDetail_mediaMarkup', true );
+				if ( $postDetail_mediaMarkup ) {
+					echo $postDetail_mediaMarkup;
+				} else {
+					the_post_thumbnail(''); 
+				}
+			?>
+		</div>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
@@ -30,6 +34,13 @@
 			) );
 		?>
 	
+		<?php $attached = get_post_meta(get_the_ID(), 'wp_custom_attachment', true); ?> 
+
+		<?php if ($attached) : ?>
+		<a href="<?php echo $attached['url']; ?>">  
+		    Download PDF Here  
+		</a>
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
@@ -58,12 +69,6 @@
 
 			} // end check for categories on this blog
 
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'lavantseine' ), '<span class="edit-link">', '</span>' ); ?>

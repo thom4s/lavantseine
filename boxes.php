@@ -25,7 +25,7 @@
 						echo $event_dates;
 					}
 					the_post_thumbnail('box-thumb');
-				endif; 
+				endif; // End if 'event' == get_post_type()  
 			?>
 	
 		</div><!-- .entry-meta -->
@@ -45,30 +45,35 @@
 		
 		<?php 
 			the_post_thumbnail('box-thumb');
-			endif;
+			endif; // End if 'post' == get_post_type() 
 		?>
 
 	</header><!-- .entry-header -->
 
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<?php
+			$event_shortText = get_post_meta( $post->ID, 'eventDetail_shortText', true );
+			if ( $event_shortText ) {
+				echo $event_shortText;
+			}
+		?>
 	</div><!-- .entry-summary -->
 
 
 	<footer class="entry-meta">
 		<?php if ( 'event' == get_post_type() ) : ?>
 			<?php 
-				 $terms = get_terms("filtre");
-				 $count = count($terms);
-				 if ( $count > 0 ){
-				     echo "<ul>";
-				     foreach ( $terms as $term ) {
-				       echo "<li>" . $term->name . "</li>";
-				        
-				     }
-				     echo "</ul>";
-				 }
+				$terms = wp_get_post_terms( $post->ID, 'filtre', $args );
+				$count = count($terms);
+				if ( $count > 0 ){
+				    echo "<ul>";
+				    foreach ( $terms as $term ) {
+				    	$term_link = get_term_link( $term, '' );
+					    echo "<a href='". $term_link ."'><li class='saisoned-on-color'>#" . $term->name . "</li></a>";
+				    }
+				    echo "</ul>";
+				}
 			?>
 		<?php endif; // End if 'event' == get_post_type() ?>
 

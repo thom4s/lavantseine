@@ -133,6 +133,6 @@ function create_taxonomies() {
 		'rewrite'               => array( 'slug' => 'tag' ),
 	);
 
-	register_taxonomy( 'tag', array( 'event', 'post' ), $args );
+	register_taxonomy( 'relational_tag', array( 'event', 'post' ), $args );
 }
 ?>

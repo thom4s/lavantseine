@@ -148,8 +148,8 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
 /**
  * Load custom metas.
  */
-require get_template_directory() . '/inc/post-metas.php';
 require get_template_directory() . '/inc/event-metas.php';
+require get_template_directory() . '/inc/post-metas.php';
 
 
 

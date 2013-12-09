@@ -46,6 +46,11 @@
 }
 
 
+.filters {
+	@extend .navigation-group;
+	margin-top: - $baseLineHeight;
+	margin-bottom: $baseLineHeight *2;
+}
 
 /*
  * Main Navigation
@@ -59,7 +64,6 @@
 	padding: 5px 10px ;
 
 	ul {
-
 	}
 
 	li {
@@ -69,7 +73,6 @@
 			color: $white;
 		}
 	}
-
 }
 
 .main-navigation ul ul {

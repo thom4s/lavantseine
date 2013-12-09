@@ -1,6 +1,8 @@
 /* Links */
 a {
-	color: royalblue;
+	color: $linkColor;
+	text-decoration: none;
+	border-bottom: 1px dotted $linkColor;
 }
 a:visited {
 	color: purple;
@@ -12,11 +14,11 @@ a:active {
 }
 
 
-
 /* Buttons */
 
 a.button {
 	@extend .plain-width;
+	@include box-sizing;
 	display: inline-block;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -26,5 +28,17 @@ a.button {
 	margin-bottom: 10px;
 	text-align: center;
 	pointer: cursor;
+	border: none; 
 
+	@include transition(all 0.2s);
+	&:hover {
+		background-color: $white;
+		color: $black;
+		border: 1px solid $black;
+	}
+}
+
+
+nav a {
+	border: inherit;
 }

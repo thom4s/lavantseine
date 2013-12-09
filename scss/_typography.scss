@@ -17,6 +17,7 @@ h1 {
 	a {
 		text-decoration: none;
 		color: inherit;
+		border: none;
 		&:visited {
 			color: inherit;
 		}		
@@ -36,6 +37,7 @@ h2 {
 	a {
 		text-decoration: none;
 		color: inherit;
+		border: inherit;
 		&:visited {
 			color: inherit;
 		}
@@ -68,3 +70,9 @@ p {
 	font-size: 1em;
 }
 
+ul {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1em;
+	line-height: $baseLineHeight;
+	margin-bottom: $baseLineHeight;	
+}

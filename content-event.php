@@ -28,19 +28,10 @@
 					$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
 					$event_repeatable_date = unserialize($post_meta_data['eventDetail_repeatable-date'][0]);
 					$event_landscape_media = get_post_meta( $post->ID, 'eventDetail_landscapeMedia', true );
-
-					$count = count($tags);
-					if ( $count > 0 ){
-					    echo "<ul class='tags-list'>";
-					    foreach ( $tags as $term ) {
-					    	echo "<li class='saisoned-on-color'>#" . $term->name . "</li>";
-					    	echo $term->description;
-					    }
-					    echo "</ul>";
-					} ?>
+					?>
 					
 
-					<?php if ( $event_dates ) : echo $event_dates; endif; ?>
+					<?php if ( $event_dates ) : echo "<p>". $event_dates ."</p>"; endif; ?>
 
 					<?php if ( $event_repeatable_date ) : 
 						echo '<ul class="event-repeatable-dates">';  
@@ -50,9 +41,26 @@
 						echo '</ul>';
 					endif; ?>
 
-					<?php if ( $event_duration ) : echo $event_duration; endif; ?>
+					<?php 
+					$count = count($tags);
+					if ( $count > 0 ){
+					    echo "<ul class='tags-list'>";
+					    foreach ( $tags as $term ) {
+					    	echo "<li class='saisoned-on-color'>#" . $term->name . "</li>";
+					    	echo $term->description;
+					    }
+					    echo "</ul>";
+					} 
+					?>
 
-					<?php if ( $event_presskit ) : echo $event_presskit; endif; ?>
+					<?php if ( $event_duration ) : echo "<p> Durée : ". $event_duration ."</p>"; endif; ?>
+
+					<?php $attached = get_post_meta(get_the_ID(), 'wp_custom_attachment', true); ?> 
+					<?php if ($attached) : ?>
+					<p class="attached-file"><a href="<?php echo $attached['url']; ?>">  
+					    Téléchargez le dossier de presse
+					</a></p>
+					<?php endif; ?>
 
 			</div><!-- .event-tags -->
 		</div>
@@ -79,7 +87,7 @@
 	<div class="entry-meta">
 
 		<?php
-			$custom_image = $post_meta_data['eventDetail_landscapeMedia'][0];  
+			$custom_image = $post_meta_data['eventDetail_portraitMedia'][0];  
 			echo wp_get_attachment_image($custom_image, ''); 
 		?>
 
@@ -90,7 +98,7 @@
 				if ( $count > 0 ){
 				    echo "<ul class='tags-list'>";
 				    foreach ( $term_list as $term ) {
-				    	echo "<li class='saisoned-on-color'>" . $term->name . "</li>";
+				    	echo "<li class='saisoned-on-color'>#" . $term->name . "</li>";
 				    	echo $term->description;
 				    }
 				    echo "</ul>";

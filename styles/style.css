@@ -644,16 +644,16 @@ article.page, article.post, article.event {
 /*
  * Common stuffs for all navigations
  */
-.navigation-group, .main-navigation, .shortcut-navigation, .picto {
+.navigation-group, .filters, .main-navigation, .shortcut-navigation, .picto {
   display: inline-block; }
-.navigation-group ul, .main-navigation ul, .shortcut-navigation ul, .picto ul {
+.navigation-group ul, .filters ul, .main-navigation ul, .shortcut-navigation ul, .picto ul {
   list-style: none;
   margin: 0;
   padding-left: 0; }
-.navigation-group li, .main-navigation li, .shortcut-navigation li, .picto li {
+.navigation-group li, .filters li, .main-navigation li, .shortcut-navigation li, .picto li {
   float: left;
   position: relative; }
-.navigation-group a, .main-navigation a, .shortcut-navigation a, .picto a {
+.navigation-group a, .filters a, .main-navigation a, .shortcut-navigation a, .picto a {
   display: block;
   text-decoration: none; }
 
@@ -665,10 +665,14 @@ article.page, article.post, article.event {
   width: 24px;
   height: 24px; }
 
-.navigation-group {
+.navigation-group, .filters {
   width: 661.1px;
   margin-top: 20px;
   margin-left: 118px; }
+
+.filters {
+  margin-top: -20px;
+  margin-bottom: 40px; }
 
 /*
  * Main Navigation
@@ -770,7 +774,8 @@ h1 {
   font-weight: 300; }
 h1 a {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  border: none; }
 h1 a:visited {
   color: inherit; }
 
@@ -783,7 +788,8 @@ h2 {
   text-transform: uppercase; }
 h2 a {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  border: inherit; }
 h2 a:visited {
   color: inherit; }
 
@@ -808,6 +814,12 @@ p {
 .menu {
   font-family: 'PT Sans', sans-serif;
   font-size: 1em; }
+
+ul {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1em;
+  line-height: 20px;
+  margin-bottom: 20px; }
 
 input {
   background: white;
@@ -859,7 +871,9 @@ embed, iframe, object {
 
 /* Links */
 a {
-  color: royalblue; }
+  color: #07547a;
+  text-decoration: none;
+  border-bottom: 1px dotted #07547a; }
 
 a:visited {
   color: purple; }
@@ -869,6 +883,10 @@ a:hover, a:focus, a:active {
 
 /* Buttons */
 a.button {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -877,7 +895,19 @@ a.button {
   padding: 0.3em 0.4em;
   margin-bottom: 10px;
   text-align: center;
-  pointer: cursor; }
+  pointer: cursor;
+  border: none;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; }
+a.button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black; }
+
+nav a {
+  border: inherit; }
 
 /* Sections */
 .site-branding {

@@ -29,7 +29,7 @@ function codex_custom_init() {
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'evenements' ),
+    'rewrite'            => array( 'slug' => 'evenement' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
