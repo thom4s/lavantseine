@@ -17,10 +17,19 @@ get_header(); ?>
 
 			<div class="next-events">
 
-				<?php if ( have_posts() ) : ?>
+				<?php
+					// Query last fourth events (event post type)
+					$args = array(
+						'post_type' => 'event',
+						'post_count' => '4'
+					);
+					$query = new WP_Query( $args );
+				?>
+
+				<?php if ( $query->have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 						<?php
 							/* Include the Post-Format-specific template for the content.
@@ -38,7 +47,10 @@ get_header(); ?>
 
 				<?php endif; ?>
 
-
+				<?php 
+					/* Restore original Post Data */
+					wp_reset_postdata();
+				?>
 			</div>
 
 		</main><!-- #main -->

@@ -6,99 +6,39 @@
 
 
 // Add the Meta Box  
-function add_event_details_meta_box() {  
+function add_post_details_meta_box() {  
     add_meta_box(  
-        'custom_meta_box', // $id  
-        'Détails de l\'événement', // $title   
-        'show_custom_meta_box', // $callback  
-        'event', // $page  
-        'normal', // $context  
+        'markupMedia_meta_box', // $id  
+        'Code pour media principal', // $title   
+        'show_post_meta_box', // $callback  
+        'post', // $page  
+        'side', // $context  
         'high'); // $priority  
 } 
-add_action('add_meta_boxes', 'add_event_details_meta_box');  
+add_action('add_meta_boxes', 'add_post_details_meta_box');  
 
 
 // Field Array  
-$prefix = 'eventDetail_';  
-$event_details_fields = array(  
+$prefix = 'postAddon_';  
+$post_addons_fields = array(  
     array(  
-        'label'=> 'Texte 2',  
+        'label'=> 'Code',  
         'desc'  => '',  
-        'id'    => $prefix.'text2',  
+        'id'    => $prefix.'markupMedia',  
         'type'  => 'textarea'  
-    ),  
-    array(  
-        'label'=> 'Distribution',  
-        'desc'  => '',  
-        'id'    => $prefix.'distribution',  
-        'type'  => 'textarea'  
-    ),  
-    array(  
-        'label'=> 'Mentions de production',  
-        'desc'  => '',  
-        'id'    => $prefix.'mentions',  
-        'type'  => 'textarea'  
-    ),  
-    array(  
-        'label'=> 'Durée',  
-        'desc'  => '',  
-        'id'    => $prefix.'duration',  
-        'type'  => 'text'  
-    ),  
-    array(  
-        'label'=> 'Dates',  
-        'desc'  => '',  
-        'id'    => $prefix.'dates',  
-        'type'  => 'text' 
-    ),
-    array(  
-	    'label' => 'Dates de représentation',  
-	    'desc'  => '',  
-	    'id'    => $prefix.'repeatable-date',  
-	    'type'  => 'repeatable-date'  
-	),
-    array(  
-        'label'=> 'Heure',  
-        'desc'  => '',  
-        'id'    => $prefix.'hour',  
-        'type'  => 'text' 
-    ),
-    array(  
-        'label'=> 'Lien revendeur',  
-        'desc'  => '',  
-        'id'    => $prefix.'dealer-link',  
-        'type'  => 'text' 
-    ),
-    array(  
-        'label'=> 'Nom revendeur',  
-        'desc'  => '',  
-        'id'    => $prefix.'dealer-name',  
-        'type'  => 'text' 
-    ),
-    array(  
-        'name'  => 'Image Portrait',  
-        'desc'  => 'Image Portrait',  
-        'id'    => $prefix.'landscapeMedia',  
-        'type'  => 'image' 
-    ),
-    array(  
-        'name'  => 'Dossier de presse',  
-        'desc'  => 'Dossier de presse',  
-        'id'    => $prefix.'presskit',  
-        'type'  => 'image'
-    ) 
+    )
 );  
 
 
 // The Callback  
-function show_custom_meta_box() {  
-global $event_details_fields, $post;  
+function show_post_meta_box() {  
+global $post_addons_fields, $post;  
 // Use nonce for verification  
 echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce(basename(__FILE__)).'" />';  
       
     // Begin the field table and loop  
     echo '<table class="form-table">';  
-    foreach ($event_details_fields as $field) {  
+    foreach ($post_addons_fields as $field) {  
         // get value of this field if it exists for this post  
         $meta = get_post_meta($post->ID, $field['id'], true);  
         // begin a table row with  
@@ -115,7 +55,7 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 
 					// textarea  
 					case 'textarea':  
-					    echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="60" rows="4">'.$meta.'</textarea> 
+					    echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" rows="4">'.$meta.'</textarea> 
 					        <br /><span class="description">'.$field['desc'].'</span>';  
 					break;  
 
@@ -183,18 +123,6 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 					    echo '<a class="repeatable-add button" href="#">+</a>';    
 					break; 
 
-                    // image  
-                    case 'image':  
-                        $image = get_template_directory_uri().'/images/image.png';    
-                        echo '<span class="custom_default_image" style="display:none">'.$image.'</span>';  
-                        if ($meta) { $image = wp_get_attachment_image_src($meta, 'medium'); $image = $image[0]; }                 
-                        echo    '<input name="'.$field['id'].'" type="hidden" class="custom_upload_image" value="'.$meta.'" /> 
-                                    <img src="'.$image.'" class="custom_preview_image" alt="" /><br /> 
-                                        <input class="custom_upload_image_button button" type="button" value="Choose Image" /> 
-                                        <small> <a href="#" class="custom_clear_image_button">Remove Image</a></small> 
-                                        <br clear="all" /><span class="description">'.$field['desc'].'';  
-                    break;
-
                 } //end switch  
         echo '</td></tr>';  
     } // end foreach  
@@ -203,17 +131,17 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 
 
 // Save the Data  
-function save_custom_meta($post_id) {  
-    global $event_details_fields;  
+function save_markupMedia_meta($post_id) {  
+    global $post_addons_fields;  
       
     // verify nonce  
-    if (!wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__)))   
+    if (!wp_verify_nonce($_POST['markupMedia_meta_box_nonce'], basename(__FILE__)))   
         return $post_id;  
     // check autosave  
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)  
         return $post_id;  
     // check permissions  
-    if ('page' == $_POST['post_type']) {  
+    if ('post' == $_POST['post_type']) {  
         if (!current_user_can('edit_page', $post_id))  
             return $post_id;  
         } elseif (!current_user_can('edit_post', $post_id)) {  
@@ -221,7 +149,7 @@ function save_custom_meta($post_id) {
     }  
       
     // loop through fields and save the data  
-    foreach ($event_details_fields as $field) {  
+    foreach ($post_addons_fields as $field) {  
         $old = get_post_meta($post_id, $field['id'], true);  
         $new = $_POST[$field['id']];  
         if ($new && $new != $old) {  
@@ -231,11 +159,7 @@ function save_custom_meta($post_id) {
         }  
     } // end foreach  
 }  
-add_action('save_post', 'save_custom_meta');    
-
-
-
-
+add_action('save_post', 'save_markupMedia_meta');    
 
 
 

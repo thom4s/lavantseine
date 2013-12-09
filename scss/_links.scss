@@ -10,3 +10,21 @@ a:focus,
 a:active {
 	color: midnightblue;
 }
+
+
+
+/* Buttons */
+
+a.button {
+	@extend .plain-width;
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 0.85em;
+	color: $white;
+	padding: $buttonPadding;
+	margin-bottom: 10px;
+	text-align: center;
+	pointer: cursor;
+
+}

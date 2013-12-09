@@ -26,6 +26,11 @@ function lavantseine_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' ); 
+
+	add_image_size( 'box-thumb', 300, 9999 );
+
+
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -119,7 +124,8 @@ function lavantseine_customize_css()
 {
     ?>
          <style type="text/css">
-            .saison-colored { color:<?php echo get_theme_mod('saison_color'); ?>; }
+            .saisoned-on-color { color:<?php echo get_theme_mod('saison_color'); ?>; }
+            .saisoned-on-bg { background-color:<?php echo get_theme_mod('saison_color'); ?>; }
          </style>
     <?php
 }

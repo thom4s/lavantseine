@@ -54,6 +54,13 @@ body {  }
 				width: 100%;
 			}	
 		}
+			#main {
+
+			}
+
+			#attached-content {
+				margin-top: 60px;
+			}
 
 		// Contain the sidebar with additionnal stuffs.
 		#secondary {
@@ -95,7 +102,12 @@ body {  }
 
 	&:nth-child(4n+1) {
 		@extend .first;
-		@include clearfix;
+		clear: both;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
 	}
 }
 
@@ -107,3 +119,14 @@ body {  }
 	@extend .box;
 }
 
+.box-event {
+	@extend .box;
+}
+
+article.page,
+article.post,
+article.event, {
+	@extend .backgrounded-box;
+	@extend .plain-width;
+	float: left;
+}

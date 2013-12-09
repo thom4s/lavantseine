@@ -42,6 +42,37 @@ function create_taxonomies() {
 
 
 	/**
+	 * Add TARIFS categories (hierarchical)
+	 */
+
+	$labels = array(
+		'name'              => _x( 'Tarifs', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Tarif', 'taxonomy singular name' ),
+		'search_items'      => __( 'Rechercher un Tarif' ),
+		'all_items'         => __( 'Tous les Tarifs' ),
+		'parent_item'       => __( 'Nom du Tarif' ),
+		'parent_item_colon' => __( '' ),
+		'edit_item'         => __( 'Editer le Tarif' ),
+		'update_item'       => __( 'Mettre à jour le Tarif' ),
+		'add_new_item'      => __( 'Ajouter un Tarif' ),
+		'new_item_name'     => __( 'Nom du nouveau Tarif' ),
+		'menu_name'         => __( 'Tarifs' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'tarif' ),
+	);
+
+	register_taxonomy( 'tarif', array( 'event' ), $args );
+
+
+
+	/**
 	 * Add ARBORESENCE categories (hierarchical)
 	 */
 	$labels = array(

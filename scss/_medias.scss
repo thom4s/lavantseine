@@ -1,6 +1,11 @@
 /* =Media
 ----------------------------------------------- */
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
