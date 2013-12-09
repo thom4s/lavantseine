@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-top"
+			],
+			[
 				"text",
 				"textarea"
 			],
@@ -18,10 +22,6 @@
 			[
 				"rem",
 				"removeClass"
-			],
-			[
-				"margin",
-				"margin-left"
 			],
 			[
 				"mar",
@@ -115,54 +115,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "inc/post-metas.php",
-			"settings":
-			{
-				"buffer_size": 3147,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/event-metas.php",
-			"settings":
-			{
-				"buffer_size": 6826,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/customizer.js",
-			"settings":
-			{
-				"buffer_size": 909,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/admin-scripts.js",
-			"settings":
-			{
-				"buffer_size": 805,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/scripts.js",
-			"settings":
-			{
-				"buffer_size": 1633,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 4752,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -208,34 +160,50 @@
 	},
 	"file_history":
 	[
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/header.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/index.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_layout.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_typography.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_variables.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_header-parts.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_contents-parts.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/functions.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_menus.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/sidebar.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_grid.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/searchform.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_forms.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/style.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_footer-parts.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_placeholders.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_mixins.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/footer.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_blocs.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_setup.scss",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/underscore-basics.css",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/single.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/post-metas.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/event-metas.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/customizer.js",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/customizer.php",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/admin-scripts.js",
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/scripts.js",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/navigation.js",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/skip-link-focus-fix.js",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/customizer.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/scripts.js",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/style.css",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/jquery-ui-custom.js",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/jquery-ui-custom.css",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/underscore-basics.css",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/untitled",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/events-metas.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/content-single.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/single-event.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/archive-event.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/functions.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/single.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/page-contact.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/extras.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/template-tags.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/style.css",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/custom.css",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_fonts.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_layout.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_setup.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/style.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_variables.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_typography.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_menus.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_mixins.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_normalize.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_wp-basics.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_config.scss",
@@ -243,7 +211,6 @@
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_medias.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_menus.scs",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_reset.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_forms.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/events-post-type.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/custom-taxonomies.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/styles.scss",
@@ -320,22 +287,7 @@
 		"/Users/thomas/Sites/DEV/th/scss/modules/_variables.scss",
 		"/Users/thomas/Sites/DEV/th/expertise.php",
 		"/Users/thomas/Sites/DEV/th/sidebar.php",
-		"/Users/thomas/Sites/DEV/th/portfolio.php",
-		"/Users/thomas/Sites/DEV/th/competences.php",
-		"/Users/thomas/Sites/DEV/th/scss/partials/_m-footer-group.scss",
-		"/Users/thomas/Sites/DEV/th/scss/partials/_a-post-content.scss",
-		"/Users/thomas/Sites/DEV/th/notes/tablecontent.md",
-		"/Users/thomas/Sites/DEV/th/scss/partials/_q-lists.scss",
-		"/Users/thomas/Sites/DEV/th/notes/posttype.md",
-		"/Users/thomas/Sites/DEV/th/notes/localhost.md",
-		"/Users/thomas/Sites/DEV/th/notes/wpupdate.md",
-		"/Users/thomas/Sites/DEV/th/notes/environnement.md",
-		"/Users/thomas/Sites/DEV/th/notes/relatedposts.md",
-		"/Users/thomas/Sites/DEV/th/notes/sass.md",
-		"/Users/thomas/Sites/DEV/th/notes/convertmarkdown.md",
-		"/Users/thomas/Sites/DEV/th/notes/outils.md",
-		"/Users/thomas/Sites/DEV/th/notes/metaboxes.md",
-		"/Users/thomas/Sites/DEV/th/notes/wpmigration.md"
+		"/Users/thomas/Sites/DEV/th/portfolio.php"
 	],
 	"find":
 	{
@@ -343,7 +295,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine",
@@ -369,6 +321,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hover",
+			"before_sidebar",
+			"@media",
+			"add_control",
+			"$wp_customize->add_setting",
+			"wp.customize",
+			"customize_register",
 			"custo",
 			"customizer",
 			".js",
@@ -485,7 +444,7 @@
 			"date"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -502,178 +461,13 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "inc/post-metas.php",
-					"settings":
-					{
-						"buffer_size": 3147,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3147,
-								3147
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "inc/event-metas.php",
-					"settings":
-					{
-						"buffer_size": 6826,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								403,
-								403
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/customizer.js",
-					"settings":
-					{
-						"buffer_size": 909,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								700,
-								700
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/admin-scripts.js",
-					"settings":
-					{
-						"buffer_size": 805,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								672,
-								672
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "js/scripts.js",
-					"settings":
-					{
-						"buffer_size": 1633,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								863,
-								863
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 5,
-					"file": "functions.php",
-					"settings":
-					{
-						"buffer_size": 4752,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3407,
-								3407
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1229.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -705,7 +499,7 @@
 		"cols":
 		[
 			0.0,
-			0.504386671663,
+			0.484765562055,
 			1.0
 		],
 		"rows":

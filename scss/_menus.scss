@@ -27,8 +27,10 @@
 }
 
 %picto {
+	a {
+		display: inline-block;	}
 	li {
-		display: inline-block;
+
 		background-image: url(/wp-content/img/pictos-sprite-24px.png);
 		background-repeat: no-repeat;
 		width: $pictoWidth;

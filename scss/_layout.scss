@@ -17,9 +17,6 @@ body {  }
 	}
 }
 
-.bloc {
-	background-color: $white;
-}
 
 	/*
 	 *	Header with branding and navigations
@@ -62,6 +59,7 @@ body {  }
 		#secondary {
 			@extend .col-1;
 			@extend %last;
+			margin-top: -120px;
 		
 			@include breakpoint(medium) {
 				width: 100%;
@@ -78,4 +76,34 @@ body {  }
 	#mastfooter {
 		@extend %clearfix;
 		@extend .plain-width;
+
+		margin-top: $baseLineHeight; 
+		@extend .backgrounded-box;
 	}
+
+
+
+/*
+ *	The footer
+ */
+
+.box {
+	@extend .col-1;
+	@include box-sizing('border');
+	padding: $boxPadding;
+	margin-bottom: $baseLineHeight;
+
+	&:nth-child(4n+1) {
+		@extend .first;
+		@include clearfix;
+	}
+}
+
+.backgrounded-box {
+	background-color: $white;
+}
+
+.box-post {
+	@extend .box;
+}
+

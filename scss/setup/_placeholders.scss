@@ -1,6 +1,6 @@
-%clearfix {
-	clear: both;
-	display: inline-block;
+%clearfix,
+.clearfix {
+	@include clearfix;
 }
 
 %first,

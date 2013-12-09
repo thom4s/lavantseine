@@ -11,12 +11,15 @@
 	</div><!-- #content -->
 
 	<footer id="mastfooter" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'lavantseine_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'lavantseine' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'lavantseine' ), 'lavantseine', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+		<?php get_sidebar( 'footer-widgets' ); ?>
+
+		<div id="inner-footer-branding" class="site-info">
+			<ul>
+				<li class="colombes-logo"></li>
+				<li class="haut-de-seine-logo"></li>
+			</ul>
+
+		</div><!-- #inner-footer-branding -->
 	</footer><!-- #mastfooter -->
 	
 </div><!-- #page -->

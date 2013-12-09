@@ -42,12 +42,12 @@
 			</nav><!-- #shortcut-navigation -->
 
 			<ul class="social-link picto" role="navigation">
-				<li class="go-facebook"></li>
-				<li class="go-twitter"></li>
-				<li class="go-googleplus"></li>
-				<li class="go-instagram"></li>
-				<li class="go-youtube"></li>
-				<li class="go-rss"></li>
+				<a href="#"><li class="go-facebook"></li></a>
+				<a href="#"><li class="go-twitter"></li></a>
+				<a href="#"><li class="go-googleplus"></li></a>
+				<a href="#"><li class="go-instagram"></li></a>
+				<a href="#"><li class="go-youtube"></li></a>
+				<a href="#"><li class="go-rss"></li></a>
 			</ul><!-- .social-navigation -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

@@ -1,0 +1,23 @@
+
+
+#inner-footer-navigations {
+	@extend .col-4;
+	@extend .first;
+}
+
+#inner-footer-branding {
+	@extend .col-1;
+	@extend .last;
+}
+
+.box-footer {
+	@extend .box;
+}
+
+.colombes-logo {
+	background-image: url();
+}
+
+.haut-de-seine-logo {
+	background-image: url();
+}
