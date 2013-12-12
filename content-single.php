@@ -40,7 +40,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php the_date('d/m/Y', 'Publié le ', ''); ?>
+		<?php the_date('d/m/Y', '<span class="date-main">Publié le ', '</span>'); ?>
 
 		<div class="post-categories">
 			<?php the_category(', ') ?>

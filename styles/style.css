@@ -592,6 +592,9 @@ table {
 /*
  *	Content with main things and sidebar things
  */
+#content {
+  margin-top: 40px; }
+
 @media (min-width: 721px) and (max-width: 1024px) {
   #primary {
     width: 100%; } }
@@ -600,7 +603,10 @@ table {
     width: 100%; } }
 
 #attached-content {
-  margin-top: 60px; }
+  margin-top: 40px; }
+
+.next-events {
+  padding: 0.5em 0; }
 
 #secondary {
   margin-top: -120px; }
@@ -615,7 +621,8 @@ table {
  *	The footer
  */
 #mastfooter {
-  margin-top: 20px; }
+  margin: 20px 0;
+  padding: 0.5em 0; }
 
 /*
  *	The footer
@@ -651,8 +658,7 @@ article.page, article.post, article.event {
   margin: 0;
   padding-left: 0; }
 .navigation-group li, .filters li, .main-navigation li, .shortcut-navigation li, .picto li {
-  float: left;
-  position: relative; }
+  float: left; }
 .navigation-group a, .filters a, .main-navigation a, .shortcut-navigation a, .picto a {
   display: block;
   text-decoration: none; }
@@ -677,8 +683,59 @@ article.page, article.post, article.event {
 /*
  * Main Navigation
  */
+.main-nav {
+  display: block;
+  background: #000;
+  position: relative;
+  width: 661.1px;
+  margin-top: 20px; }
+.main-nav > ul {
+  background: black;
+  height: 40px; }
+.main-nav ul {
+  display: block;
+  float: left;
+  padding: 0.6em 0em;
+  width: 661.1px;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+.main-nav li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: initial; }
+.main-nav li a {
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 0 10px; }
+
+.main-nav div {
+  display: none;
+  min-height: 25px;
+  margin: 0;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 35px;
+  width: 100%;
+  z-index: 1; }
+
+.main-nav .current-menu-item div {
+  display: block;
+  z-index: 2; }
+
+.main-nav .current-menu-ancestor div {
+  display: block; }
+
+.main-nav li li {
+  margin: 1px 0 0 0;
+  padding: 0; }
+
 .main-navigation {
-  margin-top: 40px;
   background: black;
   padding: 5px 10px; }
 .main-navigation li {
@@ -772,7 +829,7 @@ h1 {
   font-size: 2em;
   background: black;
   color: white;
-  padding: 0.5em 0.5em 0.1em 2em;
+  padding: 0.2em 0.5em 0.1em 2em;
   font-weight: 300; }
 h1 a {
   text-decoration: none;
@@ -781,14 +838,19 @@ h1 a {
 h1 a:visited {
   color: inherit; }
 
+.attached-content h1 {
+  margin-bottom: 20px; }
+
 aside h1 {
   font-size: 1em;
   margin-top: 5px; }
 
 h2 {
-  font-size: 1.14em;
+  font-size: 1.25em;
   text-transform: uppercase;
-  color: black; }
+  color: black;
+  font-weight: 900;
+  margin-bottom: 10px; }
 h2 a {
   text-decoration: none;
   color: inherit;
@@ -814,6 +876,11 @@ p {
   line-height: 20px;
   margin-bottom: 20px; }
 
+span {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1em;
+  line-height: 20px; }
+
 .menu {
   font-family: 'PT Sans', sans-serif;
   font-size: 1em; }
@@ -823,6 +890,9 @@ ul {
   font-size: 1em;
   line-height: 20px;
   margin-bottom: 20px; }
+
+footer {
+  font-size: 0.9em; }
 
 input {
   background: white;
@@ -912,6 +982,12 @@ a.button:hover {
 nav a {
   border: inherit; }
 
+.box-post a, .box-event a, .site-branding a {
+  border: none;
+  color: inherit; }
+.box-post a:visited, .box-event a:visited, .site-branding a:visited {
+  color: inherit; }
+
 /* Sections */
 .site-branding {
   position: absolute;
@@ -949,6 +1025,15 @@ nav a {
   margin: 0 5px 5px 0;
   padding: 0; }
 
+.date-main {
+  font-weight: bold; }
+
+.entry-summary p {
+  margin-bottom: 10px; }
+
+.entry-meta img, .entry-header img {
+  margin: 10px 0; }
+
 /**
  * Post
  */
@@ -968,9 +1053,7 @@ nav a {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  padding: 0.2em 0.3em; }
-.event .date-main {
-  font-weight: bold; }
+  padding: 0.2em 0.3em 0 0; }
 .event .entry-meta {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -980,6 +1063,20 @@ nav a {
   padding-left: 20px; }
 .event .tags-list {
   margin-bottom: 20px; }
+.event #display-entry-mentions {
+  text-align: right;
+  padding-right: 20px; }
+.event #inner-entry-mentions {
+  display: none; }
+.event #inner-entry-mentions {
+  *zoom: 1; }
+.event #inner-entry-mentions:before, .event #inner-entry-mentions:after {
+  content: "";
+  display: table; }
+.event #inner-entry-mentions:after {
+  clear: both; }
+.event .main-text {
+  font-style: italic; }
 
 .widget {
   margin-bottom: 20px; }

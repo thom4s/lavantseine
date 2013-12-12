@@ -24,14 +24,17 @@
 					$tags = wp_get_post_terms($post->ID, array('discipline', 'rdv'), array("fields" => "all"));
 
 					$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
+					$event_hour = get_post_meta( $post->ID, 'eventDetail_hour', true );
+
 					$event_duration = get_post_meta( $post->ID, 'eventDetail_duration', true );
-					$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
+					$event_text2 = get_post_meta( $post->ID, 'eventDetail_text2', true );
+
 					$event_repeatable_date = unserialize($post_meta_data['eventDetail_repeatable-date'][0]);
 					$event_landscape_media = get_post_meta( $post->ID, 'eventDetail_landscapeMedia', true );
 					?>
 					
 
-					<?php if ( $event_dates ) : echo "<p class='date-main'>". $event_dates ."</p>"; endif; ?>
+					<?php if ( $event_dates ) : echo "<span class='date-main'>". $event_dates . $event_hour ."</span>" ; endif; ?>
 
 					<?php if ( $event_repeatable_date ) : 
 						echo '<ul class="event-repeatable-dates">';  
@@ -65,12 +68,12 @@
 			</div><!-- .event-tags -->
 		</div>
 
-		<div class="inner-entry-content">
+		<div class="inner-entry-content main-text">
 			<?php the_content(); ?>
 		</div>
 
 		<div class="inner-entry-content">
-			<?php the_content(); ?>
+			<?php if ( $event_text2 ) : echo "<p class=''>". $event_text2 ."</p>"; endif; ?>
 		</div>		
 
 		<?php
@@ -126,12 +129,16 @@
 
 
 	<footer class="entry-mentions">
-		<?php
-			$event_distribution = get_post_meta( $post->ID, 'eventDetail_distribution', true );
-			if ( $event_distribution ) {
-				echo $event_distribution;
-			}
-		?>
+		<p id="display-entry-mentions"><a href="#">+ En savoir plus</a></p>
+		
+		<div id="inner-entry-mentions">
+			<?php
+				$event_distribution = get_post_meta( $post->ID, 'eventDetail_distribution', true );
+				if ( $event_distribution ) {
+					echo "<p>". $event_distribution ."</p>";
+				}
+			?>
+		</div>
 	</footer>
 
 </article><!-- #post-## -->

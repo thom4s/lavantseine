@@ -50,11 +50,18 @@
 				<a href="#"><li class="go-rss"></li></a>
 			</ul><!-- .social-navigation -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'lavantseine' ); ?></h1>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				<div class="clearfix"></div>
-			</nav><!-- #site-navigation -->
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'lavantseine' ); ?></h1>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'items_wrap' => '<ul class="clearfix" id="main-nav-list">%3$s</ul>',
+				'container' => 'nav',
+				'container_id'    => 'site-navigation',
+				'container_class' => 'main-nav',
+				'walker'=> new lavantseine_Walker_Main_Menu(),
+				'depth' => 0
+				));
+			?>
+			<!-- #site-navigation -->
 
 		</div><!-- .shortcut-navigation-group -->
 

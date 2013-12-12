@@ -1,19 +1,5 @@
 
-/**
- * Walker Menu Navigation
- *
- */
 
-$( document ).ready(function() {
-	alert('hello');
-	$parentItem = $('.main-navigation>li a');
-	$('.main-navigation li').on('hover', function() {
-		alert('hello');
-	});
-	$('.main-navigation li').on('click', function() {
-		alert('hello');
-	});
-});
 
 
 /**
@@ -104,3 +90,35 @@ window.___gcfg = {lang: 'fr'};
 		}, false );
 	}
 })();
+
+
+
+/**
+ * Walker Menu Navigation
+ *
+ */
+
+( function() {
+	var currentItems = document.getElementsByClassName('menu-item-has-children');
+
+	for ( var i=0; i<currentItems.length; i++) {
+		var that = currentItems[i]
+		console.log(that);
+		link = that.getElementsByTagName('a');
+		console.log(link);
+
+		link[0].onclick = function (event) {
+			console.log(that);
+			event.preventDefault()
+			var subMenuItems = that.getElementsByTagName('div');
+			if( subMenuItems[0].style.display == "none" ) {
+				subMenuItems[0].style.display = "block";
+			} else {
+				subMenuItems[0].style.display = "none";
+			}
+
+		}
+	}
+
+})(); 
+

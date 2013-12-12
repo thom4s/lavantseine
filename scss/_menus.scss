@@ -17,7 +17,6 @@
 
 	li {
 		float: left;
-		position: relative;
 	}
 
 	a {
@@ -56,10 +55,76 @@
  * Main Navigation
  */
 
+
+.main-nav {
+	display: block;
+	background: #000;
+	position: relative;
+	width: 779.1px - $logoWidth - $baseLineHeight;
+	margin-top: $baseLineHeight;
+
+	& > ul {
+		background: $navbarBackground;
+		height: 40px;	
+	}
+
+	ul {
+		display: block;
+		float: left;
+		padding: 0.6em 0em;
+		width: 779.1px - $logoWidth - $baseLineHeight;
+		@include box-sizing();
+	}
+
+	li {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		position: initial;
+
+		a {
+			color: #fff;
+			display: block;
+			margin: 0;
+			padding: 0 10px;
+		}
+	}
+}
+
+.main-nav div {
+	display: none;
+	min-height: 25px;
+	margin: 0;
+	left: 0;
+	padding: 0;
+	position: absolute;
+	top: 35px;
+	width: 100%;
+	z-index: 1;
+}
+
+.main-nav .current-menu-item div {
+	display: block;
+	z-index: 2;
+}
+
+.main-nav .current-menu-ancestor div {
+	display: block;
+}
+
+.main-nav li li {
+	margin: 1px 0 0 0;
+	padding: 0;
+}
+
+
+
+
+
 .main-navigation {
 	@extend %navigation;
 	@extend .plain-width;
-	margin-top: $baseLineHeight * 2;
 	background: $navbarBackground;
 	padding: 5px 10px ;
 
@@ -108,6 +173,10 @@
 .main-navigation .current-menu-item a {
 }
 
+
+.main-navigation 	{
+
+}
 
 
 /* Small menu */

@@ -40,6 +40,7 @@ body {  }
 	 */
 	#content {
 		@extend %clearfix;
+		margin-top: $baseLineHeight * 2;
 	}
 
 		// Contain content main things : media + texte principal (page, article, event) / archives prog + journal
@@ -59,8 +60,12 @@ body {  }
 			}
 
 			#attached-content {
-				margin-top: 60px;
+				margin-top: $baseLineHeight * 2;
 			}
+
+				.next-events {
+					padding: $bigBlocsPadding;
+				}
 
 		// Contain the sidebar with additionnal stuffs.
 		#secondary {
@@ -84,7 +89,8 @@ body {  }
 		@extend %clearfix;
 		@extend .plain-width;
 
-		margin-top: $baseLineHeight; 
+		margin: $baseLineHeight 0;
+		padding: $bigBlocsPadding;
 		@extend .backgrounded-box;
 	}
 

@@ -37,7 +37,22 @@
 	}
 }
 
+.date-main {
+	font-weight: bold;
+}
 
+.entry-summary {
+	p {
+		margin-bottom: $baseLineHeight / 2; 
+	}
+}
+
+.entry-meta,
+.entry-header {
+	img {
+		margin: $baseLineHeight / 2 0 ; 
+	}
+}
 
 /**
  * Post
@@ -98,14 +113,10 @@
 	.inner-entry-content {
 		@extend .col-1;
 		@include box-sizing('border');
-		padding: $boxPadding;
+		padding: 0.2em 0.3em 0 0;
 		&:first-child {
 			@extend .first;
 		}
-	}
-
-	.date-main {
-		font-weight: bold;
 	}
 
 	.entry-meta {
@@ -125,6 +136,20 @@
 		@extend .last;
 
 	}
+
+	#display-entry-mentions {
+		text-align: right;
+		padding-right: $baseLineHeight; 
+	}
+
+	#inner-entry-mentions {
+		@include clearfix();
+		display: none;
+	}
+	.main-text {
+		font-style: italic;
+	}
+
 }
 
 

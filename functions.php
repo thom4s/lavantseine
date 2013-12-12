@@ -96,7 +96,7 @@ function lavantseine_scripts() {
 	wp_enqueue_style( 'lavantseine-style', get_template_directory_uri() . '/styles/style.css' );
 	wp_enqueue_style( 'lavantseine-custom', get_template_directory_uri() . '/styles/custom.css' );
 
-	wp_enqueue_script( 'lavantseine-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
+	wp_enqueue_script( 'lavantseine-scripts', get_template_directory_uri() . '/js/scripts.js', array(), false, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -201,6 +201,22 @@ function lavantseine_display_share_buttons() {
 	echo '<a href="https://twitter.com/share" class="one-button twitter-share-button" data-lang="fr">Tweeter</a>';
 	echo '<div class="one-button g-plusone"></div>';
 }
+
+
+
+/*
+ * Custom Walket Menu
+ */
+class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
+    function start_lvl(&$output, $depth) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<div class=\"sub-nav-shadow\"><ul class=\"sub-menu saisoned-on-bg\">\n";
+    }
+    function end_lvl( &$output, $depth) {
+        $output .= '</ul></div>';
+    }
+}
+
 
 
 /*

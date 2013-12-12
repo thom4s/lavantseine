@@ -18,7 +18,7 @@
 						$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
 						$event_landscape_media = get_post_meta( $post->ID, 'eventMedia_landscape', true );
 						if ( $event_dates ) {
-							echo $event_dates;
+							echo "<span class='date-main'>". $event_dates . "</span>";
 						}
 						if ( $eventMedia_landscape ) {
 							echo $event_dates;
@@ -37,7 +37,7 @@
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php the_date(); ?>
+				<?php the_date('d/m/Y', '<span class="date-main">Publié le ', '</span>'); ?>
 			</div><!-- .entry-meta -->
 			
 			<?php 
@@ -51,8 +51,12 @@
 	<div class="entry-summary">
 		<?php
 			$event_shortText = get_post_meta( $post->ID, 'eventDetail_shortText', true );
+			$post_shortText = get_post_meta( $post->ID, 'postDetail_shortText', true );
+
 			if ( $event_shortText ) {
-				echo $event_shortText;
+				echo "<p>". $event_shortText. "</p>";
+			} elseif ($post_shortText) {
+				echo "<p>".$post_shortText. "</p>";
 			}
 		?>
 	</div><!-- .entry-summary -->
