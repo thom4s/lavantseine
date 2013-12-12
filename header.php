@@ -19,6 +19,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 
@@ -50,8 +52,8 @@
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'lavantseine' ); ?></h1>
-				<!-- <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'lavantseine' ); ?></a> -->
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<div class="clearfix"></div>
 			</nav><!-- #site-navigation -->
 
 		</div><!-- .shortcut-navigation-group -->

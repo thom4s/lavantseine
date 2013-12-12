@@ -17,7 +17,45 @@
 	}
 }
 
+/**
+ * Commun things
+ */
 
+.entry-content {
+	@extend .col-3;
+	@extend .last;
+	@include box-sizing();
+	padding: $contentPadding;
+}
+
+.share-buttons {
+	margin-top: $baseLineHeight;
+	.one-button  {
+		display: inline-block;
+		margin: 0 5px 5px 0;
+		padding: 0;
+	}
+}
+
+
+
+/**
+ * Post
+ */
+ 
+.post {
+	.entry-media {
+		@extend .plain-width;
+	}
+
+	.entry-header {
+
+	}
+
+	.entry-content {
+
+	}	
+}
 
 
 
@@ -32,8 +70,7 @@
 	}
 
 	.entry-content {
-		@extend .col-3;
-		@extend .last;
+
 	}
 }
 
@@ -55,8 +92,7 @@
 	} 
 
 	.entry-content {
-		@extend .col-3;
-		@extend .last;
+		padding: 0;
 	}
 	
 	.inner-entry-content {
@@ -66,6 +102,10 @@
 		&:first-child {
 			@extend .first;
 		}
+	}
+
+	.date-main {
+		font-weight: bold;
 	}
 
 	.entry-meta {

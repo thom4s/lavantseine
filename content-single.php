@@ -6,23 +6,19 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<div class="entry-media">
+		<?php
+			$postDetail_mediaMarkup = get_post_meta( $post->ID, 'postDetail_mediaMarkup', true );
+			if ( $postDetail_mediaMarkup ) {
+				echo $postDetail_mediaMarkup;
+			} else {
+				the_post_thumbnail(''); 
+			}
+		?>
+	</div>
+
 	<header class="entry-header">
-
-		<div class="entry-media">
-			<?php
-				$postDetail_mediaMarkup = get_post_meta( $post->ID, 'postDetail_mediaMarkup', true );
-				if ( $postDetail_mediaMarkup ) {
-					echo $postDetail_mediaMarkup;
-				} else {
-					the_post_thumbnail(''); 
-				}
-			?>
-		</div>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-
-		<div class="entry-meta">
-			<?php lavantseine_posted_on(); ?>
-		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -44,32 +40,15 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'lavantseine' ) );
+		<?php the_date('d/m/Y', 'Publié le ', ''); ?>
 
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'lavantseine' ) );
+		<div class="post-categories">
+			<?php the_category(', ') ?>
+		</div><!-- .post-categories -->
 
-			if ( ! lavantseine_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'lavantseine' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'lavantseine' );
-				}
-
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'lavantseine' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'lavantseine' );
-				}
-
-			} // end check for categories on this blog
-
-		?>
+		<div class="post-social">
+			<?php lavantseine_display_share_buttons(); ?>
+		</div><!-- .post-social -->
 
 		<?php edit_post_link( __( 'Edit', 'lavantseine' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->

@@ -483,7 +483,7 @@ table {
 .suffix-2 {
   margin-right: 401.8px; }
 
-.col-3, .page .entry-content, .event .entry-header, .event .entry-content, .event .entry-mentions {
+.col-3, .entry-content, .event .entry-header, .event .entry-mentions {
   width: 578.2px;
   position: relative;
   float: left;
@@ -557,10 +557,10 @@ table {
 #primary, .first, .box:nth-child(4n+1), .box-post:nth-child(4n+1), .box-event:nth-child(4n+1), .box-footer:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, #inner-footer-navigations {
   margin-left: 0; }
 
-#secondary, .search-form, .last, .page .entry-content, .event .entry-content, .event .entry-mentions, #inner-footer-branding {
+#secondary, .search-form, .last, .entry-content, .event .entry-mentions, #inner-footer-branding {
   float: right; }
 
-.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, a.button, .event .entry-media {
+.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, a.button, .post .entry-media, .event .entry-media {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -687,12 +687,14 @@ article.page, article.post, article.event {
   color: white; }
 
 .main-navigation ul ul {
+  background-color: #000;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   display: none;
+  width: 600px;
   float: left;
-  left: 0;
+  left: -10px;
+  top: 25px;
   position: absolute;
-  top: 1.5em;
   z-index: 99999; }
 
 .main-navigation ul ul ul {
@@ -700,7 +702,7 @@ article.page, article.post, article.event {
   top: 0; }
 
 .main-navigation ul ul a {
-  width: 200px; }
+  color: #fff; }
 
 .main-navigation ul li:hover > ul {
   display: block; }
@@ -785,7 +787,8 @@ aside h1 {
 
 h2 {
   font-size: 1.14em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: black; }
 h2 a {
   text-decoration: none;
   color: inherit;
@@ -930,6 +933,26 @@ nav a {
   margin: 0 0 2px 0; }
 
 /**
+ * Commun things
+ */
+.entry-content {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 1em; }
+
+.share-buttons {
+  margin-top: 20px; }
+.share-buttons .one-button {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  padding: 0; }
+
+/**
+ * Post
+ */
+/**
  * Page
  */
 /**
@@ -938,12 +961,16 @@ nav a {
 .event .entry-header {
   position: relative;
   max-width: 70%; }
+.event .entry-content {
+  padding: 0; }
 .event .inner-entry-content {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0.2em 0.3em; }
+.event .date-main {
+  font-weight: bold; }
 .event .entry-meta {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;

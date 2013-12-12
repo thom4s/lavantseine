@@ -12,21 +12,21 @@ add_action( 'init', 'create_taxonomies', 0 );
 function create_taxonomies() {
 
 	/**
-	 * Add FILTRES categories (hierarchical)
+	 * Add DISCIPLINE categories (hierarchical)
 	 */
 
 	$labels = array(
-		'name'              => _x( 'Filtres', 'taxonomy general name' ),
-		'singular_name'     => _x( 'filtre', 'taxonomy singular name' ),
-		'search_items'      => __( 'Rechercher un filtre' ),
-		'all_items'         => __( 'Tous les filtres' ),
-		'parent_item'       => __( 'Nom du filtre' ),
+		'name'              => _x( 'Disciplines', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Discipline', 'taxonomy singular name' ),
+		'search_items'      => __( 'Rechercher une Discipline' ),
+		'all_items'         => __( 'Toutes les Disciplines' ),
+		'parent_item'       => __( 'Nom de la Discipline' ),
 		'parent_item_colon' => __( '' ),
-		'edit_item'         => __( 'Editer le filtre' ),
-		'update_item'       => __( 'Mettre à jour le filtre' ),
-		'add_new_item'      => __( 'Ajouter un filtre' ),
-		'new_item_name'     => __( 'Nom du nouveau filtre' ),
-		'menu_name'         => __( 'Filtres' ),
+		'edit_item'         => __( 'Editer la Discipline' ),
+		'update_item'       => __( 'Mettre à jour la Discipline' ),
+		'add_new_item'      => __( 'Ajouter une Discipline' ),
+		'new_item_name'     => __( 'Nom du nouveau Discipline' ),
+		'menu_name'         => __( 'Disciplines' ),
 	);
 
 	$args = array(
@@ -35,10 +35,100 @@ function create_taxonomies() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'filtre' ),
+		'rewrite'           => array( 'slug' => 'discipline' ),
 	);
 
-	register_taxonomy( 'filtre', array( 'event' ), $args );
+	register_taxonomy( 'discipline', array( 'event' ), $args );
+
+
+	/**
+	 * Add RENDEZ-VOUS categories (hierarchical)
+	 */
+
+	$labels = array(
+		'name'              => _x( 'Rendez-vous', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Rendez-vous', 'taxonomy singular name' ),
+		'search_items'      => __( 'Rechercher un Rendez-vous' ),
+		'all_items'         => __( 'Tous les Rendez-vous' ),
+		'parent_item'       => __( 'Nom du Rendez-vous' ),
+		'parent_item_colon' => __( '' ),
+		'edit_item'         => __( 'Editer le Rendez-vous' ),
+		'update_item'       => __( 'Mettre à jour le Rendez-vous' ),
+		'add_new_item'      => __( 'Ajouter un Rendez-vous' ),
+		'new_item_name'     => __( 'Nom du nouveau Rendez-vous' ),
+		'menu_name'         => __( 'Rendez-vous' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'rdv' ),
+	);
+
+	register_taxonomy( 'rdv', array( 'event' ), $args );
+
+
+	/**
+	 * Add PUBLIC categories (hierarchical)
+	 */
+
+	$labels = array(
+		'name'              => _x( 'Publics', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Public', 'taxonomy singular name' ),
+		'search_items'      => __( 'Rechercher un Public' ),
+		'all_items'         => __( 'Tous les Public' ),
+		'parent_item'       => __( 'Nom du Public' ),
+		'parent_item_colon' => __( '' ),
+		'edit_item'         => __( 'Editer le Public' ),
+		'update_item'       => __( 'Mettre à jour le Public' ),
+		'add_new_item'      => __( 'Ajouter un Public' ),
+		'new_item_name'     => __( 'Nom du nouveau Public' ),
+		'menu_name'         => __( 'Publics' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'public' ),
+	);
+
+	register_taxonomy( 'public', array( 'event' ), $args );
+
+
+	/**
+	 * Add SAISONS categories (hierarchical)
+	 */
+
+	$labels = array(
+		'name'              => _x( 'Saisons', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Saison', 'taxonomy singular name' ),
+		'search_items'      => __( 'Rechercher une Saison' ),
+		'all_items'         => __( 'Toutes les Saison' ),
+		'parent_item'       => __( 'Nom de la Saison' ),
+		'parent_item_colon' => __( '' ),
+		'edit_item'         => __( 'Editer la Saison' ),
+		'update_item'       => __( 'Mettre à jour la Saison' ),
+		'add_new_item'      => __( 'Ajouter une Saison' ),
+		'new_item_name'     => __( 'Nom de la nouvelleu Saison' ),
+		'menu_name'         => __( 'Saisons' ),
+	);
+
+	$args = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'saison' ),
+	);
+
+	register_taxonomy( 'saison', array( 'event' ), $args );
 
 
 	/**

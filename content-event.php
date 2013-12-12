@@ -21,7 +21,7 @@
 				<?php
 					$post_meta_data = get_post_custom($post->ID);
 		
-					$tags = wp_get_post_terms($post->ID, 'filtre', array("fields" => "all"));
+					$tags = wp_get_post_terms($post->ID, array('discipline', 'rdv'), array("fields" => "all"));
 
 					$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
 					$event_duration = get_post_meta( $post->ID, 'eventDetail_duration', true );
@@ -31,12 +31,12 @@
 					?>
 					
 
-					<?php if ( $event_dates ) : echo "<p>". $event_dates ."</p>"; endif; ?>
+					<?php if ( $event_dates ) : echo "<p class='date-main'>". $event_dates ."</p>"; endif; ?>
 
 					<?php if ( $event_repeatable_date ) : 
 						echo '<ul class="event-repeatable-dates">';  
-						foreach ($event_repeatable_date as $string) {  
-						    echo '<li>'.$string.'</li>';  
+						foreach ($event_repeatable_date as $date) {  
+						    echo '<li>'.$date.'</li>';  
 						}  
 						echo '</ul>';
 					endif; ?>
@@ -119,8 +119,8 @@
 			<?php endif; ?>
 		</div><!-- .event-dealers -->
 
-		<div class="event-social">
-			Facebook | Twitter | G+1
+		<div class="share-buttons">
+			<?php lavantseine_display_share_buttons(); ?>
 		</div><!-- .event-social -->
 	</div><!-- .entry-meta -->
 

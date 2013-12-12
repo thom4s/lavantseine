@@ -193,4 +193,34 @@ function get_before_sidebar( )
 add_action( 'before_sidebar', 'get_before_sidebar', 10, 2 );
 
 
+/*
+ * Social Buttons Sharing
+ */
+function lavantseine_display_share_buttons() {
+	echo '<div class="one-button fb-share-button" data-type="button_count"></div>';
+	echo '<a href="https://twitter.com/share" class="one-button twitter-share-button" data-lang="fr">Tweeter</a>';
+	echo '<div class="one-button g-plusone"></div>';
+}
+
+
+/*
+ * Social Buttons Sharing
+ */
+function display_prog_filtre_menu() {
+	$args = array( 'taxonomy' => 'rdv' );
+
+	$terms = get_terms('rdv', $args);
+
+	$count = count($terms); $i=0;
+	if ($count > 0) {
+	    $cape_list = '<p class="my_term-archive">';
+	    foreach ($terms as $term) {
+	        $i++;
+	    	$term_list .= '<a href="' . get_term_link( $term ) . '" title="' . sprintf(__('View all post filed under %s', 'my_localization_domain'), $term->name) . '">' . $term->name . '</a>';
+	    	if ($count != $i) $term_list .= ' &middot; '; else $term_list .= '</p>';
+	    }
+	    echo $term_list;
+	}
+}
+
 
