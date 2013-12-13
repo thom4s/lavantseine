@@ -60,9 +60,7 @@ get_header(); ?>
 
 		<div id="attached-content" class="">
 	
-			<div class="featured-media">
-				<h1>Le <b>Magazine</b> de l'Avant Seine</h1>
-			</div>		
+			<h1>Le <b>Magazine</b> de l'Avant Seine</h1>
 			
 			<div class="last-posts">
 				<?php if ( have_posts() ) : ?>

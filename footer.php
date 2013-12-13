@@ -10,7 +10,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="mastfooter" class="site-footer" role="contentinfo">
+	<footer id="mastfooter" class="site-footer transparent-background" role="contentinfo">
 		<?php get_sidebar( 'footer-widgets' ); ?>
 
 		<div id="inner-footer-branding" class="site-info">
@@ -20,6 +20,7 @@
 			</ul>
 
 		</div><!-- #inner-footer-branding -->
+		<div class="clearfix"></div>
 	</footer><!-- #mastfooter -->
 	
 </div><!-- #page -->

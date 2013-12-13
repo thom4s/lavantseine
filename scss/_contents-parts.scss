@@ -61,6 +61,9 @@
 .post {
 	.entry-media {
 		@extend .plain-width;
+		img {
+			margin-bottom: -10px;
+		}
 	}
 
 	.entry-header {
@@ -70,6 +73,17 @@
 	.entry-content {
 
 	}	
+
+	.entry-meta {
+		padding: $postMetaPadding;
+
+		.post-categories {
+			margin: $baseLineHeight 0;
+			a {
+				border: none;
+			}
+		}
+	}
 }
 
 

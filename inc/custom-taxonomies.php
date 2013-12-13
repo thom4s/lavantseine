@@ -170,7 +170,7 @@ function create_taxonomies() {
 		'singular_name'     => _x( 'Arborescence', 'taxonomy singular name' ),
 		'search_items'      => __( 'Rechercher un terme' ),
 		'all_items'         => __( 'Tous les termes' ),
-		'parent_item'       => __( 'Nom du terme' ),
+		'parent_item'       => __( 'Nom du terme parent' ),
 		'parent_item_colon' => __( '' ),
 		'edit_item'         => __( 'Editer le terme' ),
 		'update_item'       => __( 'Mettre à jour le terme' ),

@@ -6,6 +6,11 @@
  */
 
 
+define('FB_URL','https://www.facebook.com/lAvantSeine');
+define('TWITTER_URL','https://twitter.com/AvantSeine');
+
+
+
 if ( ! function_exists( 'lavantseine_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -69,7 +74,7 @@ function lavantseine_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar principale', 'lavantseine' ),
 		'id'            => 'sidebar',
-		'before_widget' => '<aside id="%1$s" class="backgrounded-box box-sidebar widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="box-sidebar widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
@@ -124,8 +129,12 @@ function lavantseine_customize_css()
 {
     ?>
          <style type="text/css">
-            .saisoned-on-color { color:<?php echo get_theme_mod('saison_color'); ?>; }
-            .saisoned-on-bg { background-color:<?php echo get_theme_mod('saison_color'); ?>; }
+         	<?php $saisonColor = get_theme_mod('saison_color'); ?>
+            .saisoned-on-color { color: <?php echo $saisonColor; ?> !important; }
+            .saisoned-on-bg { background-color:<?php echo $saisonColor; ?> !important; }
+            h3, h4 { color:<?php echo $saisonColor; ?> !important; }
+            .main-nav .current_page_item > a, .current-menu-ancestor a, .main-nav .current-menu-item > a { color:<?php echo $saisonColor; ?> !important; }
+
          </style>
     <?php
 }
@@ -138,12 +147,10 @@ add_action( 'wp_head', 'lavantseine_customize_css');
  */
 require get_template_directory() . '/inc/events-post-type.php';
 
-
 /**
  * Load custom taxonomies.
  */
 require get_template_directory() . '/inc/custom-taxonomies.php';
-
 
 /**
  * Load custom metas.
@@ -151,7 +158,10 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
 require get_template_directory() . '/inc/event-metas.php';
 require get_template_directory() . '/inc/post-metas.php';
 
-
+/**
+ * Load custom widgets.
+ */
+// require get_template_directory() . '/inc/custom-widgets.php';
 
 
 /**
@@ -185,11 +195,9 @@ require get_template_directory() . '/inc/jetpack.php';
  * Define bloc "la cuisine de l'Avant Seine" 
  */
 
-function get_before_sidebar( )
-{
-	echo 'cuisine bloc';
-}
+function get_before_sidebar( ) {
 
+}
 add_action( 'before_sidebar', 'get_before_sidebar', 10, 2 );
 
 

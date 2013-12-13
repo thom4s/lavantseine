@@ -546,18 +546,18 @@ table {
 .suffix-5 {
   margin-right: 1004.5px; }
 
-#masthead, #content, #mastfooter, .clearfix, .event .entry-mentions {
+#masthead, #content, .clearfix, .event .entry-mentions {
   *zoom: 1; }
-#masthead:before, #content:before, #mastfooter:before, #masthead:after, #content:after, #mastfooter:after, .clearfix:before, .event .entry-mentions:before, .clearfix:after, .event .entry-mentions:after {
+#masthead:before, #content:before, #masthead:after, #content:after, .clearfix:before, .event .entry-mentions:before, .clearfix:after, .event .entry-mentions:after {
   content: "";
   display: table; }
-#masthead:after, #content:after, #mastfooter:after, .clearfix:after, .event .entry-mentions:after {
+#masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .first, .box:nth-child(4n+1), .box-post:nth-child(4n+1), .box-event:nth-child(4n+1), .box-footer:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, #inner-footer-navigations {
+#primary, .search-form, .first, .box:nth-child(4n+1), .box-post:nth-child(4n+1), .box-event:nth-child(4n+1), .box-footer:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, #inner-footer-navigations {
   margin-left: 0; }
 
-#secondary, .search-form, .last, .entry-content, .event .entry-mentions, #inner-footer-branding {
+.last, .entry-content, .event .entry-mentions, #inner-footer-branding {
   float: right; }
 
 .plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, a.button, .post .entry-media, .event .entry-media {
@@ -573,6 +573,7 @@ table {
  */
 #page {
   width: 980px;
+  position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -603,13 +604,15 @@ table {
     width: 100%; } }
 
 #attached-content {
-  margin-top: 40px; }
+  margin-top: 20px; }
 
 .next-events {
   padding: 0.5em 0; }
 
 #secondary {
-  margin-top: -120px; }
+  position: absolute;
+  top: 20px;
+  right: 0; }
 @media (min-width: 721px) and (max-width: 1024px) {
   #secondary {
     width: 100%; } }
@@ -640,8 +643,23 @@ table {
   max-width: 100%;
   height: auto; }
 
-.backgrounded-box, #mastfooter, article.page, article.post, article.event {
+.backgrounded-box, article.page, article.post, article.event, #secondary aside:nth-child(2) {
   background-color: white; }
+
+.transparent-background, #secondary aside:not(:nth-child(2)) {
+  display: block;
+  position: relative; }
+
+.transparent-background::after, #secondary aside:not(:nth-child(2))::after {
+  content: "";
+  background: white;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
 
 article.page, article.post, article.event {
   float: left; }
@@ -715,7 +733,7 @@ article.page, article.post, article.event {
 
 .main-nav div {
   display: none;
-  min-height: 25px;
+  height: 25px;
   margin: 0;
   left: 0;
   padding: 0;
@@ -838,12 +856,15 @@ h1 a {
 h1 a:visited {
   color: inherit; }
 
-.attached-content h1 {
-  margin-bottom: 20px; }
+#attached-content h1 {
+  margin-bottom: 20px;
+  margin-top: 0; }
 
 aside h1 {
   font-size: 1em;
-  margin-top: 5px; }
+  margin-top: 5px;
+  margin-left: -0.3em;
+  padding-top: 0.5em; }
 
 h2 {
   font-size: 1.25em;
@@ -859,11 +880,19 @@ h2 a:visited {
   color: inherit; }
 
 h3, h4 {
-  font-size: 1em;
-  color: black; }
+  margin-bottom: 10px; }
 h3 a, h4 a {
   text-decoration: none;
   color: inherit; }
+
+h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+h4 {
+  font-size: 1em;
+  font-weight: bold; }
 
 h5 {
   font-weight: 900;
@@ -898,6 +927,29 @@ input {
   background: white;
   border: 1px solid black;
   height: 20px; }
+
+.search-form {
+  padding: 0;
+  border: none; }
+.search-form input[type=search] {
+  width: 70%;
+  float: left;
+  height: 24px;
+  margin: 0;
+  padding: 0 0.3em;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+.search-form input[type=submit] {
+  width: 30%;
+  height: 24px;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background: black;
+  color: white; }
 
 /* =Media
 ----------------------------------------------- */
@@ -1037,6 +1089,15 @@ nav a {
 /**
  * Post
  */
+.post .entry-media img {
+  margin-bottom: -10px; }
+.post .entry-meta {
+  padding: 0.2em 1em; }
+.post .entry-meta .post-categories {
+  margin: 20px 0; }
+.post .entry-meta .post-categories a {
+  border: none; }
+
 /**
  * Page
  */
@@ -1079,14 +1140,40 @@ nav a {
   font-style: italic; }
 
 .widget {
-  margin-bottom: 20px; }
-.widget {
-  *zoom: 1; }
-.widget:before, .widget:after {
-  content: "";
-  display: table; }
-.widget:after {
+  margin-bottom: 20px;
+  padding: 0.2em 0.3em; }
+
+#secondary aside {
   clear: both; }
+#secondary aside:nth-child(1) {
+  background: none; }
+#secondary aside:nth-child(1), #secondary aside:nth-child(2) {
+  padding: 0; }
+#secondary aside:nth-child(2) {
+  margin-top: 43px; }
+
+#secondary aside:nth-child(2) {
+  padding: 0; }
+#secondary aside:nth-child(2) .widget-title {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: block;
+  height: 40px;
+  margin: 0;
+  padding: 0.6em 0 0 0.3em;
+  text-align: left; }
+#secondary aside:nth-child(2) .textwidget {
+  padding: 0.2em 0.3em; }
+
+.box-footer p {
+  margin-bottom: 10px; }
+.box-footer a {
+  color: inherit;
+  border: none; }
+.box-footer a:before {
+  content: "• "; }
 
 .colombes-logo {
   background-image: url(); }

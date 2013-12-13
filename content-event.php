@@ -134,8 +134,10 @@
 		<div id="inner-entry-mentions">
 			<?php
 				$event_distribution = get_post_meta( $post->ID, 'eventDetail_distribution', true );
-				if ( $event_distribution ) {
+				$event_mentions = get_post_meta( $post->ID, 'eventDetail_mentions', true );	
+				if ( $event_distribution || $event_mentions ) {
 					echo "<p>". $event_distribution ."</p>";
+					echo "<p>". $event_mentions ."</p>";
 				}
 			?>
 		</div>

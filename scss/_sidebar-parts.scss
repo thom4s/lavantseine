@@ -1,5 +1,47 @@
 
 .widget {
-	@include clearfix;
 	margin-bottom: $baseLineHeight;
+	padding: $boxPadding;
+}
+
+#secondary {
+
+	aside {
+		clear: both;
+	}
+
+	aside:nth-child(1) {
+		background: none;
+	}
+	aside:nth-child(1),
+	aside:nth-child(2) {
+		padding: 0;
+	}
+
+	aside:nth-child(2) {
+		@extend .backgrounded-box;
+		margin-top: 43px;
+	}
+	aside:not(:nth-child(2)) {
+		@extend .transparent-background;
+	}
+}
+
+
+#secondary {
+	aside:nth-child(2) {
+		padding: 0;
+		.widget-title {
+			@include box-sizing();
+			display: block;
+			height: $menuHeight;
+			margin: 0;
+			padding: 0.6em 0 0 0.3em;
+			text-align: left;
+		}
+
+		.textwidget {
+			padding: $boxPadding;
+		}
+	}
 }

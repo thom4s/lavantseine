@@ -24,15 +24,18 @@ h1 {
 	}
 }
 
-.attached-content {
+#attached-content {
 	h1 {
 		margin-bottom: $baseLineHeight;
+		margin-top: 0;
 	}
 }
 aside {
 	h1 {
 		font-size: 1em;
 		margin-top: 5px;
+		margin-left: - $boxPaddingSide;
+		padding-top: 0.5em;
 	}
 }
 
@@ -53,12 +56,22 @@ h2 {
 }
 
 h3, h4 {
-	font-size: 1em;
-	color: $black;
+	margin-bottom: $baseLineHeight / 2;
 	a {
 		text-decoration: none;
 		color: inherit;
 	}	
+}
+
+h3 {
+	font-size: 1em;
+	text-transform: uppercase;
+	font-weight: bold;	
+}
+
+h4 {
+	font-size: 1em;
+	font-weight: bold;
 }
 
 h5 {

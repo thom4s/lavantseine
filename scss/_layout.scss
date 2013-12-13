@@ -7,6 +7,7 @@ body {  }
  */
 #page {
 	width: $mainWidth;
+	position: relative;
 	@include center-block;
 
 	@include breakpoint(medium) {
@@ -55,12 +56,13 @@ body {  }
 				width: 100%;
 			}	
 		}
+
 			#main {
 
 			}
 
 			#attached-content {
-				margin-top: $baseLineHeight * 2;
+				margin-top: $baseLineHeight;
 			}
 
 				.next-events {
@@ -70,8 +72,9 @@ body {  }
 		// Contain the sidebar with additionnal stuffs.
 		#secondary {
 			@extend .col-1;
-			@extend %last;
-			margin-top: -120px;
+			position: absolute;
+			top: 20px;
+			right: 0;
 		
 			@include breakpoint(medium) {
 				width: 100%;
@@ -86,12 +89,10 @@ body {  }
 	 *	The footer
 	 */
 	#mastfooter {
-		@extend %clearfix;
 		@extend .plain-width;
 
 		margin: $baseLineHeight 0;
 		padding: $bigBlocsPadding;
-		@extend .backgrounded-box;
 	}
 
 
@@ -119,6 +120,23 @@ body {  }
 
 .backgrounded-box {
 	background-color: $white;
+}
+
+.transparent-background {
+  display: block;
+  position: relative;
+}
+
+.transparent-background::after {
+  content: "";
+  background: $white;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 .box-post {

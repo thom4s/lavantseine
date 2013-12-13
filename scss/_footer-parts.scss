@@ -12,6 +12,19 @@
 
 .box-footer {
 	@extend .box;
+
+	p {
+		margin-bottom: $baseLineHeight / 2 ;
+	}
+
+	a {
+		color: inherit;
+		border: none;
+		
+		&:before {
+			content: "• ";
+		}
+	}
 }
 
 .colombes-logo {

@@ -28,17 +28,23 @@ $post_details_fields = array(
         'type'  => 'textarea'  
     ),
     array(  
-        'name'  => 'Code media',  
-        'desc'  => '',  
+        'label'  => 'Code media',  
+        'desc'  => '(vimeo/dailymotion/soundcloud)',  
         'id'    => $prefix.'mediaMarkup',  
         'type'  => 'textarea' 
     ),
     array(  
-        'name'  => 'Image Portrait',  
+        'label'  => 'Afficher le visuel',  
+        'desc'  => '(si code vidéo ou sonore)',  
+        'id'    => $prefix.'showPic',  
+        'type'  => 'checkbox' 
+    ),
+    array(  
+        'label'  => 'Image Portrait',  
         'desc'  => 'Image Portrait',  
-        'id'    => $prefix.'landscapeMedia',  
+        'id'    => $prefix.'portraitMedia',  
         'type'  => 'image' 
-    )  
+    )    
 );  
 
 
@@ -67,8 +73,8 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 
 					// textarea  
 					case 'textarea':  
-					    echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="60" rows="4">'.$meta.'</textarea> 
-					        <br /><span class="description">'.$field['desc'].'</span>';  
+					    echo '<textarea name="'. $field['id'] .'" id="'. $field['id']. '" cols="60" rows="4">'. $meta .'</textarea> 
+					        <br /><span class="description">'. $field['desc'] .'</span>';  
 					break;  
 
 					// checkbox  

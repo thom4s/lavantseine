@@ -6,9 +6,26 @@ input {
 
 .search-form {
 	@extend .col-1;
-	@extend %last;
+	@extend %first;
+	padding: 0;
+	border: none;
+
+	input[type=search] {
+		width: 70%;
+		float: left;
+		height: 24px;
+		margin: 0;
+		padding: 0 0.3em;
+		@include box-sizing();
+	}
+
+	input[type=submit] {
+		width: 30%;
+		height: 24px;
+		@include box-sizing();
+		background: $black;
+		color: $white;
+	}
+
 }
 
-input[type=search] {
-
-}

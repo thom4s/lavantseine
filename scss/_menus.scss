@@ -65,7 +65,7 @@
 
 	& > ul {
 		background: $navbarBackground;
-		height: 40px;	
+		height: $menuHeight;	
 	}
 
 	ul {
@@ -94,7 +94,7 @@
 
 .main-nav div {
 	display: none;
-	min-height: 25px;
+	height: 25px;
 	margin: 0;
 	left: 0;
 	padding: 0;
