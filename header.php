@@ -42,12 +42,12 @@
 			</nav><!-- #shortcut-navigation -->
 
 			<ul class="social-link picto" role="navigation">
-				<a href="#"><li class="go-facebook"></li></a>
-				<a href="#"><li class="go-twitter"></li></a>
-				<a href="#"><li class="go-googleplus"></li></a>
-				<a href="#"><li class="go-instagram"></li></a>
-				<a href="#"><li class="go-youtube"></li></a>
-				<a href="#"><li class="go-rss"></li></a>
+				<a href="<?php echo FB_URL; ?>" target="_blank"><li class="go-facebook"></li></a>
+				<a href="<?php echo TWITTER_URL; ?>" target="_blank"><li class="go-twitter"></li></a>
+				<a href="<?php echo GOOGLEPLUS_URL; ?>" target="_blank"><li class="go-googleplus"></li></a>
+				<a href="<?php echo INSTAGRAM_URL; ?>" target="_blank"><li class="go-instagram"></li></a>
+				<a href="<?php echo VIDEOCHANNEL_URL; ?>" target="_blank"><li class="go-youtube"></li></a>
+				<a href="<?php bloginfo('rss2_url'); ?>"><li class="go-rss"></li></a>
 			</ul><!-- .social-navigation -->
 
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'lavantseine' ); ?></h1>

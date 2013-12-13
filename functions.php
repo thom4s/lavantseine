@@ -8,6 +8,9 @@
 
 define('FB_URL','https://www.facebook.com/lAvantSeine');
 define('TWITTER_URL','https://twitter.com/AvantSeine');
+define('INSTAGRAM_URL','http://instagram.com/avantseine');
+define('GOOGLEPLUS_URL','https://twitter.com/AvantSeine');
+define('VIDEOCHANNEL_URL','https://twitter.com/AvantSeine');
 
 
 
@@ -88,6 +91,17 @@ function lavantseine_widgets_init() {
 		'before_title'  => '<h5 class="box-footer-title">',
 		'after_title'   => '</h5>',
 	) );
+
+
+	register_sidebar( array(
+		'name'          => __( 'Emplacement Template Contact ', 'lavantseine' ),
+		'id'            => 'contact-widgets',
+		'before_widget' => '<div id="%1$s" class="box-footer widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h5 class="box-footer-title">',
+		'after_title'   => '</h5>',
+	) );
+
 
 }
 add_action( 'widgets_init', 'lavantseine_widgets_init' );
@@ -228,23 +242,99 @@ class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
 
 
 /*
- * Social Buttons Sharing
+ * Display Programmation Filter menu
  */
-function display_prog_filtre_menu() {
-	$args = array( 'taxonomy' => 'rdv' );
+function display_prog_filter_menu() {
 
-	$terms = get_terms('rdv', $args);
+	echo "<div class='filter-column'>";
+	echo "<h4>Rendez-vous</h4>";
+		$terms = get_terms("rdv");
+		 $count = count($terms);
+		 if ( $count > 0 ){
+		     echo "<ul>";
+		     foreach ( $terms as $term ) {
+		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
+		        
+		     }
+		     echo "</ul>";
+		 }
+	echo "</div>"; // end first column
 
-	$count = count($terms); $i=0;
-	if ($count > 0) {
-	    $cape_list = '<p class="my_term-archive">';
-	    foreach ($terms as $term) {
-	        $i++;
-	    	$term_list .= '<a href="' . get_term_link( $term ) . '" title="' . sprintf(__('View all post filed under %s', 'my_localization_domain'), $term->name) . '">' . $term->name . '</a>';
-	    	if ($count != $i) $term_list .= ' &middot; '; else $term_list .= '</p>';
-	    }
-	    echo $term_list;
-	}
-}
+
+	echo "<div class='filter-column'>";
+
+	echo "</div>"; // end second column
+
+
+	echo "<div class='filter-column'>";
+	echo "<h4>Discipline</h4>";
+		$terms = get_terms("discipline");
+		$count = count($terms);
+		if ( $count > 0 ){
+		    echo "<ul>";
+		    foreach ( $terms as $term ) {
+		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
+		    }
+	    	echo "</ul>";
+		}
+	echo "</div>"; // end third column
+
+
+	echo "<div class='filter-column'>";
+
+	echo "</div>"; // end fourth column
+
+
+	echo "<div class='filter-column'>";
+	echo "<h4>Public</h4>";
+		$terms = get_terms("public");
+		$count = count($terms);
+		if ( $count > 0 ){
+		    echo "<ul>";
+		    foreach ( $terms as $term ) {
+		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
+		    }
+		    echo "</ul>";
+		}
+
+	echo "<h4>Tarif</h4>";
+		$terms = get_terms("tarif");
+		$count = count($terms);
+		if ( $count > 0 ){
+		    echo "<ul>";
+		    foreach ( $terms as $term ) {
+		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
+		    }
+		    echo "</ul>";
+		}
+	echo "</div>"; // end fifth column
+
+
+	echo "<div class='filter-column'>";
+	echo "<h4>Date</h4>";
+		$terms = get_terms("saison");
+		$count = count($terms);
+		if ( $count > 0 ){
+		    echo "<ul>";
+		    foreach ( $terms as $term ) {
+		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
+		    }
+		    echo "</ul>";
+		}
+
+	echo "<h4>Saison</h4>";
+		$terms = get_terms("saison");
+		$count = count($terms);
+		if ( $count > 0 ){
+		    echo "<ul>";
+		    foreach ( $terms as $term ) {
+		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
+		    }
+		    echo "</ul>";
+		}
+	echo "</div>"; // end sixth fifth column
+
+
+} // end display_prog_filter_menu() function
 
 

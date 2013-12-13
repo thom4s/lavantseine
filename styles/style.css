@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-post, .box-event, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding {
+.col-1, #secondary, .box, .box-post, .box-event, .box-footer, .search-form, .page .entry-media, .entry-contact-aside, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding {
   width: 176.4px;
   position: relative;
   float: left;
@@ -462,7 +462,7 @@ table {
 .suffix-1 {
   margin-right: 200.9px; }
 
-.col-2 {
+.col-2, .entry-contact-content {
   width: 377.3px;
   position: relative;
   float: left;
@@ -691,10 +691,6 @@ article.page, article.post, article.event {
   margin-top: 20px;
   margin-left: 118px; }
 
-.filters {
-  margin-top: -20px;
-  margin-bottom: 40px; }
-
 .bottom-bordered {
   border-bottom: 3px solid #900; }
 
@@ -752,6 +748,9 @@ article.page, article.post, article.event {
 .main-nav li li {
   margin: 1px 0 0 0;
   padding: 0; }
+
+ul.sub-menu {
+  padding: 0.3em; }
 
 .main-navigation {
   background: black;
@@ -1078,6 +1077,8 @@ nav a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0 1em; }
+.entry-content iframe {
+  width: 100%; }
 
 .share-buttons {
   margin-top: 20px; }
@@ -1110,6 +1111,17 @@ nav a {
 /**
  * Page
  */
+.entry-contact-content {
+  padding: 0; }
+
+.twitter-timeline {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  max-width: 100% !important;
+  min-width: none; }
+
 /**
  * Event
  */
@@ -1189,3 +1201,28 @@ nav a {
 
 .haut-de-seine-logo {
   background-image: url(); }
+
+.filters {
+  height: 200px;
+  margin-top: -40px;
+  margin-bottom: 20px; }
+
+.filter-column {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 15%;
+  margin-left: 2%;
+  padding: 0.5em;
+  float: left; }
+.filter-column:first-child {
+  margin-left: 0; }
+.filter-column ul {
+  display: inline-block;
+  margin-bottom: 20px; }
+.filter-column li:before {
+  content: '⊕ '; }
+.filter-column a {
+  border: inherit;
+  color: inherit; }

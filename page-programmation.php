@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div class="filters backgrounded-box">
-		<?php display_prog_filtre_menu(); ?>
+		<?php display_prog_filter_menu(); ?>
 	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main backgrounded-box" role="main">

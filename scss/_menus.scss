@@ -39,13 +39,6 @@
 	margin-left: $logoWidth + $baseLineHeight;
 }
 
-
-.filters {
-	@extend .navigation-group;
-	margin-top: - $baseLineHeight;
-	margin-bottom: $baseLineHeight *2;
-}
-
 .bottom-bordered {
 	border-bottom: 3px solid #900;
 }
@@ -117,6 +110,9 @@
 	padding: 0;
 }
 
+ul.sub-menu {
+	padding: 0.3em;
+}
 
 .main-navigation {
 	@extend %navigation;

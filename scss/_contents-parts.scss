@@ -26,6 +26,10 @@
 	@extend .last;
 	@include box-sizing();
 	padding: $contentPadding;
+
+	iframe {
+		width: 100%;
+	}
 }
 
 .share-buttons {
@@ -53,6 +57,8 @@
 		margin: $baseLineHeight / 2 0 ; 
 	}
 }
+
+
 
 /**
  * Post
@@ -102,6 +108,28 @@
 
 	}
 }
+
+// Contact page Template
+.entry-contact-content {
+	@extend .col-2;
+	padding: 0;
+}
+
+.entry-contact-aside {
+	@extend .col-1;
+}
+
+.twitter-timeline {
+	@include box-sizing();
+	max-width: 100% !important;
+	min-width: none;
+}
+
+
+
+
+// Programmation page Template
+
 
 
 /**
