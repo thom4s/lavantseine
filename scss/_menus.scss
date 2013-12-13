@@ -18,11 +18,6 @@
 	li {
 		float: left;
 	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
 }
 
 %picto {
@@ -51,10 +46,14 @@
 	margin-bottom: $baseLineHeight *2;
 }
 
+.bottom-bordered {
+	border-bottom: 3px solid #900;
+}
+
+
 /*
  * Main Navigation
  */
-
 
 .main-nav {
 	display: block;
@@ -119,9 +118,6 @@
 }
 
 
-
-
-
 .main-navigation {
 	@extend %navigation;
 	@extend .plain-width;
@@ -155,9 +151,17 @@
 	left: 100%;
 	top: 0;
 }
+
 .main-navigation ul ul a {
 	color: #fff;
 }
+
+.current-menu-ancestor .sub-menu .current-menu-item a {
+	color: $white !important;
+	font-weight: bold;
+}
+
+
 .main-navigation ul ul li {
 }
 .main-navigation li:hover > a {

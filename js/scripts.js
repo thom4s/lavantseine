@@ -5,35 +5,28 @@ jQuery(function($) {
 
 
 		// Walker Menu Navigation
-		var currentItems = document.getElementsByClassName('menu-item-has-children');
+		var $itemsWithChildren = $('.menu-item-has-children > a');
+		var $subMenu = $('.sub-nav-shadow');
 
-		for ( var i=0; i<currentItems.length; i++) {
-			var that = currentItems[i]
-			console.log(that);
-			link = that.getElementsByTagName('a');
-			console.log(link);
+		$itemsWithChildren.on('click', function(event) {
 
-			link[0].onclick = function (event) {
-				console.log(that);
-				event.preventDefault()
-				var subMenuItems = that.getElementsByTagName('div');
-				if( subMenuItems[0].style.display == "none" ) {
-					subMenuItems[0].style.display = "block";
-				} else {
-					subMenuItems[0].style.display = "none";
-				}
+			event.preventDefault();
+			
+			$subMenu.each(function() {
+				var wrap = $(this);
+				wrap.hide();
+			});
 
-			}
-		}		
+			$(this).parent().find('.sub-nav-shadow').toggle();
+		});
+		
 
-	
 
 		// Display Event distribution & mentions
 		$('#display-entry-mentions a').on('click', function(event) {
 			event.preventDefault();
 			$('#inner-entry-mentions').toggle('fast');
 		});
-
 
 	});
 });

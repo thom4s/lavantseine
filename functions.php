@@ -133,8 +133,8 @@ function lavantseine_customize_css()
             .saisoned-on-color { color: <?php echo $saisonColor; ?> !important; }
             .saisoned-on-bg { background-color:<?php echo $saisonColor; ?> !important; }
             h3, h4 { color:<?php echo $saisonColor; ?> !important; }
-            .main-nav .current_page_item > a, .current-menu-ancestor a, .main-nav .current-menu-item > a { color:<?php echo $saisonColor; ?> !important; }
-
+            .main-nav .current_page_item > a, .current-menu-ancestor > a, .main-nav .current-menu-item > a { color:<?php echo $saisonColor; ?> !important; }
+            a.button { background-color:<?php echo $saisonColor; ?> !important; }
          </style>
     <?php
 }

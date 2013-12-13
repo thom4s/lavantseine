@@ -677,9 +677,6 @@ article.page, article.post, article.event {
   padding-left: 0; }
 .navigation-group li, .filters li, .main-navigation li, .shortcut-navigation li, .picto li {
   float: left; }
-.navigation-group a, .filters a, .main-navigation a, .shortcut-navigation a, .picto a {
-  display: block;
-  text-decoration: none; }
 
 .picto a {
   display: inline-block; }
@@ -697,6 +694,9 @@ article.page, article.post, article.event {
 .filters {
   margin-top: -20px;
   margin-bottom: 40px; }
+
+.bottom-bordered {
+  border-bottom: 3px solid #900; }
 
 /*
  * Main Navigation
@@ -778,6 +778,10 @@ article.page, article.post, article.event {
 
 .main-navigation ul ul a {
   color: #fff; }
+
+.current-menu-ancestor .sub-menu .current-menu-item a {
+  color: white !important;
+  font-weight: bold; }
 
 .main-navigation ul li:hover > ul {
   display: block; }
@@ -1008,6 +1012,8 @@ a:hover, a:focus, a:active {
 
 /* Buttons */
 a.button {
+  font-family: "PT Sans", sans-serif;
+  line-height: 20px;
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1029,7 +1035,10 @@ a.button {
 a.button:hover {
   background-color: white;
   color: black;
-  border: 1px solid black; }
+  border: none; }
+
+.widget a.button {
+  width: auto; }
 
 nav a {
   border: inherit; }
