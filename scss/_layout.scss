@@ -90,7 +90,7 @@ body {  }
 	 */
 	#mastfooter {
 		@extend .plain-width;
-
+		z-index: -50;
 		margin: $baseLineHeight 0;
 		padding: $bigBlocsPadding;
 	}

@@ -16,10 +16,15 @@
 					/* Get Meta Values if event */
 					if ( 'event' == get_post_type() ) :
 						$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
+						$event_hour = get_post_meta( $post->ID, 'eventDetail_hour', true );
 						$event_landscape_media = get_post_meta( $post->ID, 'eventMedia_landscape', true );
+
 						if ( $event_dates ) {
 							echo "<span class='date-main'>". $event_dates . "</span>";
 						}
+						if ( $event_hour ) {
+							echo " - <span class='date-main'>". $event_hour . "</span>";
+						}	
 						if ( $eventMedia_landscape ) {
 							echo $event_dates;
 						}
@@ -37,7 +42,7 @@
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php the_date('d/m/Y', '<span class="date-main">Publié le ', '</span>'); ?>
+				<span class="date-main">Publié le <?php the_time('d/m/Y'); ?></span>
 			</div><!-- .entry-meta -->
 			
 			<?php 

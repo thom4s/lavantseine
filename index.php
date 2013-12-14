@@ -21,7 +21,7 @@ get_header(); ?>
 					// Query last fourth events (event post type)
 					$args = array(
 						'post_type' => 'event',
-						'post_count' => '4'
+						'posts_per_page' => '4'
 					);
 					$query = new WP_Query( $args );
 				?>

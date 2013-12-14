@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying the Events Programmation
  *
  * Template Name: Page Programmation
  *
@@ -18,10 +18,14 @@ get_header(); ?>
 			<div class="next-events">
 
 				<?php
-					// Query last fourth events (event post type)
+					$previous_month = false;
+
+					// Query events to come
 					$args = array(
-						'post_type' => 'event',
-						'post_count' => ''
+						'post_type' 	=> 'event',
+						'post_count' 	=> '',
+						'meta_key'		=> '',
+						'meta_value'	=> ''
 					);
 					$query = new WP_Query( $args );
 				?>
@@ -31,11 +35,45 @@ get_header(); ?>
 					<?php /* Start the Loop */ ?>
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
+
+
+
+						<?php 
+
+							// test if month is previous month and display
+							// script from mahi-mahi on mep wptheme
+
+							if ( preg_match("#\d+\-\d+?#", get_query_var('quand') ) ):
+								$date = get_query_var('quand');
+							else:
+								$date = get_query_var('quand').'-01-01';
+							endif;
+
+							$month = date('Y/m', max(strtotime($date), strtotime(get_post_meta(get_the_ID(), 'eventDetail_repeatable-date', true))));
+
+							if ( $previous_month != $month ):
+								?>
+								<div class="box<?php echo '-'; echo get_post_type(); ?>" data-date="<?php print strtotime($month.'/01') ?>">
+									<h2 class="entry-title">
+										<?php print strftime('%B %Y', strtotime($month.'/01')) ?>
+									</h2>
+								</div><!-- .box -->
+								<?php
+								$previous_month = $month;
+							endif;
+
+						?>
+
+
+
+
+
 						<?php
-							/* Include the Post-Format-specific template for the content.
-							 */
+							// get box model for each post()
 							get_template_part( 'boxes', get_post_format() );
 						?>
+
+
 
 					<?php endwhile; ?>
 

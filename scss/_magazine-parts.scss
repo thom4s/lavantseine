@@ -1,0 +1,28 @@
+
+
+
+#main-magazine {
+	@extend .col-3;
+	@include clearfix();
+	@extend .last;
+}
+
+#categories-magazine {
+	@extend .col-1;
+	@extend .first;
+	margin-top: $baseLineHeight *4;
+}
+
+
+.featured-post {
+	@extend .plain-width;
+
+	.featured-content {
+		padding: 1em;
+	}
+}
+
+.last-event-post {
+	@extend .col-2;
+	@extend .last;
+}

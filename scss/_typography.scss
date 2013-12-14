@@ -30,7 +30,10 @@ h1 {
 		margin-top: 0;
 	}
 }
-aside {
+
+aside, 
+.last-event-post,
+#categories-magazine {
 	h1 {
 		font-size: 1em;
 		margin-top: 5px;
@@ -81,28 +84,33 @@ h5 {
 }
 
 p {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $paragraphsFontFamily;
 	font-size: 1em;
 	line-height: $baseLineHeight;
 	margin-bottom: $baseLineHeight;
 }
 
 span {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $paragraphsFontFamily;
 	font-size: 1em;
 	line-height: $baseLineHeight;	
 }
 
 .menu {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $paragraphsFontFamily;
 	font-size: 1em;
 }
 
 ul {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $paragraphsFontFamily;
 	font-size: 1em;
 	line-height: $baseLineHeight;
 	margin-bottom: $baseLineHeight;	
+}
+
+input {
+	font-family: $paragraphsFontFamily;
+	font-size: 0.9em;
 }
 
 footer {

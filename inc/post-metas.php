@@ -40,6 +40,12 @@ $post_details_fields = array(
         'type'  => 'checkbox' 
     ),
     array(  
+        'label'  => 'Mise en avant',  
+        'desc'  => '(afficher en Une du Magazine)',  
+        'id'    => $prefix.'featured',  
+        'type'  => 'checkbox' 
+    ),
+    array(  
         'label'  => 'Image Portrait',  
         'desc'  => 'Image Portrait',  
         'id'    => $prefix.'portraitMedia',  

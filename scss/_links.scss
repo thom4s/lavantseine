@@ -17,7 +17,7 @@ a:active {
 
 /* Buttons */
 
-a.button {
+%button {
 	font-family: $paragraphsFontFamily;
 	line-height: $baseLineHeight;
 	@extend .plain-width;
@@ -42,10 +42,13 @@ a.button {
 }
 
 
+a.button {
+	@extend %button;
+}
+
 .widget a.button {
 	width: auto;
 }
-
 
 nav a {
 	border: inherit;

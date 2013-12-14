@@ -19,6 +19,7 @@
 		<div class="inner-entry-content">
 			<div class="event-tags">
 				<?php
+					setlocale(LC_TIME, "fr_FR");
 					$post_meta_data = get_post_custom($post->ID);
 		
 					$tags = wp_get_post_terms($post->ID, array('discipline', 'rdv'), array("fields" => "all"));
@@ -30,6 +31,7 @@
 					$event_text2 = get_post_meta( $post->ID, 'eventDetail_text2', true );
 
 					$event_repeatable_date = unserialize($post_meta_data['eventDetail_repeatable-date'][0]);
+
 					$event_landscape_media = get_post_meta( $post->ID, 'eventDetail_landscapeMedia', true );
 					?>
 					
@@ -39,7 +41,7 @@
 					<?php if ( $event_repeatable_date ) : 
 						echo '<ul class="event-repeatable-dates">';  
 						foreach ($event_repeatable_date as $date) {  
-						    echo '<li>'.$date.'</li>';  
+						    echo '<li>'. strftime('%A %e %b', strtotime($date) ) .'.</li>';  
 						}  
 						echo '</ul>';
 					endif; ?>

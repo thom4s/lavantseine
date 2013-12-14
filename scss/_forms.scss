@@ -1,8 +1,30 @@
+
+form {
+	p {
+		margin-bottom: $baseLineHeight / 2;
+	}
+}
+
 input {
+	@include box-sizing();
+	width: 100%;
+	line-height: $baseLineHeight;
 	background: $inputBackground;
-	border: 1px solid $inputBorder; 
+	border: $inputBorder; 
 	height: $inputHeight;
 }
+
+textarea {
+	border: $inputBorder; 
+}
+
+input[type=submit] {
+	@extend %button;
+	width: auto;
+	line-height: $baseLineHeight;
+}
+
+
 
 .search-form {
 	@extend .col-1;
@@ -27,5 +49,34 @@ input {
 		color: $white;
 	}
 
+	.search-submit {
+		background: $white !important;
+		color: $black !important;
+		border: $inputBorder;
+		border-left: none;
+		padding: 0;
+		&:hover {
+			border: inherit;
+		}
+	}
 }
 
+.wp_sarbacane_widget_form {
+	span {
+		display: none;
+	}
+
+
+
+}
+
+.wpcf7-form {
+	input {
+		width: 300px;
+	}
+	textarea {
+		@include box-sizing();
+		width: 300px;
+
+	}
+}

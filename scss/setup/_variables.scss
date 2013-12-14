@@ -126,12 +126,14 @@ $tableBorder:                       #ddd !default;
 
 // Forms
 // -------------------------
-		$inputBackground:               $white !default;
-		$inputBorder:                   $black !default;
+
 		$inputBorderRadius:             0 !default;
-		$inputDisabledBackground:       $grayLighter !default;
 		$formActionsBackground:         #f5f5f5 !default;
-		$inputHeight:                   $baseLineHeight;
+
+$inputDisabledBackground:       $grayLighter !default;
+$inputBorder:                   1px solid $black !default;
+$inputBackground:               $white !default;
+$inputHeight:                   $baseLineHeight * 1.5;
 
 
 
