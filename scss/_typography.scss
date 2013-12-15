@@ -42,6 +42,13 @@ aside,
 	}
 }
 
+#categories-magazine {
+	h1 {
+		margin-left: 0;
+	}
+}
+
+
 h2 {
 	font-size: 1.25em;
 	text-transform: uppercase;
@@ -108,7 +115,7 @@ ul {
 	margin-bottom: $baseLineHeight;	
 }
 
-input {
+form {
 	font-family: $paragraphsFontFamily;
 	font-size: 0.9em;
 }

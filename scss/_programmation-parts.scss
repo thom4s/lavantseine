@@ -2,13 +2,16 @@
 
 .filters {
 	@extend .navigation-group;
-	height: 200px;
 	margin-top: - $baseLineHeight * 2;
 	margin-bottom: $baseLineHeight * 1;
 }
 
 
 
+
+
+
+.awpqsf_class,
 .filter-column {
 	@include box-sizing();
 	width: 15%;

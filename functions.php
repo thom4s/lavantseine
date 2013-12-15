@@ -156,6 +156,7 @@ add_action( 'wp_head', 'lavantseine_customize_css');
 
 
 
+
 /**
  * Load events custom post type.
  */
@@ -227,7 +228,7 @@ function lavantseine_display_share_buttons() {
 
 
 /*
- * Custom Walket Menu
+ * Custom Walker Menu
  */
 class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth) {
@@ -238,6 +239,38 @@ class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
         $output .= '</ul></div>';
     }
 }
+
+
+
+
+
+
+/*
+ * Filter hook for programmation
+ */
+add_filter('ajax_wpqsf_reoutput', 'customize_output', '', 2);
+function customize_output($results , $args){
+	// The Query
+	$query = new WP_Query( $args );
+	ob_start(); $results ='';
+	// The Loop
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			get_template_part( 'boxes' );
+		}
+	}
+	/* Restore original Post Data */
+	wp_reset_postdata();
+
+	$results = ob_get_clean();
+	return $results;
+}
+
+
+
+
+
 
 
 

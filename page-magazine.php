@@ -92,7 +92,6 @@ get_header(); ?>
 
 
 
-
 				<div class="last-post-list">
 					<?php
 						// QUERY ALL POST
@@ -136,6 +135,19 @@ get_header(); ?>
 
 			<div id="categories-magazine" class=" transparent-background">
 				<h1>Au Sommaire</h1>
+				
+				<?php
+					$args = array(
+					  'orderby' => 'name',
+					  'parent' => 0
+					  );
+					$categories = get_categories( $args );
+					foreach ( $categories as $category ) {
+						echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a><br/>';
+					}
+					?>
+
+				
 			</div>
 
 

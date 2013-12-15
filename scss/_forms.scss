@@ -5,17 +5,27 @@ form {
 	}
 }
 
-input {
+input[type=text], 
+input[type=email] {
 	@include box-sizing();
 	width: 100%;
 	line-height: $baseLineHeight;
 	background: $inputBackground;
 	border: $inputBorder; 
 	height: $inputHeight;
+	padding: 0.5em;
+}
+
+input[type=checkbox] {
+	width: auto;
+	height: auto;
+	line-height: $baseLineHeight;
 }
 
 textarea {
-	border: $inputBorder; 
+	border: $inputBorder;
+	padding: 0.5em;
+	
 }
 
 input[type=submit] {
@@ -61,15 +71,16 @@ input[type=submit] {
 	}
 }
 
+
+// Sarbacane widget
 .wp_sarbacane_widget_form {
 	span {
 		display: none;
 	}
-
-
-
 }
 
+
+// Contact form
 .wpcf7-form {
 	input {
 		width: 300px;
@@ -79,4 +90,21 @@ input[type=submit] {
 		width: 300px;
 
 	}
+}
+
+
+// Filter
+#awpqsf_id {
+	label {
+		display: inline-block;
+		margin-bottom: $baseLineHeight / 2;
+	}
+	input[type=checkbox] {
+		margin-right: 5px;
+	}
+
+	.awpqsf_class {
+
+	}
+
 }

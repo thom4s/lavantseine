@@ -870,6 +870,9 @@ aside h1, .last-event-post h1, #categories-magazine h1 {
   margin-left: -0.3em;
   padding-top: 0.5em; }
 
+#categories-magazine h1 {
+  margin-left: 0; }
+
 h2 {
   font-size: 1.25em;
   text-transform: uppercase;
@@ -924,7 +927,7 @@ ul {
   line-height: 20px;
   margin-bottom: 20px; }
 
-input {
+form {
   font-family: "PT Sans", sans-serif;
   font-size: 0.9em; }
 
@@ -934,7 +937,7 @@ footer {
 form p {
   margin-bottom: 10px; }
 
-input {
+input[type=text], input[type=email] {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -943,10 +946,17 @@ input {
   line-height: 20px;
   background: white;
   border: 1px solid black;
-  height: 30px; }
+  height: 30px;
+  padding: 0.5em; }
+
+input[type=checkbox] {
+  width: auto;
+  height: auto;
+  line-height: 20px; }
 
 textarea {
-  border: 1px solid black; }
+  border: 1px solid black;
+  padding: 0.5em; }
 
 input[type=submit] {
   width: auto;
@@ -994,6 +1004,12 @@ input[type=submit] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   width: 300px; }
+
+#awpqsf_id label {
+  display: inline-block;
+  margin-bottom: 10px; }
+#awpqsf_id input[type=checkbox] {
+  margin-right: 5px; }
 
 /* =Media
 ----------------------------------------------- */
@@ -1244,11 +1260,10 @@ nav a {
   background-image: url(); }
 
 .filters {
-  height: 200px;
   margin-top: -40px;
   margin-bottom: 20px; }
 
-.filter-column {
+.awpqsf_class, .filter-column {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1257,14 +1272,14 @@ nav a {
   margin-left: 2%;
   padding: 0.5em;
   float: left; }
-.filter-column:first-child {
+.awpqsf_class:first-child, .filter-column:first-child {
   margin-left: 0; }
-.filter-column ul {
+.awpqsf_class ul, .filter-column ul {
   display: inline-block;
   margin-bottom: 20px; }
-.filter-column li:before {
+.awpqsf_class li:before, .filter-column li:before {
   content: '⊕ '; }
-.filter-column a {
+.awpqsf_class a, .filter-column a {
   border: inherit;
   color: inherit; }
 
@@ -1277,7 +1292,7 @@ nav a {
   clear: both; }
 
 #categories-magazine {
-  margin-top: 80px; }
+  margin-top: 120px; }
 
 .featured-post .featured-content {
   padding: 1em; }
