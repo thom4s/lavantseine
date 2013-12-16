@@ -98,7 +98,7 @@ body {  }
 
 
 /*
- *	The footer
+ *	Commun stuffs, helpers
  */
 
 .box {
@@ -106,11 +106,6 @@ body {  }
 	@include box-sizing('border');
 	padding: $boxPadding;
 	margin-bottom: $baseLineHeight;
-
-	&:nth-child(4n+1) {
-		@extend .first;
-		clear: both;
-	}
 
 	img {
 		max-width: 100%;
@@ -139,12 +134,25 @@ body {  }
   z-index: -1;   
 }
 
+
+.relatived {
+	position: relative;
+}
+
+
+
 .box-post {
 	@extend .box;
+	margin-left: 0;
 }
 
 .box-event {
 	@extend .box;
+
+	&:nth-child(4n+1) {
+		@extend .first;
+		clear: both;
+	}
 }
 
 article.page,

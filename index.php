@@ -21,7 +21,10 @@ get_header(); ?>
 					// Query last fourth events (event post type)
 					$args = array(
 						'post_type' => 'event',
-						'posts_per_page' => '4'
+						'posts_per_page' => '4',
+						'meta_key' => 'eventDetail_repeatable-date',
+						'orderby' => 'meta_value',
+						'order' => 'ASC'
 					);
 					$query = new WP_Query( $args );
 				?>
@@ -62,7 +65,7 @@ get_header(); ?>
 	
 			<h1>Le <b>Magazine</b> de l'Avant Seine</h1>
 			
-			<div class="last-posts">
+			<div id="homeGrid" class="last-posts" data-columns>
 				<?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>

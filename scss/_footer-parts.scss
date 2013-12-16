@@ -1,8 +1,7 @@
 
 
 #inner-footer-navigations {
-	@extend .col-4;
-	@extend .first;
+	@extend .plain-width;
 }
 
 #inner-footer-branding {
@@ -12,6 +11,14 @@
 
 .box-footer {
 	@extend .box;
+
+	&:first-child {
+		@extend .first;
+	}
+
+	&:last-child {
+		float: right;
+	}
 
 	p {
 		margin-bottom: $baseLineHeight / 2 ;

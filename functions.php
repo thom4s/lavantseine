@@ -36,8 +36,10 @@ function lavantseine_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' ); 
 
-	add_image_size( 'box-thumb', 300, 9999 );
-
+	add_image_size( 'box-thumbnail', 168, 9999 );
+	add_image_size( 'featured-post-thumbnail', 578, 9999 );
+	add_image_size( 'top-thumbnail', 779, 9999 );
+	add_image_size( '2col-thumbnail', 369, 9999 );
 
 
 	/*
@@ -117,6 +119,8 @@ function lavantseine_scripts() {
 
 	wp_enqueue_script( 'lavantseine-scripts', get_template_directory_uri() . '/js/scripts.js', array(), false, true );
 
+	wp_enqueue_script( 'salvatorre', get_template_directory_uri() . '/js/salvatorre.js', array(), false, true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -174,9 +178,9 @@ require get_template_directory() . '/inc/event-metas.php';
 require get_template_directory() . '/inc/post-metas.php';
 
 /**
- * Load custom widgets.
+ * Load Options Panel.
  */
-// require get_template_directory() . '/inc/custom-widgets.php';
+require get_template_directory() . '/inc/options-panel.php';
 
 
 /**
@@ -248,21 +252,43 @@ class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
 /*
  * Filter hook for programmation
  */
-add_filter('ajax_wpqsf_reoutput', 'customize_output', '', 2);
-function customize_output($results , $args){
+add_filter('ajax_wpqsf_reoutput', 'customize_output', '', 4);
+function customize_output( $results, $args, $id, $getdata ){
+	
 	// The Query
 	$query = new WP_Query( $args );
 	ob_start(); $results ='';
+
+	$progFilterID = get_option('progFilterID', '143');
+	$magFilterID = get_option('magFilterID', '146');
+	
 	// The Loop
 	if ( $query->have_posts() ) {
 		while ( $query->have_posts() ) {
 			$query->the_post();
-			get_template_part( 'boxes' );
+
+
+			if ( $id == $progFilterID ) {
+				get_template_part( 'boxes' );
+			} elseif ( $id == $magFilterID ) {
+				get_template_part( 'boxes' );
+			} else {
+				echo 'nothing';
+			}
+
+
+		
+
+
+
+
 		}
 	}
-	/* Restore original Post Data */
+
+	// Restore original Post Data
 	wp_reset_postdata();
 
+	// End function and send $results
 	$results = ob_get_clean();
 	return $results;
 }

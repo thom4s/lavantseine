@@ -28,7 +28,7 @@
 						if ( $eventMedia_landscape ) {
 							echo $event_dates;
 						}
-						the_post_thumbnail('box-thumb');
+						the_post_thumbnail('box-thumbnail');
 					endif; // End if 'event' == get_post_type()  
 				?>
 		
@@ -46,7 +46,7 @@
 			</div><!-- .entry-meta -->
 			
 			<?php 
-				the_post_thumbnail('box-thumb');
+				the_post_thumbnail('box-thumbnail');
 				endif; // End if 'post' == get_post_type() 
 			?>
 		</a>

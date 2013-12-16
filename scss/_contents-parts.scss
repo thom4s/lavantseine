@@ -165,8 +165,10 @@
 		@include box-sizing();
 		@extend .col-1;
 		@extend .first;
-		margin-top: -160px;
 		padding-left: $baseLineHeight;
+		position: absolute;
+		top: -30px;
+		left: 0;
 	}
 		.tags-list {
 			margin-bottom: $baseLineHeight;

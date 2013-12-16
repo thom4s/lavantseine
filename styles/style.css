@@ -504,7 +504,7 @@ table {
 .suffix-3 {
   margin-right: 602.7px; }
 
-.col-4, #primary, #inner-footer-navigations {
+.col-4, #primary {
   width: 779.1px;
   position: relative;
   float: left;
@@ -546,6 +546,30 @@ table {
 .suffix-5 {
   margin-right: 1004.5px; }
 
+/*
+ * SALVATOR PLUGIN SETTINGS
+ */
+#homeGrid[data-columns]::before {
+  content: '4 .column.col-1'; }
+
+#magazineGrid[data-columns]::before {
+  content: '3 .column.col-1'; }
+
+#related-content[data-columns]::before {
+  content: '4 .column.col-1'; }
+
+/* These are the classes that are going to be applied: */
+.column {
+  float: left;
+  margin-left: 24.5px; }
+
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .column.entry-contact-aside:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
+  margin: 0; }
+
+/* Also, don't forget to add this: */
+[data-columns]::before {
+  display: none; }
+
 #masthead, #content, .clearfix, .event .entry-mentions {
   *zoom: 1; }
 #masthead:before, #content:before, #masthead:after, #content:after, .clearfix:before, .event .entry-mentions:before, .clearfix:after, .event .entry-mentions:after {
@@ -554,13 +578,13 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box:nth-child(4n+1), .box-post:nth-child(4n+1), .box-event:nth-child(4n+1), .box-footer:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, #inner-footer-navigations, #categories-magazine {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
   margin-left: 0; }
 
 .last, .entry-content, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
   float: right; }
 
-.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, .post .entry-media, .event .entry-media, .featured-post {
+.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -629,7 +653,7 @@ table {
   padding: 0.5em 0; }
 
 /*
- *	The footer
+ *	Commun stuffs, helpers
  */
 .box, .box-post, .box-event, .box-footer {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -638,8 +662,6 @@ table {
   -moz-box-sizing: border-box;
   padding: 0.2em 0.3em;
   margin-bottom: 20px; }
-.box:nth-child(4n+1), .box-post:nth-child(4n+1), .box-event:nth-child(4n+1), .box-footer:nth-child(4n+1) {
-  clear: both; }
 .box img, .box-post img, .box-event img, .box-footer img {
   max-width: 100%;
   height: auto; }
@@ -661,6 +683,15 @@ table {
   right: 0;
   position: absolute;
   z-index: -1; }
+
+.relatived {
+  position: relative; }
+
+.box-post {
+  margin-left: 0; }
+
+.box-event:nth-child(4n+1) {
+  clear: both; }
 
 article.page, article.post, article.event {
   float: left; }
@@ -885,6 +916,9 @@ h2 a {
   border: inherit; }
 h2 a:visited {
   color: inherit; }
+
+.featured-post h2, .last-event-post h2 {
+  font-size: 1.5em; }
 
 h3, h4 {
   margin-bottom: 10px; }
@@ -1198,8 +1232,10 @@ nav a {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  margin-top: -160px;
-  padding-left: 20px; }
+  padding-left: 20px;
+  position: absolute;
+  top: -30px;
+  left: 0; }
 .event .tags-list {
   margin-bottom: 20px; }
 .event #display-entry-mentions {
@@ -1245,6 +1281,8 @@ nav a {
 #secondary aside:nth-child(2) .textwidget {
   padding: 0.2em 0.3em; }
 
+.box-footer:last-child {
+  float: right; }
 .box-footer p {
   margin-bottom: 10px; }
 .box-footer a {
@@ -1294,5 +1332,27 @@ nav a {
 #categories-magazine {
   margin-top: 120px; }
 
+.featured-post {
+  margin-bottom: 20px; }
 .featured-post .featured-content {
   padding: 1em; }
+
+.last-event-post {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 0.2em 0.3em; }
+
+#alert {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 300px;
+  margin-left: 118px;
+  padding: 0.2em 0.3em;
+  background: white;
+  color: #ba3925;
+  font-size: 1.2em; }

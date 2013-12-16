@@ -1,0 +1,9 @@
+#alert {
+	@include box-sizing();
+	width: 300px;
+	margin-left: 118px;
+	padding: $boxPadding;
+	background: $white;
+	color: $red;
+	font-size: 1.2em;
+}

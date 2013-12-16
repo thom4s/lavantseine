@@ -20,7 +20,7 @@ get_header(); ?>
 		<div class="clearfix"></div>
 
 		<div id="attached-content">
-			<div class="related-posts">
+			<div id="related-content" class="related-posts"  data-columns>
 			    <?php
 
 					// Remontée des événements puis des articles liés à l'événement en cours.

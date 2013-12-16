@@ -65,6 +65,14 @@ h2 {
 	}
 }
 
+.featured-post,
+.last-event-post {
+	h2 {
+		font-size: 1.5em;
+	}
+}
+
+
 h3, h4 {
 	margin-bottom: $baseLineHeight / 2;
 	a {

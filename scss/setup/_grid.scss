@@ -31,3 +31,29 @@
         margin-right: ( $gridColumnWidth * $i ) + (  $gridGutterWidth * ( $i ));
     }
 }
+
+
+/*
+ * SALVATOR PLUGIN SETTINGS
+ */
+
+#homeGrid[data-columns]::before {
+    content: '4 .column.col-1';
+}
+
+#magazineGrid[data-columns]::before {
+    content: '3 .column.col-1';
+}
+
+#related-content[data-columns]::before {
+    content: '4 .column.col-1';
+}
+
+/* These are the classes that are going to be applied: */
+.column { float: left; margin-left: $gridGutterWidth; }
+.column.col-1:first-child {  margin: 0; }
+
+/* Also, don't forget to add this: */
+[data-columns]::before { display: none; }
+
+

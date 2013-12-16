@@ -16,6 +16,7 @@
 
 .featured-post {
 	@extend .plain-width;
+	margin-bottom: $baseLineHeight;
 
 	.featured-content {
 		padding: 1em;
@@ -25,4 +26,7 @@
 .last-event-post {
 	@extend .col-2;
 	@extend .last;
+	@include box-sizing();
+	margin-bottom: $baseLineHeight;
+	padding: $boxPadding;	
 }

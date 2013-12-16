@@ -12,14 +12,6 @@
 
 	<footer id="mastfooter" class="site-footer transparent-background" role="contentinfo">
 		<?php get_sidebar( 'footer-widgets' ); ?>
-
-		<div id="inner-footer-branding" class="site-info">
-			<ul>
-				<li class="colombes-logo"></li>
-				<li class="haut-de-seine-logo"></li>
-			</ul>
-
-		</div><!-- #inner-footer-branding -->
 		<div class="clearfix"></div>
 	</footer><!-- #mastfooter -->
 	
