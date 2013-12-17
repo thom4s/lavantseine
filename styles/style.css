@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-post, .box-event, .box-footer, .search-form, .page .entry-media, .entry-contact-aside, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
+.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .entry-contact-aside, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
   width: 176.4px;
   position: relative;
   float: left;
@@ -563,7 +563,7 @@ table {
   float: left;
   margin-left: 24.5px; }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .column.entry-contact-aside:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .column.entry-contact-aside:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
   margin: 0; }
 
 /* Also, don't forget to add this: */
@@ -578,7 +578,7 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
   margin-left: 0; }
 
 .last, .entry-content, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
@@ -655,14 +655,14 @@ table {
 /*
  *	Commun stuffs, helpers
  */
-.box, .box-post, .box-event, .box-footer {
+.box, .box-post, .box-event, .box-month, .box-footer {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0.2em 0.3em;
   margin-bottom: 20px; }
-.box img, .box-post img, .box-event img, .box-footer img {
+.box img, .box-post img, .box-event img, .box-month img, .box-footer img {
   max-width: 100%;
   height: auto; }
 
@@ -690,7 +690,7 @@ table {
 .box-post {
   margin-left: 0; }
 
-.box-event:nth-child(4n+1) {
+.box-event:nth-child(4n+1), .box-month:nth-child(4n+1) {
   clear: both; }
 
 article.page, article.post, article.event {
@@ -1133,10 +1133,10 @@ input[type=submit]:hover, a.button:hover {
 nav a {
   border: inherit; }
 
-.box-post a, .box-event a, .site-branding a {
+.box-post a, .box-event a, .box-month a, .site-branding a {
   border: none;
   color: inherit; }
-.box-post a:visited, .box-event a:visited, .site-branding a:visited {
+.box-post a:visited, .box-event a:visited, .box-month a:visited, .site-branding a:visited {
   color: inherit; }
 
 /* Sections */
@@ -1296,6 +1296,11 @@ nav a {
 
 .haut-de-seine-logo {
   background-image: url(); }
+
+.box-month h2 {
+  text-align: right;
+  border-right: 3px solid black;
+  padding: 10px; }
 
 .filters {
   margin-top: -40px;

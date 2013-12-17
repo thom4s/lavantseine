@@ -18,14 +18,24 @@ get_header(); ?>
 			<div class="next-events">
 
 				<?php
+					$today = time();
+
 					// Query last fourth events (event post type)
 					$args = array(
-						'post_type' => 'event',
-						'posts_per_page' => '4',
-						'meta_key' => 'eventDetail_repeatable-date',
-						'orderby' => 'meta_value',
-						'order' => 'ASC'
+					   	'post_type' => 'event',
+						'posts_per_page' => '4',   
+					   	'meta_key' => 'eventDetail_first_date',
+					   	'orderby' => 'meta_value_num',
+					   	'order' => 'ASC',
+					   	'meta_query' => array(
+					       	array(
+					           'key' => 'eventDetail_first_date',
+					           'value' => $today,
+					           'compare' => '>=',
+					        )
+					    )
 					);
+
 					$query = new WP_Query( $args );
 				?>
 
@@ -35,8 +45,6 @@ get_header(); ?>
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 						<?php
-							/* Include the Post-Format-specific template for the content.
-							 */
 							get_template_part( 'boxes', get_post_format() );
 						?>
 

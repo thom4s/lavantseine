@@ -29,7 +29,7 @@ $event_details_fields = array(
     ),
     array(  
         'label'=> 'Texte 2',  
-        'desc'  => '',  
+        'desc'  => 'le texte à droite dans la page de l\'événement',  
         'id'    => $prefix.'text2',  
         'type'  => 'textarea'  
     ),  
@@ -50,40 +50,46 @@ $event_details_fields = array(
         'desc'  => '',  
         'id'    => $prefix.'duration',  
         'type'  => 'text'  
-    ),  
+    ), 
     array(  
         'label'=> 'Dates',  
-        'desc'  => '',  
+        'desc'  => 'Dates en texte plein. Exemple : Les 4 et 6 janvier 2014.',  
         'id'    => $prefix.'dates',  
         'type'  => 'text' 
     ),
     array(  
-	    'label' => 'Dates de représentation',  
-	    'desc'  => '',  
-	    'id'    => $prefix.'repeatable-date',  
-	    'type'  => 'repeatable-date'  
-	),
-    array(  
-        'label'=> 'Heure',  
-        'desc'  => '',  
-        'id'    => $prefix.'hour',  
-        'type'  => 'text' 
+        'label' => 'Première date et Heure de représentation',  
+        'desc'  => 'Renseigner la date et horaire au format 20.05.2014 20:00',  
+        'id'    => $prefix.'first_date',  
+        'type'  => 'text-date'  
     ),
     array(  
+        'label' => 'Dernière date et Heure de représentation',  
+        'desc'  => 'Renseigner la date et horaire au format 20.05.2014 20:00',  
+        'id'    => $prefix.'last_date',  
+        'type'  => 'text-date'  
+    ),
+    array( 
+	    'label' => 'Autres Dates et Horaires de représentation',  
+	    'desc'  => 'Ajouter chaque date et horaire au format 20.05.2014 20:00',  
+	    'id'    => $prefix.'other_dates',  
+	    'type'  => 'repeatable-text-date'  
+	),
+    array(  
         'label'=> 'Lien revendeur',  
-        'desc'  => '',  
+        'desc'  => 'Lien vers l\'achat billet, avec le http://....',  
         'id'    => $prefix.'dealer-link',  
         'type'  => 'text' 
     ),
     array(  
         'label'=> 'Nom revendeur',  
-        'desc'  => '',  
+        'desc'  => 'Digitiket / FNAC / etc.',  
         'id'    => $prefix.'dealer-name',  
         'type'  => 'text' 
     ),
     array(  
         'name'  => 'Image Portrait',  
-        'desc'  => 'Image Portrait',  
+        'desc'  => 'Emplacement affiche dans la page de l\'événement',  
         'id'    => $prefix.'portraitMedia',  
         'type'  => 'image' 
     )
@@ -108,12 +114,45 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
                 switch($field['type']) {  
 
                 	// text  
-					case 'text':  
+					case 'text':
 					    echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$meta.'" size="30" /> 
 					        <br /><span class="description">'.$field['desc'].'</span>';  
 					break; 
 
-					// textarea  
+                    // text-date  
+                    case 'text-date':
+                        if ($meta) {
+                            $clean_date = date("d.m.Y G:i", $meta );
+                            echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$clean_date.'" size="30" /> 
+                            <br /><span class="description">'.$field['desc'].'</span>'; 
+                        } else {
+                        echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="" size="30" /> 
+                            <br /><span class="description">'.$field['desc'].'</span>';
+                        }
+                    break; 
+
+                    // repeatable text
+                    case 'repeatable-text-date':
+                        echo '<ul id="'.$field['id'].'-repeatable" class="custom_repeatable">';  
+                        $i = 0;  
+                        if ($meta) {  
+                            foreach($meta as $value) { 
+                                $clean_date = date("d.m.Y G:i", $value);
+                                echo '<li><span class="sort hndle">|||</span> 
+                                            <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="'.$clean_date.'" size="30" /> 
+                                            <a class="repeatable-remove button" href="#">-</a></li>';  
+                                $i++;  
+                            }  
+                        } else { 
+                            echo '<li><span class="sort hndle">|||</span> 
+                                        <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="" size="30" /> 
+                                        <a class="repeatable-remove button" href="#">-</a></li>';  
+                        }  
+                        echo '</ul> 
+                            <a class="repeatable-add button" href="#">+</a> | <span class="description">'.$field['desc'].'</span>';     
+                    break;  
+
+                    					// textarea  
 					case 'textarea':  
 					    echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="60" rows="4">'.$meta.'</textarea> 
 					        <br /><span class="description">'.$field['desc'].'</span>';  
@@ -141,9 +180,8 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 					break;			
 
 					// repeatable text
-					case 'repeatable-text':  
-					    echo '<a class="repeatable-add button" href="#">+</a> 
-					            <ul id="'.$field['id'].'-repeatable" class="custom_repeatable">';  
+					case 'repeatable-text':
+					    echo '<ul id="'.$field['id'].'-other-dates" class="custom_repeatable">';  
 					    $i = 0;  
 					    if ($meta) {  
 					        foreach($meta as $row) {  
@@ -158,7 +196,7 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 					                    <a class="repeatable-remove button" href="#">-</a></li>';  
 					    }  
 					    echo '</ul> 
-					        <span class="description">'.$field['desc'].'</span>';  
+					        <a class="repeatable-add button" href="#">+</a> | <span class="description">'.$field['desc'].'</span>';     
 					break;  
 
 					// repeatable date
@@ -185,8 +223,8 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 
                     // image  
                     case 'image':  
-                        $image = get_template_directory_uri().'/images/image.png';    
-                        echo '<span class="custom_default_image" style="display:none">'.$image.'</span>';  
+                        // $image = get_template_directory_uri().'/images/image.png';    
+                        // echo '<span class="custom_default_image" style="display:none">'.$image.'</span>';  
                         if ($meta) { $image = wp_get_attachment_image_src($meta, 'medium'); $image = $image[0]; }                 
                         echo    '<input name="'.$field['id'].'" type="hidden" class="custom_upload_image" value="'.$meta.'" /> 
                                     <img src="'.$image.'" class="custom_preview_image" alt="" /><br /> 
@@ -208,7 +246,7 @@ function save_custom_meta($post_id) {
       
     // verify nonce  
     if (!wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__)))   
-        return $post_id;  
+        return $post_id;
     // check autosave  
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)  
         return $post_id;  
@@ -223,9 +261,26 @@ function save_custom_meta($post_id) {
     // loop through fields and save the data  
     foreach ($event_details_fields as $field) {  
         $old = get_post_meta($post_id, $field['id'], true);  
-        $new = $_POST[$field['id']];  
-        if ($new && $new != $old) {  
-            update_post_meta($post_id, $field['id'], $new);  
+        $new = $_POST[$field['id']]; 
+        if ($new && $new != $old) {
+            if ( $field['id'] == 'eventDetail_first_date' ) {
+                $updatefirstdate = strtotime( $new );
+                update_post_meta($post_id, $field['id'], $updatefirstdate );
+            }
+            elseif( $field['id'] == 'eventDetail_last_date' ) {
+                $updatelastdate = strtotime( $new );
+                update_post_meta($post_id, $field['id'], $updatelastdate );
+            }
+            elseif( $field['id'] == 'eventDetail_other_dates' ) {
+                foreach ($new as $value) {
+                    $updateotherdate = strtotime( $value );
+                    update_post_meta($post_id, $field['id'], $updateotherdate );
+                }
+            }
+            else {
+                update_post_meta($post_id, $field['id'], $new); 
+            }
+             
         } elseif ('' == $new && $old) {  
             delete_post_meta($post_id, $field['id'], $old);  
         }  

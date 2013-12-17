@@ -1,12 +1,19 @@
 
 
+.box-month {
+	@extend .box-event;
+	h2 {
+		text-align: right;
+		border-right: 3px solid $black;
+		padding: $baseLineHeight / 2;
+	}
+}
+
 .filters {
 	@extend .navigation-group;
 	margin-top: - $baseLineHeight * 2;
 	margin-bottom: $baseLineHeight * 1;
 }
-
-
 
 
 .awpqsf_class,

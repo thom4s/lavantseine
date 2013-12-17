@@ -21,29 +21,42 @@
 				<div class="event-tags">
 					<?php
 						setlocale(LC_TIME, "fr_FR");
+
+
 						$post_meta_data = get_post_custom($post->ID);
 			
 						$tags = wp_get_post_terms($post->ID, array('discipline', 'rdv'), array("fields" => "all"));
 
 						$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
-						$event_hour = get_post_meta( $post->ID, 'eventDetail_hour', true );
 
 						$event_duration = get_post_meta( $post->ID, 'eventDetail_duration', true );
 						$event_text2 = get_post_meta( $post->ID, 'eventDetail_text2', true );
 
-						$event_repeatable_date = unserialize($post_meta_data['eventDetail_repeatable-date'][0]);
+						$event_first_date = get_post_meta( $post->ID, 'eventDetail_first_date', true );
+						$event_last_date = get_post_meta( $post->ID, 'eventDetail_last_date', true );
+						$event_other_dates = unserialize($post_meta_data['eventDetail_other_dates'][0]);
 
 						$event_landscape_media = get_post_meta( $post->ID, 'eventDetail_landscapeMedia', true );
 						?>
 						
 
-						<?php if ( $event_dates ) : echo "<span class='date-main'>". $event_dates . $event_hour ."</span>" ; endif; ?>
+						<?php if ( $event_dates ) : echo "<span class='date-main'>". $event_dates ."</span>" ; endif; ?>
 
-						<?php if ( $event_repeatable_date ) : 
-							echo '<ul class="event-repeatable-dates">';  
-							foreach ($event_repeatable_date as $date) {  
-							    echo '<li>'. strftime('%A %e %b', strtotime($date) ) .'.</li>';  
-							}  
+						<?php if ( $event_first_date ) : 
+							echo '<ul class="event-repeatable-dates">';
+							    echo '<li>'. strftime('%A %e %b - %kh%M', $event_first_date ) .'.</li>'; 
+
+							if ( $event_other_dates ) : 
+								echo '<ul class="event-repeatable-dates">';
+								foreach ($event_other_dates as $date) {  
+								    echo '<li>'. strftime('%A %e %b - %kh%M', $date ) .'.</li>';  
+								}  
+							endif; 
+
+							if ( $event_last_date ) : 
+							    echo '<li>'. strftime('%A %e %b - %kh%M', $event_last_date ) .'.</li>'; 							    
+							endif;
+
 							echo '</ul>';
 						endif; ?>
 

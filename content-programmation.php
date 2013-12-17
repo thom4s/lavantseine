@@ -15,12 +15,19 @@
 
 					// Query events to come
 					$args = array(
-						'post_type' 	=> 'event',
-						'post_count' 	=> '',
-						'meta_key' => 'eventDetail_repeatable-date',
-						'orderby' => 'meta_value',
-						'order' => 'ASC'
+					   	'post_type' => 'event',
+					   	'meta_key' => 'eventDetail_first_date',
+					   	'orderby' => 'meta_value_num',
+					   	'order' => 'ASC',
+					   	'meta_query' => array(
+					       	array(
+					           'key' => 'eventDetail_first_date',
+					           'value' => $today,
+					           'compare' => '>=',
+					        )
+					    )
 					);
+
 					$query = new WP_Query( $args );
 				?>
 
@@ -29,25 +36,19 @@
 					<?php /* Start the Loop */ ?>
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-
-
-
 						<?php 
 
-							// test if month is previous month and display
-							// script from mahi-mahi on mep wptheme
+							$event_first_date = get_post_meta( $post->ID, 'eventDetail_first_date', true );
+							$month = date( 'Y/m', $event_first_date );
 
-							if ( preg_match("#\d+\-\d+?#", get_query_var('quand') ) ):
-								$date = get_query_var('quand');
-							else:
-								$date = get_query_var('quand').'-01-01';
-							endif;
-
-							$month = date('Y/m', max(strtotime($date), strtotime(get_post_meta(get_the_ID(), 'eventDetail_repeatable-date', true))));
+							// Get Month of present event  $event_date
+							// test if egal at previous month  $previous_month
+							// if event month == previous month, go on
+							// if event month != previous month, display event month
 
 							if ( $previous_month != $month ):
 								?>
-								<div class="box<?php echo '-'; echo get_post_type(); ?>" data-date="<?php print strtotime($month.'/01') ?>">
+								<div class="box-month" data-date="<?php print strtotime($month.'/01') ?>">
 									<h2 class="entry-title">
 										<?php print strftime('%B %Y', strtotime($month.'/01')) ?>
 									</h2>
@@ -55,19 +56,12 @@
 								<?php
 								$previous_month = $month;
 							endif;
-
 						?>
-
-
-
-
 
 						<?php
 							// get box model for each post()
 							get_template_part( 'boxes', get_post_format() );
 						?>
-
-
 
 					<?php endwhile; ?>
 
