@@ -65,7 +65,7 @@ $event_details_fields = array(
     ),
     array(  
         'label' => 'Dernière date et Heure de représentation',  
-        'desc'  => 'Renseigner la date et horaire au format 20.05.2014 20:00',  
+        'desc'  => 'Laisser vide si une seule date (à la sauvegarde, cette date sera identique à la première date)',  
         'id'    => $prefix.'last_date',  
         'type'  => 'text-date'  
     ),
@@ -280,8 +280,14 @@ function save_custom_meta($post_id) {
             else {
                 update_post_meta($post_id, $field['id'], $new); 
             }
-             
-        } elseif ('' == $new && $old) {  
+        } elseif ('' == $new && !$old ) {
+            if( $field['id'] == 'eventDetail_last_date' ) {
+                $firstdate = $_POST[ $event_details_fields[6]['id'] ];
+                // exit( var_dump( $event_details_fields[6]['id'] ) );
+                $updatefirstdate = strtotime( $firstdate );
+                update_post_meta($post_id, $field['id'], $updatefirstdate );
+            }
+        } elseif ('' == $new && $old) { 
             delete_post_meta($post_id, $field['id'], $old);  
         }  
     } // end foreach  

@@ -176,29 +176,11 @@ get_header(); ?>
 
 			</div><!-- #main-magazine -->
 
-			<div id="categories-magazine" class=" transparent-background">
+			<div id="magazine-filters" class="transparent-background">
 				<?php // display_prog_filter_menu(); ?>
 				<?php $magFilterID = get_option('magFilterID', '146'); ?>
 				<?php echo do_shortcode("[AjaxWPQSF id=". $magFilterID. " formtitle='0']"); ?>
 			</div><!-- .categories-magazine -->
-
-			<div id="categories-magazine" class=" transparent-background">
-				<h1>Au Sommaire</h1>
-				
-				<?php
-					$args = array(
-					  'orderby' => 'name',
-					  'parent' => 0
-					  );
-					$categories = get_categories( $args );
-					foreach ( $categories as $category ) {
-						echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a><br/>';
-					}
-					?>
-
-				
-			</div>
-
 
 
 		<div class="clearfix"></div>

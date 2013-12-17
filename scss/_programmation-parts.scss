@@ -5,40 +5,41 @@
 	h2 {
 		text-align: right;
 		border-right: 3px solid $black;
-		padding: $baseLineHeight / 2;
+		padding: 0 $baseLineHeight $baseLineHeight 0;
 	}
 }
 
-.filters {
+#prog-filters {
 	@extend .navigation-group;
 	margin-top: - $baseLineHeight * 2;
 	margin-bottom: $baseLineHeight * 1;
-}
 
+	.awpqsf_class,
+	.filter-column {
+		@include box-sizing();
+		width: 15%;
+		margin-left: 2%;
+		padding: 0.5em;
+		float: left;
 
-.awpqsf_class,
-.filter-column {
-	@include box-sizing();
-	width: 15%;
-	margin-left: 2%;
-	padding: 0.5em;
-	float: left;
+		&:first-child{
+			margin-left: 0;
+		}
 
-	&:first-child{
-		margin-left: 0;
-	}
-
-	ul {
-		display: inline-block;
-		margin-bottom: $baseLineHeight;
-	}
-	li {
-		&:before {
-			content: '⊕ ';
+		ul {
+			display: inline-block;
+			margin-bottom: $baseLineHeight;
+		}
+		li {
+			&:before {
+				content: '⊕ ';
+			}
+		}
+		a {
+			border: inherit;
+			color: inherit;
 		}
 	}
-	a {
-		border: inherit;
-		color: inherit;
-	}
 }
+
+

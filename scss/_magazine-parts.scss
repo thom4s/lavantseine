@@ -7,10 +7,28 @@
 	@extend .last;
 }
 
-#categories-magazine {
+#magazine-filters {
 	@extend .col-1;
 	@extend .first;
 	margin-top: $baseLineHeight * 6;
+
+	.awpqsf_class,
+	.filter-column {
+		@include box-sizing();
+		margin-left: 2%;
+		padding: 0.5em;
+		float: left;
+
+		ul {
+			display: inline-block;
+			margin-bottom: $baseLineHeight;
+		}
+		a {
+			border: inherit;
+			color: inherit;
+		}
+	}
+
 }
 
 

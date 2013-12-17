@@ -11,17 +11,19 @@
 			<div class="next-events">
 
 				<?php
+					$today = time();
 					$previous_month = false;
 
 					// Query events to come
 					$args = array(
 					   	'post_type' => 'event',
+					   	'posts_per_page' => '-1', 
 					   	'meta_key' => 'eventDetail_first_date',
 					   	'orderby' => 'meta_value_num',
 					   	'order' => 'ASC',
 					   	'meta_query' => array(
 					       	array(
-					           'key' => 'eventDetail_first_date',
+					           'key' => 'eventDetail_last_date',
 					           'value' => $today,
 					           'compare' => '>=',
 					        )

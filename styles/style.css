@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .entry-contact-aside, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
+.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .entry-contact-aside, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #magazine-filters {
   width: 176.4px;
   position: relative;
   float: left;
@@ -563,7 +563,7 @@ table {
   float: left;
   margin-left: 24.5px; }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .column.entry-contact-aside:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .column.entry-contact-aside:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#magazine-filters:first-child {
   margin: 0; }
 
 /* Also, don't forget to add this: */
@@ -578,7 +578,7 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #magazine-filters {
   margin-left: 0; }
 
 .last, .entry-content, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
@@ -701,13 +701,13 @@ article.page, article.post, article.event {
 /*
  * Common stuffs for all navigations
  */
-.navigation-group, .filters, .main-navigation, .shortcut-navigation, .picto {
+.navigation-group, #prog-filters, .main-navigation, .shortcut-navigation, .picto {
   display: inline-block; }
-.navigation-group ul, .filters ul, .main-navigation ul, .shortcut-navigation ul, .picto ul {
+.navigation-group ul, #prog-filters ul, .main-navigation ul, .shortcut-navigation ul, .picto ul {
   list-style: none;
   margin: 0;
   padding-left: 0; }
-.navigation-group li, .filters li, .main-navigation li, .shortcut-navigation li, .picto li {
+.navigation-group li, #prog-filters li, .main-navigation li, .shortcut-navigation li, .picto li {
   float: left; }
 
 .picto a {
@@ -718,7 +718,7 @@ article.page, article.post, article.event {
   width: 24px;
   height: 24px; }
 
-.navigation-group, .filters {
+.navigation-group, #prog-filters {
   width: 661.1px;
   margin-top: 20px;
   margin-left: 118px; }
@@ -1300,13 +1300,12 @@ nav a {
 .box-month h2 {
   text-align: right;
   border-right: 3px solid black;
-  padding: 10px; }
+  padding: 0 20px 20px 0; }
 
-.filters {
+#prog-filters {
   margin-top: -40px;
   margin-bottom: 20px; }
-
-.awpqsf_class, .filter-column {
+#prog-filters .awpqsf_class, #prog-filters .filter-column {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1315,14 +1314,14 @@ nav a {
   margin-left: 2%;
   padding: 0.5em;
   float: left; }
-.awpqsf_class:first-child, .filter-column:first-child {
+#prog-filters .awpqsf_class:first-child, #prog-filters .filter-column:first-child {
   margin-left: 0; }
-.awpqsf_class ul, .filter-column ul {
+#prog-filters .awpqsf_class ul, #prog-filters .filter-column ul {
   display: inline-block;
   margin-bottom: 20px; }
-.awpqsf_class li:before, .filter-column li:before {
+#prog-filters .awpqsf_class li:before, #prog-filters .filter-column li:before {
   content: '⊕ '; }
-.awpqsf_class a, .filter-column a {
+#prog-filters .awpqsf_class a, #prog-filters .filter-column a {
   border: inherit;
   color: inherit; }
 
@@ -1334,8 +1333,22 @@ nav a {
 #main-magazine:after {
   clear: both; }
 
-#categories-magazine {
+#magazine-filters {
   margin-top: 120px; }
+#magazine-filters .awpqsf_class, #magazine-filters .filter-column {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin-left: 2%;
+  padding: 0.5em;
+  float: left; }
+#magazine-filters .awpqsf_class ul, #magazine-filters .filter-column ul {
+  display: inline-block;
+  margin-bottom: 20px; }
+#magazine-filters .awpqsf_class a, #magazine-filters .filter-column a {
+  border: inherit;
+  color: inherit; }
 
 .featured-post {
   margin-bottom: 20px; }
