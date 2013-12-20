@@ -11,7 +11,6 @@
 			<div class="next-events">
 
 				<?php
-					$today = time();
 					$previous_month = false;
 
 					// Query events to come
@@ -23,7 +22,7 @@
 					   	'order' => 'ASC',
 					   	'meta_query' => array(
 					       	array(
-					           'key' => 'eventDetail_last_date',
+					           'key' => 'eventDetail_first_date',
 					           'value' => $today,
 					           'compare' => '>=',
 					        )

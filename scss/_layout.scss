@@ -1,6 +1,6 @@
 html {  }
 
-body {  }
+body { background-size: cover; }
 
 /*
  *	Wrap the all thing
@@ -75,6 +75,7 @@ body {  }
 			position: absolute;
 			top: 20px;
 			right: 0;
+			z-index: 20;
 		
 			@include breakpoint(medium) {
 				width: 100%;
@@ -90,7 +91,7 @@ body {  }
 	 */
 	#mastfooter {
 		@extend .plain-width;
-		z-index: -50;
+		z-index: 5;
 		margin: $baseLineHeight 0;
 		padding: $bigBlocsPadding;
 	}

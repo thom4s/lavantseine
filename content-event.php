@@ -22,20 +22,16 @@
 					<?php
 						setlocale(LC_TIME, "fr_FR");
 
-
 						$post_meta_data = get_post_custom($post->ID);
-			
+		
 						$tags = wp_get_post_terms($post->ID, array('discipline', 'rdv'), array("fields" => "all"));
 
 						$event_dates = get_post_meta( $post->ID, 'eventDetail_dates', true );
-
 						$event_duration = get_post_meta( $post->ID, 'eventDetail_duration', true );
 						$event_text2 = get_post_meta( $post->ID, 'eventDetail_text2', true );
-
-						$event_first_date = get_post_meta( $post->ID, 'eventDetail_first_date', true );
-						$event_last_date = get_post_meta( $post->ID, 'eventDetail_last_date', true );
+						$event_first_date = htmlspecialchars( get_post_meta( $post->ID, 'eventDetail_first_date', true ) );
+						$event_last_date = htmlspecialchars( get_post_meta( $post->ID, 'eventDetail_last_date', true ) );
 						$event_other_dates = unserialize($post_meta_data['eventDetail_other_dates'][0]);
-
 						$event_landscape_media = get_post_meta( $post->ID, 'eventDetail_landscapeMedia', true );
 						?>
 						
@@ -53,7 +49,7 @@
 								}  
 							endif; 
 
-							if ( $event_last_date ) : 
+							if ( $event_last_date && $event_last_date != $event_first_date ) : 
 							    echo '<li>'. strftime('%A %e %b - %kh%M', $event_last_date ) .'.</li>'; 							    
 							endif;
 

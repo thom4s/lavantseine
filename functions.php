@@ -12,6 +12,7 @@ define('INSTAGRAM_URL','http://instagram.com/avantseine');
 define('GOOGLEPLUS_URL','https://twitter.com/AvantSeine');
 define('VIDEOCHANNEL_URL','https://twitter.com/AvantSeine');
 
+setlocale(LC_TIME, "fr_FR");
 
 
 if ( ! function_exists( 'lavantseine_setup' ) ) :
@@ -120,6 +121,7 @@ function lavantseine_scripts() {
 	wp_enqueue_script( 'lavantseine-scripts', get_template_directory_uri() . '/js/scripts.js', array(), false, true );
 
 	wp_enqueue_script( 'salvatorre', get_template_directory_uri() . '/js/salvatorre.js', array(), false, true );
+	wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/bxslider.js', array(), false, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

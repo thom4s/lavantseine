@@ -1,6 +1,5 @@
 
 
-
 jQuery(function($) {
 	$(document).ready(function() {
 
@@ -22,13 +21,21 @@ jQuery(function($) {
 		});
 		
 
-
 		// Display Event distribution & mentions
 		$('#display-entry-mentions a').on('click', function(event) {
 			event.preventDefault();
 			$('#inner-entry-mentions').toggle('fast');
 		});
 
+		// Slide Home
+		// https://github.com/wandoledzep/bxslider-4
+		$('.bxslider').bxSlider({
+		  pager: false,
+		  controls: false,
+		  auto: true,
+		  adaptiveHeight: true,
+
+		});
 	});
 });
 
