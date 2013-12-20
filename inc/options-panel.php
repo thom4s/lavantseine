@@ -45,7 +45,9 @@ function render_panel() {
 								<label for="">Message</label>
 							</th>
 							<td>
-								<textarea row="10" id="alerteMessage" name="options[alerteMessage]" value=""><?php echo get_option('alerteMessage', ''); ?></textarea>
+								<textarea row="100" cols="100" id="alerteMessage" name="options[alerteMessage]" value=""><?php echo get_option('alerteMessage', ''); ?></textarea>
+								<br /><span class="description">pour intégrer des balises dans le texte d'alerte, utilisez : </span>
+								<pre>&lt;span style="color: #f00; font-size: 1.2em;"&gt;En rouge et plus gros&lt;/span&gt;</pre>
 							</td>
 						</tr>
 						<tr valign="top">

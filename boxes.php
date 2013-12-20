@@ -68,7 +68,7 @@
 
 
 	<footer class="entry-meta">
-		<?php if ( 'event' == get_post_type() ) : ?>
+		<?php if ( 'event' == get_post_type() && !is_page('programmation') ) : ?>
 			<?php 
 				$terms = wp_get_post_terms( $post->ID, array('discipline', 'rdv'), $args );
 				$count = count($terms);

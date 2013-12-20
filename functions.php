@@ -152,7 +152,7 @@ function lavantseine_customize_css()
          	<?php $saisonColor = get_theme_mod('saison_color'); ?>
             .saisoned-on-color { color: <?php echo $saisonColor; ?> !important; }
             .saisoned-on-bg { background-color:<?php echo $saisonColor; ?> !important; }
-            h3, h4 { color:<?php echo $saisonColor; ?> !important; }
+            .box-month h2, h3, h4 { color:<?php echo $saisonColor; ?> !important; }
             .main-nav .current_page_item > a, .current-menu-ancestor > a, .main-nav .current-menu-item > a { color:<?php echo $saisonColor; ?> !important; }
             a.button, input[type=submit] { background-color:<?php echo $saisonColor; ?> !important; }
          </style>
@@ -278,12 +278,6 @@ function customize_output( $results, $args, $id, $getdata ){
 				echo 'nothing';
 			}
 
-
-		
-
-
-
-
 		}
 	}
 
@@ -297,7 +291,36 @@ function customize_output( $results, $args, $id, $getdata ){
 
 
 
+add_action('init','random_add_rewrite');
+function random_add_rewrite() {
+       global $wp;
+       $wp->add_query_var('random');
+       add_rewrite_rule('random/?$', 'index.php?random=1', 'top');
+}
 
+add_action('template_redirect','random_template');
+function random_template() {
+        if (get_query_var('random') == 1) {
+       		$args= array(
+				'post_type' => 'event',
+				'orderby'	=> 'rand',
+				'numberposts'=> '1',
+				'meta_query' => array(
+			       	array(
+			           'key' => 'eventDetail_first_date',
+			           'value' => $today,
+			           'compare' => '>=',
+			        )
+			   	)
+       		);
+            $posts = get_posts($args);
+            foreach($posts as $post) {
+                $link = get_permalink($post);
+            }
+            wp_redirect($link,307);
+            exit;
+        }
+}
 
 
 

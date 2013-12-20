@@ -64,12 +64,15 @@
 			<!-- #site-navigation -->
 		</div><!-- .navigation-group -->
 
-		<?php $showAlert = get_option('showAlert', ''); ?>
-		<?php if ( $showAlert == 'checked' ) : ?>
-			<div id="alert" class="message">
-				<p><?php echo get_option('alerteMessage', ''); ?></p>
-			</div>
+
+		<?php if ( is_home() ) : ?>
+			<?php $showAlert = get_option('showAlert', ''); ?>
+			<?php if ( $showAlert == 'checked' ) : ?>
+				<div id="alert" class="message">
+					<p><?php echo get_option('alerteMessage', ''); ?></p>
+				</div>
+			<?php endif; ?>		
 		<?php endif; ?>		
-	
+
 	</header><!-- #masthead -->
 	<div id="content" class="site-content">

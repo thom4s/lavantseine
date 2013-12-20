@@ -1,9 +1,9 @@
 #alert {
 	@include box-sizing();
-	width: 300px;
-	margin-left: 118px;
+	@extend .navigation-group;
+	margin-top: $baseLineHeight / 2;
 	padding: $boxPadding;
 	background: $white;
-	color: $red;
-	font-size: 1.2em;
-}
+	color: $black;
+	font-size: 1em;
+} 

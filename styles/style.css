@@ -705,13 +705,13 @@ article.page, article.post, article.event {
 /*
  * Common stuffs for all navigations
  */
-.navigation-group, #prog-filters, .main-navigation, .shortcut-navigation, .picto {
+.navigation-group, #prog-filters, #alert, .main-navigation, .shortcut-navigation, .picto {
   display: inline-block; }
-.navigation-group ul, #prog-filters ul, .main-navigation ul, .shortcut-navigation ul, .picto ul {
+.navigation-group ul, #prog-filters ul, #alert ul, .main-navigation ul, .shortcut-navigation ul, .picto ul {
   list-style: none;
   margin: 0;
   padding-left: 0; }
-.navigation-group li, #prog-filters li, .main-navigation li, .shortcut-navigation li, .picto li {
+.navigation-group li, #prog-filters li, #alert li, .main-navigation li, .shortcut-navigation li, .picto li {
   float: left; }
 
 .picto a {
@@ -722,7 +722,7 @@ article.page, article.post, article.event {
   width: 24px;
   height: 24px; }
 
-.navigation-group, #prog-filters {
+.navigation-group, #prog-filters, #alert {
   width: 661.1px;
   margin-top: 20px;
   margin-left: 118px; }
@@ -1329,6 +1329,9 @@ nav a {
   border: inherit;
   color: inherit; }
 
+.event-repeatable-dates {
+  font-weight: bold; }
+
 #main-magazine {
   *zoom: 1; }
 #main-magazine:before, #main-magazine:after {
@@ -1372,12 +1375,11 @@ nav a {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  width: 300px;
-  margin-left: 118px;
+  margin-top: 10px;
   padding: 0.2em 0.3em;
   background: white;
-  color: #ba3925;
-  font-size: 1.2em; }
+  color: black;
+  font-size: 1em; }
 
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider

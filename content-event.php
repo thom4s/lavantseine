@@ -36,7 +36,7 @@
 						?>
 						
 
-						<?php if ( $event_dates ) : echo "<span class='date-main'>". $event_dates ."</span>" ; endif; ?>
+						<?php // if ( $event_dates ) : echo "<span class='date-main'>". $event_dates ."</span>" ; endif; ?>
 
 						<?php if ( $event_first_date ) : 
 							echo '<ul class="event-repeatable-dates">';

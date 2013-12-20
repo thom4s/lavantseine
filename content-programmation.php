@@ -34,7 +34,6 @@
 
 				<?php if ( $query->have_posts() ) : ?>
 
-					<?php /* Start the Loop */ ?>
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 						<?php 
@@ -42,11 +41,7 @@
 							$event_first_date = get_post_meta( $post->ID, 'eventDetail_first_date', true );
 							$month = date( 'Y/m', $event_first_date );
 
-							// Get Month of present event  $event_date
-							// test if egal at previous month  $previous_month
-							// if event month == previous month, go on
-							// if event month != previous month, display event month
-
+							// Test month of event. Display Month Date
 							if ( $previous_month != $month ):
 								?>
 								<div class="box-month" data-date="<?php print strtotime($month.'/01') ?>">
@@ -59,10 +54,7 @@
 							endif;
 						?>
 
-						<?php
-							// get box model for each post()
-							get_template_part( 'boxes', get_post_format() );
-						?>
+						<?php get_template_part( 'boxes', get_post_format() ); ?>
 
 					<?php endwhile; ?>
 
