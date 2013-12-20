@@ -34,7 +34,7 @@ jQuery(function($) {
 		  controls: false,
 		  auto: true,
 		  adaptiveHeight: true,
-
+		  infiniteLoop: true
 		});
 	});
 });

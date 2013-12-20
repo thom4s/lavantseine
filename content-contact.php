@@ -28,13 +28,9 @@
 	</div><!-- .entry-content -->
 
 	<div class="entry-contact-aside">
-		<h2>Rejoindre la Conversation</h2>
-
-		<?php // get_sidebar( 'contact-widgets' ); ?>
-
-		<div class="fb-activity" data-site="<?php echo FB_URL; ?>" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
-
-		<a class="twitter-timeline" data-tweet-limit="5" height="300" ref="https://twitter.com/AvantSeine" data-widget-id="411520589828870144">Tweets de @AvantSeine</a>
+		<?php $contact_content = get_post_meta( $post->ID, 'pageDetail_contact', true ); ?>
+		<?php echo '<p>'. $contact_content .'</p>'; ?>
+		
 	</div><!-- .contact-aside -->
 
 

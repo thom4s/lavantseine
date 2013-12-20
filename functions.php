@@ -178,6 +178,7 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
  */
 require get_template_directory() . '/inc/event-metas.php';
 require get_template_directory() . '/inc/post-metas.php';
+require get_template_directory() . '/inc/page-metas.php';
 
 /**
  * Load Options Panel.
@@ -245,7 +246,6 @@ class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
         $output .= '</ul></div>';
     }
 }
-
 
 
 
