@@ -22,11 +22,17 @@ add_action('add_meta_boxes', 'add_page_meta_box');
 $prefix = 'pageDetail_';  
 $page_details_fields = array(  
     array(  
-        'label'=> 'Contenu pour page contact',  
-        'desc'  => 'apparait sur colonne de droite',  
-        'id'    => $prefix.'contact',  
+        'label'=> 'Introduction de la page',  
+        'desc'  => 'Apparait en haut au dessus du titre.<br> Utilisez les balises html pour mise en page : &lth2>Mon titre h2&lt/h2>, &lt;p>Mon paragraphe... &lt;/p>, &lt;span style="color: #F00">mon texte en rouge...&lt;/span>, etc.',  
+        'id'    => $prefix.'intro',  
         'type'  => 'textarea'  
-    )   
+    ),
+    array(  
+        'label'=> 'Contenu de la partie droite',  
+        'desc'  => 'Apparait sur colonne de droite.<br>Utilisez les balises html pour mise en page : &lt;p>Mon paragraphe... &lt;/p>, &lt;span style="color: #F00">mon texte en rouge...&lt;/span>, etc.',  
+        'id'    => $prefix.'rightCol',  
+        'type'  => 'textarea'  
+    )    
 );  
 
 
@@ -55,7 +61,7 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 
 					// textarea  
 					case 'textarea':  
-					    echo '<textarea name="'. $field['id'] .'" id="'. $field['id']. '" cols="60" rows="4">'. $meta .'</textarea> 
+					    echo '<textarea class="wp-editor-area" name="'. $field['id'] .'" id="'. $field['id']. '" cols="60" rows="4">'. $meta .'</textarea> 
 					        <br /><span class="description">'. $field['desc'] .'</span>';  
 					break;  
 

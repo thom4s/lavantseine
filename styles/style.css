@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .entry-contact-aside, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #magazine-filters {
+.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #magazine-filters {
   width: 176.4px;
   position: relative;
   float: left;
@@ -462,7 +462,7 @@ table {
 .suffix-1 {
   margin-right: 200.9px; }
 
-.col-2, .entry-contact-content, .last-event-post {
+.col-2, .entry-practical-content, .entry-practical-aside, .last-event-post {
   width: 377.3px;
   position: relative;
   float: left;
@@ -483,7 +483,7 @@ table {
 .suffix-2 {
   margin-right: 401.8px; }
 
-.col-3, .entry-content, .event .entry-header, .event .entry-mentions, #main-magazine {
+.col-3, .entry-content, .entry-practical-header .entry-extract, .event .entry-header, .event .entry-mentions, #main-magazine {
   width: 578.2px;
   position: relative;
   float: left;
@@ -563,7 +563,7 @@ table {
   float: left;
   margin-left: 24.5px; }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .column.entry-contact-aside:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#magazine-filters:first-child {
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#magazine-filters:first-child {
   margin: 0; }
 
 /* Also, don't forget to add this: */
@@ -578,10 +578,10 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #magazine-filters {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .entry-practical-content, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #magazine-filters {
   margin-left: 0; }
 
-.last, .entry-content, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
+.last, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
   float: right; }
 
 .plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
@@ -1035,13 +1035,13 @@ input[type=submit] {
   display: none; }
 
 .wpcf7-form input {
-  width: 300px; }
+  width: 100%; }
 .wpcf7-form textarea {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  width: 300px; }
+  width: 100%; }
 
 #awpqsf_id label {
   display: inline-block;
@@ -1206,8 +1206,22 @@ nav a {
 /**
  * Page
  */
-.entry-contact-content {
-  padding: 0; }
+.entry-practical-header {
+  margin-top: 20px; }
+
+.entry-practical-content {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 1em; }
+
+.entry-practical-aside {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 1em; }
 
 .twitter-timeline {
   /* Acceptable values are border, content, and padding - content is the default W3C model */

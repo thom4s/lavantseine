@@ -109,14 +109,27 @@
 	}
 }
 
-// Contact page Template
-.entry-contact-content {
-	@extend .col-2;
-	padding: 0;
+// Infos pratiques pages Template
+
+.entry-practical-header {
+	margin-top: $baseLineHeight;
+	.entry-extract {
+		@extend .col-3;
+		@extend .last;		
+	}
 }
 
-.entry-contact-aside {
-	@extend .col-1;
+.entry-practical-content {
+	@extend .col-2;
+	@extend .first;
+	@include box-sizing();
+	padding: $contentPadding;
+}
+
+.entry-practical-aside {
+	@extend .col-2;
+	@include box-sizing();
+	padding: $contentPadding;	
 }
 
 .twitter-timeline {

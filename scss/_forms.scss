@@ -83,11 +83,11 @@ input[type=submit] {
 // Contact form
 .wpcf7-form {
 	input {
-		width: 300px;
+		width: 100%;
 	}
 	textarea {
 		@include box-sizing();
-		width: 300px;
+		width: 100%;
 
 	}
 }

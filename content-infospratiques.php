@@ -8,16 +8,23 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php $page_intro = get_post_meta( $post->ID, 'pageDetail_intro', true ); ?>
+	<?php $page_right_col = get_post_meta( $post->ID, 'pageDetail_rightCol', true ); ?>
+
 	<div class="entry-media">
 		<?php the_post_thumbnail(''); ?>
 	</div>
 
-	<header class="entry-header">
+	<header class="entry-practical-header">
+		<div class="entry-extract">
+			<?php echo $page_intro; ?>
+		</div>
+		<div class="clearfix"></div>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
 
-	<div class="entry-contact-content">
+	<div class="entry-practical-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -27,11 +34,11 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<div class="entry-contact-aside">
-		<?php $contact_content = get_post_meta( $post->ID, 'pageDetail_contact', true ); ?>
-		<?php echo '<p>'. $contact_content .'</p>'; ?>
+	<div class="entry-practical-aside">
+
+		<?php echo $page_right_col; ?>
 		
-	</div><!-- .contact-aside -->
+	</div><!-- .practical-aside -->
 
 
 
