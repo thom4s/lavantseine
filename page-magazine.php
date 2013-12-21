@@ -7,7 +7,9 @@
  * @package lavantseine
  */
 
-get_header(); ?>
+get_header();
+$today = time();
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -62,27 +64,31 @@ get_header(); ?>
 				</div><!-- end .featured-post -->
 
 
-
-				<div class="last-event-post backgrounded-box">
 					<?php
 
 						// Query events to come
 						$args = array(
 							'post_type' 		=> 'event',
 							'posts_per_page' 	=> 1,
-							'meta_key' 			=> 'eventDetail_repeatable-date',
-							'orderby' 			=> 'meta_value',
-							'order' 			=> 'ASC'
+						   	'meta_key' => 'eventDetail_first_date',
+						   	'orderby' => 'meta_value_num',
+						   	'order' => 'ASC',
+						   	'meta_query' => array(
+						       	array(
+						           'key' => 'eventDetail_first_date',
+						           'value' => $today,
+						           'compare' => '>=',
+						        )
+						    )
 						);
 						$nextEvent = get_posts( $args );
 
 						foreach ( $nextEvent as $post ) : setup_postdata( $post ); ?>
-							
+
 							<?php array_push($exclude_ids, $post->ID); ?>
 							<?php $eventRelTagTerms = wp_get_post_terms( $post->ID, 'relational_tag' ); ?>
 							<?php $eventRelTag = $eventRelTagTerms[0]->slug; ?>
 
-							<h1>le prochain <b>Spectacle</b></h1>
 							<?php
 
 								// Query events to come
@@ -103,6 +109,10 @@ get_header(); ?>
 							?>
 
 							<?php foreach ($nextEventPost as $post) : ?>
+								<?php if($post) : ?>
+								<div class="last-event-post backgrounded-box">
+								<h1>le prochain <b>Spectacle</b></h1>
+
 								<?php array_push($exclude_ids, $post->ID); ?>
 
 								<div class="featured-content">
@@ -125,14 +135,14 @@ get_header(); ?>
 									?>
 								</div>
 								
-
-							<?php endforeach; ?>
+							</div><!-- end .last-event-post -->
+							<?php endif; endforeach; ?>
 
 
 						<?php endforeach; 
 						wp_reset_postdata();
 					?>
-				</div><!-- end .last-event-post -->
+
 
 
 
