@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #magazine-filters {
+.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
   width: 176.4px;
   position: relative;
   float: left;
@@ -563,7 +563,7 @@ table {
   float: left;
   margin-left: 24.5px; }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#magazine-filters:first-child {
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
   margin: 0; }
 
 /* Also, don't forget to add this: */
@@ -578,7 +578,7 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .entry-practical-content, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #magazine-filters {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .entry-practical-content, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
   margin-left: 0; }
 
 .last, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
@@ -905,8 +905,8 @@ aside h1, .last-event-post h1, #categories-magazine h1 {
   margin-left: -0.3em;
   padding-top: 0.5em; }
 
-#categories-magazine h1 {
-  margin-left: 0; }
+#categories-magazine font-family h1 {
+  margin-left: -12px; }
 
 h2 {
   font-size: 1.25em;
@@ -1354,22 +1354,30 @@ nav a {
 #main-magazine:after {
   clear: both; }
 
-#magazine-filters {
+#categories-magazine {
   margin-top: 120px; }
-#magazine-filters .awpqsf_class, #magazine-filters .filter-column {
+#categories-magazine .awpqsf_class, #categories-magazine .filter-column {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-left: 2%;
-  padding: 0.5em;
   float: left; }
-#magazine-filters .awpqsf_class ul, #magazine-filters .filter-column ul {
+#categories-magazine .awpqsf_class ul, #categories-magazine .filter-column ul {
+  list-style: none;
   display: inline-block;
+  clear: both;
   margin-bottom: 20px; }
-#magazine-filters .awpqsf_class a, #magazine-filters .filter-column a {
+#categories-magazine .awpqsf_class a, #categories-magazine .filter-column a {
   border: inherit;
   color: inherit; }
+#categories-magazine .children {
+  *zoom: 1; }
+#categories-magazine .children:before, #categories-magazine .children:after {
+  content: "";
+  display: table; }
+#categories-magazine .children:after {
+  clear: both; }
 
 .featured-post {
   margin-bottom: 20px; }

@@ -323,102 +323,46 @@ function random_template() {
 }
 
 
-
-
 /*
- * Display Programmation Filter menu
+ * Display the category menu on magazine template.
+ * method : get all top level terms and loop its children
  */
-function display_prog_filter_menu() {
-
+function display_mag_filter_menu() {
 	echo "<div class='filter-column'>";
-	echo "<h4>Rendez-vous</h4>";
-		$terms = get_terms("rdv");
-		 $count = count($terms);
-		 if ( $count > 0 ){
-		     echo "<ul>";
-		     foreach ( $terms as $term ) {
-		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
-		        
-		     }
-		     echo "</ul>";
-		 }
-	echo "</div>"; // end first column
+	echo "<h1>au <b>Sommaire</b></h1>";
 
+	$taxonomy = 'category'; 
+	$terms = get_terms( $taxonomy ); 
 
-	echo "<div class='filter-column'>";
+	// get all terms
+	foreach ($terms as $term) {
+		$parent = $term->parent;
 
-	echo "</div>"; // end second column
+		// foreach top level term
+		if ( $parent=='0' ) {
+			echo '<ul>'; 
+	
+		    $term_id = $term->term_id; 
+		    $term_link = get_term_link( $term, $taxonomy );
+		    $term_name = $term->name;
+		    $term_desc = $term->description;
 
+		    $children = get_terms('category', array( 'parent' => $term_id ) );
+		    foreach ($children as $child) {
+		     	$child_id = $child->term_id; 
+		    	$child_link = get_term_link( $child, $taxonomy );
+		    	$child_name = $child->name;
+		    	$child_desc = $child->description;
+				
+				echo '<li><a class="ccats" href="' . $child_link . '"><span class="label">' . $child_name . '</span></a></li>';
+		    } // end children foreach
 
-	echo "<div class='filter-column'>";
-	echo "<h4>Discipline</h4>";
-		$terms = get_terms("discipline");
-		$count = count($terms);
-		if ( $count > 0 ){
-		    echo "<ul>";
-		    foreach ( $terms as $term ) {
-		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
-		    }
-	    	echo "</ul>";
+		    echo '<li>> <a class="ccats" href="' . $term_link . '"><span class="label">' . $term_desc . '</span></a></li>';
 		}
-	echo "</div>"; // end third column
+		echo '</ul>';
+	} // end main foreach
 
+	echo "</div>"; // end column
 
-	echo "<div class='filter-column'>";
-
-	echo "</div>"; // end fourth column
-
-
-	echo "<div class='filter-column'>";
-	echo "<h4>Public</h4>";
-		$terms = get_terms("public");
-		$count = count($terms);
-		if ( $count > 0 ){
-		    echo "<ul>";
-		    foreach ( $terms as $term ) {
-		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
-		    }
-		    echo "</ul>";
-		}
-
-	echo "<h4>Tarif</h4>";
-		$terms = get_terms("tarif");
-		$count = count($terms);
-		if ( $count > 0 ){
-		    echo "<ul>";
-		    foreach ( $terms as $term ) {
-		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
-		    }
-		    echo "</ul>";
-		}
-	echo "</div>"; // end fifth column
-
-
-	echo "<div class='filter-column'>";
-	echo "<h4>Date</h4>";
-		$terms = get_terms("saison");
-		$count = count($terms);
-		if ( $count > 0 ){
-		    echo "<ul>";
-		    foreach ( $terms as $term ) {
-		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
-		    }
-		    echo "</ul>";
-		}
-
-	echo "<h4>Saison</h4>";
-		$terms = get_terms("saison");
-		$count = count($terms);
-		if ( $count > 0 ){
-		    echo "<ul>";
-		    foreach ( $terms as $term ) {
-		       echo "<li><a href='". get_term_link( $term ) ."'>" . $term->name . "</a></li>";
-		    }
-		    echo "</ul>";
-		}
-	echo "</div>"; // end sixth fifth column
-
-
-} // end display_prog_filter_menu() function
-
+} // end function display_mag_filter_menu()
 
