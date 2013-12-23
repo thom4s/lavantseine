@@ -584,7 +584,7 @@ table {
 .last, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
   float: right; }
 
-.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
+.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button], .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1105,7 +1105,7 @@ a:hover, a:focus, a:active {
   color: midnightblue; }
 
 /* Buttons */
-input[type=submit], a.button {
+input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button] {
   font-family: "PT Sans", sans-serif;
   line-height: 20px;
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1126,7 +1126,7 @@ input[type=submit], a.button {
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
-input[type=submit]:hover, a.button:hover {
+input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[type=button]:hover {
   background-color: white;
   color: black;
   border: none; }
@@ -1160,7 +1160,7 @@ nav a {
 .featured-media h1 {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 3px;
   margin: 0; }
 
 /**
@@ -1340,9 +1340,12 @@ nav a {
   margin-left: 1%;
   float: left; }
 #prog-filters .awpqsf_class label[class*='tax-label-'], #prog-filters .awpqsf_class label[class*='tcmf-label-'], #prog-filters .filter-column label[class*='tax-label-'], #prog-filters .filter-column label[class*='tcmf-label-'] {
-  width: 100%; }
+  width: 100%;
+  padding: 5px 0 0; }
 #prog-filters .awpqsf_class label.taxchklabel, #prog-filters .awpqsf_class label.cmfchklabel , #prog-filters .filter-column label.taxchklabel, #prog-filters .filter-column label.cmfchklabel  {
   width: 100px; }
+#prog-filters .awpqsf_class:first-child, #prog-filters .filter-column:first-child {
+  min-height: 250px; }
 #prog-filters .awpqsf_class ul, #prog-filters .filter-column ul {
   display: inline-block;
   margin-bottom: 20px; }
@@ -1351,6 +1354,8 @@ nav a {
 #prog-filters .awpqsf_class a, #prog-filters .filter-column a {
   border: inherit;
   color: inherit; }
+#prog-filters .awpqsf_submit {
+  padding: 10px 0; }
 
 .event-repeatable-dates {
   font-weight: bold; }

@@ -46,7 +46,7 @@
 								?>
 								<div class="box-month" data-date="<?php print strtotime($month.'/01') ?>">
 									<h2 class="entry-title">
-										<?php print strftime('%B %Y', strtotime($month.'/01')) ?>
+										<?php print strftime('%B %Y', htmlentities( strtotime($month.'/01')) )?>
 									</h2>
 								</div><!-- .box -->
 								<?php

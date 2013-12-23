@@ -72,8 +72,8 @@ $event_details_fields = array(
     array( 
 	    'label' => 'Autres Dates et Horaires de représentation',  
 	    'desc'  => 'Ajouter chaque date et horaire au format 20.05.2014 20:00',  
-	    'id'    => $prefix.'other_dates',  
-	    'type'  => 'repeatable-text-date'  
+	    'id'    => $prefix.'otherdates',  
+	    'type'  => 'repeatable'  
 	),
     array(  
         'label'=> 'Lien revendeur',  
@@ -131,28 +131,33 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
                         }
                     break; 
 
-                    // repeatable text
-                    case 'repeatable-text-date':
+                    // repeatable  
+                    case 'repeatable':
                         echo '<ul id="'.$field['id'].'-repeatable" class="custom_repeatable">';  
-                        $i = 0;  
+                        $i = 0; 
                         if ($meta) {  
-                            foreach($meta as $value) { 
-                                $clean_date = date("d.m.Y G:i", $value);
+                            foreach($meta as $row) {
+                                $clean_date = date("d.m.Y G:i", $row );
                                 echo '<li><span class="sort hndle">|||</span> 
-                                            <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="'.$clean_date.'" size="30" /> 
+                                            <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="'.$row.'" size="30" /> 
                                             <a class="repeatable-remove button" href="#">-</a></li>';  
-                                $i++;  
-                            }  
-                        } else { 
+                                $i++;
+                            } 
+                        } else {  
                             echo '<li><span class="sort hndle">|||</span> 
                                         <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="" size="30" /> 
                                         <a class="repeatable-remove button" href="#">-</a></li>';  
-                        }  
-                        echo '</ul> 
-                            <a class="repeatable-add button" href="#">+</a> | <span class="description">'.$field['desc'].'</span>';     
-                    break;  
+                        } 
+                        echo '</ul>';
+                        echo '<a class="repeatable-add button" href="#">+</a>  |  ';  
+                        echo '<span class="description">'.$field['desc'].'</span>'; 
 
-                    					// textarea  
+                    break; 
+
+
+
+
+                    // textarea  
 					case 'textarea':  
 					    echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="60" rows="4">'.$meta.'</textarea> 
 					        <br /><span class="description">'.$field['desc'].'</span>';  
@@ -178,48 +183,6 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
 						echo '<input type="date" class="datepicker" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$meta.'" size="30" />
 								<br /><span class="description">'.$field['desc'].'</span>';
 					break;			
-
-					// repeatable text
-					case 'repeatable-text':
-					    echo '<ul id="'.$field['id'].'-other-dates" class="custom_repeatable">';  
-					    $i = 0;  
-					    if ($meta) {  
-					        foreach($meta as $row) {  
-					            echo '<li><span class="sort hndle">|||</span> 
-					                        <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="'.$row.'" size="30" /> 
-					                        <a class="repeatable-remove button" href="#">-</a></li>';  
-					            $i++;  
-					        }  
-					    } else {  
-					        echo '<li><span class="sort hndle">|||</span> 
-					                    <input type="text" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="" size="30" /> 
-					                    <a class="repeatable-remove button" href="#">-</a></li>';  
-					    }  
-					    echo '</ul> 
-					        <a class="repeatable-add button" href="#">+</a> | <span class="description">'.$field['desc'].'</span>';     
-					break;  
-
-					// repeatable date
-					case 'repeatable-date':  
-					    
-					    echo '<ul id="'.$field['id'].'-repeatable" class="custom_repeatable">';  
-					    $i = 0;  
-					    if ($meta) {  
-					        foreach($meta as $row) {  
-					            echo '<li><span class="sort hndle">|||</span> 
-					                        <input type="date" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="'.$row.'" size="30" /> 
-					                        <a class="repeatable-remove button" href="#">-</a></li>';  
-					            $i++;  
-					        }  
-					    } else {  
-					        echo '<li><span class="sort hndle">|||</span> 
-					                    <input type="date" name="'.$field['id'].'['.$i.']" id="'.$field['id'].'" value="" size="30" /> 
-					                    <a class="repeatable-remove button" href="#">-</a></li>';  
-					    }  
-					    echo '</ul> 
-					        <span class="description">'.$field['desc'].'</span>'; 
-					    echo '<a class="repeatable-add button" href="#">+</a>';    
-					break; 
 
                     // image  
                     case 'image':  
@@ -271,11 +234,8 @@ function save_custom_meta($post_id) {
                 $updatelastdate = strtotime( $new );
                 update_post_meta($post_id, $field['id'], $updatelastdate );
             }
-            elseif( $field['id'] == 'eventDetail_other_dates' ) {
-                foreach ($new as $value) {
-                    $updateotherdate = strtotime( $value );
-                    update_post_meta($post_id, $field['id'], $updateotherdate );
-                }
+            elseif( $field['id'] == 'eventDetail_otherdates' ) {
+               update_post_meta($post_id, $field['id'], $new); 
             }
             else {
                 update_post_meta($post_id, $field['id'], $new); 

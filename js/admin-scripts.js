@@ -17,7 +17,7 @@ jQuery('.repeatable-add').click(function() {
 jQuery('.repeatable-remove').click(function(){  
     jQuery(this).parent().remove();  
     return false;  
-});  
+}); 
 
 jQuery('.custom_repeatable').sortable({  
     opacity: 0.6,  

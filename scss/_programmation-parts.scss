@@ -28,10 +28,15 @@
 		label[class*='tax-label-'], 
 		label[class*='tcmf-label-'] {
 			width: 100%;
+			padding: 5px 0 0;
 		}
 		label.taxchklabel,
 		label.cmfchklabel {
 			width: 100px;
+		}
+
+		&:first-child {
+			min-height: 250px;
 		}
 
 		ul {
@@ -47,9 +52,11 @@
 			border: inherit;
 			color: inherit;
 		}
-
-		.awpqsf_submit {
-
+	}
+	.awpqsf_submit {
+		padding: 10px 0;
+		input[type=button] {
+			@extend %button;
 		}
 	}
 }
