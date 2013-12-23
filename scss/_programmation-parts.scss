@@ -9,6 +9,10 @@
 	}
 }
 
+#awpqsf_id {
+	border: none; 
+}
+
 #prog-filters {
 	@extend .navigation-group;
 	margin-top: - $baseLineHeight * 2;
@@ -17,13 +21,17 @@
 	.awpqsf_class,
 	.filter-column {
 		@include box-sizing();
-		width: 15%;
-		margin-left: 2%;
-		padding: 0.5em;
+		width: 32%;
+		margin-left: 1%;
 		float: left;
 
-		&:first-child{
-			margin-left: 0;
+		label[class*='tax-label-'], 
+		label[class*='tcmf-label-'] {
+			width: 100%;
+		}
+		label.taxchklabel,
+		label.cmfchklabel {
+			width: 100px;
 		}
 
 		ul {
@@ -38,6 +46,10 @@
 		a {
 			border: inherit;
 			color: inherit;
+		}
+
+		.awpqsf_submit {
+
 		}
 	}
 }

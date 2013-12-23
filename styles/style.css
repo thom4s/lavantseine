@@ -1298,6 +1298,11 @@ nav a {
   text-align: left; }
 #secondary aside:nth-child(2) .textwidget {
   padding: 0.2em 0.3em; }
+#secondary aside:nth-child(2) img {
+  width: 105%;
+  max-width: 105%;
+  margin-top: -0.2em;
+  margin-left: -0.3em; }
 
 .box-footer:last-child {
   float: right; }
@@ -1320,6 +1325,9 @@ nav a {
   border-right: 3px solid black;
   padding: 0 20px 20px 0; }
 
+#awpqsf_id {
+  border: none; }
+
 #prog-filters {
   margin-top: -40px;
   margin-bottom: 20px; }
@@ -1328,12 +1336,13 @@ nav a {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  width: 15%;
-  margin-left: 2%;
-  padding: 0.5em;
+  width: 32%;
+  margin-left: 1%;
   float: left; }
-#prog-filters .awpqsf_class:first-child, #prog-filters .filter-column:first-child {
-  margin-left: 0; }
+#prog-filters .awpqsf_class label[class*='tax-label-'], #prog-filters .awpqsf_class label[class*='tcmf-label-'], #prog-filters .filter-column label[class*='tax-label-'], #prog-filters .filter-column label[class*='tcmf-label-'] {
+  width: 100%; }
+#prog-filters .awpqsf_class label.taxchklabel, #prog-filters .awpqsf_class label.cmfchklabel , #prog-filters .filter-column label.taxchklabel, #prog-filters .filter-column label.cmfchklabel  {
+  width: 100px; }
 #prog-filters .awpqsf_class ul, #prog-filters .filter-column ul {
   display: inline-block;
   margin-bottom: 20px; }

@@ -43,5 +43,12 @@
 		.textwidget {
 			padding: $boxPadding;
 		}
+
+		img {
+			width: 105%;
+			max-width: 105%;
+			margin-top: - $boxPaddingTop;
+			margin-left: - $boxPaddingSide;
+		}
 	}
 }
