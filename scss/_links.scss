@@ -3,15 +3,13 @@ a {
 	color: $linkColor;
 	text-decoration: none;
 	border-bottom: 1px dotted $linkColor;
-	
 }
-a:visited {
-	color: purple;
-}
+
+a:visited,
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: $linkColorHover;
 }
 
 
@@ -50,8 +48,8 @@ a.button {
 	width: auto;
 }
 
-nav a {
-	border: inherit;
+.navigation-group a {
+	border: none;
 }
 
 .box-post  a,

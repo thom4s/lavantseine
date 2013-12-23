@@ -6,6 +6,8 @@
  */
 
 
+error_reporting(0);
+
 define('FB_URL','https://www.facebook.com/lAvantSeine');
 define('TWITTER_URL','https://twitter.com/AvantSeine');
 define('INSTAGRAM_URL','http://instagram.com/avantseine');

@@ -55,7 +55,6 @@ h2 {
 	text-transform: uppercase;
 	color: $black;
 	font-weight: 900;
-	margin-bottom: $baseLineHeight / 2;
 	a {
 		text-decoration: none;
 		color: inherit;
@@ -63,6 +62,14 @@ h2 {
 		&:visited {
 			color: inherit;
 		}
+	}
+}
+
+.box-page,
+.box-post,
+.entry-content {
+	h2 {
+		margin-bottom: $baseLineHeight / 2;
 	}
 }
 
@@ -106,7 +113,8 @@ p {
 	margin-bottom: $baseLineHeight;
 }
 
-span {
+span,
+.paging-navigation {
 	font-family: $paragraphsFontFamily;
 	font-size: 1em;
 	line-height: $baseLineHeight;	

@@ -53,8 +53,8 @@ $purple:                #7a43b6 !default;
 // Basic colors
 // -------------------------
 $textColor:             $grayDark !default;
-$linkColor:             #07547A !default;
-$linkColorHover:        darken($linkColor, 15%) !default;
+$linkColor:             $black !default;
+$linkColorHover:        lighten($linkColor, 50%) !default;
 $quoteColor:			#666;
 
 

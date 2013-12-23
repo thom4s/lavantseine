@@ -451,7 +451,6 @@ table {
   width: 176.4px; }
 
 .push-1 {
-  position: relative;
   left: 200.9px; }
 
 .pull-1, .event .entry-header {
@@ -473,7 +472,6 @@ table {
   width: 377.3px; }
 
 .push-2 {
-  position: relative;
   left: 401.8px; }
 
 .pull-2 {
@@ -495,7 +493,6 @@ table {
   width: 578.2px; }
 
 .push-3 {
-  position: relative;
   left: 602.7px; }
 
 .pull-3 {
@@ -517,7 +514,6 @@ table {
   width: 779.1px; }
 
 .push-4 {
-  position: relative;
   left: 803.6px; }
 
 .pull-4 {
@@ -539,7 +535,6 @@ table {
   width: 980px; }
 
 .push-5 {
-  position: relative;
   left: 1004.5px; }
 
 .pull-5 {
@@ -890,6 +885,12 @@ ul.sub-menu {
 .go-search {
   background-position: top 0 left 0; }
 
+/*
+ *  Pagination
+ */
+.paging-navigation {
+  clear: both; }
+
 body {
   font-size: 14px; }
 
@@ -927,14 +928,16 @@ h2 {
   font-size: 1.25em;
   text-transform: uppercase;
   color: black;
-  font-weight: 900;
-  margin-bottom: 10px; }
+  font-weight: 900; }
 h2 a {
   text-decoration: none;
   color: inherit;
   border: inherit; }
 h2 a:visited {
   color: inherit; }
+
+.box-page h2, .box-post h2, .entry-content h2 {
+  margin-bottom: 10px; }
 
 .featured-post h2, .last-event-post h2 {
   font-size: 1.5em; }
@@ -965,7 +968,7 @@ p {
   line-height: 20px;
   margin-bottom: 20px; }
 
-span {
+span, .paging-navigation {
   font-family: "PT Sans", sans-serif;
   font-size: 1em;
   line-height: 20px; }
@@ -1109,15 +1112,12 @@ embed, iframe, object {
 
 /* Links */
 a {
-  color: #07547a;
+  color: black;
   text-decoration: none;
-  border-bottom: 1px dotted #07547a; }
+  border-bottom: 1px dotted black; }
 
-a:visited {
-  color: purple; }
-
-a:hover, a:focus, a:active {
-  color: midnightblue; }
+a:visited, a:hover, a:focus, a:active {
+  color: gray; }
 
 /* Buttons */
 input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button] {
@@ -1149,8 +1149,8 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 .widget a.button {
   width: auto; }
 
-nav a {
-  border: inherit; }
+.navigation-group a, #prog-filters a, #alert a {
+  border: none; }
 
 .box-post a, .box-event a, .box-month a, .site-branding a {
   border: none;
