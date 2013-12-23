@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
+.col-1, #secondary, .box, .box-blank, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
   width: 176.4px;
   position: relative;
   float: left;
@@ -451,12 +451,13 @@ table {
   width: 176.4px; }
 
 .push-1 {
+  position: relative;
   left: 200.9px; }
 
 .pull-1, .event .entry-header {
   right: -151.9px; }
 
-.prefix-1 {
+.prefix-1, .box-title h1 {
   margin-left: 200.9px; }
 
 .suffix-1 {
@@ -472,6 +473,7 @@ table {
   width: 377.3px; }
 
 .push-2 {
+  position: relative;
   left: 401.8px; }
 
 .pull-2 {
@@ -493,6 +495,7 @@ table {
   width: 578.2px; }
 
 .push-3 {
+  position: relative;
   left: 602.7px; }
 
 .pull-3 {
@@ -514,6 +517,7 @@ table {
   width: 779.1px; }
 
 .push-4 {
+  position: relative;
   left: 803.6px; }
 
 .pull-4 {
@@ -535,6 +539,7 @@ table {
   width: 980px; }
 
 .push-5 {
+  position: relative;
   left: 1004.5px; }
 
 .pull-5 {
@@ -563,7 +568,7 @@ table {
   float: left;
   margin-left: 24.5px; }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
   margin: 0; }
 
 /* Also, don't forget to add this: */
@@ -584,7 +589,7 @@ table {
 .last, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
   float: right; }
 
-.plain-width, #masthead, #mastfooter, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button], .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
+.plain-width, #masthead, #mastfooter, .box-title, article.page, article.post, article.event, .main-navigation, input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button], .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -635,6 +640,13 @@ body {
 
 .next-events {
   padding: 0.5em 0; }
+.next-events {
+  *zoom: 1; }
+.next-events:before, .next-events:after {
+  content: "";
+  display: table; }
+.next-events:after {
+  clear: both; }
 
 #secondary {
   position: absolute;
@@ -659,16 +671,19 @@ body {
 /*
  *	Commun stuffs, helpers
  */
-.box, .box-post, .box-event, .box-month, .box-footer {
+.box, .box-blank, .box-post, .box-event, .box-month, .box-footer {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0.2em 0.3em;
   margin-bottom: 20px; }
-.box img, .box-post img, .box-event img, .box-month img, .box-footer img {
+.box img, .box-blank img, .box-post img, .box-event img, .box-month img, .box-footer img {
   max-width: 100%;
   height: auto; }
+
+.box-blank {
+  margin: 0; }
 
 .backgrounded-box, article.page, article.post, article.event, #secondary aside:nth-child(2) {
   background-color: white; }
@@ -1160,7 +1175,7 @@ nav a {
 .featured-media h1 {
   position: absolute;
   left: 0;
-  bottom: 3px;
+  bottom: 0;
   margin: 0; }
 
 /**

@@ -16,6 +16,7 @@
     }
     
     .push-#{$i} {
+        position: relative;
         left: ($gridColumnWidth * $i ) + ( $gridGutterWidth * ( $i ));
     }
  

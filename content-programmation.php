@@ -37,8 +37,8 @@
 
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-						<?php 
-
+						<?php
+							// Month Test
 							$event_first_date = get_post_meta( $post->ID, 'eventDetail_first_date', true );
 							$month = date( 'Y/m', $event_first_date );
 
@@ -53,7 +53,7 @@
 								<?php
 								$previous_month = $month;
 							endif;
-						?>
+						?> <!-- end month test -->
 
 						<?php get_template_part( 'boxes', get_post_format() ); ?>
 

@@ -66,6 +66,7 @@ body { background-size: cover; }
 			}
 
 				.next-events {
+					@include clearfix;
 					padding: $bigBlocsPadding;
 				}
 
@@ -102,6 +103,9 @@ body { background-size: cover; }
  *	Commun stuffs, helpers
  */
 
+.site-main {
+}
+
 .box {
 	@extend .col-1;
 	@include box-sizing('border');
@@ -111,6 +115,19 @@ body { background-size: cover; }
 	img {
 		max-width: 100%;
 		height: auto;
+	}
+}
+
+.box-blank {
+	@extend .box;
+	margin: 0;
+}
+
+.box-title {
+	@extend .plain-width;
+	
+	h1 {
+		@extend .prefix-1;
 	}
 }
 
@@ -139,8 +156,6 @@ body { background-size: cover; }
 .relatived {
 	position: relative;
 }
-
-
 
 .box-post {
 	@extend .box;
