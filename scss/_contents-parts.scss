@@ -173,6 +173,11 @@
 			@extend .first;
 		}
 	}
+	.inner-entry-main-content {
+		@extend .col-2;
+		@include box-sizing('border');
+		padding: 0.2em 0.3em 0 0;
+	}
 
 	.entry-meta {
 		@include box-sizing();

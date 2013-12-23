@@ -78,16 +78,14 @@
 						</a></p>
 						<?php endif; ?>
 
+						<?php if ( $event_text2 ) : echo "<p class=''>". $event_text2 ."</p>"; endif; ?>
+
 				</div><!-- .event-tags -->
 			</div>
 
-			<div class="inner-entry-content main-text">
+			<div class="inner-entry-main-content">
 				<?php the_content(); ?>
 			</div>
-
-			<div class="inner-entry-content">
-				<?php if ( $event_text2 ) : echo "<p class=''>". $event_text2 ."</p>"; endif; ?>
-			</div>		
 
 			<?php
 				wp_link_pages( array(

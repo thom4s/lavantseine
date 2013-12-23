@@ -7,10 +7,11 @@
  * @package lavantseine
  */
 ?>
-
 			<div class="next-events">
 
 				<?php
+					setlocale(LC_TIME, "fr_FR");
+					$today = time();
 					$previous_month = false;
 
 					// Query events to come

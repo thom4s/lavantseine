@@ -28,8 +28,8 @@ $event_details_fields = array(
         'type'  => 'textarea'  
     ),
     array(  
-        'label'=> 'Texte 2',  
-        'desc'  => 'le texte à droite dans la page de l\'événement',  
+        'label'=> 'Texte complémentaire',  
+        'desc'  => 'Texte en bas des infos pratiques (dates, durée...)',  
         'id'    => $prefix.'text2',  
         'type'  => 'textarea'  
     ),  
