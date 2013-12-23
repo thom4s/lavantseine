@@ -35,7 +35,7 @@ get_header(); ?>
 
 			<div class="featured-media">
 				<?php if ( $query->have_posts() ) : ?>
-				  <ul class="bxslider">
+				  <ul class="slider bxslider-no-controls">
 		
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 						<li><?php the_post_thumbnail('top-thumbnail'); ?></li>

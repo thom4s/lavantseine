@@ -179,6 +179,7 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
 require get_template_directory() . '/inc/event-metas.php';
 require get_template_directory() . '/inc/post-metas.php';
 require get_template_directory() . '/inc/page-metas.php';
+require get_template_directory() . '/inc/attachment-metas.php';
 
 /**
  * Load Options Panel.

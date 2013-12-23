@@ -29,13 +29,30 @@ jQuery(function($) {
 
 		// Slide Home
 		// https://github.com/wandoledzep/bxslider-4
-		$('.bxslider').bxSlider({
+		$('.bxslider-no-controls').bxSlider({
 		  pager: false,
 		  controls: false,
 		  auto: true,
 		  adaptiveHeight: true,
 		  infiniteLoop: true
 		});
+
+		// Slide posts
+		// https://github.com/wandoledzep/bxslider-4
+		$('.bxslider-with-controls').bxSlider({
+		  pager: false,
+		  controls: true,
+		  auto: false,
+		  adaptiveHeight: false,
+		  infiniteLoop: true,
+		  nextText: ' > ', 
+		  prevText: ' < '
+		});
+
+		$('.slide a').on('click', (function( event ) {
+			event.preventDefault();
+		}));
+
 	});
 });
 
