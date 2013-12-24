@@ -35,9 +35,10 @@
 .share-buttons {
 	margin-top: $baseLineHeight;
 	.one-button  {
-		display: inline-block;
+		display: block;
 		margin: 0 5px 5px 0;
 		padding: 0;
+		clear: both;
 	}
 }
 
@@ -81,6 +82,9 @@
 	}	
 
 	.entry-meta {
+		@include box-sizing;
+		@extend .col-1;
+		@extend .first;
 		padding: $postMetaPadding;
 
 		.post-categories {

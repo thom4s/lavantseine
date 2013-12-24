@@ -11,8 +11,8 @@ error_reporting(0);
 define('FB_URL','https://www.facebook.com/lAvantSeine');
 define('TWITTER_URL','https://twitter.com/AvantSeine');
 define('INSTAGRAM_URL','http://instagram.com/avantseine');
-define('GOOGLEPLUS_URL','https://twitter.com/AvantSeine');
-define('VIDEOCHANNEL_URL','https://twitter.com/AvantSeine');
+define('GOOGLEPLUS_URL','https://plus.google.com/u/0/b/100144920076066761502/100144920076066761502');
+define('VIDEOCHANNEL_URL','https://www.youtube.com/channel/UCtUb1swrX34VbClR53YcagA');
 
 setlocale(LC_TIME, "fr_FR");
 

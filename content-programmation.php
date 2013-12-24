@@ -10,7 +10,7 @@
 			<div class="next-events">
 
 				<?php
-					setlocale(LC_TIME, "fr_FR");
+					setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
 					$today = time();
 					$previous_month = false;
 

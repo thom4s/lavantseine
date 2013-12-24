@@ -38,7 +38,9 @@ $today = time();
 							<?php array_push($exclude_ids, $post->ID); ?>
 
 							<div class="featured-media">
-								<?php the_post_thumbnail(''); ?>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail(''); ?>
+								</a>	
 								<h1>le <b>Magazine</b> de l'Avant Seine</h1>
 							</div>
 
@@ -116,9 +118,10 @@ $today = time();
 								<?php array_push($exclude_ids, $post->ID); ?>
 
 								<div class="featured-content">
-									<a href="<?php the_permalink(); ?>"><h2>
-										<?php the_title(); ?>
-									</h2></a>
+									<a href="<?php the_permalink(); ?>">
+										<h2>
+											<?php the_title(); ?>
+										</h2>
 
 									<div class="entry-meta">
 										<span class="date-main">Publié le <?php the_time('d/m/Y'); ?></span>
@@ -128,12 +131,12 @@ $today = time();
 										<?php the_post_thumbnail('2col-thumbnail'); ?>
 									</div>
 
-									<?php $post_shortText = get_post_meta( $post->ID, 'postDetail_shortText', true );
-
+									<?php
+										$post_shortText = get_post_meta( $post->ID, 'postDetail_shortText', true );
 										echo "<p>".$post_shortText. "</p>";
-
 									?>
-								</div>
+									</a>
+								</div><!-- .featured-content -->
 								
 							</div><!-- end .last-event-post -->
 							<?php endif; endforeach; ?>

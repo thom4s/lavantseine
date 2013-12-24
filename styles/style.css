@@ -441,7 +441,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-blank, .box-post, .box-event, .box-month, .box-footer, .search-form, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
+.col-1, #secondary, .box, .box-blank, .box-post, .box-event, .box-month, .box-footer, .search-form, .post .entry-meta, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #inner-footer-branding, #categories-magazine {
   width: 176.4px;
   position: relative;
   float: left;
@@ -563,7 +563,7 @@ table {
   float: left;
   margin-left: 24.5px; }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
+.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#inner-footer-branding:first-child, .column#categories-magazine:first-child {
   margin: 0; }
 
 /* Also, don't forget to add this: */
@@ -578,7 +578,7 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .page .entry-media, .entry-practical-content, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
   margin-left: 0; }
 
 .last, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #inner-footer-branding, #main-magazine, .last-event-post {
@@ -1117,7 +1117,7 @@ a {
   border-bottom: 1px dotted black; }
 
 a:visited, a:hover, a:focus, a:active {
-  color: gray; }
+  color: #4d4d4d; }
 
 /* Buttons */
 input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button] {
@@ -1149,8 +1149,11 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 .widget a.button {
   width: auto; }
 
-.navigation-group a, #prog-filters a, #alert a {
+.navigation-group a, #prog-filters a, #alert a, .featured-media a {
   border: none; }
+
+#menu-acces-directs a:visited, #menu-acces-directs a:hover, #menu-acces-directs a:focus, #menu-acces-directs a:active {
+  color: black; }
 
 .box-post a, .box-event a, .box-month a, .site-branding a {
   border: none;
@@ -1193,9 +1196,10 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 .share-buttons {
   margin-top: 20px; }
 .share-buttons .one-button {
-  display: inline-block;
+  display: block;
   margin: 0 5px 5px 0;
-  padding: 0; }
+  padding: 0;
+  clear: both; }
 
 .date-main {
   font-weight: bold; }
@@ -1212,6 +1216,10 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 .post .entry-media img {
   margin-bottom: -10px; }
 .post .entry-meta {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   padding: 0.2em 1em; }
 .post .entry-meta .post-categories {
   margin: 20px 0; }

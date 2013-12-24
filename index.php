@@ -38,7 +38,7 @@ get_header(); ?>
 				  <ul class="slider bxslider-no-controls">
 		
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-						<li><?php the_post_thumbnail('top-thumbnail'); ?></li>
+						<a href="<?php the_permalink(); ?>"><li><?php the_post_thumbnail('top-thumbnail'); ?></li></a>
 					<?php endwhile; ?>
 
 				  </ul><!-- .bxslider -->
@@ -68,7 +68,7 @@ get_header(); ?>
 		<div class="clearfix"></div>
 
 		<div id="attached-content" class="">
-			<h1>Le <b>Magazine</b> de l'Avant Seine</h1>
+			<a href="/magazine"><h1>Le <b>Magazine</b> de l'Avant Seine</h1></a>
 			
 			<div id="homeGrid" class="last-posts" data-columns>
 				<?php if ( have_posts() ) : ?>

@@ -2,9 +2,10 @@
 
 $media_items = get_posts(array(
 	'post_type'		=>	'attachment',
-	'_media_tag'	=>	'slide',
 	'post_parent' 	=> get_the_ID(),
-	'posts_per_page' => -1
+	'posts_per_page' => -1,
+	'meta_key'      => '_media_tag',
+	'meta_value'	=> 'slide'
 ));
 
 if ($media_items): ?>

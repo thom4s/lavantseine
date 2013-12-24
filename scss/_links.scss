@@ -48,8 +48,20 @@ a.button {
 	width: auto;
 }
 
-.navigation-group a {
-	border: none;
+.navigation-group,
+.featured-media {
+	a {
+		border: none;
+	}
+}
+
+#menu-acces-directs {
+	a:visited,
+	a:hover,
+	a:focus,
+	a:active {
+		color: $linkColor;
+	}
 }
 
 .box-post  a,

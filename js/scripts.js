@@ -53,6 +53,15 @@ jQuery(function($) {
 			event.preventDefault();
 		}));
 
+
+		// Set autoplay to youtube videos frame
+		$src = $("iframe").attr("src");
+		$autoplay = "&autoplay=1";
+		$src = $src + $autoplay;
+		// $("iframe").attr("src", $src );
+
+
+
 	});
 });
 
