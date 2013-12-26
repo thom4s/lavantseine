@@ -10,28 +10,37 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<h1>search page</h1>
-
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'lavantseine' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<header class="search-header backgrounded-box">
+				<h1 class="search-title">
+					Vous avez demandé...
+				</h1>
+
+				<p>
+					<?php printf( __( 'Votre recherche : %s', 'lavantseine' ), '<span>' . get_search_query() . '</span>' ); ?>
+				</p>
+
+				<p>N'afficher que </p>
+
+				<p>Effectuer une nouvelle recherche : <?php get_search_form(); ?></p>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div id="homeGrid" class="last-posts" data-columns>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'search' ); ?>
+					<?php get_template_part( 'boxes', ''); ?>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
-			<?php lavantseine_paging_nav(); ?>
+				<?php lavantseine_paging_nav(); ?>
 
-		<?php else : ?>
+				<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+					<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; ?>
+				<?php endif; ?>
+			</div>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

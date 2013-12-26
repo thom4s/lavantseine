@@ -157,6 +157,11 @@ body { background-size: cover; }
 	position: relative;
 }
 
+.box-page {
+	@extend .box;
+	margin-left: 0;
+}
+
 .box-post {
 	@extend .box;
 	margin-left: 0;

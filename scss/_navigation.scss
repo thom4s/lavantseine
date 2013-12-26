@@ -26,7 +26,8 @@
 	}
 	
 	li {
-		background-image: url(/wp-content/img/pictos-sprite-24px.png);
+		background-origin: content-box;
+		background-image: url(/wp-content/themes/lavantseine/img/pictos-sprite-24px.png);
 		background-repeat: no-repeat;
 		width: $pictoWidth;
 		height: $pictoWidth;

@@ -38,6 +38,15 @@
 			<h2 class="entry-title">	
 					<?php the_title(); ?>
 			</h2>
+			
+			<?php if ( 'page' == get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php the_excerpt(); ?>
+			</div><!-- .entry-meta -->
+			
+			<?php 
+				endif; // End if 'page' == get_post_type() 
+			?>
 
 
 			<?php if ( 'post' == get_post_type() ) : ?>

@@ -41,6 +41,12 @@
     content: '4 .column.col-1';
 }
 
+#homeGrid {
+    .box-event {
+        margin-left: 0;
+    }
+}
+
 #magazineGrid[data-columns]::before {
     content: '3 .column.col-1';
 }

@@ -13,6 +13,12 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<header class="archive-header">
+				<h1 class="archive-title">
+					Tous les articles pour <span class="saisoned-on-color">#<?php single_cat_title(); ?></span>
+				</h1>
+			</header>
+
 			<div id="main-magazine">
 
 				<?php if ( have_posts() ) : ?>

@@ -43,27 +43,25 @@ input[type=submit] {
 	border: none;
 
 	input[type=search] {
-		width: 70%;
+		width: 152px;
 		float: left;
 		height: 24px;
 		margin: 0;
 		padding: 0 0.3em;
 		@include box-sizing();
+		border: none;
 	}
 
 	input[type=submit] {
-		width: 30%;
-		height: 24px;
 		@include box-sizing();
-		background: $black;
+		background-image: url(/wp-content/themes/lavantseine/img/pictos-sprite-24px.png);
+		background-repeat: no-repeat;
+		width: $pictoWidth;
+		height: $pictoWidth;
 		color: $white;
 	}
 
 	.search-submit {
-		background: $white !important;
-		color: $black !important;
-		border: $inputBorder;
-		border-left: none;
 		padding: 0;
 		&:hover {
 			border: inherit;

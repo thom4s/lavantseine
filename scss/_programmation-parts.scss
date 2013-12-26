@@ -55,6 +55,8 @@
 	}
 	.awpqsf_submit {
 		padding: 10px 0;
+		float: right;
+		margin: 0 1%;
 		input[type=button] {
 			@extend %button;
 		}

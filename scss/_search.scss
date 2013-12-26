@@ -1,0 +1,25 @@
+
+
+.search-header {
+	@include clearfix;
+
+	margin-left: $logoWidth + $baseLineHeight;
+	margin-bottom: $baseLineHeight * 2;
+
+	h1 {
+		float: left;
+		margin: ($baseLineHeight / 2) 0 ; 
+
+	}
+
+	p {
+		clear: both; 
+		float: left;
+		margin-bottom: $baseLineHeight / 2;
+		margin-left: 10px;
+	}
+
+	.search-form {
+		margin-left: 10px;
+	}
+}
