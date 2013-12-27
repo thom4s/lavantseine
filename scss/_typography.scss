@@ -67,7 +67,10 @@ h2 {
 
 .box-page,
 .box-post,
-.entry-content {
+.entry-content,
+.entry-practical-aside,
+.entry-practical-content,
+.entry-practical-header {
 	h2 {
 		margin-bottom: $baseLineHeight / 2;
 	}

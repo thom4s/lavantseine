@@ -10,7 +10,7 @@
 		clear: both;
 	}
 
-	aside:nth-child(1) {
+	aside.widget_search {
 		background: none;
 	}
 	aside:nth-child(1),
@@ -18,19 +18,15 @@
 		padding: 0;
 	}
 
-	aside:nth-child(2) {
-		@extend .backgrounded-box;
-		margin-top: 43px;
-	}
-	aside:not(:nth-child(2)) {
+	aside:not(.cuisine-widget) {
 		@extend .transparent-background;
 	}
-}
 
-
-#secondary {
-	aside:nth-child(2) {
+	aside.cuisine-widget {
+		@extend .backgrounded-box;
 		padding: 0;
+		margin-top: 43px;
+
 		.widget-title {
 			@include box-sizing();
 			display: block;
@@ -49,6 +45,7 @@
 			max-width: 105%;
 			margin-top: - $boxPaddingTop;
 			margin-left: - $boxPaddingSide;
-		}
+		}		
 	}
+
 }

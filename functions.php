@@ -189,6 +189,18 @@ require get_template_directory() . '/inc/attachment-metas.php';
  */
 require get_template_directory() . '/inc/options-panel.php';
 
+/**
+ * Load Custom Widgets & replace text widget.
+ */
+require get_template_directory() . '/inc/custom-widgets.php';
+add_action( "widgets_init", "load_custom_widgets" );
+
+function load_custom_widgets() {
+	unregister_widget( "WP_Widget_Text" );
+	register_widget( "WP_Widget_Text_Custom" );
+}
+
+
 
 /**
  * Implement the Custom Header feature.

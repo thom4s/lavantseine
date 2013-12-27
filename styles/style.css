@@ -683,14 +683,14 @@ body {
 .box-blank {
   margin: 0; }
 
-.backgrounded-box, article.page, article.post, article.event, #secondary aside:nth-child(2) {
+.backgrounded-box, article.page, article.post, article.event, #secondary aside.cuisine-widget {
   background-color: white; }
 
-.transparent-background, #secondary aside:not(:nth-child(2)) {
+.transparent-background, #secondary aside:not(.cuisine-widget) {
   display: block;
   position: relative; }
 
-.transparent-background::after, #secondary aside:not(:nth-child(2))::after {
+.transparent-background::after, #secondary aside:not(.cuisine-widget)::after {
   content: "";
   background: white;
   opacity: 0.7;
@@ -943,7 +943,7 @@ h2 a {
 h2 a:visited {
   color: inherit; }
 
-.box-page h2, .box-post h2, .entry-content h2 {
+.box-page h2, .box-post h2, .entry-content h2, .entry-practical-aside h2, .entry-practical-content h2, .entry-practical-header h2 {
   margin-bottom: 10px; }
 
 .featured-post h2, .last-event-post h2 {
@@ -1311,16 +1311,14 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 
 #secondary aside {
   clear: both; }
-#secondary aside:nth-child(1) {
+#secondary aside.widget_search {
   background: none; }
 #secondary aside:nth-child(1), #secondary aside:nth-child(2) {
   padding: 0; }
-#secondary aside:nth-child(2) {
+#secondary aside.cuisine-widget {
+  padding: 0;
   margin-top: 43px; }
-
-#secondary aside:nth-child(2) {
-  padding: 0; }
-#secondary aside:nth-child(2) .widget-title {
+#secondary aside.cuisine-widget .widget-title {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1330,9 +1328,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   margin: 0;
   padding: 0.6em 0 0 0.3em;
   text-align: left; }
-#secondary aside:nth-child(2) .textwidget {
+#secondary aside.cuisine-widget .textwidget {
   padding: 0.2em 0.3em; }
-#secondary aside:nth-child(2) img {
+#secondary aside.cuisine-widget img {
   width: 105%;
   max-width: 105%;
   margin-top: -0.2em;
