@@ -8,14 +8,30 @@
 
 	aside {
 		clear: both;
+
+		@include breakpoint(tablette) {
+			width: 45%;
+			float: left;
+			clear: none;
+			margin-left: 10px;
+			padding: $boxPadding;
+		}	
+
+		@include breakpoint(small) {
+			@include box-sizing();
+			width: 100%;
+			margin-left: 0;
+		}
+
 	}
 
 	aside.widget_search {
-		background: none;
-	}
-	aside:nth-child(1),
-	aside:nth-child(2) {
 		padding: 0;
+		background: none;
+
+		@include breakpoint(medium) {
+			padding: 0 0.3em;
+		}
 	}
 
 	aside:not(.cuisine-widget) {
@@ -45,7 +61,11 @@
 			max-width: 105%;
 			margin-top: - $boxPaddingTop;
 			margin-left: - $boxPaddingSide;
-		}		
+		}
+
+		@include breakpoint(tablette) {
+			margin-top: 0;
+		}			
 	}
 
 }

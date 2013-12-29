@@ -36,9 +36,18 @@
 
 .navigation-group {
 	@extend %navigation;
-	width: 779.1px - $logoWidth - $baseLineHeight;
+	width: $navigationWidth;
 	margin-top: $baseLineHeight;
-	margin-left: $logoWidth + $baseLineHeight;
+	margin-left: $navigationMarginLeft;
+
+	@include breakpoint(medium) {
+		width: 100%;
+		margin: 0;
+	}
+	@include breakpoint( small ) {
+	}
+
+
 }
 
 .bottom-bordered {
@@ -54,7 +63,7 @@
 	display: block;
 	background: #000;
 	position: relative;
-	width: 779.1px - $logoWidth - $baseLineHeight;
+	width: $navigationWidth;
 	margin-top: $baseLineHeight;
 
 	& > ul {
@@ -66,8 +75,19 @@
 		display: block;
 		float: left;
 		padding: 0.6em 0em;
-		width: 779.1px - $logoWidth - $baseLineHeight;
+		width: $navigationWidth;
 		@include box-sizing();
+
+		@include breakpoint(medium) {
+			width: 100%;
+			height: auto;
+			float: none;
+			@include clearfix();
+		}
+		@include breakpoint(small ) {
+
+		}
+
 	}
 
 	li {
@@ -83,7 +103,30 @@
 			margin: 0;
 			padding: 0 10px;
 		}
+
+		@include breakpoint(medium) {
+			width: 100%;
+			float: none;
+			text-align: center;
+			margin: 10px 0;
+			font-size: 1.2em;
+		}
+		@include breakpoint( small) {
+
+		}
+
 	}
+
+	@include breakpoint(medium) {
+		width: 100%;
+		margin: 0;
+		display: none;
+	}
+	@include breakpoint(small) {
+
+	}
+
+
 }
 
 .main-nav div {
@@ -93,9 +136,15 @@
 	left: 0;
 	padding: 0;
 	position: absolute;
-	top: 35px;
+	top: 63px;
 	width: 100%;
 	z-index: 1;
+
+	@include breakpoint(medium) {
+		top: 0;
+		position: relative;
+
+	}	
 }
 
 .main-nav .current-menu-item div {
@@ -114,45 +163,12 @@
 
 ul.sub-menu {
 	padding: 0.3em;
-}
-
-.main-navigation {
-	@extend %navigation;
-	@extend .plain-width;
-	background: $navbarBackground;
-	padding: 5px 10px ;
-
-	ul {
-	}
-
-	li {
-		margin-right: $baseLineHeight;
-
-		a {
-			color: $white;
-		}
+	font-size: 1em;
+	@include breakpoint(medium) {
+		font-size: 0.8em;
 	}
 }
 
-.main-navigation ul ul {
-	background-color: #000;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
-	width: 600px;
-	float: left;
-	left: -10px;
-	top: 25px;
-	position: absolute;
-	z-index: 99999;
-}
-.main-navigation ul ul ul {
-	left: 100%;
-	top: 0;
-}
-
-.main-navigation ul ul a {
-	color: #fff;
-}
 
 .current-menu-ancestor .sub-menu .current-menu-item a {
 	color: $white !important;
@@ -160,43 +176,29 @@ ul.sub-menu {
 }
 
 
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
-.main-navigation ul li:hover > ul {
-	display: block;
-}
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
-}
 
-
-.main-navigation 	{
-
-}
 
 
 /* Small menu */
 .menu-toggle {
+	clear: both;
 	cursor: pointer;
 	display: none;
-}
+	margin: 0;
+	text-align: center;
+	padding: 0;
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
+	@include breakpoint(medium) {
 		display: block;
+		margin: 0 auto 0 auto;
 	}
 
-	.main-navigation ul {
-		display: none;
+	@include breakpoint( small) {
+
 	}
+
 }
+
 
 
 /*
@@ -205,10 +207,35 @@ ul.sub-menu {
 
 .shortcut-navigation {
 	@extend %navigation;
+	@include clearfix();
+	@include box-sizing();
+	text-transform: uppercase;
+	display: none;
 
 	li {
-		margin-right: $baseLineHeight;
+		margin-right: $baseLineHeight / 2;
+		@extend .saisoned-on-bg;
+		padding: 0 8px;
 	}
+
+	a {
+		color: $white;
+		&:hover,
+		&:visited,
+		&:active {
+			color: $white;
+		}
+	}
+
+	@include breakpoint(medium) {
+		display: block;
+		padding: 9.5px;
+		margin-bottom: 10px;
+	}
+	@include breakpoint(medium) {
+
+	}
+
 }
 
 
@@ -221,6 +248,13 @@ ul.sub-menu {
 .picto {
 	@extend %navigation;
 	@extend %picto;
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+	@include breakpoint(small) {
+	}
+
 }
 
 
@@ -233,7 +267,8 @@ ul.sub-menu {
 
 .social-link {
 	float: right;
-
+	height: 24px;
+	margin-bottom: $baseLineHeight !important;
 	li {
 		margin-left: 10px;
 	}
@@ -277,7 +312,21 @@ ul.sub-menu {
  */
 
 .paging-navigation {
+	@extend .backgrounded-box;
+	@extend .plain-width;
 	clear: both;
+	padding: $boxPadding;
+	float: left;
+
+	.nav-previous {
+		float: left;
+		margin-left: 10px;
+	}
+
+	.nav-next {
+		float: right;
+		margin-right: 10px;
+	}
 } 
 
 

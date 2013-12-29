@@ -10,11 +10,16 @@ body { background-size: cover; }
 	position: relative;
 	@include center-block;
 
+	@include breakpoint(small) {
+		width: 100%;
+	}
 	@include breakpoint(medium) {
 		width: 100%;
 	}
-	@include breakpoint(small) {
+	@include breakpoint(tablette) {
 		width: 100%;
+	}
+	@include breakpoint(desktop) {
 	}
 }
 
@@ -27,10 +32,10 @@ body { background-size: cover; }
 		@extend %clearfix;
 		@extend .plain-width;
 
-		@include breakpoint(medium) {
+		@include breakpoint(small) {
 
 		}
-		@include breakpoint(small) {
+		@include breakpoint(medium) {
 
 		}
 	}
@@ -42,6 +47,16 @@ body { background-size: cover; }
 	#content {
 		@extend %clearfix;
 		margin-top: $baseLineHeight * 2;
+
+		@include breakpoint(small) {
+		}
+
+		@include breakpoint(tablette) {
+			width: 98%;
+			margin: auto;
+			clear: both;
+
+		}
 	}
 
 		// Contain content main things : media + texte principal (page, article, event) / archives prog + journal
@@ -49,10 +64,10 @@ body { background-size: cover; }
 			@extend .col-4;
 			@extend %first;
 
-			@include breakpoint(medium) {
+			@include breakpoint(small) {
 				width: 100%;
 			}
-			@include breakpoint(small) {
+			@include breakpoint(medium) {
 				width: 100%;
 			}	
 		}
@@ -68,22 +83,38 @@ body { background-size: cover; }
 				.next-events {
 					@include clearfix;
 					padding: $bigBlocsPadding;
+
+					@include breakpoint(small) {
+						width: 95%;
+						margin: 0 auto;
+					}
+
+					@include breakpoint(medium) {
+
+					}
 				}
 
 		// Contain the sidebar with additionnal stuffs.
 		#secondary {
 			@extend .col-1;
 			position: absolute;
-			top: 20px;
+			top: $baseLineHeight;
 			right: 0;
 			z-index: 20;
 		
+			@include breakpoint(tablette) {
+				position: relative;
+				width: 100%;
+				margin: 0;
+				top: 0;
+				float: none;
+				clear: both;
+			}
+
 			@include breakpoint(medium) {
-				width: 100%;
+								
 			}
-			@include breakpoint(small) {
-				width: 100%;
-			}
+
 		}
 
 
@@ -95,6 +126,18 @@ body { background-size: cover; }
 		z-index: 5;
 		margin: $baseLineHeight 0;
 		padding: $bigBlocsPadding;
+
+
+		@include breakpoint(tablette) {
+			width: 98%;
+			margin: 0 auto;
+			font-size: 1em;
+		}
+
+		@include breakpoint(medium) {
+
+		}
+
 	}
 
 
@@ -115,6 +158,14 @@ body { background-size: cover; }
 	img {
 		max-width: 100%;
 		height: auto;
+	}
+
+	@include breakpoint(small) {
+		margin-left: 5%;
+	}
+
+	@include breakpoint(medium) {
+
 	}
 }
 
@@ -165,6 +216,12 @@ body { background-size: cover; }
 .box-post {
 	@extend .box;
 	margin-left: 0;
+	
+	@include breakpoint(small) {
+
+	}
+	@include breakpoint(medium) {
+	}		
 }
 
 .box-event {
@@ -173,8 +230,62 @@ body { background-size: cover; }
 	&:nth-child(4n+1) {
 		@extend .first;
 		clear: both;
+
+		@include breakpoint(small) {
+			margin-left: 5%;
+		}
+
+		@include breakpoint(medium) {
+
+		}	
+	}
+
+	&:nth-child(2n+1) {
+		@include breakpoint(small) {
+			clear: both;
+		}
+		@include breakpoint(medium) {
+		}	
 	}
 }
+
+.events-group-pair {
+	@extend .col-2;
+	@include box-sizing();
+	display: inline-block;
+	float: left;
+	margin-left: $gridGutterWidth;
+	
+	&:first-child {
+		margin-left: 0;
+	}
+
+	@include breakpoint(small) {
+		clear: both;
+		width: 100%;
+		margin: auto;
+
+	}
+
+	@include breakpoint(medium) {
+
+	}	
+
+	.box-event {
+		&:first-child {
+			float: left;
+		}
+		&:last-child {
+			float: right;
+		}	
+	}
+
+
+}
+
+
+
+
 
 article.page,
 article.post,
@@ -182,4 +293,12 @@ article.event, {
 	@extend .backgrounded-box;
 	@extend .plain-width;
 	float: left;
+}
+
+
+.no-results {
+	@include box-sizing();
+	width: $navigationWidth;
+	padding: $boxPadding;
+	@extend .last;
 }

@@ -144,8 +144,9 @@ $inputHeight:                   $baseLineHeight * 1.5;
 
 $responsive:				true;
 $largeBreakpoint:			1240px;
-$mediumBreakpoint:			1024px;
-$smallBreakpoint:			720px;
+$desktopBreakpoint:			1024px;
+$mediumBreakpoint:			800px;
+$smallBreakpoint:			600px;
 $minimalBreakpoint:			320px;
 
 $mainWidth: 				980px !default;

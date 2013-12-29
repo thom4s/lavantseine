@@ -4,13 +4,21 @@
 	@extend .plain-width;
 }
 
-#inner-footer-branding {
-	@extend .col-1;
-	@extend .last;
-}
-
 .box-footer {
 	@extend .box;
+
+	@include breakpoint(medium) {
+		width: 46%;
+		margin: 0 0 $baseLineHeight 0;
+		text-align: center;
+	}
+
+	@include breakpoint(medium) {
+	}
+
+	@include breakpoint(small) {
+		width: 100%;
+	}	
 
 	&:first-child {
 		@extend .first;
@@ -18,6 +26,23 @@
 
 	&:last-child {
 		float: right;
+
+		@include breakpoint(tablette) {
+			clear: both;
+			float: none;
+			margin: 0 auto;
+		}	
+	}
+
+	&:nth-child(2n+1) {
+
+		@include breakpoint(tablette) {
+			float: left;
+		}
+
+		@include breakpoint(medium) {
+			clear: both;
+		}	
 	}
 
 	p {
@@ -32,6 +57,9 @@
 			content: "• ";
 		}
 	}
+
+
+
 }
 
 .colombes-logo {

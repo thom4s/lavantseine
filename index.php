@@ -48,14 +48,28 @@ get_header(); ?>
 			</div><!-- .featured-media -->
 
 			<div class="next-events">
+
 				<?php if ( $query->have_posts() ) : ?>
+					<?php $i = 1 ?>
+					<div class="events-group-pair">
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+						<?php if ($i == 3) : ?>
+							<div class="events-group-pair">
+						<?php endif; ?>
+
 						<?php get_template_part( 'boxes', get_post_format() ); ?>
+
+						<?php if ($i == 2) : ?>
+							</div>
+						<?php endif; ?>							
+						<?php $i++; ?>		
+					
 					<?php endwhile; ?>
 					<?php lavantseine_paging_nav(); ?>
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>
+
 
 				<?php 
 					/* Restore original Post Data */

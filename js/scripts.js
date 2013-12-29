@@ -54,13 +54,24 @@ jQuery(function($) {
 		}));
 
 
-		// Set autoplay to youtube videos frame
-		$src = $("iframe").attr("src");
-		$autoplay = "&autoplay=1";
-		$src = $src + $autoplay;
-		// $("iframe").attr("src", $src );
+		// Search Form Filter
+		var $filterform = $('.search-form-filter');
+		var $checkbox = $filterform.find(':checkbox');
+		var $url = document.location.href;
+
+	    $checkbox.on(
+	    	'click',
+	    	function(event) {
+	    		$that = $(this);
+	    		$input_value = $that.attr('value');
+	    		document.location.href = $input_value;
+	    	});
 
 
+	    // Toggle Menu 
+	    $('.menu-toggle').on('click', function() {
+	    	$('#site-navigation').toggle('fast');
+	    });
 
 	});
 });

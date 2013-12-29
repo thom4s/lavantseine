@@ -32,6 +32,8 @@
     }
 }
 
+$navigationWidth: 779.1px - $logoWidth - $baseLineHeight;
+$navigationMarginLeft: $logoWidth + $baseLineHeight;
 
 /*
  * SALVATOR PLUGIN SETTINGS
@@ -39,6 +41,14 @@
 
 #homeGrid[data-columns]::before {
     content: '4 .column.col-1';
+
+    @include breakpoint(small) {
+        content: '2 .column.col-1';
+    }
+
+    @include breakpoint(medium) {
+        content: '3 .column.col-1';
+    }     
 }
 
 #homeGrid {
@@ -56,8 +66,33 @@
 }
 
 /* These are the classes that are going to be applied: */
-.column { float: left; margin-left: $gridGutterWidth; }
-.column.col-1:first-child {  margin: 0; }
+.column {
+    float: left;
+    margin-left: $gridGutterWidth;
+
+    @include breakpoint(small) {
+        margin-left: 5%;
+        max-width: 45%;
+    }
+    @include breakpoint(medium) {
+        margin-left: 5%;
+    }   
+}
+
+.column.col-1:first-child {
+
+    @include breakpoint(small) {
+        margin-left: 2%;
+    }
+    @include breakpoint(medium) {
+        margin-left: 5%;
+    }
+    @include breakpoint(desktop) {
+        margin: 0;
+    }
+
+
+}
 
 /* Also, don't forget to add this: */
 [data-columns]::before { display: none; }

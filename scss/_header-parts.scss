@@ -9,6 +9,22 @@
 	z-index: 500;
 	img {
 		max-width: $logoWidth;
+
+		@include breakpoint(medium) {
+			width: 100%;
+		}
+		@include breakpoint(medium) {
+		}
+
 	}
+
+	@include breakpoint(medium) {
+		width: 20%;
+		margin-top: $baseLineHeight * 2 + 10;
+	}
+
+	@include breakpoint(medium) {
+	}
+
 
 }
