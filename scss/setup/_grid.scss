@@ -42,14 +42,26 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
 #homeGrid[data-columns]::before {
     content: '4 .column.col-1';
 
+    @include breakpoint(medium) {
+        content: '3 .column.col-1';
+    }     
     @include breakpoint(small) {
         content: '2 .column.col-1';
     }
 
+}
+
+#home-next-events[data-columns]::before {
+    content: '4 .column.col-1';
+
     @include breakpoint(medium) {
         content: '3 .column.col-1';
-    }     
+    }
+    @include breakpoint(small) {
+        content: '2 .column.col-1';
+    }      
 }
+
 
 #homeGrid {
     .box-event {
@@ -74,27 +86,20 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
         margin-left: 5%;
         max-width: 45%;
     }
-    @include breakpoint(medium) {
-        margin-left: 5%;
-    }   
 }
 
 .column.col-1:first-child {
+    margin-left: 0;
 
     @include breakpoint(small) {
         margin-left: 2%;
     }
-    @include breakpoint(medium) {
-        margin-left: 5%;
-    }
-    @include breakpoint(desktop) {
-        margin: 0;
-    }
+
 
 
 }
 
 /* Also, don't forget to add this: */
-[data-columns]::before { display: none; }
+[data-columns]::before { display: none !important; }
 
 

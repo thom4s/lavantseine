@@ -186,7 +186,8 @@ ul.sub-menu {
 	display: none;
 	margin: 0;
 	text-align: center;
-	padding: 0;
+	padding: 5px 0;
+	font-size: 1.4em;
 
 	@include breakpoint(medium) {
 		display: block;
@@ -195,6 +196,12 @@ ul.sub-menu {
 
 	@include breakpoint( small) {
 
+	}
+
+	img {
+		width: 12px;
+		height: auto;
+		margin-right: 10px;
 	}
 
 }

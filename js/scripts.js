@@ -71,6 +71,7 @@ jQuery(function($) {
 	    // Toggle Menu 
 	    $('.menu-toggle').on('click', function() {
 	    	$('#site-navigation').toggle('fast');
+	    	$(this).find('img').toggleClass('rotate');
 	    });
 
 	});

@@ -47,22 +47,12 @@ get_header(); ?>
 				<h1>Prochainement</h1>
 			</div><!-- .featured-media -->
 
-			<div class="next-events">
+			<div id="home-next-events" class="next-events" data-columns>
 
 				<?php if ( $query->have_posts() ) : ?>
-					<?php $i = 1 ?>
-					<div class="events-group-pair">
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-						<?php if ($i == 3) : ?>
-							<div class="events-group-pair">
-						<?php endif; ?>
 
 						<?php get_template_part( 'boxes', get_post_format() ); ?>
-
-						<?php if ($i == 2) : ?>
-							</div>
-						<?php endif; ?>							
-						<?php $i++; ?>		
 					
 					<?php endwhile; ?>
 					<?php lavantseine_paging_nav(); ?>

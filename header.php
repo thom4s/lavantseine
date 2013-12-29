@@ -50,7 +50,7 @@
 				<a href="<?php bloginfo('rss2_url'); ?>"><li class="go-rss"></li></a>
 			</ul><!-- .social-navigation -->
 
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'lavantseine' ); ?></h1>
+			<h1 class="menu-toggle"><img src="<?php bloginfo( 'template_url' ); ?>/img/arrow.png"><?php _e( 'au <b>Menu</b>', 'lavantseine' ); ?></h1>
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'items_wrap' => '<ul class="clearfix" id="main-nav-list">%3$s</ul>',

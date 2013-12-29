@@ -10,17 +10,16 @@ body { background-size: cover; }
 	position: relative;
 	@include center-block;
 
+	@include breakpoint(tablette) {
+		width: 779.1px;
+	}
+	@include breakpoint(medium) {
+		width: 578.8px;
+	}
 	@include breakpoint(small) {
 		width: 100%;
 	}
-	@include breakpoint(medium) {
-		width: 100%;
-	}
-	@include breakpoint(tablette) {
-		width: 100%;
-	}
-	@include breakpoint(desktop) {
-	}
+
 }
 
 
@@ -30,9 +29,11 @@ body { background-size: cover; }
 	#masthead {
 		position: relative;
 		@extend %clearfix;
-		@extend .plain-width;
 
-		@include breakpoint(small) {
+		@include breakpoint(desktop) {
+			@extend .plain-width;
+		}
+		@include breakpoint(tablette) {
 
 		}
 		@include breakpoint(medium) {
@@ -48,15 +49,13 @@ body { background-size: cover; }
 		@extend %clearfix;
 		margin-top: $baseLineHeight * 2;
 
-		@include breakpoint(small) {
-		}
-
 		@include breakpoint(tablette) {
-			width: 98%;
-			margin: auto;
 			clear: both;
-
 		}
+		@include breakpoint(medium) {
+			margin: 0;
+
+		}		
 	}
 
 		// Contain content main things : media + texte principal (page, article, event) / archives prog + journal
@@ -123,13 +122,15 @@ body { background-size: cover; }
 	 */
 	#mastfooter {
 		@extend .plain-width;
+		@include box-sizing();
+
 		z-index: 5;
 		margin: $baseLineHeight 0;
 		padding: $bigBlocsPadding;
 
 
 		@include breakpoint(tablette) {
-			width: 98%;
+			width: 100%;
 			margin: 0 auto;
 			font-size: 1em;
 		}
