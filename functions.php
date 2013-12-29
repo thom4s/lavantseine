@@ -387,3 +387,17 @@ function custom_excerpt_length( $length ) {
 	return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+/**
+ * Sets the 'publicly_queryable' value of the page post type to true
+ * so that search results can be filtered by page.
+ *
+ * @author Brent Shepherd
+ */
+function eg_make_pages_queryable() {
+    global $wp_post_types;  
+ 
+    $wp_post_types['page']->publicly_queryable = true;
+}
+add_action( 'init', 'eg_make_pages_queryable', 20 );
+

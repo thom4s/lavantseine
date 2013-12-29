@@ -3,7 +3,8 @@
 .search-header {
 	@include clearfix;
 
-	margin-left: $logoWidth + $baseLineHeight;
+	width: $navigationWidth;
+	@extend .last;
 	margin-bottom: $baseLineHeight * 2;
 
 	h1 {
@@ -12,7 +13,8 @@
 
 	}
 
-	p {
+	p, 
+	.post-type-filter {
 		clear: both; 
 		float: left;
 		margin-bottom: $baseLineHeight / 2;
@@ -21,5 +23,11 @@
 
 	.search-form {
 		margin-left: 10px;
+	}
+
+	.post-type-filter {
+		input {
+			margin-left: 10px;
+		}
 	}
 }

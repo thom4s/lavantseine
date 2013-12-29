@@ -2,6 +2,7 @@
 
 
 .archive-title {
-	@extend .prefix-1;
+	margin-left : $navigationMarginLeft;
 	margin-bottom: $baseLineHeight * 2;
+	margin-top: 0;
 }

@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found backgrounded-box">
 	<header class="page-header">
 		<h2 class="page-title"><?php _e( 'Rien trouvé...', 'lavantseine' ); ?></h2>
 	</header><!-- .page-header -->
@@ -20,7 +20,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'lavantseine' ); ?></p>
+			<p><?php _e( 'Désolé, il n\'y a aucun résultat pour votre recherche. Réessayez avec différents mots clefs.', 'lavantseine' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>

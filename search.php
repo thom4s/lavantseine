@@ -21,7 +21,36 @@ get_header(); ?>
 					<?php printf( __( 'Votre recherche : %s', 'lavantseine' ), '<span>' . get_search_query() . '</span>' ); ?>
 				</p>
 
-				<p>N'afficher que </p>
+				<div class="post-type-filter">
+					<form class="search-form-filter clearfix" method="get" action="">
+						<?php global $wp_query; ?>
+						<label for="search-from-cat">Afficher </label>
+							<?php
+
+							foreach(
+								array( 
+									'any' => 'Tout',
+									'event' => 'les Rendez-vous',
+									'post' => 'le Magazine',
+									'page' => 'Les autres Pages'
+									) as $post_type => $type_title ):
+								
+								$args = $wp_query->query_vars;
+								$args['post_type'] = $post_type;
+								query_posts($args);
+							?>
+
+								<input type="checkbox" name="" value="/?s=<?php print get_search_query() ?>&amp;post_type=<?php print $post_type ?>"> <?php print $type_title ?> (<?php print $wp_query->found_posts ?>)
+
+							<?php 
+							endforeach;
+							?>
+					</form><!-- .search-form-filter -->
+					<?php wp_reset_query(); ?>
+				</div>
+
+
+
 
 				<p>Effectuer une nouvelle recherche : <?php get_search_form(); ?></p>
 			</header><!-- .page-header -->
@@ -32,15 +61,16 @@ get_header(); ?>
 					<?php get_template_part( 'boxes', ''); ?>
 
 				<?php endwhile; ?>
-
-				<?php lavantseine_paging_nav(); ?>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'content', 'none' ); ?>
-
-				<?php endif; ?>
 			</div>
+
+			<?php lavantseine_paging_nav(); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'content', 'none' ); ?>
+
+			<?php endif; ?>
+
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

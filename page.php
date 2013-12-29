@@ -10,6 +10,26 @@
  * @package lavantseine
  */
 
+
+//if page have subpages redirect to the first one
+$args = array(
+			'post_type' 		=> 	'page',
+			'post_parent' 		=> 	get_the_ID(),
+			'orderby' 			=> 	'menu_order',
+			'order'				=> 	'ASC',
+			'posts_per_page'	=>	1
+			);
+query_posts($args);
+
+if ( have_posts() ):
+	the_post();
+	wp_redirect(get_permalink(get_the_ID()), 301);
+	exit();
+endif;
+
+wp_reset_query();
+
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">

@@ -11,7 +11,7 @@ class WP_Widget_Text_Custom extends WP_Widget_Text {
 	function __construct() {
 		$widget_ops = array('classname' => 'widget_text', 'description' => __('Arbitrary text or HTML'));
 		$control_ops = array('width' => 400, 'height' => 350);
-		parent::__construct('text', __('Text HTML'), $widget_ops, $control_ops);
+		parent::__construct('text', __('Text'), $widget_ops, $control_ops);
 	}
  
 	function widget( $args, $instance ) {
