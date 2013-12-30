@@ -10,17 +10,11 @@
 		clear: both;
 
 		@include breakpoint(tablette) {
-			width: 45%;
-			float: left;
-			clear: none;
-			margin-left: 10px;
-			padding: $boxPadding;
+
 		}	
 
 		@include breakpoint(small) {
-			@include box-sizing();
-			width: 100%;
-			margin-left: 0;
+
 		}
 
 	}
@@ -30,7 +24,6 @@
 		background: none;
 
 		@include breakpoint(medium) {
-			padding: 0 0.3em;
 		}
 	}
 

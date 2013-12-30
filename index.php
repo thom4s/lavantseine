@@ -47,13 +47,15 @@ get_header(); ?>
 				<h1>Prochainement</h1>
 			</div><!-- .featured-media -->
 
-			<div id="home-next-events" class="next-events" data-columns>
+			<div id="home-next-events" class="next-events">
 
 				<?php if ( $query->have_posts() ) : ?>
+					<?php $i = 1;  ?>
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 						<?php get_template_part( 'boxes', get_post_format() ); ?>
 					
+					<?php $i++; ?>
 					<?php endwhile; ?>
 					<?php lavantseine_paging_nav(); ?>
 				<?php else : ?>

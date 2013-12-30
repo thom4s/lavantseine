@@ -27,6 +27,13 @@
 	@include box-sizing();
 	padding: $contentPadding;
 
+	@include breakpoint(medium) {
+		width: 377px;
+	}
+	@include breakpoint(small) {
+		width: 100%;
+	}
+
 	iframe {
 		width: 100%;
 	}
@@ -39,6 +46,10 @@
 		margin: 0 5px 5px 0;
 		padding: 0;
 		clear: both;
+
+		@include breakpoint(small) {
+			float: left;
+		}
 	}
 }
 
@@ -89,10 +100,20 @@
 
 		.post-categories {
 			margin: $baseLineHeight 0;
+
+			@include breakpoint(small) {
+				display: inline-block;
+				margin-left: 20px;
+			}			
 			a {
 				border: none;
 			}
 		}
+		
+		@include breakpoint(small) {
+			width: 100%;
+		}
+
 	}
 }
 
@@ -106,10 +127,23 @@
 	.entry-media {
 		@extend .col-1;
 		@extend .first;
+
+		@include breakpoint(small) {
+			display: none;
+		}	
+	}
+
+	> .entry-header {
+		@include breakpoint(medium) {
+			padding-left: 14%;
+		}
 	}
 
 	.entry-content {
-
+		@include breakpoint(medium) {
+			@extend .col-2;
+			@extend .last;
+		}
 	}
 }
 
@@ -117,9 +151,15 @@
 
 .entry-practical-header {
 	margin-top: $baseLineHeight;
+
 	.entry-extract {
 		@extend .col-3;
-		@extend .last;		
+		@extend .last;
+
+		@include breakpoint(medium) {
+			width: 377px;
+			max-width: 99%;
+		}
 	}
 }
 
@@ -128,12 +168,22 @@
 	@extend .first;
 	@include box-sizing();
 	padding: $contentPadding;
+	
+	@include breakpoint(medium) {
+		width: 99%;
+	}	
 }
 
 .entry-practical-aside {
 	@extend .col-2;
 	@include box-sizing();
-	padding: $contentPadding;	
+	padding: $contentPadding;
+
+	@include breakpoint(medium) {
+		width: 99%;
+		clear: both;
+		margin: auto;
+	}	
 }
 
 .twitter-timeline {
@@ -142,10 +192,6 @@
 	min-width: none;
 }
 
-
-
-
-// Programmation page Template
 
 
 
@@ -163,24 +209,60 @@
 		@extend .pull-1;
 		position: relative;
 		max-width: 70%;
+
+		@include breakpoint(small) {
+			margin: 0;
+			right: 0;
+			max-width: 100%;
+		}	
 	} 
 
 	.entry-content {
 		padding: 0;
+
+		@include breakpoint(small) {
+			width: 95%;
+			margin: auto;
+			float: none;
+			@include clearfix();
+		}	
 	}
 	
 	.inner-entry-content {
 		@extend .col-1;
-		@include box-sizing('border');
+		@extend .first;
+		@include box-sizing();
 		padding: 0.2em 0.3em 0 0;
+
+		@include breakpoint(medium) {
+			width: 98%;
+			clear: both;
+			margin: auto;
+		}
+
+		@include breakpoint(small) {
+			width: 100%;
+			clear: both;
+			margin: 0;
+		}
+
 		&:first-child {
-			@extend .first;
+			
 		}
 	}
+
 	.inner-entry-main-content {
 		@extend .col-2;
-		@include box-sizing('border');
+		@include box-sizing();
 		padding: 0.2em 0.3em 0 0;
+		
+		@include breakpoint(medium) {
+			margin-left: 0;
+		}		
+		@include breakpoint(medium) {
+			width: 100%;
+			margin: 0;
+		}	
 	}
 
 	.entry-meta {
@@ -191,6 +273,22 @@
 		position: absolute;
 		top: -30px;
 		left: 0;
+		
+		@include breakpoint(small) {
+			width: 95%;
+			position: relative;
+			clear: both;
+			padding: 0;
+			margin: 30px auto 0 auto;
+			float: none;
+		}
+
+		img {
+			@include breakpoint(small) {
+				display: none;
+			}
+		}
+
 	}
 		.tags-list {
 			margin-bottom: $baseLineHeight;
@@ -201,6 +299,14 @@
 		@extend .col-3;
 		@extend .last;
 
+		@include breakpoint(medium) {
+			width: 377px;
+			float: right;
+		}
+		@include breakpoint(medium) {
+			width: 100%;
+			clear: both;
+		}
 	}
 
 	#display-entry-mentions {

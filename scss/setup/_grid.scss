@@ -51,15 +51,19 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
 
 }
 
-#home-next-events[data-columns]::before {
-    content: '4 .column.col-1';
 
+#secondary[data-columns]::before  {
+    content: '1 .column.col-1';
+
+    @include breakpoint(tablette) {
+        content: '4 .column.col-1';
+    } 
     @include breakpoint(medium) {
         content: '3 .column.col-1';
-    }
+    }     
     @include breakpoint(small) {
         content: '2 .column.col-1';
-    }      
+    }
 }
 
 
@@ -83,8 +87,10 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
     margin-left: $gridGutterWidth;
 
     @include breakpoint(small) {
-        margin-left: 5%;
+        margin-right: 4%;
         max-width: 45%;
+        float: right;
+        margin-left: 0; 
     }
 }
 
@@ -92,11 +98,10 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
     margin-left: 0;
 
     @include breakpoint(small) {
-        margin-left: 2%;
+        margin-left: 4%;
+        float: left;
+        margin-right: 1%;
     }
-
-
-
 }
 
 /* Also, don't forget to add this: */

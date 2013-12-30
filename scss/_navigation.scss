@@ -221,8 +221,8 @@ ul.sub-menu {
 
 	li {
 		margin-right: $baseLineHeight / 2;
-		@extend .saisoned-on-bg;
 		padding: 0 8px;
+		margin-bottom: 10px;
 	}
 
 	a {
@@ -238,6 +238,7 @@ ul.sub-menu {
 		display: block;
 		padding: 9.5px;
 		margin-bottom: 10px;
+		margin-left: 15%;
 	}
 	@include breakpoint(medium) {
 

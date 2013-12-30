@@ -558,13 +558,16 @@ table {
   #homeGrid[data-columns]::before {
     content: '2 .column.col-1'; } }
 
-#home-next-events[data-columns]::before {
-  content: '4 .column.col-1'; }
+#secondary[data-columns]::before {
+  content: '1 .column.col-1'; }
+@media (max-width: 1024px) {
+  #secondary[data-columns]::before {
+    content: '4 .column.col-1'; } }
 @media (max-width: 800px) {
-  #home-next-events[data-columns]::before {
+  #secondary[data-columns]::before {
     content: '3 .column.col-1'; } }
 @media (min-width: 320px) and (max-width: 600px) {
-  #home-next-events[data-columns]::before {
+  #secondary[data-columns]::before {
     content: '2 .column.col-1'; } }
 
 #homeGrid .box-event, #homeGrid .box-month {
@@ -582,14 +585,18 @@ table {
   margin-left: 24.5px; }
 @media (min-width: 320px) and (max-width: 600px) {
   .column {
-    margin-left: 5%;
-    max-width: 45%; } }
+    margin-right: 4%;
+    max-width: 45%;
+    float: right;
+    margin-left: 0; } }
 
 .column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child {
   margin-left: 0; }
 @media (min-width: 320px) and (max-width: 600px) {
   .column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child {
-    margin-left: 2%; } }
+    margin-left: 4%;
+    float: left;
+    margin-right: 1%; } }
 
 /* Also, don't forget to add this: */
 [data-columns]::before {
@@ -603,7 +610,7 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content:first-child, .event .entry-meta, .box-footer:first-child, #categories-magazine {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content, .event .entry-meta, .box-footer:first-child, #categories-magazine {
   margin-left: 0; }
 
 .last, .no-results, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #main-magazine, .last-event-post, .search-header {
@@ -683,9 +690,15 @@ body {
 .next-events:after {
   clear: both; }
 @media (min-width: 320px) and (max-width: 600px) {
-  .next-events {
-    width: 95%;
-    margin: 0 auto; } }
+  .next-events .box-event, .next-events .box-month {
+    max-width: 45%;
+    margin: 0 2%; } }
+@media (max-width: 800px) {
+  .next-events .box-4 {
+    display: none; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  .next-events .box-3 {
+    display: none; } }
 
 #secondary {
   position: absolute;
@@ -696,9 +709,9 @@ body {
   #secondary {
     position: relative;
     width: 100%;
-    margin: 0;
+    margin: 80px 0;
     top: 0;
-    float: none;
+    float: left;
     clear: both; } }
 
 /*
@@ -764,14 +777,20 @@ body {
 
 .box-post {
   margin-left: 0; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .box-post {
+    width: 100%; } }
 
 .box-event:nth-child(4n+1), .box-month:nth-child(4n+1) {
   clear: both; }
-@media (min-width: 320px) and (max-width: 600px) {
+@media (max-width: 800px) {
   .box-event:nth-child(4n+1), .box-month:nth-child(4n+1) {
-    margin-left: 5%; } }
+    clear: none; } }
 @media (min-width: 320px) and (max-width: 600px) {
   .box-event:nth-child(2n+1), .box-month:nth-child(2n+1) {
+    clear: both; } }
+@media (max-width: 800px) {
+  .box-event:nth-child(3n+3), .box-month:nth-child(3n+3) {
     clear: both; } }
 
 .events-group-pair {
@@ -795,7 +814,8 @@ body {
   float: right; }
 
 article.page, article.post, article.event {
-  float: left; }
+  float: left;
+  min-height: 800px; }
 
 .no-results {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -971,7 +991,8 @@ ul.sub-menu {
   clear: both; }
 .shortcut-navigation li {
   margin-right: 10px;
-  padding: 0 8px; }
+  padding: 0 8px;
+  margin-bottom: 10px; }
 .shortcut-navigation a {
   color: white; }
 .shortcut-navigation a:hover, .shortcut-navigation a:visited, .shortcut-navigation a:active {
@@ -980,7 +1001,8 @@ ul.sub-menu {
   .shortcut-navigation {
     display: block;
     padding: 9.5px;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px;
+    margin-left: 15%; } }
 
 /*
  * Pictos Navigation
@@ -1184,10 +1206,9 @@ input[type=submit] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   border: none; }
-@media (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 600px) {
   .search-form input[type=search] {
-    width: 90%;
-    height: 40px; } }
+    width: 100%; } }
 .search-form input[type=submit] {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -1198,10 +1219,6 @@ input[type=submit] {
   width: 24px;
   height: 24px;
   color: white; }
-@media (max-width: 1024px) {
-  .search-form input[type=submit] {
-    width: 9%;
-    background-position: 3px 2px; } }
 .search-form .search-submit {
   padding: 0; }
 .search-form .search-submit:hover {
@@ -1329,8 +1346,8 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
     width: 100%; } }
 @media (max-width: 800px) {
   .site-branding {
-    width: 20%;
-    margin-top: 50px; } }
+    width: 15%;
+    margin-top: 0; } }
 
 .featured-media {
   max-width: 100%;
@@ -1352,6 +1369,12 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0 1em; }
+@media (max-width: 800px) {
+  .entry-content {
+    width: 377px; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  .entry-content {
+    width: 100%; } }
 .entry-content iframe {
   width: 100%; }
 
@@ -1362,6 +1385,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   margin: 0 5px 5px 0;
   padding: 0;
   clear: both; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .share-buttons .one-button {
+    float: left; } }
 
 .date-main {
   font-weight: bold; }
@@ -1385,14 +1411,32 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   padding: 0.2em 1em; }
 .post .entry-meta .post-categories {
   margin: 20px 0; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .post .entry-meta .post-categories {
+    display: inline-block;
+    margin-left: 20px; } }
 .post .entry-meta .post-categories a {
   border: none; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .post .entry-meta {
+    width: 100%; } }
 
 /**
  * Page
  */
+@media (min-width: 320px) and (max-width: 600px) {
+  .page .entry-media {
+    display: none; } }
+@media (max-width: 800px) {
+  .page > .entry-header {
+    padding-left: 14%; } }
+
 .entry-practical-header {
   margin-top: 20px; }
+@media (max-width: 800px) {
+  .entry-practical-header .entry-extract {
+    width: 377px;
+    max-width: 99%; } }
 
 .entry-practical-content {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1400,6 +1444,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0 1em; }
+@media (max-width: 800px) {
+  .entry-practical-content {
+    width: 99%; } }
 
 .entry-practical-aside {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1407,6 +1454,11 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0 1em; }
+@media (max-width: 800px) {
+  .entry-practical-aside {
+    width: 99%;
+    clear: both;
+    margin: auto; } }
 
 .twitter-timeline {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1422,20 +1474,54 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 .event .entry-header {
   position: relative;
   max-width: 70%; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .event .entry-header {
+    margin: 0;
+    right: 0;
+    max-width: 100%; } }
 .event .entry-content {
   padding: 0; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .event .entry-content {
+    width: 95%;
+    margin: auto;
+    float: none; }
+  .event .entry-content {
+    *zoom: 1; }
+  .event .entry-content:before, .event .entry-content:after {
+    content: "";
+    display: table; }
+  .event .entry-content:after {
+    clear: both; } }
 .event .inner-entry-content {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0.2em 0.3em 0 0; }
+@media (max-width: 800px) {
+  .event .inner-entry-content {
+    width: 98%;
+    clear: both;
+    margin: auto; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  .event .inner-entry-content {
+    width: 100%;
+    clear: both;
+    margin: 0; } }
 .event .inner-entry-main-content {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0.2em 0.3em 0 0; }
+@media (max-width: 800px) {
+  .event .inner-entry-main-content {
+    margin-left: 0; } }
+@media (max-width: 800px) {
+  .event .inner-entry-main-content {
+    width: 100%;
+    margin: 0; } }
 .event .entry-meta {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -1445,8 +1531,27 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   position: absolute;
   top: -30px;
   left: 0; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .event .entry-meta {
+    width: 95%;
+    position: relative;
+    clear: both;
+    padding: 0;
+    margin: 30px auto 0 auto;
+    float: none; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  .event .entry-meta img {
+    display: none; } }
 .event .tags-list {
   margin-bottom: 20px; }
+@media (max-width: 800px) {
+  .event .entry-mentions {
+    width: 377px;
+    float: right; } }
+@media (max-width: 800px) {
+  .event .entry-mentions {
+    width: 100%;
+    clear: both; } }
 .event #display-entry-mentions {
   text-align: right;
   padding-right: 20px; }
@@ -1468,27 +1573,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 
 #secondary aside {
   clear: both; }
-@media (max-width: 1024px) {
-  #secondary aside {
-    width: 45%;
-    float: left;
-    clear: none;
-    margin-left: 10px;
-    padding: 0.2em 0.3em; } }
-@media (min-width: 320px) and (max-width: 600px) {
-  #secondary aside {
-    /* Acceptable values are border, content, and padding - content is the default W3C model */
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    margin-left: 0; } }
 #secondary aside.widget_search {
   padding: 0;
   background: none; }
-@media (max-width: 800px) {
-  #secondary aside.widget_search {
-    padding: 0 0.3em; } }
 #secondary aside.cuisine-widget {
   padding: 0;
   margin-top: 43px; }
@@ -1557,8 +1644,11 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   border: none; }
 
 #prog-filters {
-  margin-top: -40px;
+  margin-top: -45px;
   margin-bottom: 20px; }
+@media (max-width: 800px) {
+  #prog-filters {
+    margin-top: 0; } }
 #prog-filters .awpqsf_class, #prog-filters .filter-column {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;

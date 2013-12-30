@@ -57,9 +57,8 @@ input[type=submit] {
 		@include box-sizing();
 		border: none;
 
-		@include breakpoint(tablette) {
-			width: 90%;
-			height: 40px;
+		@include breakpoint(small) {
+			width: 100%;
 		}
 	}
 
@@ -71,9 +70,8 @@ input[type=submit] {
 		height: $pictoWidth;
 		color: $white;
 		
-		@include breakpoint(tablette) {
-			width: 9%;
-			background-position: 3px 2px;
+		@include breakpoint(small) {
+			
 		}
 			
 	}

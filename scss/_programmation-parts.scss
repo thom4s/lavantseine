@@ -15,8 +15,12 @@
 
 #prog-filters {
 	@extend .navigation-group;
-	margin-top: - $baseLineHeight * 2;
+	margin-top: - $baseLineHeight * 2 - 5;
 	margin-bottom: $baseLineHeight * 1;
+
+   	@include breakpoint(medium) {
+        margin-top: 0;
+    }
 
 	.awpqsf_class,
 	.filter-column {
