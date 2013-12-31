@@ -5,12 +5,20 @@
 	@extend .col-3;
 	@include clearfix();
 	@extend .last;
+	
+	@include breakpoint(small) {
+		width: 100%;
+	}
 }
 
 #categories-magazine {
 	@extend .col-1;
 	@extend .first;
 	margin-top: $baseLineHeight * 6;
+
+	@include breakpoint(small) {
+		display: none;
+	}
 
 	.awpqsf_class,
 	.filter-column {
@@ -37,8 +45,14 @@
 
 
 .featured-post {
+	@include box-sizing();
 	@extend .plain-width;
 	margin-bottom: $baseLineHeight;
+
+	@include breakpoint(small) {
+		width: 100%;
+		margin: auto;
+	}	
 
 	.featured-content {
 		padding: 1em;
@@ -50,5 +64,20 @@
 	@extend .last;
 	@include box-sizing();
 	margin-bottom: $baseLineHeight;
-	padding: $boxPadding;	
+	padding: $boxPadding;
+
+	@include breakpoint(small) {
+		width: 95%;
+		margin: 20px auto;
+		float: none;
+	}		
+}
+
+#magazineGrid {
+	@include breakpoint(small) {
+		clear: both;
+		width: 95%;
+		margin: 20px auto;
+		float: none;
+	}
 }

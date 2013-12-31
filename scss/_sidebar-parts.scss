@@ -23,7 +23,8 @@
 		padding: 0;
 		background: none;
 
-		@include breakpoint(medium) {
+		@include breakpoint(small) {
+			display: none;
 		}
 	}
 
@@ -43,6 +44,10 @@
 			margin: 0;
 			padding: 0.6em 0 0 0.3em;
 			text-align: left;
+
+			@include breakpoint(small) {
+				height: auto;
+			}
 		}
 
 		.textwidget {

@@ -75,6 +75,10 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
 
 #magazineGrid[data-columns]::before {
     content: '3 .column.col-1';
+
+    @include breakpoint(small) {
+         content: '2 .column.col-1';
+    }   
 }
 
 #related-content[data-columns]::before {
@@ -103,6 +107,11 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
         margin-right: 1%;
     }
 }
+
+#magazineGrid {
+
+}
+
 
 /* Also, don't forget to add this: */
 [data-columns]::before { display: none !important; }

@@ -31,7 +31,7 @@ body { background-size: cover; }
 		@extend %clearfix;
 
 		@include breakpoint(desktop) {
-			@extend .plain-width;
+			width: 100%;
 		}
 		@include breakpoint(tablette) {
 
@@ -253,11 +253,9 @@ body { background-size: cover; }
 
 	&:nth-child(3n+3) {
 		@include breakpoint(medium) {
-			clear: both;
+			
 		}	
 	}
-
-
 
 }
 

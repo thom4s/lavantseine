@@ -136,6 +136,7 @@
 	> .entry-header {
 		@include breakpoint(medium) {
 			padding-left: 14%;
+			margin: 20px 0;
 		}
 	}
 
