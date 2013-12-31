@@ -91,7 +91,8 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
     margin-left: $gridGutterWidth;
 
     @include breakpoint(small) {
-        margin-right: 4%;
+        margin-right: 3%;
+        margin-left: 3%;
         max-width: 45%;
         float: right;
         margin-left: 0; 

@@ -83,10 +83,16 @@ body { background-size: cover; }
 					@include clearfix;
 					padding: $bigBlocsPadding;
 
+					@include breakpoint(small) {
+						width: 400px;
+						max-width: 100%;
+						margin: auto;
+					}
+
 					.box-event {
 						@include breakpoint(small) {
-							max-width: 45%;
-							margin: 0 2%;
+							max-width: 44%;
+							margin: 0 3%;
 						}
 					}
 
@@ -234,29 +240,36 @@ body { background-size: cover; }
 		@extend .first;
 		clear: both;
 
+		@include breakpoint(medium) {
+			clear: none;
+			margin-left: $gridGutterWidth;
+		}	
 		@include breakpoint(small) {
 
 		}
+	}
 
+	&:nth-child(3n+1) {
 		@include breakpoint(medium) {
+			clear: both;
+			margin-left: 0;
+		}	
+		@include breakpoint(small) {
+			float: left;
 			clear: none;
+			margin: 0 3%;
 		}	
 	}
 
 	&:nth-child(2n+1) {
+		@include breakpoint(medium) {
+			clear: none;
+		}
 		@include breakpoint(small) {
 			clear: both;
+			margin: 0 3%;
 		}
-		@include breakpoint(medium) {
-		}	
 	}
-
-	&:nth-child(3n+3) {
-		@include breakpoint(medium) {
-			
-		}	
-	}
-
 }
 
 .events-group-pair {

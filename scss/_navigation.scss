@@ -125,8 +125,6 @@
 	@include breakpoint(small) {
 
 	}
-
-
 }
 
 .main-nav div {
@@ -143,7 +141,7 @@
 	@include breakpoint(medium) {
 		top: 0;
 		position: relative;
-
+		height: auto;
 	}	
 }
 

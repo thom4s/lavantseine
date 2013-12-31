@@ -588,7 +588,8 @@ table {
   margin-left: 24.5px; }
 @media (min-width: 320px) and (max-width: 600px) {
   .column {
-    margin-right: 4%;
+    margin-right: 3%;
+    margin-left: 3%;
     max-width: 45%;
     float: right;
     margin-left: 0; } }
@@ -696,9 +697,14 @@ body {
 .next-events:after {
   clear: both; }
 @media (min-width: 320px) and (max-width: 600px) {
+  .next-events {
+    width: 400px;
+    max-width: 100%;
+    margin: auto; } }
+@media (min-width: 320px) and (max-width: 600px) {
   .next-events .box-event, .next-events .box-month {
-    max-width: 45%;
-    margin: 0 2%; } }
+    max-width: 44%;
+    margin: 0 3%; } }
 @media (max-width: 800px) {
   .next-events .box-4 {
     display: none; } }
@@ -791,10 +797,24 @@ body {
   clear: both; }
 @media (max-width: 800px) {
   .box-event:nth-child(4n+1), .box-month:nth-child(4n+1) {
+    clear: none;
+    margin-left: 24.5px; } }
+@media (max-width: 800px) {
+  .box-event:nth-child(3n+1), .box-month:nth-child(3n+1) {
+    clear: both;
+    margin-left: 0; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  .box-event:nth-child(3n+1), .box-month:nth-child(3n+1) {
+    float: left;
+    clear: none;
+    margin: 0 3%; } }
+@media (max-width: 800px) {
+  .box-event:nth-child(2n+1), .box-month:nth-child(2n+1) {
     clear: none; } }
 @media (min-width: 320px) and (max-width: 600px) {
   .box-event:nth-child(2n+1), .box-month:nth-child(2n+1) {
-    clear: both; } }
+    clear: both;
+    margin: 0 3%; } }
 
 .events-group-pair {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -933,7 +953,8 @@ article.page, article.post, article.event {
 @media (max-width: 800px) {
   .main-nav div {
     top: 0;
-    position: relative; } }
+    position: relative;
+    height: auto; } }
 
 .main-nav .current-menu-item div {
   display: block;
