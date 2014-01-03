@@ -95,12 +95,14 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: 0;
+	left: 1%;
+	text-align: left;
 	background: url(images/controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
-	right: 0;
+	right: 1%;
+	text-align: right;
 	background: url(images/controls.png) no-repeat -43px -32px;
 }
 
@@ -114,13 +116,16 @@
 
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;
+	@include box-sizing();
+	font-size: 3em;
 	top: 0;
 	margin: 0;
 	outline: 0;
 	width: 49%;
 	height: 100%;
-	text-indent: -9999px;
 	z-index: 9999;
+	padding-top: 20%;
+	opacity: 0.4;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {

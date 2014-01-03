@@ -13,7 +13,7 @@
 			
 			get_template_part( 'part', 'postslide' );
 
-			if ( $postDetail_showPic ) {
+			if ( !$postDetail_showPic ) {
 				the_post_thumbnail(''); 
 			}
 			if ( $postDetail_mediaMarkup ) {

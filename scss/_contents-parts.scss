@@ -39,6 +39,7 @@
 	}
 }
 
+
 .share-buttons {
 	margin-top: $baseLineHeight;
 	.one-button  {
@@ -79,8 +80,10 @@
 .post {
 	.entry-media {
 		@extend .plain-width;
-		img {
-			margin-bottom: -10px;
+		img, 
+		iframe {
+			display: block;
+			margin: auto;
 		}
 	}
 
@@ -142,8 +145,6 @@
 
 	.entry-content {
 		@include breakpoint(medium) {
-			@extend .col-2;
-			@extend .last;
 		}
 	}
 }
@@ -203,6 +204,10 @@
 .event {
 	.entry-media {
 		@extend .plain-width;
+	}
+
+	.event-portrait-media {
+		min-height: 40px;
 	}
 
 	.entry-header {
@@ -304,8 +309,8 @@
 			width: 377px;
 			float: right;
 		}
-		@include breakpoint(medium) {
-			width: 100%;
+		@include breakpoint(small) {
+			width: 98%;
 			clear: both;
 		}
 	}

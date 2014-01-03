@@ -57,7 +57,6 @@ get_header(); ?>
 					
 					<?php $i++; ?>
 					<?php endwhile; ?>
-					<?php lavantseine_paging_nav(); ?>
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>
@@ -81,7 +80,7 @@ get_header(); ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'boxes', get_post_format() ); ?>
 					<?php endwhile; ?>
-					<?php lavantseine_paging_nav(); ?>
+					<?php // lavantseine_paging_nav(); ?>
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>

@@ -257,7 +257,8 @@ body { background-size: cover; }
 		@include breakpoint(small) {
 			float: left;
 			clear: none;
-			margin: 0 3%;
+			margin-left: 3%;
+			margin-right: 3%;
 		}	
 	}
 
@@ -267,10 +268,25 @@ body { background-size: cover; }
 		}
 		@include breakpoint(small) {
 			clear: both;
-			margin: 0 3%;
+			margin-left: 3%;
+			margin-right: 3%;
 		}
 	}
+
+	&:nth-child(7) {
+		@include breakpoint(medium) {
+			clear: both;
+		}
+	}	
 }
+
+.column {
+	.box-event {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 
 .events-group-pair {
 	@extend .col-2;
@@ -299,9 +315,9 @@ body { background-size: cover; }
 			float: left;
 		}
 		&:last-child {
-			float: right;
+			float: right; 
 		}	
-	}
+	} 
 }
 
 
@@ -314,7 +330,10 @@ article.event, {
 	@extend .backgrounded-box;
 	@extend .plain-width;
 	float: left;
-	min-height: 800px;
+
+	@include breakpoint(desktop) {
+		min-height: 200px;
+	}
 }
 
 

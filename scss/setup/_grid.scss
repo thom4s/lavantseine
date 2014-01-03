@@ -83,6 +83,15 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
 
 #related-content[data-columns]::before {
     content: '4 .column.col-1';
+
+    @include breakpoint(small) {
+         content: '3 .column.col-1';
+    } 
+
+    @include breakpoint(small) {
+         content: '2 .column.col-1';
+    }     
+
 }
 
 /* These are the classes that are going to be applied: */
@@ -90,12 +99,15 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
     float: left;
     margin-left: $gridGutterWidth;
 
+    .box {
+        max-width: 100%;
+    }
+
     @include breakpoint(small) {
         margin-right: 3%;
         margin-left: 3%;
-        max-width: 45%;
-        float: right;
-        margin-left: 0; 
+        max-width: 44%;
+        float: left;
     }
 }
 
@@ -103,9 +115,9 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
     margin-left: 0;
 
     @include breakpoint(small) {
-        margin-left: 4%;
+        margin-left: 3%;
         float: left;
-        margin-right: 1%;
+        margin-right: 3%;
     }
 }
 

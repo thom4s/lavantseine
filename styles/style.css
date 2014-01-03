@@ -581,26 +581,33 @@ table {
 
 #related-content[data-columns]::before {
   content: '4 .column.col-1'; }
+@media (min-width: 320px) and (max-width: 600px) {
+  #related-content[data-columns]::before {
+    content: '3 .column.col-1'; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  #related-content[data-columns]::before {
+    content: '2 .column.col-1'; } }
 
 /* These are the classes that are going to be applied: */
 .column {
   float: left;
   margin-left: 24.5px; }
+.column .box, .column .box-blank, .column .box-page, .column .box-post, .column .box-event, .column .box-month, .column .box-footer {
+  max-width: 100%; }
 @media (min-width: 320px) and (max-width: 600px) {
   .column {
     margin-right: 3%;
     margin-left: 3%;
-    max-width: 45%;
-    float: right;
-    margin-left: 0; } }
+    max-width: 44%;
+    float: left; } }
 
 .column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child {
   margin-left: 0; }
 @media (min-width: 320px) and (max-width: 600px) {
   .column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child {
-    margin-left: 4%;
+    margin-left: 3%;
     float: left;
-    margin-right: 1%; } }
+    margin-right: 3%; } }
 
 /* Also, don't forget to add this: */
 [data-columns]::before {
@@ -807,14 +814,23 @@ body {
   .box-event:nth-child(3n+1), .box-month:nth-child(3n+1) {
     float: left;
     clear: none;
-    margin: 0 3%; } }
+    margin-left: 3%;
+    margin-right: 3%; } }
 @media (max-width: 800px) {
   .box-event:nth-child(2n+1), .box-month:nth-child(2n+1) {
     clear: none; } }
 @media (min-width: 320px) and (max-width: 600px) {
   .box-event:nth-child(2n+1), .box-month:nth-child(2n+1) {
     clear: both;
-    margin: 0 3%; } }
+    margin-left: 3%;
+    margin-right: 3%; } }
+@media (max-width: 800px) {
+  .box-event:nth-child(7), .box-month:nth-child(7) {
+    clear: both; } }
+
+.column .box-event, .column .box-month {
+  margin-left: 0;
+  margin-right: 0; }
 
 .events-group-pair {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -837,8 +853,10 @@ body {
   float: right; }
 
 article.page, article.post, article.event {
-  float: left;
-  min-height: 800px; }
+  float: left; }
+@media (min-width: 1025px) {
+  article.page, article.post, article.event {
+    min-height: 200px; } }
 
 .no-results {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1056,7 +1074,7 @@ ul.sub-menu {
   background-position: top -72px left 0; }
 
 .go-instagram {
-  background-position: top -48px left 0; }
+  background-position: top -168px left 0; }
 
 .go-youtube {
   background-position: top -120px left 0; }
@@ -1175,6 +1193,9 @@ ul {
   font-size: 1em;
   line-height: 20px;
   margin-bottom: 20px; }
+
+em {
+  font-style: italic; }
 
 form {
   font-family: "PT Sans", sans-serif;
@@ -1424,8 +1445,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 /**
  * Post
  */
-.post .entry-media img {
-  margin-bottom: -10px; }
+.post .entry-media img, .post .entry-media iframe {
+  display: block;
+  margin: auto; }
 .post .entry-meta {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -1495,6 +1517,8 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 /**
  * Event
  */
+.event .event-portrait-media {
+  min-height: 40px; }
 .event .entry-header {
   position: relative;
   max-width: 70%; }
@@ -1572,9 +1596,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   .event .entry-mentions {
     width: 377px;
     float: right; } }
-@media (max-width: 800px) {
+@media (min-width: 320px) and (max-width: 600px) {
   .event .entry-mentions {
-    width: 100%;
+    width: 98%;
     clear: both; } }
 .event #display-entry-mentions {
   text-align: right;
@@ -1687,6 +1711,12 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   width: 32%;
   margin-left: 1%;
   float: left; }
+@media (max-width: 800px) {
+  #prog-filters .awpqsf_class, #prog-filters .filter-column {
+    width: 28%; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  #prog-filters .awpqsf_class, #prog-filters .filter-column {
+    width: 32%; } }
 #prog-filters .awpqsf_class label[class*='tax-label-'], #prog-filters .awpqsf_class label[class*='tcmf-label-'], #prog-filters .filter-column label[class*='tax-label-'], #prog-filters .filter-column label[class*='tcmf-label-'] {
   width: 100%;
   padding: 5px 0 0; }
@@ -1702,6 +1732,16 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 #prog-filters .awpqsf_class a, #prog-filters .filter-column a {
   border: inherit;
   color: inherit; }
+@media (max-width: 800px) {
+  #prog-filters .taxcheckbox-0 {
+    margin-top: 150px;
+    margin-right: 5%;
+    width: 35%; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  #prog-filters .taxcheckbox-0 {
+    margin-top: 20%;
+    margin-right: 0;
+    width: 32%; } }
 #prog-filters .awpqsf_submit {
   padding: 10px 0;
   float: right;
@@ -1870,11 +1910,13 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-wrapper .bx-prev {
-  left: 0;
+  left: 1%;
+  text-align: left;
   background: url(images/controls.png) no-repeat 0 -32px; }
 
 .bx-wrapper .bx-next {
-  right: 0;
+  right: 1%;
+  text-align: right;
   background: url(images/controls.png) no-repeat -43px -32px; }
 
 .bx-wrapper .bx-prev:hover {
@@ -1885,13 +1927,19 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 3em;
   top: 0;
   margin: 0;
   outline: 0;
   width: 49%;
   height: 100%;
-  text-indent: -9999px;
-  z-index: 9999; }
+  z-index: 9999;
+  padding-top: 20%;
+  opacity: 0.4; }
 
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none; }
@@ -1955,6 +2003,10 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   margin-top: 0; }
 
 .search-header {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   width: 661.1px;
   margin-bottom: 40px; }
 .search-header {
@@ -1964,6 +2016,11 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   display: table; }
 .search-header:after {
   clear: both; }
+@media (max-width: 800px) {
+  .search-header {
+    width: 100%;
+    margin-top: 0;
+    padding-left: 15%; } }
 .search-header h1 {
   float: left;
   margin: 10px 0; }
@@ -1976,3 +2033,6 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   margin-left: 10px; }
 .search-header .post-type-filter input {
   margin-left: 10px; }
+.search-header input[type=search] {
+  border: 1px solid;
+  border-right: none; }

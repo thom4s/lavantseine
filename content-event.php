@@ -43,11 +43,12 @@
 							    echo '<li>'. strftime('%A %e %b - %kh%M', $event_first_date ) .'.</li>'; 
 
 							if ( $event_other_dates ) : 
-								echo '<ul class="event-repeatable-dates">';
 								foreach ($event_other_dates as $date) { 
 									$date = strtotime($date);
-								    echo '<li>'. strftime('%A %e %b - %kh%M', $date ) .'.</li>';  
-								}  
+								    if ( $date != '' ) : 
+								    	echo '<li>'. strftime('%A %e %b - %kh%M', $date ) .'.</li>'; 
+								    endif;
+								} 
 							endif; 
 
 							if ( $event_last_date && $event_last_date != $event_first_date ) : 
@@ -98,10 +99,12 @@
 
 		<div class="entry-meta">
 
-			<?php
-				$custom_image = $post_meta_data['eventDetail_portraitMedia'][0];  
-				echo wp_get_attachment_image($custom_image, ''); 
-			?>
+			<div class="event-portrait-media">
+				<?php
+					$custom_image = $post_meta_data['eventDetail_portraitMedia'][0];  
+					echo wp_get_attachment_image($custom_image, ''); 
+				?>
+			</div><!-- .event-portrait-media -->
 
 			<div class="event-price">
 				<?php
@@ -124,7 +127,7 @@
 					$event_dealer_name = get_post_meta( $post->ID, 'eventDetail_dealer-name', true );
 				?>		
 
-				<a href="#" class="button saisoned-on-bg">Réservez au Théâtre</a>
+				<a href="http://staging.lavant-seine.com/les-infos-pratiques/tarifs-et-reservations/" class="button saisoned-on-bg">Réservez au Théâtre</a>
 				<?php 
 					if ( $event_dealer_name ) : ?>
 						<a href="<?php echo $event_dealer_link; ?>" target="_blank" class="button saisoned-on-bg">Réservez sur <?php echo $event_dealer_name; ?></a>

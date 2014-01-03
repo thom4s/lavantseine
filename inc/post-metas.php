@@ -34,8 +34,8 @@ $post_details_fields = array(
         'type'  => 'textarea' 
     ),
     array(  
-        'label'  => 'Afficher le visuel',  
-        'desc'  => '(si code vidéo ou sonore)',  
+        'label'  => 'Ne pas afficher le visuel principal',  
+        'desc'  => '(si code vidéo ou slide)',  
         'id'    => $prefix.'showPic',  
         'type'  => 'checkbox' 
     ),
