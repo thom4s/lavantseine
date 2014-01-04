@@ -30,7 +30,7 @@ get_header(); ?>
 							foreach(
 								array( 
 									'any' => 'Tout',
-									'event' => 'les Rendez-vous',
+									'event' => 'les Evénements',
 									'post' => 'le Magazine',
 									'page' => 'Les autres Pages'
 									) as $post_type => $type_title ):

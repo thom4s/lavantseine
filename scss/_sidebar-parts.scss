@@ -16,16 +16,24 @@
 		@include breakpoint(small) {
 
 		}
-
 	}
 
-	aside.widget_search {
+	aside.search-format-inline {
 		padding: 0;
 		background: none;
 
-		@include breakpoint(small) {
+		@include breakpoint(tablette) {
 			display: none;
 		}
+	}
+
+
+	aside.search-format-bloc {
+		display: none;
+
+		@include breakpoint(tablette) {
+			display: block;
+		}	
 	}
 
 	aside:not(.cuisine-widget) {
@@ -62,7 +70,7 @@
 		}
 
 		@include breakpoint(tablette) {
-			margin-top: 0;
+			display: none;
 		}			
 	}
 

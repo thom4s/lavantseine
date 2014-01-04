@@ -336,10 +336,19 @@ article.event, {
 	}
 }
 
+article.event {
+	min-height: 770px;
+}
+
 
 .no-results {
 	@include box-sizing();
 	width: $navigationWidth;
 	padding: $boxPadding;
 	@extend .last;
+
+	@include breakpoint(tablette) {
+		width: 100%;
+		padding-left: 16%;
+	}
 }

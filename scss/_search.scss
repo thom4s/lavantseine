@@ -38,10 +38,54 @@
 		}
 	}
 
+}
+
+.search-format-inline,
+.search-header  {
 	input[type=search] {
 		border: 1px solid;
 		border-right: none;
+		line-height: 20px;	
+	}
+	input[type=submit] {
+		padding: 0.3em 0.4em;
+	}
+}
+
+.search-header  {
+	.search-form {
+		width: auto;
+	}
+	input[type=search] {
+		height: 30px;
+	}
+	input[type=submit] {
+		border: none;
+		height: 30px;
+	}
+}
+
+.search-format-bloc {
+
+	.search-form {
+		float: none;
+		height: auto;
 	}
 
-
+	input[type=search] {
+		width: 100%;
+		line-height: 20px;
+		background: white;
+		border: 1px solid $black;
+		height: 30px;
+		padding: 0.5em;
+		margin: 12px 0 7px 0;
+	}
+	input[type=submit] {
+		padding: 0.3em 0.4em;
+	}	
 }
+
+
+
+

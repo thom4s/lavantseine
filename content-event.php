@@ -40,19 +40,19 @@
 
 						<?php if ( $event_first_date ) : 
 							echo '<ul class="event-repeatable-dates">';
-							    echo '<li>'. strftime('%A %e %b - %kh%M', $event_first_date ) .'.</li>'; 
+							    echo '<li>'. strftime('%A %e %b %G - %kh%M', $event_first_date ) .'.</li>'; 
 
 							if ( $event_other_dates ) : 
 								foreach ($event_other_dates as $date) { 
 									$date = strtotime($date);
 								    if ( $date != '' ) : 
-								    	echo '<li>'. strftime('%A %e %b - %kh%M', $date ) .'.</li>'; 
+								    	echo '<li>'. strftime('%A %e %b %G - %kh%M', $date ) .'.</li>'; 
 								    endif;
 								} 
 							endif; 
 
 							if ( $event_last_date && $event_last_date != $event_first_date ) : 
-							    echo '<li>'. strftime('%A %e %b - %kh%M', $event_last_date ) .'.</li>'; 							    
+							    echo '<li>'. strftime('%A %e %b %G - %kh%M', $event_last_date ) .'.</li>'; 							    
 							endif;
 
 							echo '</ul>';
@@ -63,7 +63,8 @@
 						if ( $count > 0 ){
 						    echo "<ul class='tags-list'>";
 						    foreach ( $tags as $term ) {
-						    	echo "<li class='saisoned-on-color'>#" . $term->name . "</li>";
+				    			$term_link = get_term_link( $term, '' );
+						    	echo "<a href='". $term_link ."'><li class='saisoned-on-color'>#" . $term->name . "</li></a>";
 						    	echo $term->description;
 						    }
 						    echo "</ul>";

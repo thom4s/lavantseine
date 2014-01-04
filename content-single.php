@@ -39,7 +39,7 @@
 
 		<?php if ($attached) : ?>
 		<a href="<?php echo $attached['url']; ?>">  
-		    Download PDF Here  
+		    Téléchargez le dossier de presse ici (.pdf)  
 		</a>
 		<?php endif; ?>
 	</div><!-- .entry-content -->

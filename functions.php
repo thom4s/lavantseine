@@ -14,7 +14,8 @@ define('INSTAGRAM_URL','http://instagram.com/avantseine');
 define('GOOGLEPLUS_URL','https://plus.google.com/u/0/b/100144920076066761502/100144920076066761502');
 define('VIDEOCHANNEL_URL','https://www.youtube.com/channel/UCtUb1swrX34VbClR53YcagA');
 
-setlocale(LC_TIME, "fr_FR");
+setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+
 
 
 if ( ! function_exists( 'lavantseine_setup' ) ) :
@@ -154,8 +155,8 @@ function lavantseine_customize_css()
             .saisoned-on-bg { background-color:<?php echo $saisonColor; ?> !important; }
             h3, h4 { color:<?php echo $saisonColor; ?> !important; }
             .box-month h2 { color:<?php echo $saisonColor; ?> !important; border-color: <?php echo $saisonColor; ?> !important}
-            .main-nav .current_page_item > a, .current-menu-ancestor > a, .main-nav .current-menu-item > a { color:<?php echo $saisonColor; ?> !important; }
-            a.button, input[type=submit], input[type=button], #menu-acces-directs li, .widget_search { background-color:<?php echo $saisonColor; ?> !important; }
+            .main-nav .current_page_item > a, .current-menu-ancestor > a, .main-nav .current-menu-item > a, .search-format-inline input[type=submit] { color:<?php echo $saisonColor; ?> !important; }
+            a.button, input[type=submit], input[type=button], #menu-acces-directs li, .search-format-inline { background-color:<?php echo $saisonColor; ?> !important; }
          </style>
     <?php
 }
@@ -314,26 +315,27 @@ function random_add_rewrite() {
 
 add_action('template_redirect','random_template');
 function random_template() {
-        if (get_query_var('random') == 1) {
-       		$args= array(
-				'post_type' => 'event',
-				'orderby'	=> 'rand',
-				'numberposts'=> '1',
-				'meta_query' => array(
-			       	array(
-			           'key' => 'eventDetail_first_date',
-			           'value' => $today,
-			           'compare' => '>=',
-			        )
-			   	)
-       		);
-            $posts = get_posts($args);
-            foreach($posts as $post) {
-                $link = get_permalink($post);
-            }
-            wp_redirect($link,307);
-            exit;
+	$today = time();
+    if (get_query_var('random') == 1) {
+    	$args= array(
+			'post_type' => 'event',
+			'orderby'	=> 'rand',
+			'numberposts'=> '1',
+			'meta_query' => array(
+			   	array(
+			        'key' => 'eventDetail_first_date',
+			        'value' => $today,
+			        'compare' => '>=',
+			    )
+			)
+       	);
+        $posts = get_posts($args);
+        foreach($posts as $post) {
+            $link = get_permalink($post);
         }
+        wp_redirect($link,307);
+        exit;
+    }
 }
 
 
@@ -385,6 +387,8 @@ function custom_excerpt_length( $length ) {
 	return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
 
 /**
  * Sets the 'publicly_queryable' value of the page post type to true

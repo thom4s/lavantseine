@@ -25,6 +25,19 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
+		<div class="clearfix"></div>
+
+
+		<div id="attached-content">
+
+			<div id="related-content" class="related-posts" data-columns>
+
+			    <?php get_template_part( 'related', 'events' ); ?>
+				<?php get_template_part( 'related', 'posts' ); ?>
+
+			</div><!-- /.related-posts -->
+		</div>	<!-- #attached-content -->
+				
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

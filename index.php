@@ -11,7 +11,7 @@ get_header(); ?>
 		<main id="main" class="site-main backgrounded-box" role="main">
 
 			<?php
-				setlocale(LC_TIME, "fr_FR");
+				setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
 				$today = time();
 
 				// Query last fourth events (event post type)

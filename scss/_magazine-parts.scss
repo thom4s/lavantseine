@@ -16,7 +16,7 @@
 	@extend .first;
 	margin-top: $baseLineHeight * 6;
 
-	@include breakpoint(small) {
+	@include breakpoint(medium) {
 		display: none;
 	}
 
@@ -43,6 +43,21 @@
 	}
 }
 
+#categories-replaced {
+	display: none;
+	@extend #categories-magazine;
+	margin-top: 0;
+	margin-bottom: $baseLineHeight;
+	
+	@include breakpoint(medium) {
+		display: block;
+	}
+	@include breakpoint(small) {
+		margin-left: 3%;
+		margin-right: 3%;
+		max-width: 44%;		
+	}
+}
 
 .featured-post {
 	@include box-sizing();
@@ -52,6 +67,7 @@
 	@include breakpoint(small) {
 		width: 100%;
 		margin: auto;
+		margin-bottom: $baseLineHeight;
 	}	
 
 	.featured-content {
@@ -67,9 +83,11 @@
 	padding: $boxPadding;
 
 	@include breakpoint(small) {
-		width: 95%;
-		margin: 20px auto;
-		float: none;
+		width: 176px;
+		float: left;
+		margin-left: 2%;
+		margin-right: 3%;
+        max-width: 44%;
 	}		
 }
 
@@ -77,7 +95,6 @@
 	@include breakpoint(small) {
 		clear: both;
 		width: 95%;
-		margin: 20px auto;
-		float: none;
+		float: left;
 	}
 }

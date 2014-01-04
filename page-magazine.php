@@ -65,6 +65,9 @@ $today = time();
 					?>
 				</div><!-- end .featured-post -->
 
+				<div id="categories-replaced" class="transparent-background">
+					<?php display_mag_filter_menu(); ?>
+				</div>
 
 					<?php
 
@@ -183,15 +186,11 @@ $today = time();
 					<?php wp_reset_postdata(); ?>
 				</div>
 
-
 			</div><!-- #main-magazine -->
 
 			<div id="categories-magazine" class="transparent-background">
 				<?php display_mag_filter_menu(); ?>
-				<?php $magFilterID = get_option('magFilterID', '146'); ?>
-				<?php // echo do_shortcode("[AjaxWPQSF id=". $magFilterID. " formtitle='0']"); ?>
 			</div><!-- .categories-magazine -->
-
 
 		<div class="clearfix"></div>
 		</main><!-- #main -->

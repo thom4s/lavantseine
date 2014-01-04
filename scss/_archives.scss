@@ -5,4 +5,8 @@
 	margin-left : $navigationMarginLeft;
 	margin-bottom: $baseLineHeight * 2;
 	margin-top: 0;
+	
+	@include breakpoint(medium) {
+		margin-left : 0;
+	}	
 }

@@ -40,7 +40,6 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() ) :
 						comments_template();
 					endif;
@@ -55,39 +54,10 @@ get_header(); ?>
 		<div id="attached-content">
 
 			<div id="related-content" class="related-posts" data-columns>
-			    <?php
 
-					// Remontée des événements puis des articles liés à l'événement en cours.
-				    // Basé sur un related post à partir de la taxonomie 'tag' (tag relationnel)
-					$backup = $post;  // backup the current object
-					$taxonomy = 'arborescence';//  e.g. post_tag, category, custom taxonomy
-					$param_type = 'arborescence'; //  e.g. tag__in, category__in, but genre__in will NOT work
-					$post_types = array('event', 'post' );
-					$tax_args=array('orderby' => 'none');
-					$tags = wp_get_post_terms( $post->ID , $taxonomy, $tax_args);
-					if ($tags) {
-						foreach ($post_types as $post) {
-						  foreach ($tags as $tag) {
-						    $args=array(
-						      "$param_type" => $tag->slug,
-						      'post__not_in' => array($backup->ID),
-						      'post_type' => $post,
-						      'showposts'=>-1,
-						      'caller_get_posts'=>1
-						    );
-						    $my_query = null;
-						    $my_query = new WP_Query($args);
-						    if( $my_query->have_posts() ) {
-						      while ($my_query->have_posts()) : $my_query->the_post();
-						      	get_template_part( 'boxes', get_post_format() );
-						      endwhile;
-						    }
-						  }
-						}
-					}
-					wp_reset_query();
+			    <?php get_template_part( 'relatedbyarbo', 'events' ); ?>
+				<?php get_template_part( 'relatedbyarbo', 'posts' ); ?>
 
-			    ?>
 			</div><!-- /.related-posts -->
 		</div>	<!-- #attached-content -->
 

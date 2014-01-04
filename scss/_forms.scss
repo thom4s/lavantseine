@@ -47,7 +47,6 @@ input[type=submit] {
 		height: 40px;
 	}
 
-
 	input[type=search] {
 		width: 152px;
 		float: left;
@@ -62,20 +61,6 @@ input[type=submit] {
 		}
 	}
 
-	input[type=submit] {
-		@include box-sizing();
-		background-image: url(/wp-content/themes/lavantseine/img/pictos-sprite-24px.png);
-		background-repeat: no-repeat;
-		width: $pictoWidth;
-		height: $pictoWidth;
-		color: $white;
-		
-		@include breakpoint(small) {
-			
-		}
-			
-	}
-
 	.search-submit {
 		padding: 0;
 		&:hover {
@@ -83,6 +68,28 @@ input[type=submit] {
 		}
 	}
 }
+
+.search-format-inline {
+	input[type=submit] {
+		@include box-sizing();
+		background-image: url(/wp-content/themes/lavantseine/img/pictos-sprite-24px.png);
+		background-repeat: no-repeat;
+		width: $pictoWidth;
+		height: $pictoWidth;
+		color: $white;	
+	}
+}
+
+
+.search-format-bloc {
+	input[type=submit] {
+		@include box-sizing();
+		background: none;
+		color: $white;
+	}
+}
+
+
 
 
 // Sarbacane widget
