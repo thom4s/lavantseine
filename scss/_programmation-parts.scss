@@ -30,10 +30,10 @@
 		float: left;
 
 		@include breakpoint(medium) {
-        	width: 28%;
+    	
     	}
 		@include breakpoint(small) {
-        	width: 32%;
+
     	}
 		label[class*='tax-label-'], 
 		label[class*='tcmf-label-'] {
@@ -66,14 +66,9 @@
 
 	.taxcheckbox-0 {
 		@include breakpoint(medium) {
-        	margin-top: 150px;
-        	margin-right: 5%;
-        	width: 35%;
+        	margin-top: 40px;
     	}
 		@include breakpoint(small) {
-        	margin-top: 20%;
-        	margin-right: 0;
-        	width: 32%;
     	}    	
 	}
 

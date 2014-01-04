@@ -67,10 +67,7 @@
 
 				<?php endif; ?>
 
-				<?php 
-					/* Restore original Post Data */
-					wp_reset_postdata();
-				?>
+				<?php wp_reset_postdata(); ?>
 			</div>
 
 

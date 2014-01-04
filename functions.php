@@ -15,7 +15,8 @@ define('GOOGLEPLUS_URL','https://plus.google.com/u/0/b/100144920076066761502/100
 define('VIDEOCHANNEL_URL','https://www.youtube.com/channel/UCtUb1swrX34VbClR53YcagA');
 
 setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
-
+$today = time();
+$previous_month = false;
 
 
 if ( ! function_exists( 'lavantseine_setup' ) ) :
@@ -273,27 +274,38 @@ add_filter('ajax_wpqsf_reoutput', 'customize_output', '', 4);
 function customize_output( $results, $args, $id, $getdata ){
 	
 	// The Query
+	
 	$query = new WP_Query( $args );
+   
 	ob_start(); $results ='';
-
-	$progFilterID = get_option('progFilterID', '143');
-	$magFilterID = get_option('magFilterID', '146');
 	
 	// The Loop
 	if ( $query->have_posts() ) {
+		echo '<div class="next-events backgrounded-box">';
+
 		while ( $query->have_posts() ) {
 			$query->the_post();
+			$id = get_the_ID();
 
+			// Month Test
+			$event_first_date = get_post_meta( $id, 'eventDetail_first_date', true );
+			$month = date( 'Y/m', $event_first_date );
 
-			if ( $id == $progFilterID ) {
-				get_template_part( 'boxes' );
-			} elseif ( $id == $magFilterID ) {
-				get_template_part( 'boxes' );
-			} else {
-				echo 'nothing';
-			}
-
-		}
+			// Test month of event. Display Month Date
+			if ( $previous_month != $month ): ?>
+				<div class="box-month " data-date="<?php print strtotime($month.'/01') ?>">
+					<h2 class="entry-title">
+						<?php print strftime('%B %Y', htmlentities( strtotime($month.'/01')) )?>
+					</h2>
+				</div><!-- .box -->
+			<?php
+				$previous_month = $month;
+			endif;
+			// end month test
+		
+			get_template_part( 'boxes', get_post_format() );
+		} // endwhile
+		echo '</div>';
 	}
 
 	// Restore original Post Data
@@ -305,7 +317,10 @@ function customize_output( $results, $args, $id, $getdata ){
 }
 
 
-
+/**
+ * Random an event with url /index.php?random=1
+ *
+ */
 add_action('init','random_add_rewrite');
 function random_add_rewrite() {
        global $wp;
@@ -402,4 +417,42 @@ function eg_make_pages_queryable() {
     $wp_post_types['page']->publicly_queryable = true;
 }
 add_action( 'init', 'eg_make_pages_queryable', 20 );
+
+
+
+
+/**
+ * Set order for event in search & archives page
+ *
+ */
+function sort_by_date_from_today( $query ) {
+    global $today;  
+    if ( !is_admin() && is_tax( array('rdv', 'discipline') ) && $query->is_main_query() ) {
+        $query->set( 'meta_key', 'eventDetail_first_date');
+        $query->set( 'posts_per_page', '-1');
+        $query->set( 'orderby', 'meta_value_num');
+        $query->set( 'order', 'ASC');
+        $query->set( 'meta_query', array(
+		       	array(
+		           'key' => 'eventDetail_first_date',
+		           'value' => $today,
+		           'compare' => '>=',
+		        )
+		    ));
+    }
+}
+add_action( 'pre_get_posts', 'sort_by_date_from_today' );
+
+
+function sort_by_date( $query ) {
+    global $today;  
+    if ( !is_admin() && is_search() && $query->is_main_query() ) {
+        $query->set( 'meta_key', 'eventDetail_first_date');
+        $query->set( 'orderby', 'meta_value_num');
+        $query->set( 'order', 'ASC');
+    }
+}
+add_action( 'pre_get_posts', 'sort_by_date' );
+
+
 

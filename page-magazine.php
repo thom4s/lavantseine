@@ -65,10 +65,6 @@ $today = time();
 					?>
 				</div><!-- end .featured-post -->
 
-				<div id="categories-replaced" class="transparent-background">
-					<?php display_mag_filter_menu(); ?>
-				</div>
-
 					<?php
 
 						// Query events to come
@@ -149,13 +145,14 @@ $today = time();
 						wp_reset_postdata();
 					?>
 
+				<div id="magazineGrid" data-columns class="last-post-list">
 
+				<div id="categories-replaced" class="transparent-background">
+					<?php display_mag_filter_menu(); ?>
+				</div>
 
-
-				<div id="magazineGrid"  data-columns class="last-post-list">
 					<?php
 						// QUERY ALL POST
-						// TODO : Exclude featured post and lastEventPost
 						$args = array(
 							'post_type' 	=> 'post',
 							'order'			=> 'DESC',
@@ -166,7 +163,6 @@ $today = time();
 
 					<?php if ( $query->have_posts() ) : ?>
 
-						<?php /* Start the Loop */ ?>
 						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 							<?php
@@ -175,6 +171,7 @@ $today = time();
 
 						<?php endwhile; ?>
 
+						<h1>Pagination</h1>
 						<?php lavantseine_paging_nav(); ?>
 
 					<?php else : ?>

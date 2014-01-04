@@ -3,7 +3,7 @@
 
 .archive-title {
 	margin-left : $navigationMarginLeft;
-	margin-bottom: $baseLineHeight * 2;
+	margin-bottom: $baseLineHeight;
 	margin-top: 0;
 	
 	@include breakpoint(medium) {

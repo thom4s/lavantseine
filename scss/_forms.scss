@@ -14,6 +14,7 @@ input[type=email] {
 	border: $inputBorder; 
 	height: $inputHeight;
 	padding: 0.5em;
+	@include border-radius(0);
 }
 
 input[type=checkbox] {
@@ -54,6 +55,7 @@ input[type=submit] {
 		margin: 0;
 		padding: 0 0.3em;
 		@include box-sizing();
+		@include border-radius(0);
 		border: none;
 
 		@include breakpoint(small) {
