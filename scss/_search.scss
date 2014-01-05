@@ -14,6 +14,10 @@
 		padding-left: 15%;
 	}
 
+	@include breakpoint(small) {
+		padding-left: 0;
+	}
+
 	h1 {
 		float: left;
 		margin: ($baseLineHeight / 2) 0 ; 
@@ -30,6 +34,11 @@
 
 	.search-form {
 		margin-left: 10px;
+		@include breakpoint(small) {
+			clear: both;
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.post-type-filter {
@@ -58,6 +67,11 @@
 	}
 	input[type=search] {
 		height: 30px;
+		
+		@include breakpoint(small) {
+			border-right: 1px solid;
+			margin-bottom: 2px;
+		}
 	}
 	input[type=submit] {
 		border: none;

@@ -84,7 +84,7 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
 #related-content[data-columns]::before {
     content: '4 .column.col-1';
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
          content: '3 .column.col-1';
     } 
 

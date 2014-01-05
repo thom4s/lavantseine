@@ -197,7 +197,7 @@ function add_attachement_meta_boxes() {
     // Define the custom attachment for pages  
     add_meta_box(  
         'wp_custom_attachment',  
-        'Custom Attachment',  
+        'Dossier de presse',  
         'wp_custom_attachment',  
         'event',  
         'side'  
@@ -209,13 +209,18 @@ add_action('add_meta_boxes', 'add_attachement_meta_boxes');
 function wp_custom_attachment() {  
   
     wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');  
-      
+    $attached = get_post_meta(get_the_ID(), 'wp_custom_attachment', true);
+    
+    if ($attached) : 
+        echo '<b>Fichier en place : </b>'. $attached['file'];
+    endif; 
+
     $html = '<p class="description">';  
-        $html .= 'Upload your PDF here.';  
+        $html .= 'Ajouter ou Modifier un document au format PDF';  
     $html .= '</p>';  
     $html .= '<input type="file" id="wp_custom_attachment" name="wp_custom_attachment" value="" size="25">';  
       
-    echo $html;  
+    echo $html; 
   
 } // end wp_custom_attachment 
 

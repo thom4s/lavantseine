@@ -273,7 +273,8 @@ body { background-size: cover; }
 		}
 	}
 
-	&:nth-child(7) {
+	&:nth-child(7),
+	&:nth-child(13) {
 		@include breakpoint(medium) {
 			clear: both;
 		}

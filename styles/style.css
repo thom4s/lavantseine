@@ -581,7 +581,7 @@ table {
 
 #related-content[data-columns]::before {
   content: '4 .column.col-1'; }
-@media (min-width: 320px) and (max-width: 600px) {
+@media (max-width: 800px) {
   #related-content[data-columns]::before {
     content: '3 .column.col-1'; } }
 @media (min-width: 320px) and (max-width: 600px) {
@@ -825,7 +825,7 @@ body {
     margin-left: 3%;
     margin-right: 3%; } }
 @media (max-width: 800px) {
-  .box-event:nth-child(7), .box-month:nth-child(7) {
+  .box-event:nth-child(7), .box-month:nth-child(7), .box-event:nth-child(13), .box-month:nth-child(13) {
     clear: both; } }
 
 .column .box-event, .column .box-month {
@@ -1306,7 +1306,8 @@ input[type=submit] {
 
 #awpqsf_id label {
   display: inline-block;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-right: 5px; }
 #awpqsf_id input[type=checkbox] {
   margin-right: 5px; }
 
@@ -1816,9 +1817,8 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
     display: block; } }
 @media (min-width: 320px) and (max-width: 600px) {
   #categories-replaced {
-    margin-left: 3%;
-    margin-right: 3%;
-    max-width: 44%; } }
+    margin-left: 0;
+    margin-right: 0; } }
 
 .featured-post {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1843,11 +1843,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   padding: 0.2em 0.3em; }
 @media (min-width: 320px) and (max-width: 600px) {
   .last-event-post {
-    width: 176px;
-    float: left;
-    margin-left: 2%;
-    margin-right: 3%;
-    max-width: 44%; } }
+    float: none;
+    margin-left: 3%;
+    margin-right: auto; } }
 
 @media (min-width: 320px) and (max-width: 600px) {
   #magazineGrid {
@@ -2041,7 +2039,7 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 .archive-title {
   margin-left: 118px;
   margin-bottom: 20px;
-  margin-top: 0; }
+  margin-top: 10px; }
 @media (max-width: 800px) {
   .archive-title {
     margin-left: 0; } }
@@ -2065,6 +2063,9 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
     width: 100%;
     margin-top: 0;
     padding-left: 15%; } }
+@media (min-width: 320px) and (max-width: 600px) {
+  .search-header {
+    padding-left: 0; } }
 .search-header h1 {
   float: left;
   margin: 10px 0; }
@@ -2075,6 +2076,11 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   margin-left: 10px; }
 .search-header .search-form {
   margin-left: 10px; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .search-header .search-form {
+    clear: both;
+    width: 100%;
+    height: auto; } }
 .search-header .post-type-filter input {
   margin-left: 10px; }
 
@@ -2089,6 +2095,10 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   width: auto; }
 .search-header input[type=search] {
   height: 30px; }
+@media (min-width: 320px) and (max-width: 600px) {
+  .search-header input[type=search] {
+    border-right: 1px solid;
+    margin-bottom: 2px; } }
 .search-header input[type=submit] {
   border: none;
   height: 30px; }

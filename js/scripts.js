@@ -74,6 +74,26 @@ jQuery(function($) {
 	    	$(this).find('img').toggleClass('rotate');
 	    });
 
+
+	    // Unchecked EventToCome
+	    $('#prog-filters form select').on('change', function() {
+	    	if ( $('input[name=eventToCome]').is(':checked') ) {
+	    		$('input[name=eventToCome]').attr('checked', false);
+	    	}
+	    });
+
+
+	    // Sidebar & Footer Bug (on absolute position)
+	    $pageHeight = $('#page').height();
+	    $footerHeight = $('#mastfooter').height() + 75;
+	    $sidebarHeight = $('#secondary').height();
+	    $totalHeight = $pageHeight + $footerHeight;
+	    if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
+		    $('#page').height($totalHeight);
+	    	$('#mastfooter').css('position','absolute').css('bottom', '0');
+	    }
+
+
 	});
 });
 

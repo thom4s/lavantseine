@@ -269,15 +269,15 @@ class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
 
 /*
  * Filter hook for programmation
+ * Attention : il y a des modifications faites sur le Core du plugin, ici : ajax-wp-query-search-filter/classes/process.php
+ * Utilité : Checkbox pour afficher les événements à venir uniquement.
  */
 add_filter('ajax_wpqsf_reoutput', 'customize_output', '', 4);
 function customize_output( $results, $args, $id, $getdata ){
 	
-	// The Query
-	
 	$query = new WP_Query( $args );
-   
-	ob_start(); $results ='';
+	ob_start();
+	$results ='';
 	
 	// The Loop
 	if ( $query->have_posts() ) {
@@ -305,16 +305,17 @@ function customize_output( $results, $args, $id, $getdata ){
 		
 			get_template_part( 'boxes', get_post_format() );
 		} // endwhile
+		echo  $apiclass->ajax_pagination($args['paged'],$query->max_num_pages, 4, $id);
 		echo '</div>';
 	}
 
-	// Restore original Post Data
 	wp_reset_postdata();
-
-	// End function and send $results
 	$results = ob_get_clean();
 	return $results;
 }
+
+
+
 
 
 /**
@@ -362,8 +363,12 @@ function display_mag_filter_menu() {
 	echo "<div class='filter-column'>";
 	echo "<h1>au <b>Sommaire</b></h1>";
 
-	$taxonomy = 'category'; 
-	$terms = get_terms( $taxonomy ); 
+	$taxonomy = 'category';
+	$args = array(
+	    'hide_empty'    => true,
+	    'exclude'		=> array( 1 )
+	);
+	$terms = get_terms( $taxonomy, $args ); 
 
 	// get all terms
 	foreach ($terms as $term) {
@@ -447,9 +452,11 @@ add_action( 'pre_get_posts', 'sort_by_date_from_today' );
 function sort_by_date( $query ) {
     global $today;  
     if ( !is_admin() && is_search() && $query->is_main_query() ) {
-        $query->set( 'meta_key', 'eventDetail_first_date');
-        $query->set( 'orderby', 'meta_value_num');
-        $query->set( 'order', 'ASC');
+    	if ( $query->query_vars['post_type'] == 'event' ) {
+			$query->set( 'meta_key', 'eventDetail_first_date');
+	        $query->set( 'orderby', 'meta_value_num');
+	        $query->set( 'order', 'ASC');
+		}
     }
 }
 add_action( 'pre_get_posts', 'sort_by_date' );
