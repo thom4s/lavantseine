@@ -269,12 +269,13 @@ class lavantseine_Walker_Main_Menu extends Walker_Nav_Menu {
 
 /*
  * Filter hook for programmation
- * Attention : il y a des modifications faites sur le Core du plugin, ici : ajax-wp-query-search-filter/classes/process.php
+ * Attention : il y a des modifications faites sur le Core du plugin, ici : ajax-wp-query-search-filter/classes/process.php (line 213-225)
  * Utilité : Checkbox pour afficher les événements à venir uniquement.
  */
 add_filter('ajax_wpqsf_reoutput', 'customize_output', '', 4);
 function customize_output( $results, $args, $id, $getdata ){
-	
+	$apiclass = new ajaxwpqsfclass();
+
 	$query = new WP_Query( $args );
 	ob_start();
 	$results ='';
@@ -285,10 +286,10 @@ function customize_output( $results, $args, $id, $getdata ){
 
 		while ( $query->have_posts() ) {
 			$query->the_post();
-			$id = get_the_ID();
+			$postID = get_the_ID();
 
 			// Month Test
-			$event_first_date = get_post_meta( $id, 'eventDetail_first_date', true );
+			$event_first_date = get_post_meta( $postID, 'eventDetail_first_date', true );
 			$month = date( 'Y/m', $event_first_date );
 
 			// Test month of event. Display Month Date
@@ -305,7 +306,7 @@ function customize_output( $results, $args, $id, $getdata ){
 		
 			get_template_part( 'boxes', get_post_format() );
 		} // endwhile
-		echo  $apiclass->ajax_pagination($args['paged'],$query->max_num_pages, 4, $id);
+		echo $apiclass->ajax_pagination($args['paged'],$query->max_num_pages, 4, $id);
 		echo '</div>';
 	}
 

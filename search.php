@@ -49,9 +49,6 @@ get_header(); ?>
 					<?php wp_reset_query(); ?>
 				</div>
 
-
-
-
 				<p>Effectuer une nouvelle recherche : <?php get_search_form(); ?></p>
 			</header><!-- .page-header -->
 

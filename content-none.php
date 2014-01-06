@@ -8,26 +8,35 @@
  */
 ?>
 
-<section class="no-results not-found backgrounded-box">
-	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Rien trouvé...', 'lavantseine' ); ?></h2>
-	</header><!-- .page-header -->
+		<header class="search-header backgrounded-box">
+			
+			<?php if ( is_404() ) : ?>
 
-	<div class="page-content">
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+				<h1 class="search-title">
+					<?php _e( 'La page n\'existe pas...', 'lavantseine' ); ?>
+				</h1>
+				
+				<p><?php _e( 'Oups, aucune page ne correspond à votre recherche. Mais puisqu\'il se passe toujours quelque chose à l\'Avant Seine, retentez votre chance !', 'lavantseine' ); ?></p>
+				
+			<?php else : ?>
+	
+				<h1 class="search-title">
+					<?php _e( 'Pas de résultat', 'lavantseine' ); ?>
+				</h1>
+				
+				<p><?php _e( 'Oups, aucun résultat ne correspond à votre recherche. Mais puisqu\'il se passe toujours quelque chose à l\'Avant Seine, retentez votre chance !', 'lavantseine' ); ?></p>
+			
+			<?php endif; ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'lavantseine' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
-
-		<?php elseif ( is_search() ) : ?>
-
-			<p><?php _e( 'Désolé, il n\'y a aucun résultat pour votre recherche. Réessayez avec différents mots clefs.', 'lavantseine' ); ?></p>
 			<?php get_search_form(); ?>
+		</header><!-- .page-header -->
 
-		<?php else : ?>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'lavantseine' ); ?></p>
-			<?php get_search_form(); ?>
+		<div class="page-content">
+			<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-		<?php endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+				<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'lavantseine' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+
+
+			<?php endif; ?>
+		</div><!-- .page-content -->

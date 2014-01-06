@@ -14,7 +14,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/img/favicon.png" />
 <!--[if (IE 7)|(IE 8)]>
 	  <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/selectivizr.js"></script>
 <![endif]-->

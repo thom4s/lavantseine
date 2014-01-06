@@ -50,7 +50,6 @@
 
 			<?php get_template_part( 'content', 'none' ); ?>
 
-			</div><!-- .nex-events -->
 		<?php endif; ?>
 
 

@@ -3,9 +3,11 @@
 	// Remontée des événements puis des articles liés à l'événement en cours.
 	// Basé sur un related post à partir de la taxonomie 'tag' (tag relationnel)
 	global $post;
+	global $taxo;
+
 	$backup = $post;  // backup the current object
-	$taxonomy = 'relational_tag';
-	$param_type = 'relational_tag';
+	$taxonomy = $taxo;
+	$param_type = $taxo;
 	$post_types = array('post' );
 	$tax_args=array('orderby' => 'none');
 	$tags = wp_get_post_terms( $post->ID , $taxonomy, $tax_args);

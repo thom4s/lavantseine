@@ -147,23 +147,28 @@ $today = time();
 
 				<div id="magazineGrid" data-columns class="last-post-list">
 
-				<div id="categories-replaced" class="transparent-background">
-					<?php display_mag_filter_menu(); ?>
-				</div>
+					<div id="categories-replaced" class="transparent-background">
+						<?php display_mag_filter_menu(); ?>
+					</div>
 
 					<?php
 						// QUERY ALL POST
+						if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+						elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+						else { $paged = 1; }
 						$args = array(
 							'post_type' 	=> 'post',
 							'order'			=> 'DESC',
-							'post__not_in'	=> $exclude_ids
+							'post__not_in'	=> $exclude_ids,
+							'posts_per_page'=> '24',
+							'paged'			=> $paged
 						);
-						$query = new WP_Query( $args );
+						$wp_query = new WP_Query( $args );
 					?>
 
-					<?php if ( $query->have_posts() ) : ?>
+					<?php if ( $wp_query->have_posts() ) : ?>
 
-						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+						<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
 							<?php
 								get_template_part( 'boxes', get_post_format() );
@@ -171,17 +176,17 @@ $today = time();
 
 						<?php endwhile; ?>
 
-						<h1>Pagination</h1>
-						<?php lavantseine_paging_nav(); ?>
 
 					<?php else : ?>
-
 						<?php get_template_part( 'content', 'none' ); ?>
 
 					<?php endif; ?>
 
-					<?php wp_reset_postdata(); ?>
 				</div>
+
+				<?php lavantseine_paging_nav(); ?>
+				<?php wp_reset_postdata(); ?>
+
 
 			</div><!-- #main-magazine -->
 

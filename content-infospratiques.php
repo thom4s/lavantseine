@@ -36,7 +36,8 @@
 
 	<div class="entry-practical-aside">
 
-		<?php echo $page_right_col; ?>
+		<?php echo apply_filters('the_content', $page_right_col); ?>
+		<?php // echo $page_right_col; ?>
 		
 	</div><!-- .practical-aside -->
 

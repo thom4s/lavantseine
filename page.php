@@ -50,13 +50,12 @@ get_header(); ?>
 		</main><!-- #main -->
 		<div class="clearfix"></div>
 
-
 		<div id="attached-content">
-
 			<div id="related-content" class="related-posts" data-columns>
 
-			    <?php get_template_part( 'relatedbyarbo', 'events' ); ?>
-				<?php get_template_part( 'relatedbyarbo', 'posts' ); ?>
+				<?php $taxo = 'arborescence'; ?>'relational_tag'
+			    <?php get_template_part( 'related', 'events' ); ?>
+				<?php get_template_part( 'related', 'posts' ); ?>
 
 			</div><!-- /.related-posts -->
 		</div>	<!-- #attached-content -->

@@ -22,8 +22,9 @@ get_header(); ?>
 		<div id="attached-content">
 			<div id="related-content" class="related-posts"  data-columns>
 
-			    <?php get_template_part( 'relatedbytag', 'events' ); ?>
-				<?php get_template_part( 'relatedbytag', 'posts' ); ?>
+				<?php $taxo = 'relational_tag'; ?>
+			    <?php get_template_part( 'related', 'events' ); ?>
+				<?php get_template_part( 'related', 'posts' ); ?>
 
 			</div><!-- /.related-posts -->
 		</div>	<!-- #attached-content -->
@@ -32,15 +33,12 @@ get_header(); ?>
 			<?php // lavantseine_post_nav(); ?>
 
 			<?php
-				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
 			?>
 		</div><!-- #content-to-content -->
-
-
-
+		
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

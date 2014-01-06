@@ -24,7 +24,7 @@
 
 	}
 
-	p, 
+	p,
 	.post-type-filter {
 		clear: both; 
 		float: left;
@@ -34,6 +34,7 @@
 
 	.search-form {
 		margin-left: 10px;
+		clear: both;
 		@include breakpoint(small) {
 			clear: both;
 			width: 100%;

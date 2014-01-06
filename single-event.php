@@ -19,13 +19,12 @@ get_header(); ?>
 		</main><!-- #main -->
 		<div class="clearfix"></div>
 
-
 		<div id="attached-content">
-
 			<div id="related-content" class="related-posts"  data-columns>
 
-			    <?php get_template_part( 'relatedbytag', 'events' ); ?>
-				<?php get_template_part( 'relatedbytag', 'posts' ); ?>
+				<?php $taxo = 'relational_tag'; ?>
+			    <?php get_template_part( 'related', 'events' ); ?>
+				<?php get_template_part( 'related', 'posts' ); ?>
 							
 			</div><!-- /.related-posts -->
 		</div>	<!-- #attached-content -->

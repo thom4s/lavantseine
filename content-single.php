@@ -34,14 +34,6 @@
 				'after'  => '</div>',
 			) );
 		?>
-	
-		<?php $attached = get_post_meta(get_the_ID(), 'wp_custom_attachment', true); ?> 
-
-		<?php if ($attached) : ?>
-		<a href="<?php echo $attached['url']; ?>">  
-		    Téléchargez le dossier le document ici (.pdf)  
-		</a>
-		<?php endif; ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
