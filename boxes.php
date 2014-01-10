@@ -4,12 +4,13 @@
  */
 ?>
 
-<?php global $i; ?>
+<?php global $filter; ?>
+
 <article id="post-<?php the_ID(); ?>" class="box-<?php echo $i; ?> box<?php echo '-'; echo get_post_type(); ?> backgrounded-box" <?php post_class(); ?>>
 
 	<header class="entry-header">
 
-		<a href="<?php the_permalink(); ?>" rel="bookmark">
+		<a href="<?php the_permalink(); ?>" <?php if ( $filter ) { echo 'target="_blank"'; } ?>rel="bookmark">
 
 			<div class="entry-meta">
 				<?php

@@ -104,7 +104,7 @@ $today = time();
 										)
 									),
 									'orderby'			=> 'post_date',
-									'order' 			=> 'ASC'	
+									'order' 			=> 'DESC'	
 								);
 								$nextEventPost = get_posts( $args );
 							?>
@@ -182,7 +182,7 @@ $today = time();
 
 					<?php endif; ?>
 
-				</div>
+				</div><!-- #magazineGrid -->
 
 				<?php lavantseine_paging_nav(); ?>
 				<?php wp_reset_postdata(); ?>

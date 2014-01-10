@@ -304,6 +304,7 @@ function customize_output( $results, $args, $id, $getdata ){
 			endif;
 			// end month test
 		
+			$filter = '';
 			get_template_part( 'boxes', get_post_format() );
 		} // endwhile
 		echo $apiclass->ajax_pagination($args['paged'],$query->max_num_pages, 4, $id);

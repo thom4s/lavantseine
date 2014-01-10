@@ -8,6 +8,8 @@
 
 	aside {
 		clear: both;
+		width: 176.4px;
+		@include box-sizing();
 
 		@include breakpoint(tablette) {
 
@@ -36,12 +38,11 @@
 		}	
 	}
 
-	aside:not(.cuisine-widget) {
+	aside {
 		@extend .transparent-background;
 	}
 
 	aside.cuisine-widget {
-		@extend .backgrounded-box;
 		padding: 0;
 		margin-top: 43px;
 
@@ -58,15 +59,17 @@
 			}
 		}
 
-		.textwidget {
+		p {
 			padding: $boxPadding;
 		}
 
+		a {
+			border: none;
+		}
+		
 		img {
-			width: 105%;
-			max-width: 105%;
-			margin-top: - $boxPaddingTop;
-			margin-left: - $boxPaddingSide;
+			width: 100%;
+			max-width: 100%;
 		}
 
 		@include breakpoint(tablette) {

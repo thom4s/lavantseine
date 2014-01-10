@@ -53,9 +53,8 @@ get_header(); ?>
 		<div id="attached-content">
 			<div id="related-content" class="related-posts" data-columns>
 
-				<?php $taxo = 'arborescence'; ?>'relational_tag'
-			    <?php get_template_part( 'related', 'events' ); ?>
-				<?php get_template_part( 'related', 'posts' ); ?>
+				<?php $taxo = 'arborescence'; ?>
+			    <?php get_template_part( 'part', 'relatedposts' ); ?>
 
 			</div><!-- /.related-posts -->
 		</div>	<!-- #attached-content -->

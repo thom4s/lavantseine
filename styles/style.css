@@ -621,7 +621,7 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content, .event .entry-meta, .box-footer:first-child, #categories-magazine, #categories-replaced {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content, .event .entry-meta, aside.widget-first, #categories-magazine, #categories-replaced {
   margin-left: 0; }
 
 .last, .no-results, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #main-magazine, .last-event-post, .search-header {
@@ -770,14 +770,14 @@ body {
 .box-blank {
   margin: 0; }
 
-.backgrounded-box, article.page, article.post, article.event, .paging-navigation, #secondary aside.cuisine-widget {
+.backgrounded-box, article.page, article.post, article.event, .paging-navigation {
   background-color: white; }
 
-.transparent-background, #secondary aside:not(.cuisine-widget) {
+.transparent-background, #secondary aside {
   display: block;
   position: relative; }
 
-.transparent-background::after, #secondary aside:not(.cuisine-widget)::after {
+.transparent-background::after, #secondary aside::after {
   content: "";
   background: white;
   opacity: 0.7;
@@ -1650,7 +1650,12 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   padding: 0.2em 0.3em; }
 
 #secondary aside {
-  clear: both; }
+  clear: both;
+  width: 176.4px;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
 #secondary aside.search-format-inline {
   padding: 0;
   background: none; }
@@ -1678,13 +1683,13 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 @media (min-width: 320px) and (max-width: 600px) {
   #secondary aside.cuisine-widget .widget-title {
     height: auto; } }
-#secondary aside.cuisine-widget .textwidget {
+#secondary aside.cuisine-widget p {
   padding: 0.2em 0.3em; }
+#secondary aside.cuisine-widget a {
+  border: none; }
 #secondary aside.cuisine-widget img {
-  width: 105%;
-  max-width: 105%;
-  margin-top: -0.2em;
-  margin-left: -0.3em; }
+  width: 100%;
+  max-width: 100%; }
 @media (max-width: 1024px) {
   #secondary aside.cuisine-widget {
     display: none; } }
@@ -1697,19 +1702,6 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
 @media (min-width: 320px) and (max-width: 600px) {
   .box-footer {
     width: 100%; } }
-.box-footer:last-child {
-  float: right; }
-@media (max-width: 1024px) {
-  .box-footer:last-child {
-    clear: both;
-    float: none;
-    margin: 0 auto; } }
-@media (max-width: 1024px) {
-  .box-footer:nth-child(2n+1) {
-    float: left; } }
-@media (max-width: 800px) {
-  .box-footer:nth-child(2n+1) {
-    clear: both; } }
 .box-footer p {
   margin-bottom: 10px; }
 .box-footer a {
@@ -1717,6 +1709,23 @@ input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[typ
   border: none; }
 .box-footer a:before {
   content: "• "; }
+
+aside.widget-last {
+  float: right; }
+@media (max-width: 1024px) {
+  aside.widget-last {
+    clear: both;
+    float: none !important;
+    margin: 0 auto; } }
+aside.widget-last a:before {
+  content: " " !important; }
+
+@media (max-width: 1024px) {
+  aside.widget-odd {
+    float: left; } }
+@media (max-width: 800px) {
+  aside.widget-odd {
+    clear: both; } }
 
 .colombes-logo {
   background-image: url(); }

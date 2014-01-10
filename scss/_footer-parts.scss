@@ -20,31 +20,6 @@
 		width: 100%;
 	}	
 
-	&:first-child {
-		@extend .first;
-	}
-
-	&:last-child {
-		float: right;
-
-		@include breakpoint(tablette) {
-			clear: both;
-			float: none;
-			margin: 0 auto;
-		}	
-	}
-
-	&:nth-child(2n+1) {
-
-		@include breakpoint(tablette) {
-			float: left;
-		}
-
-		@include breakpoint(medium) {
-			clear: both;
-		}	
-	}
-
 	p {
 		margin-bottom: $baseLineHeight / 2 ;
 	}
@@ -57,10 +32,41 @@
 			content: "• ";
 		}
 	}
-
-
-
 }
+
+aside.widget-first {
+	@extend .first;
+}
+
+aside.widget-last {
+	float: right;
+
+	@include breakpoint(tablette) {
+		clear: both;
+		float: none !important;
+		margin: 0 auto;
+	}		
+	
+	a {
+		&:before {
+			content: " " !important;
+		}
+	}
+}
+
+
+aside.widget-odd {
+
+		@include breakpoint(tablette) {
+			float: left;
+		}
+
+		@include breakpoint(medium) {
+			clear: both;
+		}
+	}
+
+
 
 .colombes-logo {
 	background-image: url();
