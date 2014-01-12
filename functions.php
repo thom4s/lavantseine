@@ -157,7 +157,7 @@ function lavantseine_customize_css()
             h3, h4 { color:<?php echo $saisonColor; ?> !important; }
             .box-month h2 { color:<?php echo $saisonColor; ?> !important; border-color: <?php echo $saisonColor; ?> !important}
             .main-nav .current_page_item > a, .current-menu-ancestor > a, .main-nav .current-menu-item > a, .search-format-inline input[type=submit] { color:<?php echo $saisonColor; ?> !important; }
-            a.button, input[type=submit], input[type=button], #menu-acces-directs li, .search-format-inline { background-color:<?php echo $saisonColor; ?> !important; }
+            a.button, input[type=submit], input[type=button], #menu-acces-directs li, .search-format-inline, .paging-navigation .nav-previous, .paging-navigation .nav-next { background-color:<?php echo $saisonColor; ?> !important; }
          </style>
     <?php
 }

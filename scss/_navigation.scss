@@ -317,20 +317,29 @@ ul.sub-menu {
  */
 
 .paging-navigation {
-	@extend .backgrounded-box;
-	@extend .plain-width;
+	@extend .col-2;
+	@extend .first;
+
 	clear: both;
-	padding: $boxPadding;
+	margin-top: $baseLineHeight; 
 	float: left;
 
+	.nav-links {
+		a {
+			color: #fff;
+		}
+	}
+
 	.nav-previous {
+		@extend %button;
 		float: left;
-		margin-left: 10px;
+		width: 176px; 
 	}
 
 	.nav-next {
+		@extend %button;
 		float: right;
-		margin-right: 10px;
+		width: 176px; 
 	}
 } 
 

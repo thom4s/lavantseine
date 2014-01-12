@@ -462,7 +462,7 @@ table {
 .suffix-1 {
   margin-right: 200.9px; }
 
-.col-2, .events-group-pair, .entry-practical-content, .entry-practical-aside, .event .inner-entry-main-content, .last-event-post {
+.col-2, .events-group-pair, .paging-navigation, .entry-practical-content, .entry-practical-aside, .event .inner-entry-main-content, .last-event-post {
   width: 377.3px;
   position: relative;
   float: left;
@@ -621,13 +621,13 @@ table {
 #masthead:after, #content:after, .clearfix:after, .event .entry-mentions:after {
   clear: both; }
 
-#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content, .event .entry-meta, aside.widget-first, #categories-magazine, #categories-replaced {
+#primary, .search-form, .first, .box-event:nth-child(4n+1), .box-month:nth-child(4n+1), .paging-navigation, .post .entry-meta, .page .entry-media, .entry-practical-content, .event .inner-entry-content, .event .entry-meta, aside.widget-first, #categories-magazine, #categories-replaced {
   margin-left: 0; }
 
 .last, .no-results, .entry-content, .entry-practical-header .entry-extract, .event .entry-mentions, #main-magazine, .last-event-post, .search-header {
   float: right; }
 
-.plain-width, #mastfooter, .box-title, article.page, article.post, article.event, .paging-navigation, input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button], .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
+.plain-width, #mastfooter, .box-title, article.page, article.post, article.event, .paging-navigation .nav-previous, .paging-navigation .nav-next, input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button], .post .entry-media, .event .entry-media, #inner-footer-navigations, .featured-post {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -770,7 +770,7 @@ body {
 .box-blank {
   margin: 0; }
 
-.backgrounded-box, article.page, article.post, article.event, .paging-navigation {
+.backgrounded-box, article.page, article.post, article.event {
   background-color: white; }
 
 .transparent-background, #secondary aside {
@@ -1105,14 +1105,16 @@ ul.sub-menu {
  */
 .paging-navigation {
   clear: both;
-  padding: 0.2em 0.3em;
+  margin-top: 20px;
   float: left; }
+.paging-navigation .nav-links a {
+  color: #fff; }
 .paging-navigation .nav-previous {
   float: left;
-  margin-left: 10px; }
+  width: 176px; }
 .paging-navigation .nav-next {
   float: right;
-  margin-right: 10px; }
+  width: 176px; }
 
 body {
   font-size: 14px; }
@@ -1369,7 +1371,7 @@ a:visited, a:hover, a:focus, a:active {
   color: #4d4d4d; }
 
 /* Buttons */
-input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button] {
+.paging-navigation .nav-previous, .paging-navigation .nav-next, input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button] {
   font-family: "PT Sans", sans-serif;
   line-height: 20px;
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -1390,7 +1392,7 @@ input[type=submit], a.button, #prog-filters .awpqsf_submit input[type=button] {
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
-input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[type=button]:hover {
+.paging-navigation .nav-previous:hover, .paging-navigation .nav-next:hover, input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[type=button]:hover {
   background-color: white;
   color: black;
   border: none; }

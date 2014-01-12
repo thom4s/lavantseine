@@ -388,7 +388,18 @@ var docCookies = {
 
 
 
-
-
+jQuery(function($) {
+  $(document).ready(function() {
+      // Sidebar & Footer Bug (on absolute position)
+      $pageHeight = $('#page').height();
+      $footerHeight = $('#mastfooter').height() + 75;
+      $sidebarHeight = $('#secondary').height();
+      $totalHeight = $sidebarHeight + $footerHeight;
+      if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
+        $('#page').height($totalHeight);
+        $('#mastfooter').css('position','absolute').css('bottom', '0');
+      }
+  });
+});
 
 

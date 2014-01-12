@@ -161,7 +161,7 @@ $today = time();
 							'order'			=> 'DESC',
 							'post__not_in'	=> $exclude_ids,
 							'posts_per_page'=> '24',
-							'paged'			=> $paged
+							
 						);
 						$wp_query = new WP_Query( $args );
 					?>

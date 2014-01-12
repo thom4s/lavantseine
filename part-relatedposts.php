@@ -79,7 +79,7 @@
 					'orderby'		=> 'post__in',
 					'posts_per_page'   => 24,
 					'paged'			=> $paged
-			 		);
+			 		);  
 
 			$wp_query = new WP_Query( $args );
 
