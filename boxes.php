@@ -5,6 +5,7 @@
 ?>
 
 <?php global $filter; ?>
+<?php global $i; ?>
 
 <article id="post-<?php the_ID(); ?>" class="box-<?php echo $i; ?> box<?php echo '-'; echo get_post_type(); ?> backgrounded-box" <?php post_class(); ?>>
 

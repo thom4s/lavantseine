@@ -169,7 +169,7 @@ $today = time();
 					<?php if ( $wp_query->have_posts() ) : ?>
 
 						<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-
+ 
 							<?php
 								get_template_part( 'boxes', get_post_format() );
 							?>

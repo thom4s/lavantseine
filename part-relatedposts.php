@@ -67,22 +67,31 @@
 		$uniqueposts = array_unique($postids); 
 
 		if( $uniqueposts ) {
-			$posts = get_posts(array(
+
+			if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+			elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+			else { $paged = 1; }
+
+			$args = array(
 					'post__in' => $uniqueposts, 
 					'post_type' => array('event', 'post'),
 					'post_status' => 'publish',
 					'orderby'		=> 'post__in',
 					'posts_per_page'   => 24,
-			 		));
-			foreach( $posts as $post ) :
-				get_template_part( 'boxes', get_post_format() );
-			endforeach;
-		} else {
-			return;
+					'paged'			=> $paged
+			 		);
+
+			$wp_query = new WP_Query( $args );
+
+			if ( $wp_query->have_posts() ):
+			    while ( $wp_query->have_posts() ) :
+			        $wp_query->the_post();
+			    	get_template_part( 'boxes', get_post_format() );
+			    endwhile;
+			endif;
 		}
 
 	}
-	wp_reset_query();
 
 
 

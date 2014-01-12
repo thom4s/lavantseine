@@ -57,6 +57,10 @@ get_header(); ?>
 			    <?php get_template_part( 'part', 'relatedposts' ); ?>
 
 			</div><!-- /.related-posts -->
+				<?php lavantseine_paging_nav(); ?>
+				<?php wp_reset_query(); ?>
+
+
 		</div>	<!-- #attached-content -->
 
 	</div><!-- #primary -->
