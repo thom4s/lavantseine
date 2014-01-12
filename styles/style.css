@@ -800,6 +800,11 @@ body {
   .box-post {
     width: 100%; } }
 
+#home-next-events .box-event, #home-next-events .box-month {
+  margin-bottom: 0; }
+#home-next-events .box-event .entry-meta ul, #home-next-events .box-month .entry-meta ul {
+  margin-bottom: 0; }
+
 .box-event:nth-child(4n+1), .box-month:nth-child(4n+1) {
   clear: both; }
 @media (max-width: 800px) {

@@ -233,6 +233,20 @@ body { background-size: cover; }
 	}		
 }
 
+#home-next-events {
+	.box-event {
+		margin-bottom: 0;
+
+		.entry-meta {
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+
+}
+
 .box-event {
 	@extend .box;
 

@@ -40,29 +40,30 @@
 		if ($events) {
 			$eventsids = array();
 			foreach( $events as $item ) {
-				$eventsids[] = $item->ID; 
+				$eventdate = htmlspecialchars( get_post_meta( $item->ID, 'eventDetail_first_date', true ) );
+				$eventsids[$eventdate] = $item->ID; 
+
 			}
-			$odd = array_combine(range(0,2*count($eventsids)-1,2), $eventsids);
 		}
 		if ($articles) {
 			$articlesids = array();
 			foreach( $articles as $item ) {
-				$articlesids[] = $item->ID; 
+				$articledate = get_the_time( 'U', $item->ID );
+				$articlesids[$articledate] = $item->ID; 
 			}
-			$even = array_combine(range(1,2*count($articlesids)-1,2), $articlesids);
 		}
 
+		if ($eventsids && $articlesids) {
+			$postids = $eventsids + $articlesids;
+		} elseif ( $eventsids && !$articlesids ) {
+			$postids = $eventsids;
+		} elseif ( !$eventsids && $articlesids  ) {
+			$postids = $articlesids;
+		} else {
+			$postids = array();
+		}
 		
-		if ($events && $articles) {
-			$postids = $odd + $even;
-			ksort($postids);
-		} elseif ( !$events && $articles ) {
-			$postids = $even;
-		} elseif ( $events && !$articles) {
-			$postids = $odd;
-		} 
-
-
+		krsort($postids);
 		$uniqueposts = array_unique($postids); 
 
 		if( $uniqueposts ) {
