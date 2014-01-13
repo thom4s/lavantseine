@@ -1788,6 +1788,12 @@ aside.widget-last a:before {
 .event-repeatable-dates {
   font-weight: bold; }
 
+.mloading {
+  height: 300px; }
+
+.no-result {
+  padding: 0.2em 0.3em; }
+
 #main-magazine {
   *zoom: 1; }
 #main-magazine:before, #main-magazine:after {

@@ -309,6 +309,8 @@ function customize_output( $results, $args, $id, $getdata ){
 		} // endwhile
 		echo $apiclass->ajax_pagination($args['paged'],$query->max_num_pages, 4, $id);
 		echo '</div>';
+	} else {
+		get_template_part( 'content', 'none' );
 	}
 
 	wp_reset_postdata();
