@@ -196,6 +196,8 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
                                         <br clear="all" /><span class="description">'.$field['desc'].'';  
                     break;
 
+
+
                 } //end switch  
         echo '</td></tr>';  
     } // end foreach  
@@ -280,15 +282,20 @@ function wp_custom_attachment() {
     wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');  
     $attached = get_post_meta(get_the_ID(), 'wp_custom_attachment', true);
     
-    if ($attached) : 
-        echo '<b>Fichier en place : </b>'. $attached['file'];
-    endif; 
-
     $html = '<p class="description">';  
         $html .= 'Ajouter ou Modifier un document au format PDF';  
     $html .= '</p>';  
     $html .= '<input type="file" id="wp_custom_attachment" name="wp_custom_attachment" value="" size="25">';  
-      
+
+    // Create the input box and set the file's URL as the text element's value  
+    $html .= '<input type="text" id="wp_custom_attachment_url" name="wp_custom_attachment_url" value=" ' . $attached['url'] . '" size="30" />';  
+
+    // Display the 'Delete' option if a URL to a file exists  
+    if(strlen(trim($attached['url'])) > 0) {  
+        $html .= '<a href="javascript:;" id="wp_custom_attachment_delete">' . __('Retirer le fichier') . '</a>';  
+    } // end if 
+
+
     echo $html; 
   
 } // end wp_custom_attachment 
@@ -343,7 +350,31 @@ function save_custom_meta_data($id) {
             wp_die("The file type that you've uploaded is not a PDF.");  
         } // end if/else  
           
-    } // end if  
+    } else {  
+  
+        // Grab a reference to the file associated with this post  
+        $doc = get_post_meta($id, 'wp_custom_attachment', true); 
+         
+        // Grab the value for the URL to the file stored in the text element 
+        $delete_flag = get_post_meta($id, 'wp_custom_attachment_url', true); 
+         
+        // Determine if a file is associated with this post and if the delete flag has been set (by clearing out the input box) 
+        if(strlen(trim($doc['url'])) > 0 && strlen(trim($delete_flag)) == 0) { 
+         
+            // Attempt to remove the file. If deleting it fails, print a WordPress error. 
+            if(unlink($doc['file'])) { 
+                 
+                // Delete succeeded so reset the WordPress meta data 
+                update_post_meta($id, 'wp_custom_attachment', null); 
+                update_post_meta($id, 'wp_custom_attachment_url', ''); 
+                 
+            } else { 
+                wp_die('There was an error trying to delete your file.'); 
+            } // end if/el;se 
+             
+        } // end if 
+ 
+    } // end if/else 
       
 } // end save_custom_meta_data  
 add_action('save_post', 'save_custom_meta_data');

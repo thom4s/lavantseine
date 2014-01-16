@@ -54,6 +54,19 @@ jQuery(function(jQuery) {
         jQuery(this).parent().siblings('.custom_preview_image').attr('src', defaultImage);  
         return false;  
     });  
-  
+
 }); 
+
+
+
+jQuery(function($) {  
+    if($('a#wp_custom_attachment_delete').length === 1) {  
+        $('#wp_custom_attachment_delete').click(function(evt) {  
+            evt.preventDefault();  
+            $('#wp_custom_attachment_url').val('');  
+            $(this).hide();  
+        });  
+    } // end if  
+});  
+
 

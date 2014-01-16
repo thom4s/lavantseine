@@ -126,9 +126,8 @@ function lavantseine_scripts() {
 	// wp_enqueue_script( 'salvatorre', get_template_directory_uri() . '/js/salvatorre.js', array(), false, true );
 	wp_enqueue_script( 'bxslider-modernizr-salvatorre', get_template_directory_uri() . '/js/bxslider.js', array(), false, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_dequeue_style('pagination-style');
+
 }
 add_action( 'wp_enqueue_scripts', 'lavantseine_scripts' );
 
