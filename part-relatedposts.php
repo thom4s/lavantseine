@@ -19,26 +19,26 @@
 		foreach ($tags as $tag) {
 			//first query
 			$events_get_posts = get_posts(array(
-				"$param_type" => $tag->slug,
-				'post_type' => 'event',
-				'posts_per_page'=>-1,
-				'exclude'		=> $backup->ID,
-				'meta_key' => 'eventDetail_first_date',
-				'orderby' => 'meta_value_num',
-				'order' => 'DESC',
+				"$param_type" 		=> $tag->slug,
+				'post_type' 		=> 'event',
+				'posts_per_page'	=> -1,
+				'exclude'			=> $backup->ID,
+				'meta_key' 			=> 'eventDetail_first_date',
+				'orderby' 			=> 'meta_value_num',
+				'order' 			=> 'DESC',
 			));
-			$events = $events_get_posts + $events;
+			$events = array_merge($events_get_posts, $events);
 
 			//second query
 			$articles_get_posts = get_posts(array(
-				"$param_type" => $tag->slug,
-				'post_type' => 'post',
-				'posts_per_page'=>-1,
-				'exclude'		=> $backup->ID,
-				'orderby' => 'date',
-				'order' => 'DESC',
+				"$param_type" 		=> $tag->slug,
+				'post_type' 		=> 'post',
+				'posts_per_page'	=> -1,
+				'exclude'			=> $backup->ID,
+				'orderby' 			=> 'date',
+				'order' 			=> 'DESC',
 			));
-			$articles = $articles_get_posts + $articles;
+			$articles = array_merge($articles_get_posts, $articles);
 		}
 
 		if ($events) {
@@ -67,7 +67,7 @@
 		}
 		
 		krsort($postids);
-		$uniqueposts = array_unique($postids); 
+		$uniqueposts = array_unique($postids);
 
 		if( $uniqueposts ) {
 
@@ -78,7 +78,6 @@
 			$args = array(
 					'post__in' 			=> $uniqueposts,
 					'post_type' 		=> $post_types,
-					'post_status' 		=> 'publish',
 					'orderby'			=> 'post__in',
 					'posts_per_page'	=> 24,
 					'paged'				=> $paged
