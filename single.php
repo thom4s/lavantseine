@@ -23,8 +23,7 @@ get_header(); ?>
 			<div id="related-content" class="related-posts"  data-columns>
 
 				<?php $taxo = 'relational_tag'; ?>
-			    <?php get_template_part( 'related', 'events' ); ?>
-				<?php get_template_part( 'related', 'posts' ); ?>
+			    <?php get_template_part( 'part', 'relatedposts' ); ?>
 
 			</div><!-- /.related-posts -->
 		</div>	<!-- #attached-content -->

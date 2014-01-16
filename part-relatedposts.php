@@ -1,40 +1,44 @@
 <?php
 
-	setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
-	$today = time();
-
 	// Remontée des événements puis des articles liés à l'événement en cours.
-	// Basé sur un related post à partir de la taxonomie 'tag' (tag relationnel)
-	global $post;
-	global $taxo;
+	global $post; // for current $post backup
+	global $taxo; // twonomy to link ('arborescence' for pages ; 'tag_relationnel' for events and posts)
 
 	$backup = $post;  // backup the current object
-	$taxonomy = $taxo;
+	$taxonomy = $taxo; 
 	$param_type = $taxo;
 	$post_types = array('event', 'post');
-	$tax_args = array('orderby' => 'none');
+	$tax_args = array('orderby' => 'none', );
 
 	$tags = wp_get_post_terms( $post->ID , $taxonomy, $tax_args);
-	
+
+	$articles = array();
+	$events = array();
+
 	if ( !empty($tags) ) {
 		foreach ($tags as $tag) {
 			//first query
-			$events = get_posts(array(
+			$events_get_posts = get_posts(array(
 				"$param_type" => $tag->slug,
 				'post_type' => 'event',
 				'posts_per_page'=>-1,
+				'exclude'		=> $backup->ID,
 				'meta_key' => 'eventDetail_first_date',
 				'orderby' => 'meta_value_num',
 				'order' => 'DESC',
 			));
+			$events = $events_get_posts + $events;
+
 			//second query
-			$articles = get_posts(array(
+			$articles_get_posts = get_posts(array(
 				"$param_type" => $tag->slug,
 				'post_type' => 'post',
 				'posts_per_page'=>-1,
+				'exclude'		=> $backup->ID,
 				'orderby' => 'date',
 				'order' => 'DESC',
 			));
+			$articles = $articles_get_posts + $articles;
 		}
 
 		if ($events) {
@@ -42,7 +46,6 @@
 			foreach( $events as $item ) {
 				$eventdate = htmlspecialchars( get_post_meta( $item->ID, 'eventDetail_first_date', true ) );
 				$eventsids[$eventdate] = $item->ID; 
-
 			}
 		}
 		if ($articles) {
@@ -73,12 +76,12 @@
 			else { $paged = 1; }
 
 			$args = array(
-					'post__in' => $uniqueposts, 
-					'post_type' => array('event', 'post'),
-					'post_status' => 'publish',
-					'orderby'		=> 'post__in',
-					'posts_per_page'   => 24,
-					'paged'			=> $paged
+					'post__in' 			=> $uniqueposts,
+					'post_type' 		=> $post_types,
+					'post_status' 		=> 'publish',
+					'orderby'			=> 'post__in',
+					'posts_per_page'	=> 24,
+					'paged'				=> $paged
 			 		);  
 
 			$wp_query = new WP_Query( $args );
