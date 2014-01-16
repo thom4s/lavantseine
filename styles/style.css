@@ -758,7 +758,7 @@ body {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  padding: 0.2em 0.3em;
+  padding: 3px 5px;
   margin-bottom: 20px; }
 .box img, .box-blank img, .box-page img, .box-post img, .box-event img, .box-month img, .box-footer img {
   max-width: 100%;
@@ -872,7 +872,7 @@ article.event {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   width: 661.1px;
-  padding: 0.2em 0.3em; }
+  padding: 3px 5px; }
 @media (max-width: 1024px) {
   .no-results {
     width: 100%;
@@ -1143,7 +1143,7 @@ h1 a:visited {
 aside h1, .last-event-post h1, #categories-magazine h1, #categories-replaced h1 {
   font-size: 1em;
   margin-top: 5px;
-  margin-left: -0.3em;
+  margin-left: -5px;
   padding-top: 0.5em; }
 
 #categories-magazine font-family h1, #categories-replaced font-family h1 {
@@ -1383,7 +1383,7 @@ a:visited, a:hover, a:focus, a:active {
   text-decoration: none;
   font-size: 0.85em;
   color: white;
-  padding: 0.3em 0.4em;
+  padding: 3px;
   margin-bottom: 10px;
   text-align: center;
   pointer: cursor;
@@ -1654,7 +1654,7 @@ a:visited, a:hover, a:focus, a:active {
 
 .widget {
   margin-bottom: 20px;
-  padding: 0.2em 0.3em; }
+  padding: 3px 5px; }
 
 #secondary aside {
   clear: both;
@@ -1691,7 +1691,7 @@ a:visited, a:hover, a:focus, a:active {
   #secondary aside.cuisine-widget .widget-title {
     height: auto; } }
 #secondary aside.cuisine-widget p {
-  padding: 0.2em 0.3em; }
+  padding: 3px 5px; }
 #secondary aside.cuisine-widget a {
   border: none; }
 #secondary aside.cuisine-widget img {
@@ -1792,7 +1792,7 @@ aside.widget-last a:before {
   height: 300px; }
 
 .no-result {
-  padding: 0.2em 0.3em; }
+  padding: 3px 5px; }
 
 #main-magazine {
   *zoom: 1; }
@@ -1865,7 +1865,7 @@ aside.widget-last a:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-bottom: 20px;
-  padding: 0.2em 0.3em; }
+  padding: 3px 5px; }
 @media (min-width: 320px) and (max-width: 600px) {
   .last-event-post {
     float: none;
@@ -1884,7 +1884,7 @@ aside.widget-last a:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-top: 10px;
-  padding: 0.2em 0.3em;
+  padding: 3px 5px;
   background: white;
   color: black;
   font-size: 1em; }
