@@ -157,11 +157,11 @@ $today = time();
 						elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 						else { $paged = 1; }
 						$args = array(
-							'post_type' 	=> 'post',
-							'order'			=> 'DESC',
-							'post__not_in'	=> $exclude_ids,
-							'posts_per_page'=> '24',
-							
+							'post_type' 		=> 'post',
+							'order'				=> 'DESC',
+							'post__not_in'		=> $exclude_ids,
+							'posts_per_page'	=> '24',
+							'paged'				=> $paged							
 						);
 						$wp_query = new WP_Query( $args );
 					?>
