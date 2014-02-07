@@ -128,7 +128,7 @@
 					$event_dealer_name = get_post_meta( $post->ID, 'eventDetail_dealer-name', true );
 				?>		
 
-				<a href="http://staging.lavant-seine.com/les-infos-pratiques/tarifs-et-reservations/" class="button saisoned-on-bg">Réservez au Théâtre</a>
+				<a href="<?php bloginfo('url'); ?>/les-infos-pratiques/tarifs-et-reservations/" class="button saisoned-on-bg">Réservez au Théâtre</a>
 				<?php 
 					if ( $event_dealer_name ) : ?>
 						<a href="<?php echo $event_dealer_link; ?>" target="_blank" class="button saisoned-on-bg">Réservez sur <?php echo $event_dealer_name; ?></a>

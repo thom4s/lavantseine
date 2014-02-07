@@ -68,33 +68,32 @@ jQuery(function($) {
 	    	});
 
 
-	    // Toggle Menu 
-	    $('.menu-toggle').on('click', function() {
-	    	$('#site-navigation').toggle('fast');
-	    	$(this).find('img').toggleClass('rotate');
-	    });
+    // Toggle Menu 
+    $('.menu-toggle').on('click', function() {
+    	$('#site-navigation').toggle('fast');
+    	$(this).find('img').toggleClass('rotate');
+    });
 
 
-	    // Unchecked EventToCome
-	    $('#prog-filters form select').on('change', function() {
-	    	if ( $('input[name=eventToCome]').is(':checked') ) {
-	    		$('input[name=eventToCome]').attr('checked', false);
-	    	}
-	    });
+    // Unchecked EventToCome
+    $('#prog-filters form select').on('change', function() {
+    	if ( $('input[name=eventToCome]').is(':checked') ) {
+    		$('input[name=eventToCome]').attr('checked', false);
+    	}
+    });
 
-	    // Sidebar & Footer Bug (on absolute position)
-	    $pageHeight = $('#page').height();
-	    $footerHeight = $('#mastfooter').height() + 75;
-	    $sidebarHeight = $('#secondary').height();
-	    $totalHeight = $sidebarHeight + $footerHeight;
-	    if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
-		    $('#page').height($totalHeight);
-	    	$('#mastfooter').css('position','absolute').css('bottom', '0');
-	    }
+    // Sidebar & Footer Bug (on absolute position)
+    $pageHeight = $('#page').height();
+    $footerHeight = $('#mastfooter').height() + 75;
+    $sidebarHeight = $('#secondary').height();
+    $totalHeight = $sidebarHeight + $footerHeight;
+    if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
+	    $('#page').height($totalHeight);
+    	$('#mastfooter').css('position','absolute').css('bottom', '0');
+    }
 
-	    // Hide submit btn value for inline searchform
-	    $('.search-format-inline').find('input[type=submit]').attr('value', '');
-
+    // Hide submit btn value for inline searchform
+    $('.search-format-inline').find('input[type=submit]').attr('value', '');
 
 	});
 });
@@ -246,18 +245,27 @@ window.___gcfg = {lang: 'fr'};
              */
             fetch: function()
             {
+                var $url = document.location.href;
+                $url = "" + $url;
+                console.log($url);
+
                 if (_form === null) { _warn(); return; }
                 
                 if (!docCookies.hasItem('formData')) return;
                 var fd = _formData.length < 1 ? docCookies.getItem('formData').split(',') : _formData;
-                jQuery('#awpqsf_id_btn').click();
+
+                if( $url.indexOf('/rdv/') != -1 || $url.indexOf('/discipline/') != -1) {
+                } else {
+                  jQuery('#awpqsf_id_btn').click();
+                }
+
                 jQuery.each(fd, function(i, item)
                 {
                     var s = item.split(':');
                     var elem = $('#' + s[0]);
                     formCache.setFieldValue(elem, s[1]);
                 });
-                
+ 
 
             },
             /* Sets the value of the specified form field from previously stored data.

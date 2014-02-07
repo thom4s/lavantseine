@@ -37,7 +37,7 @@
 		<div id="" class="navigation-group" role="navigation">
 
 			<ul class="home-link picto">
-				<a href="<?php bloginfo('url');  ?>"><li class="go-home"></li></a>
+				<a href="<?php bloginfo('url'); ?>"><li class="go-home"></li></a>
 			</ul><!-- #shortcut-navigation -->
 
 			<nav id="shortcut-navigation" class="shortcut-navigation" role="navigation">
