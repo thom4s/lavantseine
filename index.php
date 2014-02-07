@@ -23,7 +23,7 @@ get_header(); ?>
 				   	'order' => 'ASC',
 				   	'meta_query' => array(
 				       	array(
-				           'key' => 'eventDetail_first_date',
+				           'key' => 'eventDetail_last_date',
 				           'value' => $today,
 				           'compare' => '>=',
 				        )
