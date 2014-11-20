@@ -164,6 +164,7 @@ $today = time();
 							'paged'				=> $paged							
 						);
 						$wp_query = new WP_Query( $args );
+
 					?>
 
 					<?php if ( $wp_query->have_posts() ) : ?>

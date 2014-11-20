@@ -127,6 +127,8 @@ $navigationMarginLeft: $logoWidth + $baseLineHeight;
 
 
 /* Also, don't forget to add this: */
-[data-columns]::before { display: none !important; }
+[data-columns]::before { display: block;
+height: 0;
+visibility: hidden; }
 
 

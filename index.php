@@ -17,7 +17,7 @@ get_header(); ?>
 				// Query last fourth events (event post type)
 				$args = array(
 				   	'post_type' => 'event',
-					'posts_per_page' => '4',   
+						'posts_per_page' => '4',   
 				   	'meta_key' => 'eventDetail_first_date',
 				   	'orderby' => 'meta_value_num',
 				   	'order' => 'ASC',
@@ -79,7 +79,6 @@ get_header(); ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'boxes', get_post_format() ); ?>
 					<?php endwhile; ?>
-					<?php // lavantseine_paging_nav(); ?>
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>

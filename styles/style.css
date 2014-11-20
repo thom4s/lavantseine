@@ -611,7 +611,9 @@ table {
 
 /* Also, don't forget to add this: */
 [data-columns]::before {
-  display: none !important; }
+  display: block;
+  height: 0;
+  visibility: hidden; }
 
 #masthead, #content, .clearfix, .event .entry-mentions {
   *zoom: 1; }

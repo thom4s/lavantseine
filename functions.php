@@ -109,6 +109,14 @@ function lavantseine_widgets_init() {
 		'after_title'   => '</h5>',
 	) );
 
+  register_sidebar( array(
+    'name'          => __( 'Alerte Box', 'lavantseine' ),
+    'id'            => 'alert-widgets',
+    'before_widget' => '<div id="%1$s" class="box-footer widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h5 class="box-footer-title">',
+    'after_title'   => '</h5>',
+  ) );
 
 }
 add_action( 'widgets_init', 'lavantseine_widgets_init' );
@@ -123,7 +131,7 @@ function lavantseine_scripts() {
 
 	wp_enqueue_script( 'lavantseine-scripts', get_template_directory_uri() . '/js/scripts.js', array(), false, true );
 	// wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), false, false );
-	// wp_enqueue_script( 'salvatorre', get_template_directory_uri() . '/js/salvatorre.js', array(), false, true );
+	wp_enqueue_script( 'salvatorre', get_template_directory_uri() . '/js/salvatorre.js', array(), false, true );
 	wp_enqueue_script( 'bxslider-modernizr-salvatorre', get_template_directory_uri() . '/js/bxslider.js', array(), false, true );
 
 	wp_dequeue_style('pagination-style');
