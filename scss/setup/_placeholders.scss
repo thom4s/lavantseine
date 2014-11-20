@@ -13,6 +13,12 @@
 	float: right;
 }
 
+%hidden,
+.hidden {
+  display: none !important;
+}
+
+
 %plain-width,
 .plain-width {
     @include box-sizing(border);
