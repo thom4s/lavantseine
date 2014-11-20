@@ -111,10 +111,10 @@ function lavantseine_widgets_init() {
 
   register_sidebar( array(
     'name'          => __( 'Alerte Box', 'lavantseine' ),
-    'id'            => 'alert-widgets',
-    'before_widget' => '<div id="%1$s" class="box-footer widget %2$s">',
+    'id'            => 'alert',
+    'before_widget' => '<div id="alert" class="message">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="box-footer-title">',
+    'before_title'  => '<h5 class="">',
     'after_title'   => '</h5>',
   ) );
 
