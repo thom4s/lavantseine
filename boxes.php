@@ -94,5 +94,22 @@
 			?>
 		<?php endif; // End if 'event' == get_post_type() ?>
 
+
+		<?php if ( 'post' == get_post_type() ) : ?>
+			<?php 
+				$terms = wp_get_post_terms( $post->ID, array('category'), $args );
+				$count = count($terms);
+				if ( $count > 0 ){
+				    echo "<ul>";
+				    foreach ( $terms as $term ) {
+				    	$term_link = get_term_link( $term, '' );
+					    echo "<a href='". $term_link ."'><li class='saisoned-on-color'>#" . $term->name . "</li></a>";
+				    }
+				    echo "</ul>";
+				}
+			?>
+		<?php endif; // End if 'event' == get_post_type() ?>
+
+
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
