@@ -117,7 +117,7 @@ get_header(); ?>
 					// Lister articles avec tags relationnels des événements à venir
 					$args = array(
 						'post_type' 		=> 'post',
-						'posts_per_page'	=> 12,
+						'posts_per_page'	=> 9,
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'relational_tag',
@@ -128,11 +128,8 @@ get_header(); ?>
 						'orderby'			=> 'post_date',
 						'order' 			=> 'DESC'	
 					);
-
-					// $nextEventPost = get_posts( $args );
 					$nextEventPost = new WP_Query( $args );
 
-					// The Loop
 					if ( $nextEventPost->have_posts() ) {
 						while ( $nextEventPost->have_posts() ) {
 							$nextEventPost->the_post();
@@ -141,7 +138,42 @@ get_header(); ?>
 					} else {
 						 get_template_part( 'content', 'none' );
 					}
-					/* Restore original Post Data */
+					wp_reset_postdata();
+
+
+					// Lister articles sans liens avec événements, donc sans tags relationnels
+					$relTags = get_terms( 'relational_tag', 'orderby=count&hide_empty=0' );
+
+					$tagsArray = array();
+
+					foreach ($relTags as $tag) {
+						$tagsArray[] = $tag->slug;
+					}
+
+					$args_2 = array(
+						'post_type' 		=> 'post',
+						'posts_per_page'	=> 3,
+						'tax_query' => array(
+							array(
+								'taxonomy' 	=> 'relational_tag',
+								'field' 		=> 'slug',
+								'terms' 		=> $tagsArray,
+								'operator'	=> 'NOT IN'
+							)
+						),
+						'orderby'			=> 'post_date',
+						'order' 			=> 'DESC'	
+					);
+					$singlePost = new WP_Query( $args_2 );
+
+					if ( $singlePost->have_posts() ) {
+						while ( $singlePost->have_posts() ) {
+							$singlePost->the_post();
+							get_template_part( 'boxes', get_post_format() );
+						}
+					} else {
+						 get_template_part( 'content', 'none' );
+					}
 					wp_reset_postdata();
 
 				?>
