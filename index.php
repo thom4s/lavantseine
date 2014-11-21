@@ -13,6 +13,7 @@ get_header(); ?>
 			<?php
 				setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
 				$today = time();
+				$todayPlusOneMonth = strtotime("+1 month", $today);
 
 				// Query last fourth events (event post type)
 				$args = array(
@@ -74,14 +75,79 @@ get_header(); ?>
 		<div id="attached-content" class="">
 			<a href="/magazine"><h1>Le <b>Magazine</b> de l'Avant Seine</h1></a>
 			
+			<?php 
+
+
+					// Lister événements à venir sous 30 jours
+					$args = array(
+						'post_type' 		=> 'event',
+						'posts_per_page' 	=> -1,
+					   	'meta_key' => 'eventDetail_first_date',
+					   	'orderby' => 'meta_value_num',
+					   	'order' => 'ASC',
+					   	'meta_query' => array(
+					   		'RELATION'	=> 'AND',
+					     	array(
+					        'key' => 'eventDetail_first_date',
+					        'value' => $today,
+					        'compare' => '>=',
+					      ),
+					      array(
+					        'key' => 'eventDetail_first_date',
+					        'value' => $todayPlusOneMonth,
+					        'compare' => '<=',
+					      ),
+					    )
+					);
+					$eventsNext30Days = get_posts( $args );
+
+					// Lister les tags relationnels de ces événements à venir
+					$eventRelTags = array();
+					foreach ($eventsNext30Days as $event) {
+						$tags = wp_get_post_terms( $event->ID, 'relational_tag' );
+						array_push($eventRelTags, $tags[0]->slug);
+					}
+			?>
+
+
 			<div id="homeGrid" class="last-posts" data-columns>
-				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'boxes', get_post_format() ); ?>
-					<?php endwhile; ?>
-				<?php else : ?>
-					<?php get_template_part( 'content', 'none' ); ?>
-				<?php endif; ?>
+
+				<?php
+
+					// Lister articles avec tags relationnels des événements à venir
+					$args = array(
+						'post_type' 		=> 'post',
+						'posts_per_page'	=> 12,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'relational_tag',
+								'field' => 'slug',
+								'terms' => $eventRelTags
+							)
+						),
+						'orderby'			=> 'post_date',
+						'order' 			=> 'DESC'	
+					);
+
+					// $nextEventPost = get_posts( $args );
+					$nextEventPost = new WP_Query( $args );
+
+					// The Loop
+					if ( $nextEventPost->have_posts() ) {
+						while ( $nextEventPost->have_posts() ) {
+							$nextEventPost->the_post();
+							get_template_part( 'boxes', get_post_format() );
+						}
+					} else {
+						 get_template_part( 'content', 'none' );
+					}
+					/* Restore original Post Data */
+					wp_reset_postdata();
+
+				?>
+
+
+
 			</div>
 
 		</div><!-- #aside -->
