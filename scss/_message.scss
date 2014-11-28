@@ -1,12 +1,14 @@
 #alert {
 	@include box-sizing();
 	@extend .navigation-group;
-	margin-top: $baseLineHeight / 2;
+	margin-top: $baseLineHeight;
 	padding: $boxPadding;
-	background: $white;
-	color: $black;
+	color: $white;
 	font-size: 1em;
 
+	p {
+		margin-bottom: $baseLineHeight / 2;
+	}
 
 	@include breakpoint(medium) {
 		width: 100%;

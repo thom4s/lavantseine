@@ -3,6 +3,7 @@ a {
 	color: $linkColor;
 	text-decoration: none;
 	border-bottom: 1px dotted $linkColor;
+	@include transition(all 0.2s);
 }
 
 a:visited,
@@ -67,6 +68,33 @@ a.button {
 	}
 }
 
+.entry-meta {
+	a {
+		display: inline-block;
+		clear: both;
+		float: left;
+		
+		&:hover {
+			margin-left: 5px;
+		}
+	}
+}
 
+.box-footer {
 
+	a {
+		color: inherit;
+		border: none;
+
+		&:before {
+			content: "• ";
+		}
+
+		&:hover {
+			color: $linkColorHover;
+			padding-left: 2px;
+		}	
+	}
+
+}
 

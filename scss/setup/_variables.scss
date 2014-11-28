@@ -55,7 +55,7 @@ $purple:                #7a43b6 !default;
 $textColor:             $grayDark !default;
 $linkColor:             $black !default;
 $linkColorHover:        lighten($linkColor, 30%) !default;
-$quoteColor:			#666;
+$quoteColor:						#666;
 
 
 // Typography
@@ -64,15 +64,15 @@ $sansFontFamily:        Arial, Helvetica, sans-serif !default;
 $serifFontFamily:       Georgia, Times New Roman, serif !default;
 $monoFontFamily:        Menlo, Consolas, monospace !default;		
 
-$titlesFontFamily:		'PT Sans', sans-serif !default;
-$navFontFamily: 		'PT Sans Narrow', sans-serif !default;
+$titlesFontFamily:			'PT Sans', sans-serif !default;
+$navFontFamily: 				'PT Sans Narrow', sans-serif !default;
 $paragraphsFontFamily:	'PT Sans', sans-serif !default;
 
 $baseFontSize:          14px !default; // 1em
 $baseFontFamily:        $sansFontFamily !default;
 $altFontFamily:         $serifFontFamily !default;
 $baseLineHeight:        20px !default; 
-$lineHeightRatio:		1.43 !default;
+$lineHeightRatio:				1.43 !default;
 
 
 

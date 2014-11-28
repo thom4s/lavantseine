@@ -24,14 +24,6 @@
 		margin-bottom: $baseLineHeight / 2 ;
 	}
 
-	a {
-		color: inherit;
-		border: none;
-		
-		&:before {
-			content: "• ";
-		}
-	}
 }
 
 aside.widget-first {

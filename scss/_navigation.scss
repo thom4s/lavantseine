@@ -87,7 +87,6 @@
 		@include breakpoint(small ) {
 
 		}
-
 	}
 
 	li {
@@ -102,6 +101,10 @@
 			display: block;
 			margin: 0;
 			padding: 0 10px;
+
+			&:hover {
+				color: $grayLight;
+			}
 		}
 
 		@include breakpoint(medium) {
