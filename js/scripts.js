@@ -30,23 +30,23 @@ jQuery(function($) {
 		// Slide Home
 		// https://github.com/wandoledzep/bxslider-4
 		$('.bxslider-no-controls').bxSlider({
-		  pager: false,
-		  controls: false,
-		  auto: true,
-		  adaptiveHeight: true,
-		  infiniteLoop: true
+      pager: false,
+      controls: false,
+      auto: true,
+      adaptiveHeight: true,
+      infiniteLoop: true
 		});
 
 		// Slide posts
 		// https://github.com/wandoledzep/bxslider-4
 		$('.bxslider-with-controls').bxSlider({
-		  pager: false,
-		  controls: true,
-		  auto: false,
-		  adaptiveHeight: false,
-		  infiniteLoop: true,
-		  nextText: ' > ', 
-		  prevText: ' < '
+      pager: false,
+      controls: true,
+      auto: false,
+      adaptiveHeight: false,
+      infiniteLoop: true,
+      nextText: ' > ',
+      prevText: ' < '
 		});
 
 		$('.slide a').on('click', (function( event ) {
@@ -59,27 +59,27 @@ jQuery(function($) {
 		var $checkbox = $filterform.find(':checkbox');
 		var $url = document.location.href;
 
-	    $checkbox.on(
-	    	'click',
-	    	function(event) {
-	    		$that = $(this);
-	    		$input_value = $that.attr('value');
-	    		document.location.href = $input_value;
-	    	});
+      $checkbox.on(
+        'click',
+        function(event) {
+          $that = $(this);
+          $input_value = $that.attr('value');
+          document.location.href = $input_value;
+      });
 
 
     // Toggle Menu 
     $('.menu-toggle').on('click', function() {
-    	$('#site-navigation').toggle('fast');
-    	$(this).find('img').toggleClass('rotate');
+      $('#site-navigation').toggle('fast');
+      $(this).find('img').toggleClass('rotate');
     });
 
 
     // Unchecked EventToCome
     $('#prog-filters form select').on('change', function() {
-    	if ( $('input[name=eventToCome]').is(':checked') ) {
-    		$('input[name=eventToCome]').attr('checked', false);
-    	}
+      if ( $('input[name=eventToCome]').is(':checked') ) {
+        $('input[name=eventToCome]').attr('checked', false);
+      }
     });
 
     // Sidebar & Footer Bug (on absolute position)
@@ -88,8 +88,8 @@ jQuery(function($) {
     $sidebarHeight = $('#secondary').height();
     $totalHeight = $sidebarHeight + $footerHeight;
     if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
-	    $('#page').height($totalHeight);
-    	$('#mastfooter').css('position','absolute').css('bottom', '0');
+      $('#page').height($totalHeight);
+      $('#mastfooter').css('position','absolute').css('bottom', '0');
     }
 
     // Hide submit btn value for inline searchform
@@ -172,8 +172,8 @@ window.___gcfg = {lang: 'fr'};
 
 ( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-	    is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
+      is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
+      is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
 
 	if ( ( is_webkit || is_opera || is_ie ) && 'undefined' !== typeof( document.getElementById ) ) {
 		var eventMethod = ( window.addEventListener ) ? 'addEventListener' : 'attachEvent';
@@ -198,7 +198,7 @@ window.___gcfg = {lang: 'fr'};
      * and fetches back to the form when requested or needed. 
      */
     var formCache = (function() {
-        var _form = null, 
+      var _form = null, 
             _formData = [],
             _strFormElements = "input[type='text']," + 
                         "input[type='checkbox']," + 

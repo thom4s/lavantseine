@@ -77,7 +77,6 @@ get_header(); ?>
 			
 			<?php 
 
-
 					// Lister événements à venir sous 30 jours
 					$args = array(
 						'post_type' 		=> 'event',
@@ -114,6 +113,8 @@ get_header(); ?>
 
 				<?php
 
+					$articles = array();
+
 					// Lister articles avec tags relationnels des événements à venir
 					$args = array(
 						'post_type' 		=> 'post',
@@ -128,22 +129,14 @@ get_header(); ?>
 						'orderby'			=> 'post_date',
 						'order' 			=> 'DESC'	
 					);
-					$nextEventPost = new WP_Query( $args );
 
-					if ( $nextEventPost->have_posts() ) {
-						while ( $nextEventPost->have_posts() ) {
-							$nextEventPost->the_post();
-							get_template_part( 'boxes', get_post_format() );
-						}
-					} else {
-						 get_template_part( 'content', 'none' );
-					}
+					$nextEventPost = get_posts( $args );
+					$articles = array_merge($nextEventPost, $articles);
 					wp_reset_postdata();
 
 
 					// Lister articles sans liens avec événements, donc sans tags relationnels
 					$relTags = get_terms( 'relational_tag', 'orderby=count&hide_empty=0' );
-
 					$tagsArray = array();
 
 					foreach ($relTags as $tag) {
@@ -164,17 +157,49 @@ get_header(); ?>
 						'orderby'			=> 'post_date',
 						'order' 			=> 'DESC'	
 					);
-					$singlePost = new WP_Query( $args_2 );
 
-					if ( $singlePost->have_posts() ) {
-						while ( $singlePost->have_posts() ) {
-							$singlePost->the_post();
-							get_template_part( 'boxes', get_post_format() );
-						}
-					} else {
-						 get_template_part( 'content', 'none' );
-					}
+					$singlePost = get_posts( $args_2 );
+					$articles = array_merge($singlePost, $articles);
 					wp_reset_postdata();
+
+
+
+					// On mélange
+					if ($articles) {
+						$articlesids = array();
+						foreach( $articles as $item ) {
+							$articledate = get_the_time( 'U', $item->ID );
+							$articlesids[$articledate] = $item->ID; 
+						}
+					}
+
+					krsort($articlesids);
+					$uniqueposts = array_unique($articlesids);
+
+					if( $uniqueposts ) {
+
+						$args = array(
+								'post__in' 				=> $uniqueposts,
+								'orderby'					=> 'post__in',
+								'posts_per_page'	=> -1,
+						);  
+
+						$wp_query = new WP_Query( $args );
+
+						if ( $wp_query->have_posts() ):
+						    while ( $wp_query->have_posts() ) :
+						      $wp_query->the_post();
+						    	$tags = get_the_terms( $post->ID, 'relational_tag' );
+
+						    	if($tags) {
+						    		get_template_part( 'boxes', get_post_format() );
+						    	} else {
+						    		get_template_part( 'boxes-plain', get_post_format() );
+						    	}
+						    endwhile;
+						endif;
+					}
+
 
 				?>
 
