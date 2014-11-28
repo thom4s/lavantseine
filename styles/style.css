@@ -862,6 +862,37 @@ body {
     .box, .box-blank, .box-page, .box-post, .box-event, .box-month, .box-footer {
       margin-left: 5%; } }
 
+.plain-box {
+  position: relative;
+  height: 350px;
+  padding: 0;
+  background: none repeat scroll 0% 0% #000; }
+  .plain-box .inner-box:hover {
+    opacity: 0.9;
+    filter: alpha(opacity=90); }
+  .plain-box a {
+    height: 100%;
+    width: 100%; }
+  .plain-box img {
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+    max-width: none; }
+  .plain-box .box-content.fixed {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 3px 5px; }
+  .plain-box h2 {
+    color: #fff;
+    margin-top: 10px; }
+  .plain-box .entry-summary {
+    color: #fff;
+    margin-top: 20px; }
+  .plain-box .entry-meta {
+    color: #fff; }
+
 .box-blank {
   margin: 0; }
 
@@ -887,6 +918,9 @@ article.event {
 
 .relatived {
   position: relative; }
+
+.absoluted {
+  position: absolute; }
 
 .box-page {
   margin-left: 0; }

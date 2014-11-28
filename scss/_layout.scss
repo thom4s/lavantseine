@@ -180,6 +180,58 @@ body { background-size: cover; }
 	}
 }
 
+.plain-box {
+
+	position: relative;
+	height: 350px;
+	padding: 0;
+	background: none repeat scroll 0% 0% #000;
+
+
+	.inner-box {
+		&:hover {
+			@include opacity(0.9);
+		}
+	}
+
+	a {
+		height: 100%;
+		width: 100%;
+	}
+
+	img {
+		height:	100%;
+		width: auto;
+		overflow: hidden;
+		max-width: none;
+	}
+
+	.box-content.fixed {
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: $boxPadding;
+	}
+
+	h2 {
+		color: #fff;
+		margin-top: 10px;
+	}
+
+	.entry-summary {
+		color: #fff;
+		margin-top: 20px;
+	}
+
+	.entry-meta {
+		color: #fff;
+	}
+
+
+}
+
+
 .box-blank {
 	@extend .box;
 	margin: 0;
@@ -217,6 +269,9 @@ body { background-size: cover; }
 
 .relatived {
 	position: relative;
+}
+.absoluted {
+	position: absolute;
 }
 
 .box-page {
