@@ -95,6 +95,8 @@ jQuery(function($) {
     // Hide submit btn value for inline searchform
     $('.search-format-inline').find('input[type=submit]').attr('value', '');
 
+
+
 	});
 });
 

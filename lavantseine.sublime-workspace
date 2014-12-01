@@ -328,34 +328,34 @@
 	"buffers":
 	[
 		{
-			"file": "boxes.php",
+			"file": "/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter/classes/ajwpqsf-misc-class.php",
 			"settings":
 			{
-				"buffer_size": 3366,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "boxes-plain.php",
+			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 1517,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scss/_contents-parts.scss",
+			"file": "scss/_programmation-parts.scss",
 			"settings":
 			{
-				"buffer_size": 4202,
+				"buffer_size": 1582,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scss/_layout.scss",
+			"file": "js/scripts.js",
 			"settings":
 			{
-				"buffer_size": 5457,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -408,29 +408,34 @@
 	},
 	"file_history":
 	[
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-programmation.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/page-programmation.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/README.md",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_setup.scss",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_icheck.scss",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/js/scripts.js",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/js/icheck-min.js",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_contents-parts.scss",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes-plain.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_layout.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_variables.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_links.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_navigation.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_footer-parts.scss",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes-plain.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/functions.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_message.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/index.php",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_contents-parts.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_mixins.scss",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_layout.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-page.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/part-relatedposts.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-event.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/single-event.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/header.php",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/js/scripts.js",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/page-magazine.php",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/archive.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/page.php",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-programmation.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/index.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/functions.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/content-single.php",
@@ -530,12 +535,7 @@
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/sidebar-footer-widgets.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_blocs.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/underscore-basics.css",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/customizer.js",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/customizer.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/navigation.js",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/skip-link-focus-fix.js",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/styles/style.css",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/jquery-ui-custom.js"
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/customizer.js"
 	],
 	"find":
 	{
@@ -543,9 +543,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine",
 			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss",
 			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine",
 			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss",
@@ -600,6 +601,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jquer",
+			"console.lo",
+			"taxchklabel",
+			"ajax_wpqsffrom_46",
 			"inner",
 			"@include transition",
 			"alert",
@@ -723,11 +728,7 @@
 			"search",
 			"picto",
 			"picto-sprite",
-			"date(",
-			"share",
-			"featured-medi",
-			"next-eve",
-			"bx-prev"
+			"date("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -747,144 +748,23 @@
 	"groups":
 	[
 		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "boxes.php",
+					"file": "/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter/classes/ajwpqsf-misc-class.php",
 					"settings":
 					{
-						"buffer_size": 3366,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3329,
-								3329
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 946.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "boxes-plain.php",
-					"settings":
-					{
-						"buffer_size": 1517,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								259,
-								235
+								0,
+								0
 							]
 						],
 						"settings":
@@ -986,21 +866,142 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
-					"buffer": 2,
-					"file": "scss/_contents-parts.scss",
+					"buffer": 1,
+					"file": "functions.php",
 					"settings":
 					{
-						"buffer_size": 4202,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2761,
-								2766
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scss/_programmation-parts.scss",
+					"settings":
+					{
+						"buffer_size": 1582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								952,
+								952
 							]
 						],
 						"settings":
@@ -1098,25 +1099,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3173.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "scss/_layout.scss",
+					"file": "js/scripts.js",
 					"settings":
 					{
-						"buffer_size": 5457,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2585,
-								2585
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1210,11 +1211,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2303.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1250,7 +1252,7 @@
 		"cols":
 		[
 			0.0,
-			0.401503593622,
+			0.443044833839,
 			1.0
 		],
 		"rows":
