@@ -24,19 +24,27 @@ $color2: rgb(3, 85, 133);
         margin-top: 0;
     }
 
+	#futurEventCheckbox,
+	.taxdropdown-4,
+	.awpqsf_submit {
+			float: left;
+			width: 32%;
+		}
+
 	.awpqsf_class,
 	.filter-column {
 		@include box-sizing();
-		width: 32%;
 		margin-left: 1%;
 		float: left;
 
 		@include breakpoint(medium) {
     	
-    	}
+    }
+		
 		@include breakpoint(small) {
 
-    	}
+    }
+
 		label[class*='tax-label-'], 
 		label[class*='tcmf-label-'] {
 			width: 100%;
@@ -143,8 +151,6 @@ $color2: rgb(3, 85, 133);
 	    	}    
 	  	}
 
-
-
 		}
 	}
 
@@ -167,10 +173,29 @@ $color2: rgb(3, 85, 133);
 
 }
 
+
+// Public taxonomy
+.public {
+
+}
+	.public-name {
+		text-transform: uppercase;
+		color:$gray;
+		font-size: 0.9em;
+	}
+
+	.public-img {
+
+	}
+
+
+// Dates
 .event-repeatable-dates {
 	font-weight: bold;
 }
 
+
+// Details
 .mloading {
 	height: 300px;
 }

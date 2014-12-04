@@ -258,6 +258,7 @@ window.___gcfg = {lang: 'fr'};
 
                 if( $url.indexOf('/rdv/') != -1 || $url.indexOf('/discipline/') != -1) {
                 } else {
+                  // jQuery('#ajax_wpqsffrom_46').change();
                   jQuery('#awpqsf_id_btn').click();
                 }
 

@@ -2272,7 +2272,7 @@ a:active {
   display: inline-block;
   clear: both;
   float: left; }
-  .entry-meta a:hover {
+  .entry-meta a:not(.button):hover {
     margin-left: 5px; }
 
 .box-footer a {
@@ -2626,13 +2626,17 @@ aside.widget-last {
   @media (max-width: 800px) {
     #prog-filters {
       margin-top: 0; } }
+  #prog-filters #futurEventCheckbox,
+  #prog-filters .taxdropdown-4,
+  #prog-filters .awpqsf_submit {
+    float: left;
+    width: 32%; }
   #prog-filters .awpqsf_class,
   #prog-filters .filter-column {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    width: 32%;
     margin-left: 1%;
     float: left; }
     #prog-filters .awpqsf_class label[class*='tax-label-'],
@@ -2732,6 +2736,11 @@ aside.widget-last {
     padding: 10px 0;
     float: right;
     margin: 0 1%; }
+
+.public-name {
+  text-transform: uppercase;
+  color: #555555;
+  font-size: 0.9em; }
 
 .event-repeatable-dates {
   font-weight: bold; }

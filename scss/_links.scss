@@ -74,7 +74,7 @@ a.button {
 		clear: both;
 		float: left;
 		
-		&:hover {
+		&:not(.button):hover {
 			margin-left: 5px;
 		}
 	}
