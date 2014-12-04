@@ -166,6 +166,7 @@ function lavantseine_customize_css()
             .main-nav .current_page_item > a, .current-menu-ancestor > a, .main-nav .current-menu-item > a, .search-format-inline input[type=submit] { color:<?php echo $saisonColor; ?> !important; }
             a.button, input[type=submit], input[type=button], #menu-acces-directs li, .search-format-inline, .paging-navigation .nav-previous, .paging-navigation .nav-next { background-color:<?php echo $saisonColor; ?> !important; }
             .mag-filters a:hover { color: <?php echo $saisonColor; ?> !important;}
+            .taxchklabel input:checked + label { background-color: <?php echo $saisonColor; ?> !important; } 
          </style>
     <?php
 }
