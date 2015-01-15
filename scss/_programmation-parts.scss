@@ -199,8 +199,9 @@ $color2: rgb(3, 85, 133);
 
 
 // Public taxonomy
-.public {
-
+.event-public-item {
+	float: left;
+	margin-right: 5px;
 }
 	.public-name {
 		text-transform: uppercase;

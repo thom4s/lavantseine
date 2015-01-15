@@ -1561,7 +1561,7 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 3px 5px; }
+    padding: 10px; }
   .plain-box h2 {
     color: #fff;
     margin-top: 10px; }
@@ -1577,7 +1577,7 @@ body {
 .backgrounded-box, article.page,
 article.post,
 article.event {
-  background-color: white; }
+  background-color: #fff; }
 
 .transparent-background, #secondary aside {
   display: block;
@@ -1585,7 +1585,7 @@ article.event {
 
 .transparent-background::after, #secondary aside::after {
   content: "";
-  background: white;
+  background: #fff;
   opacity: 0.7;
   top: 0;
   left: 0;
@@ -1736,7 +1736,7 @@ article.event {
   width: 661.1px;
   margin-top: 20px; }
   .main-nav > ul {
-    background: black;
+    background: #000;
     height: 40px; }
   .main-nav ul {
     display: block;
@@ -1771,7 +1771,7 @@ article.event {
       margin: 0;
       padding: 0 10px; }
       .main-nav li a:hover {
-        color: #999999; }
+        color: #999; }
     @media (max-width: 800px) {
       .main-nav li {
         width: 100%;
@@ -1820,7 +1820,7 @@ ul.sub-menu {
       font-size: 0.8em; } }
 
 .current-menu-ancestor .sub-menu .current-menu-item a {
-  color: white !important;
+  color: #fff !important;
   font-weight: bold; }
 
 /* Small menu */
@@ -1863,9 +1863,9 @@ ul.sub-menu {
     padding: 0 15px;
     margin-bottom: 15px; }
   .shortcut-navigation a {
-    color: white; }
+    color: #fff; }
     .shortcut-navigation a:hover, .shortcut-navigation a:visited, .shortcut-navigation a:active {
-      color: white; }
+      color: #fff; }
   @media (max-width: 800px) {
     .shortcut-navigation {
       display: block;
@@ -1951,8 +1951,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   display: inline-block;
   font-size: 2em;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   padding: 0.2em 0.5em 0.1em 2em;
   font-weight: 300; }
   h1 a {
@@ -1983,7 +1983,7 @@ h1 {
 h2 {
   font-size: 1.25em;
   text-transform: uppercase;
-  color: black;
+  color: #000;
   font-weight: 900; }
   h2 a {
     text-decoration: none;
@@ -2068,8 +2068,8 @@ input[type=email] {
   -moz-box-sizing: border-box;
   width: 100%;
   line-height: 20px;
-  background: white;
-  border: 1px solid black;
+  background: #fff;
+  border: 1px solid #000;
   height: 30px;
   padding: 0.5em;
   -webkit-border-radius: 0;
@@ -2083,7 +2083,7 @@ input[type=checkbox] {
   line-height: 20px; }
 
 textarea {
-  border: 1px solid black;
+  border: 1px solid #000;
   padding: 0.5em; }
 
 input[type=submit] {
@@ -2129,7 +2129,7 @@ input[type=submit] {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
-  color: white; }
+  color: #fff; }
 
 .search-format-bloc input[type=submit] {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -2137,7 +2137,7 @@ input[type=submit] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   background: none;
-  color: white; }
+  color: #fff; }
 
 .wp_sarbacane_widget_form span {
   display: none; }
@@ -2200,9 +2200,9 @@ object {
 
 /* Links */
 a {
-  color: black;
+  color: #000;
   text-decoration: none;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted #000;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -2226,7 +2226,7 @@ a:active {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 0.85em;
-  color: white;
+  color: #fff;
   padding: 3px;
   margin-bottom: 10px;
   text-align: center;
@@ -2237,8 +2237,8 @@ a:active {
   -o-transition: all 0.2s;
   transition: all 0.2s; }
   .paging-navigation .nav-previous:hover, .paging-navigation .nav-next:hover, input[type=submit]:hover, a.button:hover, #prog-filters .awpqsf_submit input[type=button]:hover {
-    background-color: white;
-    color: black;
+    background-color: #fff;
+    color: #000;
     border: none; }
 
 .widget a.button {
@@ -2720,9 +2720,13 @@ aside.widget-last {
     float: right;
     margin: 0 1%; }
 
+.event-public-item {
+  float: left;
+  margin-right: 5px; }
+
 .public-name {
   text-transform: uppercase;
-  color: #555555;
+  color: #555;
   font-size: 0.9em; }
 
 .event-repeatable-dates {
@@ -2831,7 +2835,7 @@ aside.widget-last {
   -moz-box-sizing: border-box;
   margin-top: 20px;
   padding: 3px 5px;
-  color: white;
+  color: #fff;
   font-size: 1em; }
   #alert p {
     margin-bottom: 10px; }
@@ -2883,7 +2887,7 @@ aside.widget-last {
 /* LOADER */
 .bx-wrapper .bx-loading {
   min-height: 50px;
-  background: url(images/bx_loader.gif) center center no-repeat white;
+  background: url(images/bx_loader.gif) center center no-repeat #fff;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -3002,7 +3006,7 @@ aside.widget-last {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666666 \9;
+  background: #666 \9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%; }
 
@@ -3091,9 +3095,11 @@ aside.widget-last {
   width: 100%;
   line-height: 20px;
   background: white;
-  border: 1px solid black;
+  border: 1px solid #000;
   height: 30px;
   padding: 0.5em;
   margin: 12px 0 7px 0; }
 .search-format-bloc input[type=submit] {
   padding: 0.3em 0.4em; }
+
+/*# sourceMappingURL=style.css.map */

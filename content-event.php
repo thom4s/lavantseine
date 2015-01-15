@@ -89,10 +89,12 @@
 					$publics =  get_the_terms( $post->ID, 'public' );
 					if($publics) {
 					  foreach ($publics as $public) {
+					  	echo '<div class="event-public-item">';
 					    $tax_term_id = $public->term_taxonomy_id;
 					    $images = get_option('taxonomy_image_plugin');
 					    echo '<span class="public-name">'. $public->name .'</span><br>';
 					    echo '<span class="public-img">'. wp_get_attachment_image( $images[$tax_term_id], '' ). '</span>';
+   					  echo '</div>';
 					  }
 					}
 					?>

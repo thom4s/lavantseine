@@ -45,7 +45,7 @@ function lavantseine_setup() {
 	add_image_size( 'featured-post-thumbnail', 578, 9999 );
 	add_image_size( 'top-thumbnail', 779, 9999 );
 	add_image_size( '2col-thumbnail', 369, 9999 );
-  add_image_size( 'box-plain', 176, 350, array( 'left', 'center' ) );
+  add_image_size( 'box-plain', 176, 350, array( 'center', 'center' ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
