@@ -203,23 +203,7 @@ body { background-size: cover; }
 		max-width: none;
 	}
 
-	.inner-box {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-			
-		&:hover {
-			@include opacity(0.9);
-		}
-	}
-
 	.box-content {
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
 		padding: 10px;
 	}
 
@@ -237,8 +221,26 @@ body { background-size: cover; }
 		color: #fff;
 	}
 
+	&:hover {
+		background: #000;
+	}
+
+	.inner-box:before {
+			content: ' ';
+			@extend .absoluted;
+			@extend .full;
+			@extend .bg-black;
+			opacity: 0.5;
+	}
+
+	&:hover {
+		.inner-box:before {
+			opacity: 0.8;
+		}
+	}
 
 }
+
 
 
 .box-blank {
@@ -275,12 +277,22 @@ body { background-size: cover; }
   z-index: -1;   
 }
 
+.bg-black {
+	background: #000;
+}
 
 .relatived {
 	position: relative;
 }
 .absoluted {
 	position: absolute;
+
+	&.full {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 }
 
 .box-page {

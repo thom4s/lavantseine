@@ -9,11 +9,11 @@
 
 <article id="post-<?php the_ID(); ?>" class="box-<?php echo $i; ?> box<?php echo '-'; echo get_post_type(); ?> plain-box" <?php post_class(); ?>>
 
-	<div class="inner-box">
+	<div class="inner-box absoluted full">
 
 		<?php the_post_thumbnail('box-plain'); ?>
 
-		<div class="absoluted box-content fixed">
+		<div class="absoluted full box-content">
 
 			<a href="<?php the_permalink(); ?>" <?php if ( $filter ) { echo 'target="_blank"'; } ?>rel="bookmark">
 
