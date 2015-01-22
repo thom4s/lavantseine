@@ -1,6 +1,18 @@
 
+
+
+/*
+ * VARIABLES
+ */
+
 $color1: rgb(92, 146, 189);
-$color2: rgb(3, 85, 133);
+$color2: #333;
+$margin-inner: 5px;
+$margin-outer: 10px;
+
+/*
+ * BOXES
+ */
 
 .box-month {
 	@extend .box-event;
@@ -10,6 +22,15 @@ $color2: rgb(3, 85, 133);
 		padding: 0 $baseLineHeight $baseLineHeight 0;
 	}
 }
+
+
+
+/*
+ * PROGRAMMATION FILTER
+ */
+
+
+// General styles
 
 #awpqsf_id {
 	border: none; 
@@ -22,38 +43,29 @@ $color2: rgb(3, 85, 133);
 		margin-right: 5px;
 	}
 
-	.awpqsf_class {
-
-	}
-
-	#futurEventCheckbox {
-
-	}
-
 }
 
+// 
 
 #prog-filters {
 	@extend .navigation-group;
 	margin-top: - $baseLineHeight * 2 - 5;
 	margin-bottom: $baseLineHeight * 1;
+	padding-top: 10px;
 
-   	@include breakpoint(medium) {
-        margin-top: 0;
-    }
+ 	@include breakpoint(medium) {
+    margin-top: 0;
+  }
 
-	#futurEventCheckbox,
-	.taxdropdown-4,
-	.awpqsf_submit {
-			float: left;
-			width: 32%;
-		}
 
 	.awpqsf_class,
 	.filter-column {
 		@include box-sizing();
+		width: 49%;
 		margin-left: 1%;
-		float: left;
+		float: right;
+		padding-bottom: 0;
+		margin-bottom: $margin-outer;
 
 		@include breakpoint(medium) {
     	
@@ -66,36 +78,36 @@ $color2: rgb(3, 85, 133);
 		label[class*='tax-label-'], 
 		label[class*='tcmf-label-'] {
 			width: 100%;
-			padding: 5px 0 0;
+			padding: 0;
 		}
+
+		.tax-label-0,
+		.tax-label-1,
+		.tax-label-2 {
+			display: none;
+		}
+
 		label.taxchklabel,
 		label.cmfchklabel {
 			width: 100px;
-		}
-
-		&:first-child {
-			min-height: 250px;
 		}
 
 		ul {
 			display: inline-block;
 			margin-bottom: $baseLineHeight;
 		}
-		li {
-			&:before {
-				content: '⊕ ';
-			}
-		}
+
 		a {
 			border: inherit;
 			color: inherit;
 		}
 
+		@include breakpoint(small) {
+	  	width: 98%;
+	  } 
 
 
-
-		// TESTS
-
+		// Buttons Placeholders
 		%checkbox-btn {
 			@include box-sizing;
 
@@ -103,7 +115,7 @@ $color2: rgb(3, 85, 133);
 			width: auto;
 			position: relative;
 			clear: both;
-			margin: 0 5px 0 0;
+			margin: 0 5px 2px 0;
 
 			label {
 				@include box-sizing;
@@ -145,17 +157,8 @@ $color2: rgb(3, 85, 133);
 		.imaged-chkbx {
 			@extend %checkbox-btn;
 
-			label {
-			}
-
-				.public-img {
-					background-color: $color2;
-				}
-
-			input {
-
-	    	&:checked + label {
-	    	} 
+			.public-img {
+				background-color: none;
 			}
 		}// end .public-checkbox
 
@@ -166,39 +169,153 @@ $color2: rgb(3, 85, 133);
 		    padding: 3px 5px;
 		    transition: all 0.1s;
 			}
-
-			input {
-
-	    	&:checked + label {
-
-	    	} 
-			}
 		}// end .public-checkbox
-
-
 	}
 
+
 	.taxcheckbox-0 {
+		float: left !important;
+		height: 300px;
+
+		& .checkbox {
+			width: 75px;
+			height: 80px;
+			border: 1px solid #000;
+			float: left;
+			clear: none;
+			margin: 0 $margin-inner $margin-inner 0;
+
+			& label {
+				background-color: #fff;
+				color: #000 !important;
+				padding: 5px 1px;
+				border-radius: none;
+
+				& span {
+					display: inline-block;
+					font-size: 11px;
+					line-height: 11px;
+				}
+			}	
+		}
+	
 		@include breakpoint(medium) {
-       margin-top: 40px;
-    }
+	  	height: auto;
+	  }
+
 		@include breakpoint(small) {
-    }    	
+	  	height: auto;
+	  	margin-top:  0 10px 10px;
+	  }    	
+	}
+
+
+	.taxcheckbox-3 {
+		margin-bottom: $margin-outer * 1.5;
+		
+		& > label {
+			margin-bottom: $margin-inner;
+		}
+		& label {
+			padding: 3px 0;
+		}
+
+		& .checkbox {
+			margin-bottom: 0;
+		}
+		& .public-img {
+			padding: 0;
+			max-width: 53px;
+	    line-height: 0;
+		}	
+		
+		@include breakpoint(small) {
+
+	  } 
+	}
+
+	#futurEventCheckbox {
+		@extend %checkbox-btn;
+		width: 22.5%;
+		float: right;
+		margin: 0 $margin-inner 0 0;
+		height: 40px; 
+		
+		.checkbox {
+			height: 100%;
+			width: 100%;
+		}	
+		
+		@include breakpoint(small) {
+			width: 40%;
+			margin-right: 10px;
+			margin-bottom: 20px;
+	  } 
+	}
+
+	.taxdropdown-4 {
+		width: 24%;
+		float: left;
+		overflow: hidden;
+		margin-right: $margin-outer;
+		margin-top: 0;
+		margin-left: $margin-inner;
+		height: 40px;
+		padding: 0;
+
+		& > label {
+			display: none;
+		}
+
+		select {
+			@include box-sizing;
+			border: none;
+			background-color: $color2;
+			background-image: url('../img/arrows.png');
+			background-repeat: no-repeat;
+			background-position: 5px 17px;
+			color: #fff;
+			width: 110%;
+			height: 100%;
+			margin-right: 10px;
+			margin-left: 0;
+			text-align: center;
+		}
+
+		@include breakpoint(small) {
+			width: 50%;
+			margin-left: 10px;
+			margin-bottom: 20px;
+	  } 
+
 	}
 
 	.awpqsf_submit {
-		padding: 10px 0;
+		width: 47.5%;
+		padding: 0;
 		float: right;
-		margin: 0 1%;
+		margin: $margin-outer $margin-outer 0 0;
+		
 		input[type=button] {
 			@extend %button;
 		}
-	}
 
+		@include breakpoint(small) {
+			@include clearfix;
+			width: 50%;
+			margin: 10px auto;
+			float: none;
+	  } 
+
+	} 
 }
 
 
-// Public taxonomy
+/*
+ * SINGLE EVENT
+ */
+
+// Public taxonomy 
 .event-public-item {
 	float: left;
 	margin-right: 5px;
@@ -210,11 +327,11 @@ $color2: rgb(3, 85, 133);
 	}
 
 	.public-img {
-
+		margin: auto;
 	}
 
 
-// Dates
+// Dates 
 .event-repeatable-dates {
 	font-weight: bold;
 }

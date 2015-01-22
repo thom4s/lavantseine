@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine"
+		},
+		{
+			"path": "/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter"
 		}
 	]
 }

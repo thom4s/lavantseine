@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-outer"
+			],
+			[
+				"mar",
+				"margin-inner"
+			],
+			[
+				"publi",
+				"public-img"
+			],
+			[
+				"no-",
+				"no-repeat"
+			],
+			[
+				"backgrou",
+				"background-image"
+			],
+			[
 				"color",
 				"color2"
 			],
@@ -30,10 +50,6 @@
 			[
 				"event",
 				"events"
-			],
-			[
-				"margin",
-				"margin-top"
 			],
 			[
 				"post",
@@ -272,10 +288,6 @@
 				"removeClass"
 			],
 			[
-				"mar",
-				"margin"
-			],
-			[
 				"paddi",
 				"padding-top"
 			],
@@ -332,36 +344,18 @@
 	"buffers":
 	[
 		{
-			"contents": "Searching 27 files for \"checkbox\"\n\n/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_forms.scss:\n   18  }\n   19  \n   20: input[type=checkbox] {\n   21  	width: auto;\n   22  	height: auto;\n\n/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_programmation-parts.scss:\n   19  		margin-right: 5px;\n   20  	}\n   21: 	input[type=checkbox] {\n   22  		margin-right: 5px;\n   23  	}\n   ..\n   27  	}\n   28  \n   29: 	#futurEventCheckbox {\n   30  \n   31  	}\n   ..\n   43      }\n   44  \n   45: 	#futurEventCheckbox,\n   46  	.taxdropdown-4,\n   47  	.awpqsf_submit {\n   ..\n   97  		// TESTS\n   98  \n   99: 		%checkbox-btn {\n  100  			@include box-sizing;\n  101  \n  ...\n  140  	  	}\n  141  \n  142: 		} // end .checkbox.btn\n  143  \n  144  \n  145  		.imaged-chkbx {\n  146: 			@extend %checkbox-btn;\n  147  \n  148  			label {\n  ...\n  158  	    	} \n  159  			}\n  160: 		}// end .public-checkbox\n  161  \n  162  		.texted-chkbx {\n  163: 			@extend %checkbox-btn;\n  164  			\n  165  			label {\n  ...\n  174  	    	} \n  175  			}\n  176: 		}// end .public-checkbox\n  177  \n  178  \n  179  	}\n  180  \n  181: 	.taxcheckbox-0 {\n  182  		@include breakpoint(medium) {\n  183         margin-top: 40px;\n\n/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_icheck.scss:\n    1  /* iCheck plugin Line skin\n    2  ----------------------------------- */\n    3: .icheckbox_line,\n    4  .iradio_line {\n    5      position: relative;\n    .\n   17      cursor: pointer;\n   18  }\n   19:     .icheckbox_line .icheck_line-icon,\n   20      .iradio_line .icheck_line-icon {\n   21          position: absolute;\n   ..\n   30          border: none;\n   31      }\n   32:     .icheckbox_line.hover,\n   33:     .icheckbox_line.checked.hover,\n   34      .iradio_line.hover {\n   35          background: #444;\n   36      }\n   37:     .icheckbox_line.checked,\n   38      .iradio_line.checked {\n   39          background: #000;\n   40      }\n   41:         .icheckbox_line.checked .icheck_line-icon,\n   42          .iradio_line.checked .icheck_line-icon {\n   43              background-position: -15px 0;\n   44          }\n   45:     .icheckbox_line.disabled,\n   46      .iradio_line.disabled {\n   47          background: #ccc;\n   48          cursor: default;\n   49      }\n   50:         .icheckbox_line.disabled .icheck_line-icon,\n   51          .iradio_line.disabled .icheck_line-icon {\n   52              background-position: -30px 0;\n   53          }\n   54:     .icheckbox_line.checked.disabled,\n   55      .iradio_line.checked.disabled {\n   56          background: #ccc;\n   57      }\n   58:         .icheckbox_line.checked.disabled .icheck_line-icon,\n   59          .iradio_line.checked.disabled .icheck_line-icon {\n   60              background-position: -45px 0;\n   ..\n   63  /* HiDPI support */\n   64  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n   65:     .icheckbox_line .icheck_line-icon,\n   66      .iradio_line .icheck_line-icon {\n   67          background-image: url(line@2x.png);\n   ..\n   72  \n   73  /* red */\n   74: .icheckbox_line-red,\n   75  .iradio_line-red {\n   76      position: relative;\n   ..\n   88      cursor: pointer;\n   89  }\n   90:     .icheckbox_line-red .icheck_line-icon,\n   91      .iradio_line-red .icheck_line-icon {\n   92          position: absolute;\n   ..\n  101          border: none;\n  102      }\n  103:     .icheckbox_line-red.hover,\n  104:     .icheckbox_line-red.checked.hover,\n  105      .iradio_line-red.hover {\n  106          background: #E98582;\n  107      }\n  108:     .icheckbox_line-red.checked,\n  109      .iradio_line-red.checked {\n  110          background: #e56c69;\n  111      }\n  112:         .icheckbox_line-red.checked .icheck_line-icon,\n  113          .iradio_line-red.checked .icheck_line-icon {\n  114              background-position: -15px 0;\n  115          }\n  116:     .icheckbox_line-red.disabled,\n  117      .iradio_line-red.disabled {\n  118          background: #F7D3D2;\n  119          cursor: default;\n  120      }\n  121:         .icheckbox_line-red.disabled .icheck_line-icon,\n  122          .iradio_line-red.disabled .icheck_line-icon {\n  123              background-position: -30px 0;\n  124          }\n  125:     .icheckbox_line-red.checked.disabled,\n  126      .iradio_line-red.checked.disabled {\n  127          background: #F7D3D2;\n  128      }\n  129:         .icheckbox_line-red.checked.disabled .icheck_line-icon,\n  130          .iradio_line-red.checked.disabled .icheck_line-icon {\n  131              background-position: -45px 0;\n  ...\n  134  /* HiDPI support */\n  135  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  136:     .icheckbox_line-red .icheck_line-icon,\n  137      .iradio_line-red .icheck_line-icon {\n  138          background-image: url(line@2x.png);\n  ...\n  143  \n  144  /* green */\n  145: .icheckbox_line-green,\n  146  .iradio_line-green {\n  147      position: relative;\n  ...\n  159      cursor: pointer;\n  160  }\n  161:     .icheckbox_line-green .icheck_line-icon,\n  162      .iradio_line-green .icheck_line-icon {\n  163          position: absolute;\n  ...\n  172          border: none;\n  173      }\n  174:     .icheckbox_line-green.hover,\n  175:     .icheckbox_line-green.checked.hover,\n  176      .iradio_line-green.hover {\n  177          background: #24AA7A;\n  178      }\n  179:     .icheckbox_line-green.checked,\n  180      .iradio_line-green.checked {\n  181          background: #1b7e5a;\n  182      }\n  183:         .icheckbox_line-green.checked .icheck_line-icon,\n  184          .iradio_line-green.checked .icheck_line-icon {\n  185              background-position: -15px 0;\n  186          }\n  187:     .icheckbox_line-green.disabled,\n  188      .iradio_line-green.disabled {\n  189          background: #89E6C4;\n  190          cursor: default;\n  191      }\n  192:         .icheckbox_line-green.disabled .icheck_line-icon,\n  193          .iradio_line-green.disabled .icheck_line-icon {\n  194              background-position: -30px 0;\n  195          }\n  196:     .icheckbox_line-green.checked.disabled,\n  197      .iradio_line-green.checked.disabled {\n  198          background: #89E6C4;\n  199      }\n  200:         .icheckbox_line-green.checked.disabled .icheck_line-icon,\n  201          .iradio_line-green.checked.disabled .icheck_line-icon {\n  202              background-position: -45px 0;\n  ...\n  205  /* HiDPI support */\n  206  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  207:     .icheckbox_line-green .icheck_line-icon,\n  208      .iradio_line-green .icheck_line-icon {\n  209          background-image: url(line@2x.png);\n  ...\n  214  \n  215  /* blue */\n  216: .icheckbox_line-blue,\n  217  .iradio_line-blue {\n  218      position: relative;\n  ...\n  230      cursor: pointer;\n  231  }\n  232:     .icheckbox_line-blue .icheck_line-icon,\n  233      .iradio_line-blue .icheck_line-icon {\n  234          position: absolute;\n  ...\n  243          border: none;\n  244      }\n  245:     .icheckbox_line-blue.hover,\n  246:     .icheckbox_line-blue.checked.hover,\n  247      .iradio_line-blue.hover {\n  248          background: #3DA0DB;\n  249      }\n  250:     .icheckbox_line-blue.checked,\n  251      .iradio_line-blue.checked {\n  252          background: #2489c5;\n  253      }\n  254:         .icheckbox_line-blue.checked .icheck_line-icon,\n  255          .iradio_line-blue.checked .icheck_line-icon {\n  256              background-position: -15px 0;\n  257          }\n  258:     .icheckbox_line-blue.disabled,\n  259      .iradio_line-blue.disabled {\n  260          background: #ADD7F0;\n  261          cursor: default;\n  262      }\n  263:         .icheckbox_line-blue.disabled .icheck_line-icon,\n  264          .iradio_line-blue.disabled .icheck_line-icon {\n  265              background-position: -30px 0;\n  266          }\n  267:     .icheckbox_line-blue.checked.disabled,\n  268      .iradio_line-blue.checked.disabled {\n  269          background: #ADD7F0;\n  270      }\n  271:         .icheckbox_line-blue.checked.disabled .icheck_line-icon,\n  272          .iradio_line-blue.checked.disabled .icheck_line-icon {\n  273              background-position: -45px 0;\n  ...\n  276  /* HiDPI support */\n  277  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  278:     .icheckbox_line-blue .icheck_line-icon,\n  279      .iradio_line-blue .icheck_line-icon {\n  280          background-image: url(line@2x.png);\n  ...\n  285  \n  286  /* aero */\n  287: .icheckbox_line-aero,\n  288  .iradio_line-aero {\n  289      position: relative;\n  ...\n  301      cursor: pointer;\n  302  }\n  303:     .icheckbox_line-aero .icheck_line-icon,\n  304      .iradio_line-aero .icheck_line-icon {\n  305          position: absolute;\n  ...\n  314          border: none;\n  315      }\n  316:     .icheckbox_line-aero.hover,\n  317:     .icheckbox_line-aero.checked.hover,\n  318      .iradio_line-aero.hover {\n  319          background: #B5D1D8;\n  320      }\n  321:     .icheckbox_line-aero.checked,\n  322      .iradio_line-aero.checked {\n  323          background: #9cc2cb;\n  324      }\n  325:         .icheckbox_line-aero.checked .icheck_line-icon,\n  326          .iradio_line-aero.checked .icheck_line-icon {\n  327              background-position: -15px 0;\n  328          }\n  329:     .icheckbox_line-aero.disabled,\n  330      .iradio_line-aero.disabled {\n  331          background: #D2E4E8;\n  332          cursor: default;\n  333      }\n  334:         .icheckbox_line-aero.disabled .icheck_line-icon,\n  335          .iradio_line-aero.disabled .icheck_line-icon {\n  336              background-position: -30px 0;\n  337          }\n  338:     .icheckbox_line-aero.checked.disabled,\n  339      .iradio_line-aero.checked.disabled {\n  340          background: #D2E4E8;\n  341      }\n  342:         .icheckbox_line-aero.checked.disabled .icheck_line-icon,\n  343          .iradio_line-aero.checked.disabled .icheck_line-icon {\n  344              background-position: -45px 0;\n  ...\n  347  /* HiDPI support */\n  348  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  349:     .icheckbox_line-aero .icheck_line-icon,\n  350      .iradio_line-aero .icheck_line-icon {\n  351          background-image: url(line@2x.png);\n  ...\n  356  \n  357  /* grey */\n  358: .icheckbox_line-grey,\n  359  .iradio_line-grey {\n  360      position: relative;\n  ...\n  372      cursor: pointer;\n  373  }\n  374:     .icheckbox_line-grey .icheck_line-icon,\n  375      .iradio_line-grey .icheck_line-icon {\n  376          position: absolute;\n  ...\n  385          border: none;\n  386      }\n  387:     .icheckbox_line-grey.hover,\n  388:     .icheckbox_line-grey.checked.hover,\n  389      .iradio_line-grey.hover {\n  390          background: #8B8986;\n  391      }\n  392:     .icheckbox_line-grey.checked,\n  393      .iradio_line-grey.checked {\n  394          background: #73716e;\n  395      }\n  396:         .icheckbox_line-grey.checked .icheck_line-icon,\n  397          .iradio_line-grey.checked .icheck_line-icon {\n  398              background-position: -15px 0;\n  399          }\n  400:     .icheckbox_line-grey.disabled,\n  401      .iradio_line-grey.disabled {\n  402          background: #D5D4D3;\n  403          cursor: default;\n  404      }\n  405:         .icheckbox_line-grey.disabled .icheck_line-icon,\n  406          .iradio_line-grey.disabled .icheck_line-icon {\n  407              background-position: -30px 0;\n  408          }\n  409:     .icheckbox_line-grey.checked.disabled,\n  410      .iradio_line-grey.checked.disabled {\n  411          background: #D5D4D3;\n  412      }\n  413:         .icheckbox_line-grey.checked.disabled .icheck_line-icon,\n  414          .iradio_line-grey.checked.disabled .icheck_line-icon {\n  415              background-position: -45px 0;\n  ...\n  418  /* HiDPI support */\n  419  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  420:     .icheckbox_line-grey .icheck_line-icon,\n  421      .iradio_line-grey .icheck_line-icon {\n  422          background-image: url(line@2x.png);\n  ...\n  427  \n  428  /* orange */\n  429: .icheckbox_line-orange,\n  430  .iradio_line-orange {\n  431      position: relative;\n  ...\n  443      cursor: pointer;\n  444  }\n  445:     .icheckbox_line-orange .icheck_line-icon,\n  446      .iradio_line-orange .icheck_line-icon {\n  447          position: absolute;\n  ...\n  456          border: none;\n  457      }\n  458:     .icheckbox_line-orange.hover,\n  459:     .icheckbox_line-orange.checked.hover,\n  460      .iradio_line-orange.hover {\n  461          background: #FF9233;\n  462      }\n  463:     .icheckbox_line-orange.checked,\n  464      .iradio_line-orange.checked {\n  465          background: #f70;\n  466      }\n  467:         .icheckbox_line-orange.checked .icheck_line-icon,\n  468          .iradio_line-orange.checked .icheck_line-icon {\n  469              background-position: -15px 0;\n  470          }\n  471:     .icheckbox_line-orange.disabled,\n  472      .iradio_line-orange.disabled {\n  473          background: #FFD6B3;\n  474          cursor: default;\n  475      }\n  476:         .icheckbox_line-orange.disabled .icheck_line-icon,\n  477          .iradio_line-orange.disabled .icheck_line-icon {\n  478              background-position: -30px 0;\n  479          }\n  480:     .icheckbox_line-orange.checked.disabled,\n  481      .iradio_line-orange.checked.disabled {\n  482          background: #FFD6B3;\n  483      }\n  484:         .icheckbox_line-orange.checked.disabled .icheck_line-icon,\n  485          .iradio_line-orange.checked.disabled .icheck_line-icon {\n  486              background-position: -45px 0;\n  ...\n  489  /* HiDPI support */\n  490  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  491:     .icheckbox_line-orange .icheck_line-icon,\n  492      .iradio_line-orange .icheck_line-icon {\n  493          background-image: url(line@2x.png);\n  ...\n  498  \n  499  /* yellow */\n  500: .icheckbox_line-yellow,\n  501  .iradio_line-yellow {\n  502      position: relative;\n  ...\n  514      cursor: pointer;\n  515  }\n  516:     .icheckbox_line-yellow .icheck_line-icon,\n  517      .iradio_line-yellow .icheck_line-icon {\n  518          position: absolute;\n  ...\n  527          border: none;\n  528      }\n  529:     .icheckbox_line-yellow.hover,\n  530:     .icheckbox_line-yellow.checked.hover,\n  531      .iradio_line-yellow.hover {\n  532          background: #FFD34F;\n  533      }\n  534:     .icheckbox_line-yellow.checked,\n  535      .iradio_line-yellow.checked {\n  536          background: #FFC414;\n  537      }\n  538:         .icheckbox_line-yellow.checked .icheck_line-icon,\n  539          .iradio_line-yellow.checked .icheck_line-icon {\n  540              background-position: -15px 0;\n  541          }\n  542:     .icheckbox_line-yellow.disabled,\n  543      .iradio_line-yellow.disabled {\n  544          background: #FFE495;\n  545          cursor: default;\n  546      }\n  547:         .icheckbox_line-yellow.disabled .icheck_line-icon,\n  548          .iradio_line-yellow.disabled .icheck_line-icon {\n  549              background-position: -30px 0;\n  550          }\n  551:     .icheckbox_line-yellow.checked.disabled,\n  552      .iradio_line-yellow.checked.disabled {\n  553          background: #FFE495;\n  554      }\n  555:         .icheckbox_line-yellow.checked.disabled .icheck_line-icon,\n  556          .iradio_line-yellow.checked.disabled .icheck_line-icon {\n  557              background-position: -45px 0;\n  ...\n  560  /* HiDPI support */\n  561  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  562:     .icheckbox_line-yellow .icheck_line-icon,\n  563      .iradio_line-yellow .icheck_line-icon {\n  564          background-image: url(line@2x.png);\n  ...\n  569  \n  570  /* pink */\n  571: .icheckbox_line-pink,\n  572  .iradio_line-pink {\n  573      position: relative;\n  ...\n  585      cursor: pointer;\n  586  }\n  587:     .icheckbox_line-pink .icheck_line-icon,\n  588      .iradio_line-pink .icheck_line-icon {\n  589          position: absolute;\n  ...\n  598          border: none;\n  599      }\n  600:     .icheckbox_line-pink.hover,\n  601:     .icheckbox_line-pink.checked.hover,\n  602      .iradio_line-pink.hover {\n  603          background: #B995A9;\n  604      }\n  605:     .icheckbox_line-pink.checked,\n  606      .iradio_line-pink.checked {\n  607          background: #a77a94;\n  608      }\n  609:         .icheckbox_line-pink.checked .icheck_line-icon,\n  610          .iradio_line-pink.checked .icheck_line-icon {\n  611              background-position: -15px 0;\n  612          }\n  613:     .icheckbox_line-pink.disabled,\n  614      .iradio_line-pink.disabled {\n  615          background: #E0D0DA;\n  616          cursor: default;\n  617      }\n  618:         .icheckbox_line-pink.disabled .icheck_line-icon,\n  619          .iradio_line-pink.disabled .icheck_line-icon {\n  620              background-position: -30px 0;\n  621          }\n  622:     .icheckbox_line-pink.checked.disabled,\n  623      .iradio_line-pink.checked.disabled {\n  624          background: #E0D0DA;\n  625      }\n  626:         .icheckbox_line-pink.checked.disabled .icheck_line-icon,\n  627          .iradio_line-pink.checked.disabled .icheck_line-icon {\n  628              background-position: -45px 0;\n  ...\n  631  /* HiDPI support */\n  632  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  633:     .icheckbox_line-pink .icheck_line-icon,\n  634      .iradio_line-pink .icheck_line-icon {\n  635          background-image: url(line@2x.png);\n  ...\n  640  \n  641  /* purple */\n  642: .icheckbox_line-purple,\n  643  .iradio_line-purple {\n  644      position: relative;\n  ...\n  656      cursor: pointer;\n  657  }\n  658:     .icheckbox_line-purple .icheck_line-icon,\n  659      .iradio_line-purple .icheck_line-icon {\n  660          position: absolute;\n  ...\n  669          border: none;\n  670      }\n  671:     .icheckbox_line-purple.hover,\n  672:     .icheckbox_line-purple.checked.hover,\n  673      .iradio_line-purple.hover {\n  674          background: #8677A7;\n  675      }\n  676:     .icheckbox_line-purple.checked,\n  677      .iradio_line-purple.checked {\n  678          background: #6a5a8c;\n  679      }\n  680:         .icheckbox_line-purple.checked .icheck_line-icon,\n  681          .iradio_line-purple.checked .icheck_line-icon {\n  682              background-position: -15px 0;\n  683          }\n  684:     .icheckbox_line-purple.disabled,\n  685      .iradio_line-purple.disabled {\n  686          background: #D2CCDE;\n  687          cursor: default;\n  688      }\n  689:         .icheckbox_line-purple.disabled .icheck_line-icon,\n  690          .iradio_line-purple.disabled .icheck_line-icon {\n  691              background-position: -30px 0;\n  692          }\n  693:     .icheckbox_line-purple.checked.disabled,\n  694      .iradio_line-purple.checked.disabled {\n  695          background: #D2CCDE;\n  696      }\n  697:         .icheckbox_line-purple.checked.disabled .icheck_line-icon,\n  698          .iradio_line-purple.checked.disabled .icheck_line-icon {\n  699              background-position: -45px 0;\n  ...\n  702  /* HiDPI support */\n  703  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {\n  704:     .icheckbox_line-purple .icheck_line-icon,\n  705      .iradio_line-purple .icheck_line-icon {\n  706          background-image: url(line@2x.png);\n\n/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_normalize.scss:\n  334   */\n  335  \n  336: input[type=\"checkbox\"],\n  337  input[type=\"radio\"] {\n  338      box-sizing: border-box; /* 1 */\n\n122 matches across 4 files\n",
-			"settings":
-			{
-				"buffer_size": 19909,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
 			"file": "scss/_programmation-parts.scss",
 			"settings":
 			{
-				"buffer_size": 2957,
+				"buffer_size": 4297,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "boxes-plain.php",
+			"file": "/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter/classes/ajwpqsf-misc-class.php",
 			"settings":
 			{
-				"buffer_size": 1517,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 14348,
+				"buffer_size": 12519,
 				"line_ending": "Unix"
 			}
 		}
@@ -414,14 +408,17 @@
 	},
 	"file_history":
 	[
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_magazine-parts.scss",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_layout.scss",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter/html/searchform.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter/classes/ajwpqsf-misc-class.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_layout.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_programmation-parts.scss",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-event.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_magazine-parts.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/functions.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes-plain.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_links.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/js/scripts.js",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-event.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/style.css",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_forms.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/archive.php",
@@ -433,8 +430,6 @@
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_icheck.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/js/icheck-min.js",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_contents-parts.scss",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes-plain.php",
-		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/boxes.php",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/setup/_variables.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_navigation.scss",
 		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss/_footer-parts.scss",
@@ -540,8 +535,7 @@
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/archive-rdv.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/sidebar-contact-widgets.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/content-page.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/archive-event.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/events-post-type.php"
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/archive-event.php"
 	],
 	"find":
 	{
@@ -549,9 +543,14 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter",
+			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss",
+			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine",
+			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss",
+			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine",
 			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss",
 			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine",
 			"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/scss",
@@ -608,6 +607,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"afficher",
+			"5px",
+			"300",
+			"arrow.png",
+			"event-public-item",
+			"awpqsf_class",
+			"checkbox-btn",
+			"awpqsf_class",
+			".fixed",
+			"<?",
+			"inner-box",
+			".absoluted",
 			"checked",
 			"checkbox",
 			"plain-box",
@@ -723,19 +734,7 @@
 			"}\n",
 			"box-event",
 			"next-events",
-			"last-",
-			"last-posts",
-			"share-buttons",
-			"entry-content",
-			"entry-header\n",
-			"entry-cont",
-			"article",
-			"Menu",
-			"footer",
-			"d: none;",
-			"main-navigation",
-			"site-branding",
-			"branding"
+			"last-"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -755,551 +754,28 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"settings":
-					{
-						"buffer_size": 19909,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										160,
-										168
-									],
-									[
-										377,
-										385
-									],
-									[
-										470,
-										478
-									],
-									[
-										545,
-										553
-									],
-									[
-										646,
-										654
-									],
-									[
-										746,
-										754
-									],
-									[
-										819,
-										827
-									],
-									[
-										918,
-										926
-									],
-									[
-										979,
-										987
-									],
-									[
-										1081,
-										1089
-									],
-									[
-										1136,
-										1144
-									],
-									[
-										1407,
-										1415
-									],
-									[
-										1531,
-										1539
-									],
-									[
-										1704,
-										1712
-									],
-									[
-										1738,
-										1746
-									],
-									[
-										1858,
-										1866
-									],
-									[
-										1978,
-										1986
-									],
-									[
-										2154,
-										2162
-									],
-									[
-										2308,
-										2316
-									],
-									[
-										2486,
-										2494
-									],
-									[
-										2624,
-										2632
-									],
-									[
-										2949,
-										2957
-									],
-									[
-										3117,
-										3125
-									],
-									[
-										3249,
-										3257
-									],
-									[
-										3430,
-										3438
-									],
-									[
-										3468,
-										3476
-									],
-									[
-										3599,
-										3607
-									],
-									[
-										3730,
-										3738
-									],
-									[
-										3914,
-										3922
-									],
-									[
-										4079,
-										4087
-									],
-									[
-										4265,
-										4273
-									],
-									[
-										4414,
-										4422
-									],
-									[
-										4747,
-										4755
-									],
-									[
-										4925,
-										4933
-									],
-									[
-										5061,
-										5069
-									],
-									[
-										5246,
-										5254
-									],
-									[
-										5286,
-										5294
-									],
-									[
-										5421,
-										5429
-									],
-									[
-										5556,
-										5564
-									],
-									[
-										5744,
-										5752
-									],
-									[
-										5913,
-										5921
-									],
-									[
-										6103,
-										6111
-									],
-									[
-										6256,
-										6264
-									],
-									[
-										6593,
-										6601
-									],
-									[
-										6774,
-										6782
-									],
-									[
-										6908,
-										6916
-									],
-									[
-										7091,
-										7099
-									],
-									[
-										7130,
-										7138
-									],
-									[
-										7263,
-										7271
-									],
-									[
-										7396,
-										7404
-									],
-									[
-										7582,
-										7590
-									],
-									[
-										7749,
-										7757
-									],
-									[
-										7937,
-										7945
-									],
-									[
-										8088,
-										8096
-									],
-									[
-										8423,
-										8431
-									],
-									[
-										8602,
-										8610
-									],
-									[
-										8736,
-										8744
-									],
-									[
-										8919,
-										8927
-									],
-									[
-										8958,
-										8966
-									],
-									[
-										9091,
-										9099
-									],
-									[
-										9224,
-										9232
-									],
-									[
-										9410,
-										9418
-									],
-									[
-										9577,
-										9585
-									],
-									[
-										9765,
-										9773
-									],
-									[
-										9916,
-										9924
-									],
-									[
-										10251,
-										10259
-									],
-									[
-										10430,
-										10438
-									],
-									[
-										10564,
-										10572
-									],
-									[
-										10747,
-										10755
-									],
-									[
-										10786,
-										10794
-									],
-									[
-										10919,
-										10927
-									],
-									[
-										11052,
-										11060
-									],
-									[
-										11238,
-										11246
-									],
-									[
-										11405,
-										11413
-									],
-									[
-										11593,
-										11601
-									],
-									[
-										11744,
-										11752
-									],
-									[
-										12079,
-										12087
-									],
-									[
-										12260,
-										12268
-									],
-									[
-										12398,
-										12406
-									],
-									[
-										12585,
-										12593
-									],
-									[
-										12626,
-										12634
-									],
-									[
-										12763,
-										12771
-									],
-									[
-										12897,
-										12905
-									],
-									[
-										13087,
-										13095
-									],
-									[
-										13258,
-										13266
-									],
-									[
-										13450,
-										13458
-									],
-									[
-										13605,
-										13613
-									],
-									[
-										13944,
-										13952
-									],
-									[
-										14129,
-										14137
-									],
-									[
-										14267,
-										14275
-									],
-									[
-										14454,
-										14462
-									],
-									[
-										14495,
-										14503
-									],
-									[
-										14632,
-										14640
-									],
-									[
-										14769,
-										14777
-									],
-									[
-										14959,
-										14967
-									],
-									[
-										15130,
-										15138
-									],
-									[
-										15322,
-										15330
-									],
-									[
-										15477,
-										15485
-									],
-									[
-										15816,
-										15824
-									],
-									[
-										15999,
-										16007
-									],
-									[
-										16133,
-										16141
-									],
-									[
-										16316,
-										16324
-									],
-									[
-										16355,
-										16363
-									],
-									[
-										16488,
-										16496
-									],
-									[
-										16621,
-										16629
-									],
-									[
-										16807,
-										16815
-									],
-									[
-										16974,
-										16982
-									],
-									[
-										17162,
-										17170
-									],
-									[
-										17313,
-										17321
-									],
-									[
-										17648,
-										17656
-									],
-									[
-										17829,
-										17837
-									],
-									[
-										17967,
-										17975
-									],
-									[
-										18154,
-										18162
-									],
-									[
-										18195,
-										18203
-									],
-									[
-										18332,
-										18340
-									],
-									[
-										18469,
-										18477
-									],
-									[
-										18659,
-										18667
-									],
-									[
-										18830,
-										18838
-									],
-									[
-										19022,
-										19030
-									],
-									[
-										19177,
-										19185
-									],
-									[
-										19516,
-										19524
-									],
-									[
-										19797,
-										19805
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								241,
-								241
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "scss/_programmation-parts.scss",
 					"settings":
 					{
-						"buffer_size": 2957,
+						"buffer_size": 4297,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1921,
-								1928
+								2915,
+								2915
 							]
 						],
 						"settings":
@@ -1397,31 +873,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1601.0,
+						"translation.y": 2843.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 2,
-					"file": "boxes-plain.php",
+					"buffer": 1,
+					"file": "/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/plugins/ajax-wp-query-search-filter/classes/ajwpqsf-misc-class.php",
 					"settings":
 					{
-						"buffer_size": 1517,
+						"buffer_size": 12519,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1015,
-								1015
+								11375,
+								11376
 							]
 						],
 						"settings":
@@ -1519,122 +989,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 26.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "functions.php",
-					"settings":
-					{
-						"buffer_size": 14348,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6670,
-								6670
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2038.0,
+						"translation.y": 4454.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1670,7 +1025,7 @@
 		"cols":
 		[
 			0.0,
-			0.435725395219,
+			0.464421589854,
 			1.0
 		],
 		"rows":

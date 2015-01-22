@@ -1561,7 +1561,7 @@ body {
     background: #000; }
   .plain-box .inner-box:before {
     content: ' ';
-    opacity: 0.5; }
+    opacity: 0.3; }
   .plain-box:hover .inner-box:before {
     opacity: 0.8; }
 
@@ -2607,11 +2607,20 @@ aside.widget-last {
 .haut-de-seine-logo {
   background-image: url(); }
 
+/*
+ * VARIABLES
+ */
+/*
+ * BOXES
+ */
 .box-month h2 {
   text-align: right;
   border-right: 3px solid;
   padding: 0 20px 20px 0; }
 
+/*
+ * PROGRAMMATION FILTER
+ */
 #awpqsf_id {
   border: none; }
   #awpqsf_id label {
@@ -2622,51 +2631,56 @@ aside.widget-last {
 
 #prog-filters {
   margin-top: -45px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-top: 10px; }
   @media (max-width: 800px) {
     #prog-filters {
       margin-top: 0; } }
-  #prog-filters #futurEventCheckbox,
-  #prog-filters .taxdropdown-4,
-  #prog-filters .awpqsf_submit {
-    float: left;
-    width: 32%; }
   #prog-filters .awpqsf_class,
   #prog-filters .filter-column {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    width: 49%;
     margin-left: 1%;
-    float: left; }
+    float: right;
+    padding-bottom: 0;
+    margin-bottom: 10px; }
     #prog-filters .awpqsf_class label[class*='tax-label-'],
     #prog-filters .awpqsf_class label[class*='tcmf-label-'],
     #prog-filters .filter-column label[class*='tax-label-'],
     #prog-filters .filter-column label[class*='tcmf-label-'] {
       width: 100%;
-      padding: 5px 0 0; }
+      padding: 0; }
+    #prog-filters .awpqsf_class .tax-label-0,
+    #prog-filters .awpqsf_class .tax-label-1,
+    #prog-filters .awpqsf_class .tax-label-2,
+    #prog-filters .filter-column .tax-label-0,
+    #prog-filters .filter-column .tax-label-1,
+    #prog-filters .filter-column .tax-label-2 {
+      display: none; }
     #prog-filters .awpqsf_class label.taxchklabel,
     #prog-filters .awpqsf_class label.cmfchklabel ,
     #prog-filters .filter-column label.taxchklabel,
     #prog-filters .filter-column label.cmfchklabel  {
       width: 100px; }
-    #prog-filters .awpqsf_class:first-child,
-    #prog-filters .filter-column:first-child {
-      min-height: 250px; }
     #prog-filters .awpqsf_class ul,
     #prog-filters .filter-column ul {
       display: inline-block;
       margin-bottom: 20px; }
-    #prog-filters .awpqsf_class li:before,
-    #prog-filters .filter-column li:before {
-      content: '⊕ '; }
     #prog-filters .awpqsf_class a,
     #prog-filters .filter-column a {
       border: inherit;
       color: inherit; }
-    #prog-filters .awpqsf_class .imaged-chkbx, #prog-filters .awpqsf_class .texted-chkbx,
+    @media (min-width: 320px) and (max-width: 600px) {
+      #prog-filters .awpqsf_class,
+      #prog-filters .filter-column {
+        width: 98%; } }
+    #prog-filters .awpqsf_class .imaged-chkbx, #prog-filters .awpqsf_class .texted-chkbx, #prog-filters .awpqsf_class #futurEventCheckbox,
     #prog-filters .filter-column .imaged-chkbx,
-    #prog-filters .filter-column .texted-chkbx {
+    #prog-filters .filter-column .texted-chkbx,
+    #prog-filters .filter-column #futurEventCheckbox {
       /* Acceptable values are border, content, and padding - content is the default W3C model */
       box-sizing: border-box;
       -webkit-box-sizing: border-box;
@@ -2675,10 +2689,11 @@ aside.widget-last {
       width: auto;
       position: relative;
       clear: both;
-      margin: 0 5px 0 0; }
-      #prog-filters .awpqsf_class .imaged-chkbx label, #prog-filters .awpqsf_class .texted-chkbx label,
+      margin: 0 5px 2px 0; }
+      #prog-filters .awpqsf_class .imaged-chkbx label, #prog-filters .awpqsf_class .texted-chkbx label, #prog-filters .awpqsf_class #futurEventCheckbox label,
       #prog-filters .filter-column .imaged-chkbx label,
-      #prog-filters .filter-column .texted-chkbx label {
+      #prog-filters .filter-column .texted-chkbx label,
+      #prog-filters .filter-column #futurEventCheckbox label {
         /* Acceptable values are border, content, and padding - content is the default W3C model */
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -2693,10 +2708,11 @@ aside.widget-last {
         position: relative;
         border-radius: 2px;
         color: #eee;
-        background-color: #035585; }
-      #prog-filters .awpqsf_class .imaged-chkbx input, #prog-filters .awpqsf_class .texted-chkbx input,
+        background-color: #333; }
+      #prog-filters .awpqsf_class .imaged-chkbx input, #prog-filters .awpqsf_class .texted-chkbx input, #prog-filters .awpqsf_class #futurEventCheckbox input,
       #prog-filters .filter-column .imaged-chkbx input,
-      #prog-filters .filter-column .texted-chkbx input {
+      #prog-filters .filter-column .texted-chkbx input,
+      #prog-filters .filter-column #futurEventCheckbox input {
         top: 0px;
         right: 0px;
         bottom: 0px;
@@ -2709,19 +2725,115 @@ aside.widget-last {
         cursor: pointer; }
     #prog-filters .awpqsf_class .imaged-chkbx .public-img,
     #prog-filters .filter-column .imaged-chkbx .public-img {
-      background-color: #035585; }
+      background-color: none; }
     #prog-filters .awpqsf_class .texted-chkbx label,
     #prog-filters .filter-column .texted-chkbx label {
       padding: 3px 5px;
       transition: all 0.1s; }
-  @media (max-width: 800px) {
-    #prog-filters .taxcheckbox-0 {
-      margin-top: 40px; } }
-  #prog-filters .awpqsf_submit {
-    padding: 10px 0;
+  #prog-filters .taxcheckbox-0 {
+    float: left !important;
+    height: 300px; }
+    #prog-filters .taxcheckbox-0 .checkbox {
+      width: 75px;
+      height: 80px;
+      border: 1px solid #000;
+      float: left;
+      clear: none;
+      margin: 0 5px 5px 0; }
+      #prog-filters .taxcheckbox-0 .checkbox label {
+        background-color: #fff;
+        color: #000 !important;
+        padding: 5px 1px;
+        border-radius: none; }
+        #prog-filters .taxcheckbox-0 .checkbox label span {
+          display: inline-block;
+          font-size: 11px;
+          line-height: 11px; }
+    @media (max-width: 800px) {
+      #prog-filters .taxcheckbox-0 {
+        height: auto; } }
+    @media (min-width: 320px) and (max-width: 600px) {
+      #prog-filters .taxcheckbox-0 {
+        height: auto;
+        margin-top: 0 10px 10px; } }
+  #prog-filters .taxcheckbox-3 {
+    margin-bottom: 15px; }
+    #prog-filters .taxcheckbox-3 > label {
+      margin-bottom: 5px; }
+    #prog-filters .taxcheckbox-3 label {
+      padding: 3px 0; }
+    #prog-filters .taxcheckbox-3 .checkbox {
+      margin-bottom: 0; }
+    #prog-filters .taxcheckbox-3 .public-img {
+      padding: 0;
+      max-width: 53px;
+      line-height: 0; }
+  #prog-filters #futurEventCheckbox {
+    width: 22.5%;
     float: right;
-    margin: 0 1%; }
+    margin: 0 5px 0 0;
+    height: 40px; }
+    #prog-filters #futurEventCheckbox .checkbox {
+      height: 100%;
+      width: 100%; }
+    @media (min-width: 320px) and (max-width: 600px) {
+      #prog-filters #futurEventCheckbox {
+        width: 40%;
+        margin-right: 10px;
+        margin-bottom: 20px; } }
+  #prog-filters .taxdropdown-4 {
+    width: 24%;
+    float: left;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-left: 5px;
+    height: 40px;
+    padding: 0; }
+    #prog-filters .taxdropdown-4 > label {
+      display: none; }
+    #prog-filters .taxdropdown-4 select {
+      /* Acceptable values are border, content, and padding - content is the default W3C model */
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      border: none;
+      background-color: #333;
+      background-image: url("../img/arrows.png");
+      background-repeat: no-repeat;
+      background-position: 5px 17px;
+      color: #fff;
+      width: 110%;
+      height: 100%;
+      margin-right: 10px;
+      margin-left: 0;
+      text-align: center; }
+    @media (min-width: 320px) and (max-width: 600px) {
+      #prog-filters .taxdropdown-4 {
+        width: 50%;
+        margin-left: 10px;
+        margin-bottom: 20px; } }
+  #prog-filters .awpqsf_submit {
+    width: 47.5%;
+    padding: 0;
+    float: right;
+    margin: 10px 10px 0 0; }
+    @media (min-width: 320px) and (max-width: 600px) {
+      #prog-filters .awpqsf_submit {
+        width: 50%;
+        margin: 10px auto;
+        float: none; }
+        #prog-filters .awpqsf_submit {
+          *zoom: 1; }
+        #prog-filters .awpqsf_submit:before, #prog-filters .awpqsf_submit:after {
+          content: "";
+          display: table; }
+        #prog-filters .awpqsf_submit:after {
+          clear: both; } }
 
+/*
+ * SINGLE EVENT
+ */
 .event-public-item {
   float: left;
   margin-right: 5px; }
@@ -2730,6 +2842,9 @@ aside.widget-last {
   text-transform: uppercase;
   color: #555;
   font-size: 0.9em; }
+
+.public-img {
+  margin: auto; }
 
 .event-repeatable-dates {
   font-weight: bold; }
