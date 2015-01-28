@@ -86,10 +86,14 @@ jQuery(function($) {
     $pageHeight = $('#page').height();
     $footerHeight = $('#mastfooter').height() + 75;
     $sidebarHeight = $('#secondary').height();
+    $headerHeight = $('#masthead').height();
+    $filterHeight = $('#prog-filters').height();
+    
     $totalHeight = $sidebarHeight + $footerHeight;
     if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
-      // $('#page').height($totalHeight);
-      // $('#mastfooter').css('position','absolute').css('bottom', '0');
+      $('#page').height($totalHeight);
+      $('.site-main').css('min-height', $sidebarHeight - $headerHeight - $filterHeight);
+      //$('#mastfooter').css('position','absolute').css('bottom', '0');
     }
 
     // Hide submit btn value for inline searchform

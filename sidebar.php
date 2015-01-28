@@ -5,7 +5,7 @@
  * @package lavantseine
  */
 ?>
-	<div id="secondary" class="widget-area" role="complementary" data-columns>
+	<div id="secondary" class="widget-area col-1" role="complementary" data-columns>
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
 

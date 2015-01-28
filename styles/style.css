@@ -490,7 +490,7 @@ table {
 /*
  *  Grid setup
  */
-.col-1, #secondary, .box, .box-blank, .box-page, .box-post, .box-event, .box-month, .box-footer, .search-form, .post .entry-meta, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #categories-magazine, #categories-replaced {
+.col-1, .box, .box-blank, .box-page, .box-post, .box-event, .box-month, .box-footer, .search-form, .post .entry-meta, .page .entry-media, .event .inner-entry-content, .event .entry-meta, #categories-magazine, #categories-replaced {
   width: 176.4px;
   position: relative;
   float: left;
@@ -650,10 +650,10 @@ table {
       max-width: 44%;
       float: left; } }
 
-.column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child, .column#categories-replaced:first-child {
+.column.col-1:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child, .column#categories-replaced:first-child {
   margin-left: 0; }
   @media (min-width: 320px) and (max-width: 600px) {
-    .column.col-1:first-child, .column#secondary:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child, .column#categories-replaced:first-child {
+    .column.col-1:first-child, .column.box:first-child, .column.box-blank:first-child, .column.box-page:first-child, .column.box-post:first-child, .column.box-event:first-child, .column.box-month:first-child, .column.box-footer:first-child, .column.search-form:first-child, .post .column.entry-meta:first-child, .page .column.entry-media:first-child, .event .column.inner-entry-content:first-child, .event .column.entry-meta:first-child, .column#categories-magazine:first-child, .column#categories-replaced:first-child {
       margin-left: 3%;
       float: left;
       margin-right: 3%; } }
@@ -664,18 +664,15 @@ table {
   height: 0;
   visibility: hidden; }
 
-#masthead, #content,
 .clearfix,
 .event .entry-mentions {
   *zoom: 1; }
-#masthead:before, #content:before, #masthead:after, #content:after,
 .clearfix:before,
 .event .entry-mentions:before,
 .clearfix:after,
 .event .entry-mentions:after {
   content: "";
   display: table; }
-#masthead:after, #content:after,
 .clearfix:after,
 .event .entry-mentions:after {
   clear: both; }
@@ -1433,16 +1430,16 @@ body {
  *	Header with branding and navigations
  */
 #masthead {
-  position: relative; }
-  @media (min-width: 1025px) {
-    #masthead {
-      width: 100%; } }
+  display: inline-block;
+  position: relative;
+  float: left; }
 
 /*
  *	Content with main things and sidebar things
  */
 #content {
-  margin-top: 40px; }
+  margin-top: 40px;
+  float: left; }
   @media (max-width: 1024px) {
     #content {
       clear: both; } }
@@ -1450,12 +1447,17 @@ body {
     #content {
       margin: 0; } }
 
-@media (min-width: 320px) and (max-width: 600px) {
-  #primary {
-    width: 100%; } }
-@media (max-width: 800px) {
-  #primary {
-    width: 100%; } }
+#primary {
+  margin-bottom: 20px; }
+  @media (min-width: 320px) and (max-width: 600px) {
+    #primary {
+      width: 100%; } }
+  @media (max-width: 800px) {
+    #primary {
+      width: 100%; } }
+
+.site-main {
+  min-height: 500px; }
 
 #attached-content {
   margin-top: 20px; }
@@ -1507,6 +1509,7 @@ body {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  clear: both;
   z-index: 5;
   margin: 20px 0;
   padding: 0.5em 0; }

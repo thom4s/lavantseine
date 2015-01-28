@@ -10,6 +10,8 @@
 
 	</div><!-- #content -->
 
+<?php get_sidebar(); ?>
+
 	<footer id="mastfooter" class="site-footer transparent-background" role="contentinfo">
 		<?php get_sidebar( 'footer-widgets' ); ?>
 		<div class="clearfix"></div>

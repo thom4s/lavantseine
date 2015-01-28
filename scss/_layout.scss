@@ -27,11 +27,12 @@ body { background-size: cover; }
 	 *	Header with branding and navigations
 	 */
 	#masthead {
+		display: inline-block;
 		position: relative;
-		@extend %clearfix;
+		float: left;
 
 		@include breakpoint(desktop) {
-			width: 100%;
+			
 		}
 		@include breakpoint(tablette) {
 
@@ -46,8 +47,8 @@ body { background-size: cover; }
 	 *	Content with main things and sidebar things
 	 */
 	#content {
-		@extend %clearfix;
 		margin-top: $baseLineHeight * 2;
+		float: left;
 
 		@include breakpoint(tablette) {
 			clear: both;
@@ -62,7 +63,8 @@ body { background-size: cover; }
 		#primary {
 			@extend .col-4;
 			@extend %first;
-
+			margin-bottom: 20px;
+			
 			@include breakpoint(small) {
 				width: 100%;
 			}
@@ -71,8 +73,8 @@ body { background-size: cover; }
 			}	
 		}
 
-			#main {
-
+			.site-main {
+				min-height: 500px;
 			}
 
 			#attached-content {
@@ -110,7 +112,6 @@ body { background-size: cover; }
 
 		// Contain the sidebar with additionnal stuffs.
 		#secondary {
-			@extend .col-1;
 			position: absolute;
 			top: $baseLineHeight;
 			right: 0;
@@ -133,7 +134,8 @@ body { background-size: cover; }
 	#mastfooter {
 		@extend .plain-width;
 		@include box-sizing();
-
+		
+		clear: both;
 		z-index: 5;
 		margin: $baseLineHeight 0;
 		padding: $bigBlocsPadding;
