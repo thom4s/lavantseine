@@ -92,7 +92,7 @@ jQuery(function($) {
     $totalHeight = $sidebarHeight + $footerHeight;
     if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
       $('#page').height($totalHeight);
-      $('.site-main').css('min-height', $sidebarHeight - $headerHeight - $filterHeight);
+      $('.content-area').css('min-height', $sidebarHeight - $headerHeight - $filterHeight);
       //$('#mastfooter').css('position','absolute').css('bottom', '0');
     }
 
