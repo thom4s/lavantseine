@@ -236,9 +236,9 @@ $margin-outer: 10px;
 
 	#futurEventCheckbox {
 		@extend %checkbox-btn;
-		width: 22.5%;
+		width: 22%;
 		float: right;
-		margin: 0 $margin-inner 0 0;
+		margin: 0 $margin-outer 0 0;
 		height: 40px; 
 		
 		.checkbox {
@@ -273,13 +273,13 @@ $margin-outer: 10px;
 			background-color: $color2;
 			background-image: url('../img/arrows.png');
 			background-repeat: no-repeat;
-			background-position: 5px 17px;
+			background-position: -2px -18px;
 			color: #fff;
 			width: 110%;
 			height: 100%;
 			margin-right: 10px;
 			margin-left: 0;
-			text-align: center;
+			padding-left: 32px;
 		}
 
 		@include breakpoint(small) {
@@ -329,6 +329,41 @@ $margin-outer: 10px;
 	.public-img {
 		margin: auto;
 	}
+
+ 
+// Public taxonomy 
+.event-public-item {
+	float: left;
+	margin-right: 5px;
+
+	.public-label {
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	.public-img {
+		background-color: #333;
+		clear: both;
+		display: inline-block;
+		float: left;
+		padding: 2px 3px;
+		width: 50px;
+
+		& * {
+			display: inline-block;
+			float: left;
+			clear: both;
+			width: 100%;
+			text-align: center;
+			font-size: 0.8em;
+			color: #fff;
+		}
+	}
+	.public-name {
+		margin-bottom: 0;
+	}
+}
+
+
 
 
 // Dates 

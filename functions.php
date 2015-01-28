@@ -168,6 +168,7 @@ function lavantseine_customize_css()
             .mag-filters a:hover { color: <?php echo $saisonColor; ?> !important;}
             .imaged-chkbx input:checked + label { background-color: <?php echo $saisonColor; ?> !important; } 
             .texted-chkbx input:checked + label { background-color: <?php echo $saisonColor; ?> !important; } 
+
          </style>
     <?php
 }

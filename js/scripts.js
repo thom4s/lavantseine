@@ -88,8 +88,8 @@ jQuery(function($) {
     $sidebarHeight = $('#secondary').height();
     $totalHeight = $sidebarHeight + $footerHeight;
     if ( ($pageHeight - $footerHeight + 75) <= $sidebarHeight ) {
-      $('#page').height($totalHeight);
-      $('#mastfooter').css('position','absolute').css('bottom', '0');
+      // $('#page').height($totalHeight);
+      // $('#mastfooter').css('position','absolute').css('bottom', '0');
     }
 
     // Hide submit btn value for inline searchform
