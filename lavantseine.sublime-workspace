@@ -347,7 +347,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2948,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -355,7 +355,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 5240,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -363,7 +363,7 @@
 			"file": "footer.php",
 			"settings":
 			{
-				"buffer_size": 886,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -371,7 +371,7 @@
 			"file": "scss/_layout.scss",
 			"settings":
 			{
-				"buffer_size": 5633,
+				"buffer_size": 5611,
 				"line_ending": "Unix"
 			}
 		},
@@ -379,7 +379,7 @@
 			"file": "js/scripts.js",
 			"settings":
 			{
-				"buffer_size": 13838,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -789,15 +789,15 @@
 					"file": "header.php",
 					"settings":
 					{
-						"buffer_size": 2948,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								738,
-								738
+								0,
+								0
 							]
 						],
 						"settings":
@@ -895,7 +895,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 300.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -905,15 +905,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 5240,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5216,
-								5216
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1011,7 +1011,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2345.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1021,15 +1021,15 @@
 					"file": "footer.php",
 					"settings":
 					{
-						"buffer_size": 886,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								448,
-								448
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1134,7 +1134,7 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1142,15 +1142,15 @@
 					"file": "scss/_layout.scss",
 					"settings":
 					{
-						"buffer_size": 5633,
+						"buffer_size": 5611,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								972,
-								972
+								1104,
+								1104
 							]
 						],
 						"settings":
@@ -1248,7 +1248,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 633.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1258,15 +1258,15 @@
 					"file": "js/scripts.js",
 					"settings":
 					{
-						"buffer_size": 13838,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2462,
-								2462
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1365,7 +1365,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 815.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -38,8 +38,11 @@ body { background-size: cover; }
 
 		}
 		@include breakpoint(medium) {
-
+			width: 100%;
 		}
+		@include breakpoint(small) {
+			
+		}		
 	}
 
 
@@ -55,8 +58,8 @@ body { background-size: cover; }
 		}
 		@include breakpoint(medium) {
 			margin: 0;
-
-		}		
+			float: none;
+		}
 	}
 
 		// Contain content main things : media + texte principal (page, article, event) / archives prog + journal

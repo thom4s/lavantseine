@@ -1433,6 +1433,9 @@ body {
   display: inline-block;
   position: relative;
   float: left; }
+  @media (max-width: 800px) {
+    #masthead {
+      width: 100%; } }
 
 /*
  *	Content with main things and sidebar things
@@ -1445,7 +1448,8 @@ body {
       clear: both; } }
   @media (max-width: 800px) {
     #content {
-      margin: 0; } }
+      margin: 0;
+      float: none; } }
 
 #primary {
   margin-bottom: 20px; }
