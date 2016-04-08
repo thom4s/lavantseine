@@ -184,7 +184,7 @@
 		<?php $event_mentions = get_post_meta( $post->ID, 'eventDetail_mentions', true ); ?>
 		<?php if ( $event_distribution || $event_mentions ) : ?>
 		<footer class="entry-mentions">
-			<p id="display-entry-mentions"><a href="#">+ En savoir plus</a></p>
+			<p id="display-entry-mentions"><a href="#">+ distributions et mentions complètes</a></p>
 			
 			<div id="inner-entry-mentions">
 				<?php

@@ -312,6 +312,8 @@
 		@extend .col-3;
 		@extend .last;
 
+		margin-top: $baseLineHeight;
+		
 		@include breakpoint(medium) {
 			width: 377px;
 			float: right;
@@ -330,6 +332,12 @@
 	#inner-entry-mentions {
 		@include clearfix();
 		display: none;
+
+		p {
+			font-size: 0.9em;
+			color: #666;
+			line-height: 18px;
+		}
 	}
 	.main-text {
 		font-style: italic;
