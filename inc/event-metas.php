@@ -92,7 +92,19 @@ $event_details_fields = array(
         'desc'  => 'Emplacement affiche dans la page de l\'événement',  
         'id'    => $prefix.'portraitMedia',  
         'type'  => 'image' 
-    )
+    ),
+    array(  
+        'label'  => 'Code media',  
+        'desc'  => '(vimeo/dailymotion/soundcloud)',  
+        'id'    => $prefix.'mediaMarkup',  
+        'type'  => 'textarea' 
+    ),
+    array(  
+        'label'  => 'Ne pas afficher le visuel principal',  
+        'desc'  => '(si code vidéo ou slide)',  
+        'id'    => $prefix.'showPic',  
+        'type'  => 'checkbox' 
+    ),
 );  
 
 

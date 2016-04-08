@@ -2352,6 +2352,9 @@ a:active {
 .entry-header img {
   margin: 10px 0; }
 
+.entry-media img {
+  display: block; }
+
 /**
  * Post
  */

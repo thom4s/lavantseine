@@ -7,7 +7,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<div class="entry-media">
-		<?php the_post_thumbnail('top-thumbnail'); ?>
+		<?php
+			$eventDetail_mediaMarkup = get_post_meta( $post->ID, 'eventDetail_mediaMarkup', true );
+			$eventDetail_showPic = get_post_meta( $post->ID, 'eventDetail_showPic', true );
+			
+			get_template_part( 'part', 'postslide' );
+
+			if ( !$eventDetail_showPic ) {
+		  	the_post_thumbnail('top-thumbnail');
+			}
+			if ( $eventDetail_mediaMarkup ) {
+				echo $eventDetail_mediaMarkup;
+			}
+		?>
 	</div>
 
 	<header class="entry-header">
